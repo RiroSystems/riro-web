@@ -1,0 +1,514 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const WHATSAPP_NUMBER = "+54 9 11 XXXX-XXXX";
+const WHATSAPP_LINK   = "https://wa.me/549XXXXXXXXXX";
+const EMAIL           = "contacto@rirosystems.com";
+---
+
+<BaseLayout
+  title="Contacto | Riro Systems"
+  description="Hablemos de tu proyecto de automatización. Diseñamos ecosistemas con criterio para GBA y CABA."
+>
+  <main class="overflow-x-hidden">
+
+    <!-- ═══════════════════════ ENCABEZADO ═══════════════════════ -->
+    <section class="relative pt-36 pb-20 px-6 bg-[#0D1B2A] overflow-hidden">
+
+      <div class="contacto-header-bg" aria-hidden="true"></div>
+
+      <div class="relative z-10 max-w-6xl mx-auto">
+
+        <div class="flex items-center gap-3 mb-10">
+          <span class="w-8 h-px bg-[#00C8FF]"></span>
+          <span class="text-[#00C8FF] text-xs font-medium tracking-[0.22em] uppercase">
+            Contacto
+          </span>
+        </div>
+
+        <h1 class="text-[clamp(2.5rem,6vw,5rem)] font-bold leading-[0.95] tracking-tight text-white mb-6">
+          Hablemos de<br /><span class="contacto-title-accent">tu proyecto.</span>
+        </h1>
+
+        <p class="text-white/45 text-lg md:text-xl max-w-xl leading-relaxed">
+          Diseñamos ecosistemas con criterio. Contanos qué necesitás automatizar.
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════ GRID PRINCIPAL ════════════════════ -->
+    <section class="py-24 px-6 bg-[#0D1B2A]">
+      <div class="max-w-6xl mx-auto">
+
+        <div class="contacto-grid">
+
+          <!-- ══ COLUMNA IZQUIERDA — Información ══ -->
+          <div class="contacto-info">
+
+            <h2 class="text-sm font-medium tracking-[0.18em] text-white/35 uppercase mb-8">
+              Contacto directo
+            </h2>
+
+            <!-- WhatsApp -->
+            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" class="canal-item canal-item--wa">
+              <div class="canal-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+              </div>
+              <div class="canal-body">
+                <span class="canal-label">WhatsApp</span>
+                <span class="canal-value">{WHATSAPP_NUMBER}</span>
+              </div>
+              <span class="canal-arrow">→</span>
+            </a>
+
+            <!-- Email -->
+            <a href={`mailto:${EMAIL}`} class="canal-item canal-item--email">
+              <div class="canal-icon canal-icon--email">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </div>
+              <div class="canal-body">
+                <span class="canal-label">Email</span>
+                <span class="canal-value">{EMAIL}</span>
+              </div>
+              <span class="canal-arrow">→</span>
+            </a>
+
+            <!-- Divider -->
+            <div class="contacto-divider"></div>
+
+            <!-- Cobertura -->
+            <h2 class="text-sm font-medium tracking-[0.18em] text-white/35 uppercase mb-6">
+              Cobertura
+            </h2>
+
+            <div class="cobertura-lista">
+
+              <div class="cobertura-item">
+                <div class="cobertura-dot"></div>
+                <div>
+                  <p class="cobertura-zona">GBA y CABA</p>
+                  <p class="cobertura-desc">Proyectos residenciales e industriales en zona metropolitana</p>
+                </div>
+              </div>
+
+              <div class="cobertura-item">
+                <div class="cobertura-dot cobertura-dot--soft"></div>
+                <div>
+                  <p class="cobertura-zona">Interior del país</p>
+                  <p class="cobertura-desc">Integraciones remotas y asistencia técnica a distancia</p>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Divider -->
+            <div class="contacto-divider"></div>
+
+            <!-- Líneas -->
+            <h2 class="text-sm font-medium tracking-[0.18em] text-white/35 uppercase mb-6">
+              Qué atendemos
+            </h2>
+
+            <div class="lineas-tags">
+              <span class="linea-tag linea-tag--home">RIRO HOME</span>
+              <span class="linea-tag linea-tag--ops">RIRO OPS</span>
+              <span class="linea-tag">Automatización residencial</span>
+              <span class="linea-tag">Monitoreo industrial</span>
+              <span class="linea-tag">Integración IoT</span>
+              <span class="linea-tag">Consultoría</span>
+            </div>
+
+          </div>
+
+
+          <!-- ══ COLUMNA DERECHA — Formulario ══ -->
+          <div class="contacto-form-wrapper">
+
+            <form
+              name="contacto"
+              method="POST"
+              action="/gracias"
+              class="contacto-form"
+            >
+
+              <div class="form-group">
+                <label for="nombre" class="form-label">Nombre *</label>
+                <input
+                  type="text"
+                  id="nombre"
+                  name="nombre"
+                  placeholder="Tu nombre completo"
+                  required
+                  class="form-input"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="empresa" class="form-label">Empresa / Propiedad</label>
+                <input
+                  type="text"
+                  id="empresa"
+                  name="empresa"
+                  placeholder="Nombre de tu empresa o propiedad"
+                  class="form-input"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="form-label">Email *</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="tu@email.com"
+                  required
+                  class="form-input"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="detalles" class="form-label">Detalles del proyecto</label>
+                <textarea
+                  id="detalles"
+                  name="detalles"
+                  rows="5"
+                  placeholder="Contanos qué querés automatizar, el tipo de espacio (casa, local, planta), y cualquier requerimiento específico..."
+                  class="form-input form-textarea"
+                ></textarea>
+              </div>
+
+              <button type="submit" class="form-submit">
+                Enviar mensaje
+                <span class="form-submit-arrow">→</span>
+              </button>
+
+              <p class="form-note">
+                Respondemos en menos de 24 hs hábiles.
+                Tu información es confidencial y no es compartida con terceros.
+              </p>
+
+            </form>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════ CIERRE MINIMALISTA ════════════════ -->
+    <section class="py-20 px-6 bg-[#1C2B3A] border-t border-white/5">
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+
+        <div>
+          <p class="text-white/60 text-sm leading-relaxed max-w-lg">
+            Cada proyecto empieza con una conversación honesta sobre qué necesitás y qué no.
+            Sin propuestas infladas ni tecnología de adorno.
+          </p>
+        </div>
+
+        <div class="flex items-center gap-2 flex-shrink-0">
+          <span class="text-white font-bold tracking-tight">RIRO</span>
+          <span class="text-[#00C8FF] font-bold">·</span>
+          <span class="text-white/50 font-medium">SYSTEMS</span>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>
+
+<style>
+  :root {
+    --c-navy:     #0D1B2A;
+    --c-charcoal: #1C2B3A;
+    --c-cyan:     #00C8FF;
+    --c-steel:    #4A7FA5;
+  }
+
+  /* ══ HEADER ══════════════════════════════════════════════════ */
+  .contacto-header-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,200,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,200,255,0.025) 1px, transparent 1px);
+    background-size: 72px 72px;
+    pointer-events: none;
+  }
+
+  .contacto-title-accent {
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(0,200,255,0.35);
+  }
+
+  /* ══ GRID PRINCIPAL ══════════════════════════════════════════ */
+  .contacto-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.35fr;
+    gap: 6rem;
+    align-items: start;
+  }
+  @media (max-width: 900px) {
+    .contacto-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+  }
+
+  /* ══ CANALES DE CONTACTO ═════════════════════════════════════ */
+  .canal-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.125rem 1.25rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.06);
+    background: rgba(255,255,255,0.02);
+    text-decoration: none;
+    transition: border-color 0.2s, background 0.2s, transform 0.2s;
+    margin-bottom: 0.75rem;
+  }
+  .canal-item:hover {
+    transform: translateX(4px);
+  }
+  .canal-item--wa:hover {
+    border-color: rgba(37,211,102,0.25);
+    background: rgba(37,211,102,0.04);
+  }
+  .canal-item--email:hover {
+    border-color: rgba(0,200,255,0.2);
+    background: rgba(0,200,255,0.03);
+  }
+
+  .canal-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    flex-shrink: 0;
+    color: #25d366;
+    background: rgba(37,211,102,0.08);
+  }
+  .canal-icon--email {
+    color: var(--c-cyan);
+    background: rgba(0,200,255,0.07);
+  }
+
+  .canal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex-grow: 1;
+  }
+  .canal-label {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.3);
+    text-transform: uppercase;
+  }
+  .canal-value {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.8);
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  .canal-arrow {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.2);
+    transition: color 0.2s, transform 0.2s;
+  }
+  .canal-item:hover .canal-arrow {
+    color: rgba(255,255,255,0.5);
+    transform: translateX(2px);
+  }
+
+  /* ══ DIVISOR ═════════════════════════════════════════════════ */
+  .contacto-divider {
+    height: 1px;
+    background: rgba(255,255,255,0.06);
+    margin: 2rem 0;
+  }
+
+  /* ══ COBERTURA ═══════════════════════════════════════════════ */
+  .cobertura-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .cobertura-item {
+    display: flex;
+    gap: 0.875rem;
+    align-items: flex-start;
+  }
+  .cobertura-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--c-cyan);
+    flex-shrink: 0;
+    margin-top: 5px;
+    box-shadow: 0 0 8px rgba(0,200,255,0.4);
+  }
+  .cobertura-dot--soft {
+    background: rgba(255,255,255,0.2);
+    box-shadow: none;
+  }
+
+  .cobertura-zona {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 2px;
+  }
+  .cobertura-desc {
+    font-size: 0.8125rem;
+    color: rgba(255,255,255,0.35);
+    line-height: 1.5;
+  }
+
+  /* ══ TAGS DE LÍNEAS ══════════════════════════════════════════ */
+  .lineas-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .linea-tag {
+    display: inline-flex;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    padding: 4px 10px;
+    border-radius: 4px;
+    color: rgba(255,255,255,0.45);
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+  }
+  .linea-tag--home {
+    color: var(--c-steel);
+    background: rgba(74,127,165,0.08);
+    border-color: rgba(74,127,165,0.2);
+  }
+  .linea-tag--ops {
+    color: var(--c-cyan);
+    background: rgba(0,200,255,0.07);
+    border-color: rgba(0,200,255,0.18);
+  }
+
+  /* ══ FORMULARIO ══════════════════════════════════════════════ */
+  .contacto-form-wrapper {
+    background: var(--c-charcoal);
+    border-radius: 16px;
+    padding: 2.75rem;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  @media (max-width: 640px) {
+    .contacto-form-wrapper { padding: 1.75rem; }
+  }
+
+  .contacto-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.375rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .form-label {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 0.01em;
+  }
+
+  .form-input {
+    width: 100%;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.9375rem;
+    color: rgba(255,255,255,0.85);
+    background: #0D1B2A;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+  }
+
+  .form-input::placeholder {
+    color: rgba(255,255,255,0.2);
+  }
+
+  .form-input:focus {
+    border-color: rgba(0,200,255,0.4);
+    box-shadow: 0 0 0 3px rgba(0,200,255,0.07);
+  }
+
+  .form-input:hover:not(:focus) {
+    border-color: rgba(255,255,255,0.14);
+  }
+
+  .form-textarea {
+    resize: vertical;
+    min-height: 130px;
+    line-height: 1.6;
+  }
+
+  .form-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    color: #0D1B2A;
+    background: var(--c-cyan);
+    border: none;
+    border-radius: 8px;
+    padding: 0.9rem 2rem;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s, gap 0.2s;
+    width: 100%;
+    margin-top: 0.25rem;
+  }
+  .form-submit:hover {
+    background: #19d4ff;
+    box-shadow: 0 0 28px rgba(0,200,255,0.35);
+    gap: 0.875rem;
+  }
+
+  .form-submit-arrow {
+    font-size: 1rem;
+    transition: transform 0.2s;
+  }
+  .form-submit:hover .form-submit-arrow {
+    transform: translateX(3px);
+  }
+
+  .form-note {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.25);
+    text-align: center;
+    line-height: 1.6;
+  }
+</style>

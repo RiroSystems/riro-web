@@ -1,0 +1,337 @@
+---
+// Footer global — Riro Systems
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="footer-inner">
+
+    <!-- Columna 1: Líneas de negocio -->
+    <div class="footer-col">
+      <p class="footer-brand">
+        <span class="brand-riro">RIRO</span><span class="brand-sep">·</span><span class="brand-sys">SYSTEMS</span>
+      </p>
+      <p class="footer-tagline">Automatización con criterio.</p>
+
+      <div class="biz-lines">
+        <a href="/home" class="biz-item">
+          <span class="biz-badge biz-home">HOME</span>
+          <span class="biz-label">Ecosistema residencial inteligente</span>
+        </a>
+        <a href="/ops" class="biz-item">
+          <span class="biz-badge biz-ops">OPS</span>
+          <span class="biz-label">Inteligencia operativa industrial</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Columna 2: Legal / Privacidad -->
+    <div class="footer-col">
+      <p class="col-heading">Legal</p>
+      <nav class="footer-nav" aria-label="Legal">
+        <a href="/privacidad" class="footer-link">Política de Privacidad</a>
+        <a href="/terminos" class="footer-link">Términos de Uso</a>
+        <a href="/privacidad#datos" class="footer-link">Procesamiento de Datos</a>
+      </nav>
+      <p class="privacy-note">
+        Procesamiento local por diseño. Tus datos permanecen en tu infraestructura.
+      </p>
+    </div>
+
+    <!-- Columna 3: Contacto rápido -->
+    <div class="footer-col">
+      <p class="col-heading">Contacto</p>
+      <nav class="footer-nav" aria-label="Contacto">
+        <a href="/contacto" class="footer-link">Solicitar Relevamiento</a>
+        <a href="/#proceso" class="footer-link">Ver el Proceso</a>
+        <a href="https://wa.me/5491100000000" class="footer-link footer-link--cta" target="_blank" rel="noopener noreferrer">
+          WhatsApp directo →
+        </a>
+      </nav>
+      <a href="/contacto" class="footer-demo">Solicitar Demo</a>
+    </div>
+
+  </div>
+
+  <!-- Barra inferior -->
+  <div class="footer-bottom">
+    <p class="footer-copy">
+      © {year} Riro Systems. Todos los derechos reservados.
+    </p>
+    <p class="footer-origin">
+      <span class="origin-dot"></span> Argentina — Hardware tuyo. Criterio nuestro.
+    </p>
+  </div>
+</footer>
+
+<style>
+  :root {
+    --c-navy:    #0D1B2A;
+    --c-charcoal:#1C2B3A;
+    --c-cyan:    #00C8FF;
+    --c-steel:   #4A7FA5;
+    --c-white:   #FFFFFF;
+    --c-muted:   rgba(255, 255, 255, 0.45);
+    --c-subtle:  rgba(255, 255, 255, 0.06);
+  }
+
+  /* ── Contenedor ─────────────────────────────────────────── */
+  .footer {
+    background: var(--c-navy);
+    border-top: 1px solid rgba(0, 200, 255, 0.08);
+    margin-top: 6rem;
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3.5rem 1.5rem 2.5rem;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 3rem;
+  }
+
+  /* ── Columna genérica ────────────────────────────────────── */
+  .footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  /* ── Marca ───────────────────────────────────────────────── */
+  .footer-brand {
+    display: flex;
+    align-items: baseline;
+    gap: 0;
+    user-select: none;
+    margin: 0 0 0.35rem;
+  }
+
+  .brand-riro {
+    font-family: 'Inter', 'DM Sans', system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.14em;
+    color: var(--c-white);
+  }
+
+  .brand-sep {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--c-cyan);
+    margin: 0 2px;
+  }
+
+  .brand-sys {
+    font-family: 'Inter', 'DM Sans', system-ui, sans-serif;
+    font-weight: 400;
+    font-size: 0.5rem;
+    letter-spacing: 0.26em;
+    color: rgba(255, 255, 255, 0.35);
+    text-transform: uppercase;
+    align-self: flex-end;
+    margin-bottom: 1px;
+  }
+
+  .footer-tagline {
+    font-family: 'Inter', 'DM Sans', system-ui, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--c-muted);
+    margin: 0 0 1.75rem;
+    letter-spacing: 0.01em;
+  }
+
+  /* ── Líneas de negocio ───────────────────────────────────── */
+  .biz-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .biz-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+    transition: opacity 0.18s;
+  }
+
+  .biz-item:hover {
+    opacity: 0.85;
+  }
+
+  .biz-badge {
+    font-family: 'Inter', 'DM Sans', system-ui, sans-serif;
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    padding: 2px 6px;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+
+  .biz-home {
+    color: var(--c-steel);
+    background: rgba(74, 127, 165, 0.12);
+    border: 1px solid rgba(74, 127, 165, 0.25);
+  }
+
+  .biz-ops {
+    color: var(--c-cyan);
+    background: rgba(0, 200, 255, 0.08);
+    border: 1px solid rgba(0, 200, 255, 0.2);
+  }
+
+  .biz-label {
+    font-family: 'Inter', 'DM Sans', system-ui, sans-serif;
+    font-size: 0.775rem;
+    color: var(--c-muted);
+    line-height: 1.3;
+  }
+
+  /* ── Cabeceras de columna ────────────────────────────────── */
+  .col-heading {
+    font-family: 'Inter', 'DM Sans', system-ui, sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.3);
+    margin: 0 0 1.25rem;
+  }
+
+  /* ── Navegación del footer ───────────────────────────────── */
+  .footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .footer-link {
+    font-family: 'Inter', 'DM Sans', system-ui, sans-serif;
+    font-size: 0.8375rem;
+    font-weight: 400;
+    color: var(--c-muted);
+    text-decoration: none;
+    transition: color 0.18s;
+    line-height: 1.4;
+  }
+
+  .footer-link:hover {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .footer-link--cta {
+    color: var(--c-cyan);
+    opacity: 0.85;
+  }
+
+  .footer-link--cta:hover {
+    color: var(--c-cyan);
+    opacity: 1;
+  }
+
+  /* ── Nota privacidad ─────────────────────────────────────── */
+  .privacy-note {
+    font-family: 'Inter', 'DM Sans', system-ui, sans-serif;
+    font-size: 0.725rem;
+    color: rgba(255, 255, 255, 0.22);
+    line-height: 1.5;
+    margin: 0;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  /* ── CTA demo ────────────────────────────────────────────── */
+  .footer-demo {
+    display: inline-block;
+    align-self: flex-start;
+    font-family: 'Inter', 'DM Sans', system-ui, sans-serif;
+    font-weight: 500;
+    font-size: 0.8125rem;
+    letter-spacing: 0.015em;
+    color: var(--c-navy);
+    background: var(--c-cyan);
+    text-decoration: none;
+    padding: 0.5rem 1.1rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+    transition: background 0.2s, box-shadow 0.2s;
+    white-space: nowrap;
+  }
+
+  .footer-demo:hover {
+    background: #19d4ff;
+    box-shadow: 0 0 16px rgba(0, 200, 255, 0.28);
+  }
+
+  /* ── Barra inferior ──────────────────────────────────────── */
+  .footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.25rem 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-copy,
+  .footer-origin {
+    font-family: 'Inter', 'DM Sans', system-ui, sans-serif;
+    font-size: 0.725rem;
+    color: rgba(255, 255, 255, 0.2);
+    margin: 0;
+  }
+
+  .footer-origin {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .origin-dot {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--c-cyan);
+    opacity: 0.5;
+    flex-shrink: 0;
+  }
+
+  /* ── Responsive ──────────────────────────────────────────── */
+  @media (max-width: 900px) {
+    .footer-inner {
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+    }
+
+    .footer-col:first-child {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .footer-inner {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      padding: 2.5rem 1.25rem 2rem;
+    }
+
+    .footer-col:first-child {
+      grid-column: auto;
+    }
+
+    .footer-bottom {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.4rem;
+    }
+  }
+</style>

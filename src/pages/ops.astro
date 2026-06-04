@@ -1,0 +1,545 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Riro OPS — Inteligencia Operativa para Manufactura"
+  description="Monitoreo industrial y visión por computadora 100% local. Sin cámaras invasivas, sin datos en la nube. Inteligencia operativa con criterio para la manufactura moderna."
+>
+  <main class="overflow-x-hidden">
+
+    <!-- ══════════════════════════ HERO ══════════════════════════ -->
+    <section class="relative min-h-[75vh] flex items-center overflow-hidden bg-[#0D1B2A]">
+      <div class="hero-grid-bg" aria-hidden="true"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0D1B2A] pointer-events-none" aria-hidden="true"></div>
+
+      <div class="relative z-10 max-w-6xl mx-auto px-6 pt-36 pb-24">
+        <div class="flex items-center gap-3 mb-10">
+          <span class="w-8 h-px bg-[#00C8FF]"></span>
+          <span class="text-[#00C8FF] text-xs font-medium tracking-[0.22em] uppercase">Línea Industrial</span>
+        </div>
+
+        <div class="flex items-start gap-4 mb-6">
+          <span class="badge-line badge-line--ops">OPS</span>
+        </div>
+
+        <h1 class="text-[clamp(3rem,8vw,6.5rem)] font-bold leading-[0.93] tracking-tight mb-8">
+          <span class="text-white">Visibilidad</span><br />
+          <span class="title-outline">real</span><span class="text-[#00C8FF]">.</span>
+        </h1>
+
+        <p class="text-lg md:text-xl text-white/55 max-w-xl leading-relaxed mb-12">
+          Inteligencia operativa en manufactura sin cámaras invasivas ni datos
+          en la nube. Tu planta, tu información, tu control.
+        </p>
+
+        <div class="flex flex-wrap gap-4">
+          <a href="/contacto" class="btn-primary-ops">
+            Solicitar evaluación
+            <span class="btn-arrow">→</span>
+          </a>
+          <a href="/proyecto-piloto" class="btn-ghost">
+            Ver caso piloto
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-circles" aria-hidden="true"></div>
+    </section>
+
+
+    <!-- ════════════════════ EL PROBLEMA ════════════════════ -->
+    <section class="py-32 px-6 bg-[#0D1B2A]">
+      <div class="max-w-6xl mx-auto">
+
+        <div class="flex items-center gap-3 mb-6">
+          <span class="w-8 h-px bg-[#00C8FF]"></span>
+          <span class="text-[#00C8FF] text-xs font-medium tracking-[0.22em] uppercase">El contexto</span>
+        </div>
+
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-16 leading-tight">
+          Lo que la manufactura<br />necesita hoy.
+        </h2>
+
+        <div class="problema-grid">
+
+          <div class="problema-col problema-col--no">
+            <div class="flex items-center gap-3 mb-8">
+              <span class="prob-num">01</span>
+              <span class="w-10 h-px bg-white/10"></span>
+            </div>
+            <h3 class="text-xl font-medium text-white/40 mb-8">Lo que no funciona</h3>
+            <ul class="space-y-5">
+              <li class="prob-item prob-item--no">
+                <span class="prob-mark prob-mark--no">✕</span>
+                <span>Cámaras de seguridad que invaden la privacidad del operario</span>
+              </li>
+              <li class="prob-item prob-item--no">
+                <span class="prob-mark prob-mark--no">✕</span>
+                <span>Datos de producción en servidores de terceros</span>
+              </li>
+              <li class="prob-item prob-item--no">
+                <span class="prob-mark prob-mark--no">✕</span>
+                <span>Soluciones SaaS que facturan por siempre y por todo</span>
+              </li>
+              <li class="prob-item prob-item--no">
+                <span class="prob-mark prob-mark--no">✕</span>
+                <span>Métricas que llegan tarde cuando el daño ya está hecho</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="problema-col problema-col--si">
+            <div class="flex items-center gap-3 mb-8">
+              <span class="prob-num prob-num--si">02</span>
+              <span class="w-10 h-px bg-white/10"></span>
+            </div>
+            <h3 class="text-xl font-medium text-[#00C8FF] mb-8">Lo que Riro OPS ofrece</h3>
+            <ul class="space-y-5">
+              <li class="prob-item prob-item--si">
+                <span class="prob-mark prob-mark--si">→</span>
+                <span>Inferencia matemática sin identificar personas</span>
+              </li>
+              <li class="prob-item prob-item--si">
+                <span class="prob-mark prob-mark--si">→</span>
+                <span>Procesamiento 100% on-premise, cero latencia de nube</span>
+              </li>
+              <li class="prob-item prob-item--si">
+                <span class="prob-mark prob-mark--si">→</span>
+                <span>Inversión única. Hardware que adquirís y poseés</span>
+              </li>
+              <li class="prob-item prob-item--si">
+                <span class="prob-mark prob-mark--si">→</span>
+                <span>Alertas en tiempo real con datos accionables</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═════════════════════ CAPACIDADES ═════════════════════ -->
+    <section class="py-32 px-6 bg-[#1C2B3A]">
+      <div class="max-w-6xl mx-auto">
+
+        <div class="flex items-center gap-3 mb-6">
+          <span class="w-8 h-px bg-[#00C8FF]"></span>
+          <span class="text-[#00C8FF] text-xs font-medium tracking-[0.22em] uppercase">Stack técnico</span>
+        </div>
+
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-16 leading-tight">
+          Qué hace Riro OPS.
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+          <!-- Capacidad 1 -->
+          <div class="cap-card">
+            <div class="cap-num">01</div>
+            <h3 class="cap-title">Conteo de unidades por visión</h3>
+            <p class="cap-desc">
+              Cámaras industriales con modelos Frigate + FastAPI cuentan
+              unidades en línea sin identificar operarios. Métricas de
+              producción en tiempo real.
+            </p>
+            <div class="cap-tag-row">
+              <span class="cap-tag">Frigate</span>
+              <span class="cap-tag">FastAPI</span>
+              <span class="cap-tag">Edge compute</span>
+            </div>
+          </div>
+
+          <!-- Capacidad 2 -->
+          <div class="cap-card">
+            <div class="cap-num">02</div>
+            <h3 class="cap-title">Dashboard operativo en tiempo real</h3>
+            <p class="cap-desc">
+              Panel React con métricas de turno, alertas de desvío y
+              comparativa histórica. Visualización del piso de planta
+              sin abandonar la seguridad del servidor local.
+            </p>
+            <div class="cap-tag-row">
+              <span class="cap-tag">React</span>
+              <span class="cap-tag">WebSocket</span>
+              <span class="cap-tag">On-premise</span>
+            </div>
+          </div>
+
+          <!-- Capacidad 3 -->
+          <div class="cap-card">
+            <div class="cap-num">03</div>
+            <h3 class="cap-title">Inferencia matemática de productividad</h3>
+            <p class="cap-desc">
+              Algoritmos que calculan ritmo de producción, proyección de
+              turno y eficiencia por zona sin almacenar imágenes de personas
+              ni requerir datos personales.
+            </p>
+            <div class="cap-tag-row">
+              <span class="cap-tag">Privacidad by design</span>
+              <span class="cap-tag">Python</span>
+            </div>
+          </div>
+
+          <!-- Capacidad 4 -->
+          <div class="cap-card cap-card--highlight">
+            <div class="cap-num cap-num--cyan">04</div>
+            <h3 class="cap-title">Riro Care Industrial</h3>
+            <p class="cap-desc">
+              Soporte técnico continuo, actualizaciones de modelos de visión
+              y monitoreo proactivo del sistema. Tu operación nunca se detiene
+              por fallas de infraestructura.
+            </p>
+            <div class="cap-tag-row">
+              <span class="cap-tag cap-tag--cyan">SLA garantizado</span>
+              <span class="cap-tag cap-tag--cyan">Soporte 24/7</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════ CASO PILOTO BANNER ══════════════════ -->
+    <section class="py-32 px-6 bg-[#0D1B2A]">
+      <div class="max-w-6xl mx-auto">
+        <div class="pilot-banner">
+          <div class="pilot-grid" aria-hidden="true"></div>
+          <div class="pilot-circles" aria-hidden="true"></div>
+
+          <div class="pilot-content">
+            <div class="flex items-center gap-3 mb-8">
+              <span class="w-8 h-px bg-[#00C8FF]"></span>
+              <span class="text-[#00C8FF] text-xs font-medium tracking-[0.22em] uppercase">Caso de Uso Real</span>
+            </div>
+
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6 max-w-2xl">
+              Planta manufacturera.<br />
+              Resultado medible.<br />
+              <span class="text-[#00C8FF]">Sin invadir a nadie.</span>
+            </h2>
+
+            <p class="text-white/50 text-lg max-w-xl leading-relaxed mb-10">
+              Implementamos el primer caso OPS en un entorno real de manufactura.
+              4 fases, métricas en vivo, privacidad garantizada.
+            </p>
+
+            <a href="/proyecto-piloto" class="btn-primary-ops">
+              Ver Proyecto Piloto completo
+              <span class="btn-arrow">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════ CTA FINAL ══════════════════════════ -->
+    <section class="py-32 px-6 bg-[#1C2B3A]">
+      <div class="max-w-6xl mx-auto text-center">
+        <div class="flex items-center justify-center gap-3 mb-6">
+          <span class="w-8 h-px bg-[#00C8FF]"></span>
+          <span class="text-[#00C8FF] text-xs font-medium tracking-[0.22em] uppercase">Próximo paso</span>
+          <span class="w-8 h-px bg-[#00C8FF]"></span>
+        </div>
+
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+          ¿Cuánto produce tu planta?<br />
+          <span class="text-[#00C8FF]">Averigualo con datos reales.</span>
+        </h2>
+
+        <p class="text-white/50 text-lg max-w-xl mx-auto leading-relaxed mb-12">
+          Agendá una evaluación técnica sin costo. Analizamos tu flujo
+          de producción y diseñamos el sistema mínimo necesario.
+        </p>
+
+        <a href="/contacto" class="btn-primary-ops">
+          Agendar evaluación técnica
+          <span class="btn-arrow">→</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>
+
+<style>
+  :root {
+    --c-navy:    #0D1B2A;
+    --c-charcoal:#1C2B3A;
+    --c-cyan:    #00C8FF;
+    --c-steel:   #4A7FA5;
+  }
+
+  /* ── Hero ─────────────────────────────────────────────────── */
+  .hero-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-color: var(--c-navy);
+    background-image:
+      linear-gradient(rgba(0, 200, 255, 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 200, 255, 0.035) 1px, transparent 1px);
+    background-size: 72px 72px;
+  }
+
+  .badge-line {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    padding: 3px 10px;
+    border-radius: 4px;
+  }
+
+  .badge-line--ops {
+    color: var(--c-cyan);
+    background: rgba(0, 200, 255, 0.08);
+    border: 1px solid rgba(0, 200, 255, 0.22);
+  }
+
+  .title-outline {
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.22);
+  }
+
+  .btn-primary-ops {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    color: var(--c-navy);
+    background: var(--c-cyan);
+    text-decoration: none;
+    padding: 0.9rem 1.75rem;
+    border-radius: 7px;
+    transition: background 0.2s, box-shadow 0.2s, gap 0.2s;
+    white-space: nowrap;
+  }
+
+  .btn-primary-ops:hover {
+    background: #19d4ff;
+    box-shadow: 0 0 32px rgba(0, 200, 255, 0.38);
+    gap: 0.75rem;
+  }
+
+  .btn-arrow { transition: transform 0.2s; }
+  .btn-primary-ops:hover .btn-arrow { transform: translateX(3px); }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 400;
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    padding: 0.9rem 1.75rem;
+    border-radius: 7px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
+  }
+
+  .btn-ghost:hover {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .hero-circles {
+    position: absolute;
+    right: -100px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 520px;
+    height: 520px;
+    pointer-events: none;
+  }
+
+  .hero-circles::before,
+  .hero-circles::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 200, 255, 0.07);
+  }
+
+  .hero-circles::before { inset: 0; }
+  .hero-circles::after  { inset: 80px; border-color: rgba(0, 200, 255, 0.1); box-shadow: inset 0 0 80px rgba(0, 200, 255, 0.03); }
+
+  @media (max-width: 1024px) { .hero-circles { display: none; } }
+
+  /* ── Problema grid ────────────────────────────────────────── */
+  .problema-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  @media (max-width: 768px) {
+    .problema-grid { grid-template-columns: 1fr; }
+  }
+
+  .problema-col { padding: 3rem; }
+
+  .problema-col--si {
+    border-left: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  @media (max-width: 768px) {
+    .problema-col--si {
+      border-left: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+    }
+  }
+
+  .prob-num {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    color: rgba(255, 255, 255, 0.2);
+  }
+
+  .prob-num--si { color: rgba(0, 200, 255, 0.5); }
+
+  .prob-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.875rem;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.9375rem;
+    line-height: 1.55;
+  }
+
+  .prob-item--no { color: rgba(255, 255, 255, 0.4); }
+  .prob-item--si { color: rgba(255, 255, 255, 0.85); }
+
+  .prob-mark {
+    flex-shrink: 0;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-top: 3px;
+  }
+
+  .prob-mark--no { color: rgba(255, 255, 255, 0.18); }
+  .prob-mark--si { color: var(--c-cyan); }
+
+  /* ── Capacidades ──────────────────────────────────────────── */
+  .cap-card {
+    padding: 2.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.02);
+    transition: border-color 0.25s, transform 0.25s;
+  }
+
+  .cap-card:hover {
+    border-color: rgba(0, 200, 255, 0.2);
+    transform: translateY(-3px);
+  }
+
+  .cap-card--highlight {
+    border-color: rgba(0, 200, 255, 0.1);
+    background: rgba(0, 200, 255, 0.03);
+  }
+
+  .cap-num {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    color: rgba(255, 255, 255, 0.2);
+    margin-bottom: 1.25rem;
+  }
+
+  .cap-num--cyan { color: rgba(0, 200, 255, 0.6); }
+
+  .cap-title {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.875rem;
+    line-height: 1.3;
+  }
+
+  .cap-desc {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.42);
+    line-height: 1.65;
+    margin-bottom: 1.5rem;
+  }
+
+  .cap-tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .cap-tag {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.45);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+
+  .cap-tag--cyan {
+    color: rgba(0, 200, 255, 0.75);
+    background: rgba(0, 200, 255, 0.06);
+    border-color: rgba(0, 200, 255, 0.15);
+  }
+
+  /* ── Pilot Banner ─────────────────────────────────────────── */
+  .pilot-banner {
+    position: relative;
+    background: var(--c-charcoal);
+    border-radius: 16px;
+    padding: 5rem 4.5rem;
+    overflow: hidden;
+    border: 1px solid rgba(0, 200, 255, 0.08);
+  }
+
+  @media (max-width: 768px) { .pilot-banner { padding: 3rem 2rem; } }
+
+  .pilot-content { position: relative; z-index: 2; }
+
+  .pilot-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0, 200, 255, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 200, 255, 0.025) 1px, transparent 1px);
+    background-size: 44px 44px;
+    pointer-events: none;
+  }
+
+  .pilot-circles {
+    position: absolute;
+    right: -80px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 440px;
+    height: 440px;
+    pointer-events: none;
+  }
+
+  .pilot-circles::before,
+  .pilot-circles::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 200, 255, 0.06);
+  }
+
+  .pilot-circles::before { inset: 0; }
+  .pilot-circles::after  { inset: 70px; border-color: rgba(0, 200, 255, 0.08); background: rgba(0, 200, 255, 0.015); }
+
+  @media (max-width: 1024px) { .pilot-circles { display: none; } }
+</style>

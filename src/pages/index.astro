@@ -1,0 +1,861 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Riro Systems | Automatización con criterio">
+  <main class="overflow-x-hidden">
+
+    <!-- ══════════════════════════ HERO ══════════════════════════ -->
+    <section id="inicio" class="relative min-h-screen flex items-center overflow-hidden">
+
+      <!-- Fondo cuadrícula geométrica -->
+      <div class="hero-grid-bg" aria-hidden="true"></div>
+
+      <!-- Degradado al fondo de sección -->
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0D1B2A] pointer-events-none" aria-hidden="true"></div>
+
+      <!-- Contenido -->
+      <div class="relative z-10 max-w-6xl mx-auto px-6 pt-36 pb-28">
+
+        <!-- Eyebrow -->
+        <div class="flex items-center gap-3 mb-10">
+          <span class="w-8 h-px bg-[#00C8FF]"></span>
+          <span class="text-[#00C8FF] text-xs font-medium tracking-[0.22em] uppercase">
+            Ecosistema residencial · Industrial
+          </span>
+        </div>
+
+        <!-- Titular -->
+        <h1 class="text-[clamp(3rem,9vw,7.5rem)] font-bold leading-[0.93] tracking-tight mb-8">
+          <span class="text-white">Automatización</span><br />
+          <span class="hero-title-outline">con criterio</span><span class="text-[#00C8FF]">.</span>
+        </h1>
+
+        <!-- Subtítulo -->
+        <p class="text-lg md:text-xl text-white/55 max-w-lg leading-relaxed mb-12">
+          No es tecnología por tecnología.<br />
+          Es tu espacio funcionando mejor.
+        </p>
+
+        <!-- CTAs -->
+        <div class="flex flex-wrap gap-4">
+          <a href="/contacto" class="btn-primary">
+            Hablemos de tu proyecto
+            <span class="btn-arrow">→</span>
+          </a>
+          <a href="#lineas" class="btn-ghost">
+            Explorar soluciones
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Decoración: círculos concéntricos (derecha) -->
+      <div class="hero-circles" aria-hidden="true"></div>
+
+    </section>
+
+
+    <!-- ══════════════════════ EL CRITERIO ══════════════════════ -->
+    <section id="criterio" class="py-32 px-6 bg-[#0D1B2A]">
+      <div class="max-w-6xl mx-auto">
+
+        <div class="flex items-center gap-3 mb-6">
+          <span class="w-8 h-px bg-[#4A7FA5]"></span>
+          <span class="text-[#4A7FA5] text-xs font-medium tracking-[0.22em] uppercase">Filosofía de trabajo</span>
+        </div>
+
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-16 leading-tight">
+          El Criterio
+        </h2>
+
+        <!-- Grid dos columnas -->
+        <div class="criterio-wrapper">
+
+          <!-- Qué no hacemos -->
+          <div class="criterio-col">
+            <div class="flex items-center gap-3 mb-8">
+              <span class="criterio-num">01</span>
+              <span class="w-10 h-px bg-white/10"></span>
+            </div>
+            <h3 class="text-xl font-medium text-white/40 mb-8">Qué no hacemos</h3>
+            <ul class="space-y-5">
+              <li class="criterio-item criterio-item--no">
+                <span class="criterio-mark criterio-mark--no">✕</span>
+                <span>No somos SaaS</span>
+              </li>
+              <li class="criterio-item criterio-item--no">
+                <span class="criterio-mark criterio-mark--no">✕</span>
+                <span>No vendemos gadgets sueltos</span>
+              </li>
+              <li class="criterio-item criterio-item--no">
+                <span class="criterio-mark criterio-mark--no">✕</span>
+                <span>No enviamos tus datos a la nube sin criterio</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Qué hacemos -->
+          <div class="criterio-col criterio-col--right">
+            <div class="flex items-center gap-3 mb-8">
+              <span class="criterio-num criterio-num--si">02</span>
+              <span class="w-10 h-px bg-white/10"></span>
+            </div>
+            <h3 class="text-xl font-medium text-[#00C8FF] mb-8">Qué hacemos</h3>
+            <ul class="space-y-5">
+              <li class="criterio-item criterio-item--si">
+                <span class="criterio-mark criterio-mark--si">→</span>
+                <span>Diseñamos ecosistemas con criterio</span>
+              </li>
+              <li class="criterio-item criterio-item--si">
+                <span class="criterio-mark criterio-mark--si">→</span>
+                <span>Hardware en propiedad del cliente</span>
+              </li>
+              <li class="criterio-item criterio-item--si">
+                <span class="criterio-mark criterio-mark--si">→</span>
+                <span>Procesamiento 100% local</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═════════════════════ NUESTRAS LÍNEAS ═════════════════════ -->
+    <section id="lineas" class="py-32 px-6 bg-[#0D1B2A]">
+      <div class="max-w-6xl mx-auto">
+
+        <div class="flex items-center gap-3 mb-6">
+          <span class="w-8 h-px bg-[#00C8FF]"></span>
+          <span class="text-[#00C8FF] text-xs font-medium tracking-[0.22em] uppercase">Productos</span>
+        </div>
+
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-16 leading-tight">
+          Nuestras Líneas
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+          <!-- RIRO HOME -->
+          <div class="linea-card linea-card--home">
+            <span class="linea-accent linea-accent--home"></span>
+            <div class="linea-body">
+              <span class="linea-badge linea-badge--home">HOME</span>
+              <h3 class="linea-title">RIRO<br />HOME</h3>
+              <p class="linea-desc">
+                Ecosistema residencial inteligente. Tu hogar automatizado con hardware que posees
+                y privacidad que controlás.
+              </p>
+              <a href="/home" class="linea-link linea-link--home">
+                Conocer solución <span>→</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- RIRO OPS -->
+          <div class="linea-card linea-card--ops">
+            <span class="linea-accent linea-accent--ops"></span>
+            <div class="linea-body">
+              <span class="linea-badge linea-badge--ops">OPS</span>
+              <h3 class="linea-title">RIRO<br />OPS</h3>
+              <p class="linea-desc">
+                Inteligencia operativa y monitoreo industrial. Visibilidad real de tu operación
+                sin cámaras invasivas ni datos en la nube.
+              </p>
+              <a href="/ops" class="linea-link linea-link--ops">
+                Conocer solución <span>→</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════ EL PROCESO ══════════════════════ -->
+    <section id="proceso" class="py-32 px-6 bg-[#1C2B3A]">
+      <div class="max-w-6xl mx-auto">
+
+        <div class="flex items-center gap-3 mb-6">
+          <span class="w-8 h-px bg-[#4A7FA5]"></span>
+          <span class="text-[#4A7FA5] text-xs font-medium tracking-[0.22em] uppercase">Metodología</span>
+        </div>
+
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-16 leading-tight">
+          El Proceso
+        </h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+          <div class="proceso-step">
+            <div class="proceso-num">01</div>
+            <h4 class="proceso-title">Relevamiento</h4>
+            <p class="proceso-desc">
+              Entendemos tu espacio, flujos y necesidades reales antes de proponer tecnología.
+            </p>
+          </div>
+
+          <div class="proceso-step">
+            <div class="proceso-num">02</div>
+            <h4 class="proceso-title">Diseño con criterio</h4>
+            <p class="proceso-desc">
+              Arquitecturamos la solución mínima necesaria. Sin sobrediseño ni venta de lo que no necesitás.
+            </p>
+          </div>
+
+          <div class="proceso-step">
+            <div class="proceso-num">03</div>
+            <h4 class="proceso-title">Instalación</h4>
+            <p class="proceso-desc">
+              Implementamos en tu entorno. Hardware en tu poder, código que podés auditar.
+            </p>
+          </div>
+
+          <div class="proceso-step proceso-step--care">
+            <div class="proceso-num proceso-num--care">04</div>
+            <h4 class="proceso-title">Riro Care</h4>
+            <p class="proceso-desc">
+              Soporte continuo, monitoreo proactivo y mejoras iterativas. Tu sistema evoluciona con vos.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- ══════════════════════ RIRO CARE ══════════════════════ -->
+    <section id="care" class="py-32 px-6 bg-[#0D1B2A]">
+      <div class="max-w-6xl mx-auto">
+
+        <div class="flex items-center gap-3 mb-6">
+          <span class="w-8 h-px bg-[#00C8FF]"></span>
+          <span class="text-[#00C8FF] text-xs font-medium tracking-[0.22em] uppercase">Soporte continuo</span>
+        </div>
+
+        <div class="care-header">
+          <div>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+              Riro Care.
+            </h2>
+            <p class="text-white/45 text-lg max-w-xl leading-relaxed">
+              Tu sistema no termina en la instalación. Riro Care es el soporte continuo
+              que mantiene tu ecosistema funcionando, evolucionando y en tus manos.
+            </p>
+          </div>
+          <div class="care-badge-wrap">
+            <span class="care-badge">04</span>
+          </div>
+        </div>
+
+        <div class="care-grid">
+
+          <div class="care-card">
+            <div class="care-icon">◈</div>
+            <h3 class="care-title">Monitoreo proactivo</h3>
+            <p class="care-desc">
+              Detectamos anomalías antes de que afecten tu operación.
+              No esperamos el reporte — actuamos antes.
+            </p>
+          </div>
+
+          <div class="care-card">
+            <div class="care-icon">◈</div>
+            <h3 class="care-title">Actualizaciones de modelos</h3>
+            <p class="care-desc">
+              Los modelos de IA y las automatizaciones se actualizan
+              con los cambios de tu entorno. Sin costo de re-implementación.
+            </p>
+          </div>
+
+          <div class="care-card care-card--highlight">
+            <div class="care-icon care-icon--cyan">◈</div>
+            <h3 class="care-title">Respuesta garantizada</h3>
+            <p class="care-desc">
+              SLA definido en contrato. Tiempo de respuesta real
+              — no un chatbot que promete y no aparece.
+            </p>
+          </div>
+
+          <div class="care-card">
+            <div class="care-icon">◈</div>
+            <h3 class="care-title">Evolución iterativa</h3>
+            <p class="care-desc">
+              Tu espacio cambia. Tu ecosistema también.
+              Care incluye mejoras y ajustes a medida que crecés.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="care-cta">
+          <a href="/contacto" class="btn-care">
+            Consultar plan Care
+            <span class="care-arrow">→</span>
+          </a>
+          <p class="care-note">Disponible para clientes HOME y OPS</p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ═════════════════════ CASO PILOTO ═════════════════════ -->
+    <section id="caso-piloto" class="py-32 px-6 bg-[#0D1B2A]">
+      <div class="max-w-6xl mx-auto">
+
+        <div class="caso-banner">
+
+          <!-- Decoración fondo -->
+          <div class="caso-grid-bg" aria-hidden="true"></div>
+          <div class="caso-circles" aria-hidden="true"></div>
+
+          <!-- Contenido -->
+          <div class="caso-content">
+            <div class="flex items-center gap-3 mb-8">
+              <span class="w-8 h-px bg-[#00C8FF]"></span>
+              <span class="text-[#00C8FF] text-xs font-medium tracking-[0.22em] uppercase">
+                Caso de Uso Real
+              </span>
+            </div>
+
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6 max-w-2xl">
+              Inteligencia Operativa<br />
+              sin invadir la privacidad.
+            </h2>
+
+            <p class="text-white/50 text-lg max-w-xl leading-relaxed mb-10">
+              Descubrí cómo implementamos Inteligencia Operativa sin invadir la privacidad
+              en el entorno industrial.
+            </p>
+
+            <a href="/proyecto-piloto" class="btn-primary">
+              Ver Proyecto Piloto
+              <span class="btn-arrow">→</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+</BaseLayout>
+
+<style>
+  /* ── Tokens ──────────────────────────────────────────────── */
+  :root {
+    --c-navy:    #0D1B2A;
+    --c-charcoal:#1C2B3A;
+    --c-cyan:    #00C8FF;
+    --c-steel:   #4A7FA5;
+  }
+
+  /* ═══════════════════════════ HERO ══════════════════════════ */
+  .hero-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-color: var(--c-navy);
+    background-image:
+      linear-gradient(rgba(0, 200, 255, 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 200, 255, 0.035) 1px, transparent 1px);
+    background-size: 72px 72px;
+  }
+
+  .hero-title-outline {
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.22);
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    color: var(--c-navy);
+    background: var(--c-cyan);
+    text-decoration: none;
+    padding: 0.9rem 1.75rem;
+    border-radius: 7px;
+    transition: background 0.2s, box-shadow 0.2s, gap 0.2s;
+    white-space: nowrap;
+  }
+
+  .btn-primary:hover {
+    background: #19d4ff;
+    box-shadow: 0 0 32px rgba(0, 200, 255, 0.38);
+    gap: 0.75rem;
+  }
+
+  .btn-arrow {
+    transition: transform 0.2s;
+  }
+
+  .btn-primary:hover .btn-arrow {
+    transform: translateX(3px);
+  }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 400;
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    padding: 0.9rem 1.75rem;
+    border-radius: 7px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
+  }
+
+  .btn-ghost:hover {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  /* Círculos decorativos hero */
+  .hero-circles {
+    position: absolute;
+    right: -100px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 560px;
+    height: 560px;
+    pointer-events: none;
+  }
+
+  .hero-circles::before,
+  .hero-circles::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 200, 255, 0.07);
+  }
+
+  .hero-circles::before {
+    inset: 0;
+  }
+
+  .hero-circles::after {
+    inset: 80px;
+    border-color: rgba(0, 200, 255, 0.1);
+    box-shadow: inset 0 0 80px rgba(0, 200, 255, 0.03);
+  }
+
+  @media (max-width: 1024px) {
+    .hero-circles {
+      display: none;
+    }
+  }
+
+  /* ══════════════════════ EL CRITERIO ══════════════════════ */
+  .criterio-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  @media (max-width: 768px) {
+    .criterio-wrapper {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .criterio-col {
+    padding: 3rem;
+  }
+
+  .criterio-col--right {
+    border-left: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  @media (max-width: 768px) {
+    .criterio-col--right {
+      border-left: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+    }
+  }
+
+  .criterio-num {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    color: rgba(255, 255, 255, 0.2);
+  }
+
+  .criterio-num--si {
+    color: rgba(0, 200, 255, 0.5);
+  }
+
+  .criterio-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.875rem;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  .criterio-item--no  { color: rgba(255, 255, 255, 0.4); }
+  .criterio-item--si  { color: rgba(255, 255, 255, 0.85); }
+
+  .criterio-mark {
+    flex-shrink: 0;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-top: 3px;
+  }
+
+  .criterio-mark--no { color: rgba(255, 255, 255, 0.18); }
+  .criterio-mark--si { color: var(--c-cyan); }
+
+  /* ═════════════════════ NUESTRAS LÍNEAS ═════════════════════ */
+  .linea-card {
+    position: relative;
+    background: var(--c-charcoal);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: border-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .linea-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .linea-card--home:hover { border-color: rgba(74, 127, 165, 0.35); }
+  .linea-card--ops:hover  { border-color: rgba(0, 200, 255, 0.35); }
+
+  .linea-accent {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+  }
+
+  .linea-accent--home {
+    background: linear-gradient(90deg, var(--c-steel) 0%, transparent 70%);
+  }
+
+  .linea-accent--ops {
+    background: linear-gradient(90deg, var(--c-cyan) 0%, transparent 70%);
+  }
+
+  .linea-body {
+    padding: 2.75rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 360px;
+  }
+
+  .linea-badge {
+    display: inline-flex;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    padding: 3px 9px;
+    border-radius: 4px;
+    margin-bottom: 2rem;
+    width: fit-content;
+  }
+
+  .linea-badge--home {
+    color: var(--c-steel);
+    background: rgba(74, 127, 165, 0.1);
+    border: 1px solid rgba(74, 127, 165, 0.25);
+  }
+
+  .linea-badge--ops {
+    color: var(--c-cyan);
+    background: rgba(0, 200, 255, 0.08);
+    border: 1px solid rgba(0, 200, 255, 0.22);
+  }
+
+  .linea-title {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: clamp(2.5rem, 5vw, 3.75rem);
+    font-weight: 700;
+    color: #fff;
+    line-height: 0.93;
+    letter-spacing: -0.025em;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+  }
+
+  .linea-desc {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.45);
+    line-height: 1.65;
+    margin-bottom: 2rem;
+  }
+
+  .linea-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: gap 0.2s ease;
+    margin-top: auto;
+  }
+
+  .linea-link--home { color: var(--c-steel); }
+  .linea-link--ops  { color: var(--c-cyan); }
+
+  .linea-link:hover { gap: 0.8rem; }
+
+  /* ══════════════════════ EL PROCESO ══════════════════════ */
+  .proceso-step {
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .proceso-step--care {
+    border-top-color: rgba(0, 200, 255, 0.15);
+  }
+
+  .proceso-num {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    color: rgba(255, 255, 255, 0.2);
+    margin-bottom: 1.25rem;
+  }
+
+  .proceso-num--care {
+    color: rgba(0, 200, 255, 0.6);
+  }
+
+  .proceso-title {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+  }
+
+  .proceso-desc {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.4);
+    line-height: 1.65;
+  }
+
+  /* ═════════════════════ CASO PILOTO ═════════════════════ */
+  .caso-banner {
+    position: relative;
+    background: var(--c-charcoal);
+    border-radius: 16px;
+    padding: 5rem 4.5rem;
+    overflow: hidden;
+    border: 1px solid rgba(0, 200, 255, 0.08);
+  }
+
+  @media (max-width: 768px) {
+    .caso-banner {
+      padding: 3rem 2rem;
+    }
+  }
+
+  .caso-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .caso-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0, 200, 255, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 200, 255, 0.025) 1px, transparent 1px);
+    background-size: 44px 44px;
+    pointer-events: none;
+  }
+
+  .caso-circles {
+    position: absolute;
+    right: -80px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 440px;
+    height: 440px;
+    pointer-events: none;
+  }
+
+  .caso-circles::before,
+  .caso-circles::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 200, 255, 0.06);
+  }
+
+  .caso-circles::before {
+    inset: 0;
+  }
+
+  .caso-circles::after {
+    inset: 70px;
+    border-color: rgba(0, 200, 255, 0.08);
+    background: rgba(0, 200, 255, 0.015);
+  }
+
+  @media (max-width: 1024px) {
+    .caso-circles {
+      display: none;
+    }
+  }
+
+  /* ══════════════════════ RIRO CARE ══════════════════════ */
+  .care-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 3.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .care-header {
+      flex-direction: column;
+    }
+    .care-badge-wrap {
+      display: none;
+    }
+  }
+
+  .care-badge-wrap {
+    flex-shrink: 0;
+  }
+
+  .care-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 200, 255, 0.18);
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: rgba(0, 200, 255, 0.5);
+    letter-spacing: 0.05em;
+  }
+
+  .care-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  @media (max-width: 640px) {
+    .care-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .care-card {
+    padding: 2rem;
+    background: var(--c-charcoal);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: border-color 0.25s;
+  }
+
+  .care-card:hover {
+    border-color: rgba(0, 200, 255, 0.15);
+  }
+
+  .care-card--highlight {
+    border-color: rgba(0, 200, 255, 0.1);
+  }
+
+  .care-icon {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.2);
+    margin-bottom: 1.25rem;
+  }
+
+  .care-icon--cyan {
+    color: var(--c-cyan);
+  }
+
+  .care-title {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.625rem;
+    line-height: 1.3;
+  }
+
+  .care-desc {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.4);
+    line-height: 1.65;
+  }
+
+  .care-cta {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-care {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    color: var(--c-navy);
+    background: var(--c-cyan);
+    text-decoration: none;
+    padding: 0.9rem 1.75rem;
+    border-radius: 7px;
+    transition: background 0.2s, box-shadow 0.2s, gap 0.2s;
+  }
+
+  .btn-care:hover {
+    background: #19d4ff;
+    box-shadow: 0 0 32px rgba(0, 200, 255, 0.38);
+    gap: 0.75rem;
+  }
+
+  .care-arrow {
+    transition: transform 0.2s;
+  }
+
+  .btn-care:hover .care-arrow {
+    transform: translateX(3px);
+  }
+
+  .care-note {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.25);
+    margin: 0;
+  }
+
+</style>

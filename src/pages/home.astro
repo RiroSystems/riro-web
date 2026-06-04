@@ -1,0 +1,553 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Riro HOME — Ecosistema Residencial Inteligente"
+  description="Automatización residencial con hardware de tu propiedad y privacidad 100% local. Home Essentials, Home Premium y Home Accesible."
+>
+  <main class="overflow-x-hidden">
+
+    <!-- ══════════════════════════ HERO ══════════════════════════ -->
+    <section class="relative min-h-[70vh] flex items-center overflow-hidden bg-[#0D1B2A]">
+      <div class="hero-grid-bg" aria-hidden="true"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0D1B2A] pointer-events-none" aria-hidden="true"></div>
+
+      <div class="relative z-10 max-w-6xl mx-auto px-6 pt-36 pb-24">
+        <div class="flex items-center gap-3 mb-10">
+          <span class="w-8 h-px bg-[#4A7FA5]"></span>
+          <span class="text-[#4A7FA5] text-xs font-medium tracking-[0.22em] uppercase">Línea Residencial</span>
+        </div>
+
+        <div class="flex items-start gap-4 mb-6">
+          <span class="badge-line badge-line--home">HOME</span>
+        </div>
+
+        <h1 class="text-[clamp(3rem,8vw,6.5rem)] font-bold leading-[0.93] tracking-tight mb-8">
+          <span class="text-white">Tu hogar,</span><br />
+          <span class="title-outline">tus reglas</span><span class="text-[#4A7FA5]">.</span>
+        </h1>
+
+        <p class="text-lg md:text-xl text-white/55 max-w-xl leading-relaxed mb-12">
+          Automatización residencial con hardware que poseés y privacidad
+          que controlás. Sin suscripciones. Sin nubes ajenas.
+        </p>
+
+        <div class="flex flex-wrap gap-4">
+          <a href="/contacto" class="btn-primary-home">
+            Solicitar diagnóstico
+            <span class="btn-arrow">→</span>
+          </a>
+          <a href="#categorias" class="btn-ghost">Ver categorías</a>
+        </div>
+      </div>
+
+      <div class="hero-circles" aria-hidden="true"></div>
+    </section>
+
+
+    <!-- ════════════════════ TRES CATEGORÍAS ════════════════════ -->
+    <section id="categorias" class="py-32 px-6 bg-[#0D1B2A]">
+      <div class="max-w-6xl mx-auto">
+
+        <div class="flex items-center gap-3 mb-6">
+          <span class="w-8 h-px bg-[#4A7FA5]"></span>
+          <span class="text-[#4A7FA5] text-xs font-medium tracking-[0.22em] uppercase">Soluciones</span>
+        </div>
+
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
+          Tres niveles.<br />Un mismo criterio.
+        </h2>
+        <p class="text-white/45 text-lg max-w-xl leading-relaxed mb-16">
+          Cada hogar tiene necesidades distintas. Elegí el nivel que se adapta
+          a tu espacio y presupuesto.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+          <!-- ESSENTIALS -->
+          <div class="cat-card cat-card--essentials">
+            <div class="cat-placeholder" aria-hidden="true">
+              <span class="cat-placeholder-label">Imagen · Essentials</span>
+            </div>
+            <div class="cat-body">
+              <span class="cat-badge cat-badge--essentials">Essentials</span>
+              <h3 class="cat-title">Home<br />Essentials</h3>
+              <p class="cat-desc">
+                Lo esencial hecho bien. Iluminación, clima, seguridad perimetral
+                y acceso inteligente para la vivienda que funciona.
+              </p>
+              <div class="cat-features">
+                <span class="cat-feat">Iluminación inteligente</span>
+                <span class="cat-feat">Control de clima</span>
+                <span class="cat-feat">Acceso seguro</span>
+                <span class="cat-feat">Alertas locales</span>
+              </div>
+              <a href="/contacto" class="cat-cta cat-cta--home">
+                Consultar <span>→</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- PREMIUM -->
+          <div class="cat-card cat-card--premium">
+            <div class="cat-placeholder cat-placeholder--featured" aria-hidden="true">
+              <span class="cat-placeholder-label">Imagen · Premium</span>
+            </div>
+            <div class="cat-badge-featured">
+              <span class="cat-badge-recommended">Más solicitado</span>
+            </div>
+            <div class="cat-body">
+              <span class="cat-badge cat-badge--premium">Premium</span>
+              <h3 class="cat-title">Home<br />Premium</h3>
+              <p class="cat-desc">
+                Automatización profunda con visión por computadora, detección local de accesos y orquestación total del hogar.
+              </p>
+              <div class="cat-features">
+                <span class="cat-feat">IA de acceso — 100% local</span>
+                <span class="cat-feat">Cámaras locales Frigate</span>
+                <span class="cat-feat">Escenas automáticas</span>
+                <span class="cat-feat">Panel unificado</span>
+              </div>
+              <a href="/contacto" class="cat-cta cat-cta--home">
+                Consultar <span>→</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- ACCESIBLE -->
+          <div class="cat-card cat-card--accesible cat-card--accesible-special">
+            <div class="cat-placeholder" aria-hidden="true">
+              <span class="cat-placeholder-label">Imagen · Accesible</span>
+            </div>
+            <div class="cat-body">
+              <span class="cat-badge cat-badge--accesible">Accesible</span>
+              <h3 class="cat-title">Home<br />Accesible</h3>
+              <p class="cat-desc">
+                Automatizaciones de asistencia para personas con movilidad reducida
+                o discapacidad. No es un nicho oportunista: es un problema que conocemos
+                desde adentro.
+              </p>
+              <div class="cat-features">
+                <span class="cat-feat">Apertura sin contacto</span>
+                <span class="cat-feat">Detección de caídas</span>
+                <span class="cat-feat">Alertas a familiares</span>
+                <span class="cat-feat">Control por voz — local</span>
+              </div>
+              <div class="accesible-note">
+                <span class="accesible-dot"></span>
+                <p>Experiencia directa en adaptación de hogar. Diseñamos lo que usamos.</p>
+              </div>
+              <a href="/blog/home-accesible-experiencia-real" class="cat-cta cat-cta--home">
+                Leer nuestra historia <span>→</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════ DIFERENCIAL ═══════════════════════ -->
+    <section class="py-32 px-6 bg-[#1C2B3A]">
+      <div class="max-w-6xl mx-auto">
+
+        <div class="flex items-center gap-3 mb-6">
+          <span class="w-8 h-px bg-[#4A7FA5]"></span>
+          <span class="text-[#4A7FA5] text-xs font-medium tracking-[0.22em] uppercase">Por qué Riro HOME</span>
+        </div>
+
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-16 leading-tight">
+          Hardware que poseés.<br />Datos que controlás.
+        </h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <div class="diff-item">
+            <div class="diff-icon">⬡</div>
+            <h4 class="diff-title">100% Local</h4>
+            <p class="diff-desc">Tu hogar funciona sin internet. Sin servidores de terceros. Sin suscripciones.</p>
+          </div>
+
+          <div class="diff-item">
+            <div class="diff-icon">⬡</div>
+            <h4 class="diff-title">Hardware tuyo</h4>
+            <p class="diff-desc">Adquirís el equipamiento. No alquilás tecnología ni dependés de una empresa para operar.</p>
+          </div>
+
+          <div class="diff-item">
+            <div class="diff-icon diff-icon--cyan">⬡</div>
+            <h4 class="diff-title">Riro Care</h4>
+            <p class="diff-desc">Soporte continuo, actualizaciones y mejoras. Tu sistema evoluciona con vos.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════ CTA ══════════════════════════ -->
+    <section class="py-32 px-6 bg-[#0D1B2A]">
+      <div class="max-w-6xl mx-auto">
+        <div class="cta-banner">
+          <div class="cta-grid" aria-hidden="true"></div>
+          <div class="relative z-10">
+            <div class="flex items-center gap-3 mb-8">
+              <span class="w-8 h-px bg-[#4A7FA5]"></span>
+              <span class="text-[#4A7FA5] text-xs font-medium tracking-[0.22em] uppercase">Siguiente paso</span>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 max-w-2xl leading-tight">
+              Empezá con un diagnóstico sin compromiso.
+            </h2>
+            <p class="text-white/50 text-lg max-w-xl leading-relaxed mb-10">
+              Evaluamos tu espacio y te proponemos el nivel de automatización
+              que realmente necesitás. Sin sobrediseño, sin venta de lo innecesario.
+            </p>
+            <a href="/contacto" class="btn-primary-home">
+              Hablemos de tu hogar
+              <span class="btn-arrow">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>
+
+<style>
+  :root {
+    --c-navy:    #0D1B2A;
+    --c-charcoal:#1C2B3A;
+    --c-cyan:    #00C8FF;
+    --c-steel:   #4A7FA5;
+  }
+
+  /* ── Hero ─────────────────────────────────────────────────── */
+  .hero-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-color: var(--c-navy);
+    background-image:
+      linear-gradient(rgba(74, 127, 165, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(74, 127, 165, 0.04) 1px, transparent 1px);
+    background-size: 72px 72px;
+  }
+
+  .badge-line {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    padding: 3px 10px;
+    border-radius: 4px;
+  }
+
+  .badge-line--home {
+    color: var(--c-steel);
+    background: rgba(74, 127, 165, 0.1);
+    border: 1px solid rgba(74, 127, 165, 0.25);
+  }
+
+  .title-outline {
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.22);
+  }
+
+  .btn-primary-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    color: #fff;
+    background: var(--c-steel);
+    text-decoration: none;
+    padding: 0.9rem 1.75rem;
+    border-radius: 7px;
+    transition: background 0.2s, box-shadow 0.2s, gap 0.2s;
+    white-space: nowrap;
+  }
+
+  .btn-primary-home:hover {
+    background: #5a8fb5;
+    box-shadow: 0 0 28px rgba(74, 127, 165, 0.4);
+    gap: 0.75rem;
+  }
+
+  .btn-arrow { transition: transform 0.2s; }
+  .btn-primary-home:hover .btn-arrow { transform: translateX(3px); }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 400;
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    padding: 0.9rem 1.75rem;
+    border-radius: 7px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
+  }
+
+  .btn-ghost:hover {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .hero-circles {
+    position: absolute;
+    right: -100px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 480px;
+    height: 480px;
+    pointer-events: none;
+  }
+
+  .hero-circles::before,
+  .hero-circles::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(74, 127, 165, 0.09);
+  }
+
+  .hero-circles::before { inset: 0; }
+  .hero-circles::after  { inset: 80px; border-color: rgba(74, 127, 165, 0.13); }
+
+  @media (max-width: 1024px) { .hero-circles { display: none; } }
+
+  /* ── Tarjetas de categoría ────────────────────────────────── */
+  .cat-card {
+    position: relative;
+    background: var(--c-charcoal);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+
+  .cat-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(74, 127, 165, 0.3);
+  }
+
+  .cat-card--premium {
+    border-color: rgba(74, 127, 165, 0.15);
+  }
+
+  .cat-placeholder {
+    width: 100%;
+    height: 180px;
+    background: rgba(74, 127, 165, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgba(74, 127, 165, 0.1);
+  }
+
+  .cat-placeholder--featured {
+    background: rgba(74, 127, 165, 0.1);
+    border-bottom-color: rgba(74, 127, 165, 0.18);
+  }
+
+  .cat-placeholder-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: rgba(74, 127, 165, 0.4);
+    text-transform: uppercase;
+  }
+
+  .cat-badge-featured {
+    position: relative;
+  }
+
+  .cat-badge-recommended {
+    position: absolute;
+    top: -14px;
+    right: 1.5rem;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--c-navy);
+    background: var(--c-steel);
+    padding: 3px 10px;
+    border-radius: 20px;
+  }
+
+  .cat-body {
+    padding: 1.75rem 1.75rem 2rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .cat-badge {
+    display: inline-block;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 1.25rem;
+    width: fit-content;
+  }
+
+  .cat-badge--essentials,
+  .cat-badge--premium,
+  .cat-badge--accesible {
+    color: var(--c-steel);
+    background: rgba(74, 127, 165, 0.1);
+    border: 1px solid rgba(74, 127, 165, 0.22);
+  }
+
+  .cat-title {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+
+  .cat-desc {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.42);
+    line-height: 1.65;
+    margin-bottom: 1.5rem;
+  }
+
+  .cat-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.75rem;
+    flex: 1;
+    align-content: flex-start;
+  }
+
+  .cat-feat {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.55);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    padding: 3px 9px;
+    border-radius: 4px;
+  }
+
+  .cat-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    margin-top: auto;
+    transition: gap 0.2s;
+  }
+
+  .cat-cta--home { color: var(--c-steel); }
+  .cat-cta:hover { gap: 0.8rem; }
+
+  /* ── Diferencial ─────────────────────────────────────────── */
+  .diff-item {
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.02);
+    transition: border-color 0.25s;
+  }
+
+  .diff-item:hover {
+    border-color: rgba(74, 127, 165, 0.2);
+  }
+
+  .diff-icon {
+    font-size: 1.25rem;
+    color: rgba(74, 127, 165, 0.5);
+    margin-bottom: 1rem;
+  }
+
+  .diff-icon--cyan { color: rgba(0, 200, 255, 0.5); }
+
+  .diff-title {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+
+  .diff-desc {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.4);
+    line-height: 1.6;
+  }
+
+  /* ── CTA Banner ───────────────────────────────────────────── */
+  .cta-banner {
+    position: relative;
+    background: var(--c-charcoal);
+    border-radius: 16px;
+    padding: 4.5rem;
+    overflow: hidden;
+    border: 1px solid rgba(74, 127, 165, 0.1);
+  }
+
+  @media (max-width: 768px) { .cta-banner { padding: 2.5rem 1.75rem; } }
+
+  .cta-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(74, 127, 165, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(74, 127, 165, 0.025) 1px, transparent 1px);
+    background-size: 44px 44px;
+    pointer-events: none;
+  }
+
+  /* ── Nota auténtica Home Accesible ─────────────────────── */
+  .accesible-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    padding: 0.875rem;
+    background: rgba(74, 127, 165, 0.06);
+    border: 1px solid rgba(74, 127, 165, 0.15);
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+  }
+
+  .accesible-dot {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--c-steel);
+    opacity: 0.7;
+    flex-shrink: 0;
+    margin-top: 5px;
+  }
+
+  .accesible-note p {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.35);
+    line-height: 1.5;
+    margin: 0;
+    font-style: italic;
+  }
+
+</style>
