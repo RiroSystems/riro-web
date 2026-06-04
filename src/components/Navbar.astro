@@ -58,16 +58,10 @@
 </header>
 
 <style>
-  /* ── Tokens ─────────────────────────────────────────────── */
-  :root {
-    --c-navy:    #1B2A4A;
-    --c-charcoal:#F4F7FA;
-    --c-cyan:    #2B96AD;
-    --c-steel:   #4A7FA5;
-    --c-white:   #FFFFFF;
-    --c-muted:   rgba(27, 42, 74, 0.55);
-    --c-subtle:  rgba(27, 42, 74, 0.05);
-  }
+  /* ── Tokens locales (valores explícitos para evitar conflictos con Footer) */
+  .navbar        { --nb-navy:   #1B2A4A; --nb-cyan: #2B96AD; }
+  .nav-link      { --nb-muted:  rgba(27, 42, 74, 0.62); }
+  .hamburger     { --nb-subtle: rgba(27, 42, 74, 0.05); }
 
   /* ── Contenedor principal ───────────────────────────────── */
   .navbar {
@@ -122,7 +116,7 @@
     font-family: 'Inter', 'DM Sans', system-ui, sans-serif;
     font-weight: 400;
     font-size: 0.875rem;
-    color: var(--c-muted);
+    color: rgba(27, 42, 74, 0.62);
     text-decoration: none;
     padding: 0.375rem 0.75rem;
     border-radius: 6px;
@@ -133,8 +127,8 @@
   }
 
   .nav-link:hover {
-    color: var(--c-navy);
-    background: var(--c-subtle);
+    color: #1B2A4A;
+    background: rgba(27, 42, 74, 0.05);
   }
 
   /* Badges HOME / OPS */
@@ -148,7 +142,7 @@
   }
 
   .badge-home {
-    color: var(--c-steel);
+    color: #4A7FA5;
     background: rgba(74, 127, 165, 0.12);
     border: 1px solid rgba(74, 127, 165, 0.28);
   }
@@ -159,14 +153,14 @@
   }
 
   .badge-ops {
-    color: var(--c-cyan);
-    background: rgba(0, 200, 255, 0.08);
-    border: 1px solid rgba(0, 200, 255, 0.22);
+    color: #2B96AD;
+    background: rgba(43, 150, 173, 0.08);
+    border: 1px solid rgba(43, 150, 173, 0.25);
   }
 
   .nav-link:hover .badge-ops {
-    background: rgba(0, 200, 255, 0.16);
-    border-color: rgba(0, 200, 255, 0.44);
+    background: rgba(43, 150, 173, 0.16);
+    border-color: rgba(43, 150, 173, 0.45);
   }
 
   /* ── CTA "Solicitar Demo" ───────────────────────────────── */
@@ -176,8 +170,8 @@
     font-weight: 500;
     font-size: 0.8125rem;
     letter-spacing: 0.015em;
-    color: var(--c-white);
-    background: var(--c-navy);
+    color: #FFFFFF;
+    background: #1B2A4A;
     text-decoration: none;
     padding: 0.45rem 1.1rem;
     border-radius: 6px;
@@ -215,7 +209,7 @@
   }
 
   .hamburger:hover span {
-    background: var(--c-navy);
+    background: #1B2A4A;
   }
 
   /* Animación X al abrir */
@@ -266,7 +260,7 @@
   }
 
   .mobile-link:hover {
-    color: var(--c-navy);
+    color: #1B2A4A;
   }
 
   .mobile-cta {
@@ -274,8 +268,8 @@
     font-family: 'Inter', 'DM Sans', system-ui, sans-serif;
     font-weight: 500;
     font-size: 0.9375rem;
-    color: var(--c-white);
-    background: var(--c-navy);
+    color: #FFFFFF;
+    background: #1B2A4A;
     text-decoration: none;
     text-align: center;
     padding: 0.8rem 1rem;
