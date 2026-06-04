@@ -14,7 +14,8 @@ Empresa de automatización y monitoreo de plantas industriales.
 - Esencia: "Experto Silencioso" — tecnología que trabaja sin que se note
 - Visual: Matriz Conectada — grillas, nodos, conexiones
 - Tono: profesional, directo, sin jerga innecesaria
-- Colores principales: negro profundo, blanco, acento verde/cian tecnológico
+- Colores actuales: fondo blanco, navy `#1B2A4A`, teal `#2B96AD` (extraídos del logo)
+- Logo: `public/riro_system_logo.jpeg` (horizontal 520×210)
 
 ## Estructura del proyecto
 ```
@@ -51,9 +52,16 @@ git add .
 git commit -m "tipo: descripción"
 git push origin dev
 
-# Sincronizar cambios al CT117 (deploy manual)
-pct exec 117 -- bash -c "cd /root/riro-website && git pull origin dev && npm run build"
+# Deploy completo al CT117 (pull + build + publicar)
+pct exec 117 -- bash -c "cd /root/riro-website && git pull origin dev && npm run build && cp -r dist/. /srv/riro-web/"
 ```
+
+## Arquitectura del deploy en CT117
+- Repo local en CT117: `/root/riro-website`
+- Build genera archivos en: `/root/riro-website/dist/`
+- Nginx sirve desde: `/srv/riro-web/` ← hay que copiar manualmente el dist
+- El `cp -r dist/. /srv/riro-web/` es OBLIGATORIO — sin ese paso los cambios no se ven
+- node_modules está instalado en el CT117, no en el host Proxmox
 
 ## Lo que NO hacer
 - No tocar `dist/` — se genera automáticamente con npm run build
