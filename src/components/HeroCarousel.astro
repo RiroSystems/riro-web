@@ -1,84 +1,63 @@
 ---
-const slides = [
-  {
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&q=80&fit=crop",
-    tag: "Infraestructura local",
-    title: "Local por convicción.\nSólido por diseño.",
-    desc: "Tu infraestructura no pide permiso para funcionar. Procesa aquí, responde aquí, siempre.",
-  },
-  {
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&q=80&fit=crop",
-    tag: "Independencia tecnológica",
-    title: "Cero nube. Cero dependencias.\nCien por ciento tuyo.",
-    desc: "Sin suscripciones que vencer ni servidores que caer. Tu sistema, tus reglas, tu control.",
-  },
-  {
-    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1920&q=80&fit=crop",
-    tag: "Alta disponibilidad",
-    title: "Indetenible por diseño.",
-    desc: "Construimos sistemas que siguen operando cuando el internet falla y la nube no responde.",
-  },
-  {
-    image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=1920&q=80&fit=crop",
-    tag: "Edge computing",
-    title: "Donde otros dependen de la nube,\nnosotros procesamos en tierra.",
-    desc: "Inferencia local en milisegundos. Sin latencia de datacenter ni intermediarios que fallen.",
-  },
-  {
-    image: "https://images.unsplash.com/photo-1565514020179-026b92b84bb6?w=1920&q=80&fit=crop",
-    tag: "Automatización industrial",
-    title: "Automatización de grado industrial.\nSin letra chica.",
-    desc: "Cada componente tiene una razón documentada de estar. Sin extras, sin sorpresas ocultas.",
-  },
-];
+interface Slide {
+  image: string;
+  tag: string;
+  title: string;
+  desc: string;
+  cta?: { label: string; href: string };
+}
+
+interface Props {
+  slides: Slide[];
+}
+
+const { slides } = Astro.props;
+const defaultCta = { label: "Solicitar evaluación", href: "/contacto" };
 ---
 
 <!-- Swiper CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-<section class="hero-carousel" aria-label="Carousel principal Riro OPS">
+<section class="hero-carousel" aria-label="Carousel principal">
   <div class="swiper hero-swiper">
     <div class="swiper-wrapper">
-      {slides.map((slide, i) => (
-        <div
-          class="swiper-slide hero-slide"
-          style={`background-image: url('${slide.image}')`}
-          aria-label={`Slide ${i + 1} de ${slides.length}`}
-        >
-          <!-- Overlay gradiente -->
-          <div class="slide-overlay" aria-hidden="true"></div>
+      {slides.map((slide, i) => {
+        const cta = slide.cta ?? defaultCta;
+        return (
+          <div
+            class="swiper-slide hero-slide"
+            style={`background-image: url('${slide.image}')`}
+            aria-label={`Slide ${i + 1} de ${slides.length}`}
+          >
+            <div class="slide-overlay" aria-hidden="true"></div>
 
-          <!-- Contenido -->
-          <div class="slide-content">
-            <div class="slide-eyebrow">
-              <span class="eyebrow-line" aria-hidden="true"></span>
-              <span class="eyebrow-tag">{slide.tag}</span>
+            <div class="slide-content">
+              <div class="slide-eyebrow">
+                <span class="eyebrow-line" aria-hidden="true"></span>
+                <span class="eyebrow-tag">{slide.tag}</span>
+              </div>
+              <h2 class="slide-title">
+                {slide.title.split('\n').map((line, j, arr) => (
+                  <span class="title-line">{line}{j < arr.length - 1 && <br />}</span>
+                ))}
+              </h2>
+              <p class="slide-desc">{slide.desc}</p>
+              <a href={cta.href} class="slide-cta">
+                {cta.label}
+                <span class="cta-arrow" aria-hidden="true">→</span>
+              </a>
             </div>
-            <h2 class="slide-title">
-              {slide.title.split('\n').map((line, j) => (
-                <span class="title-line">{line}{j < slide.title.split('\n').length - 1 && <br />}</span>
-              ))}
-            </h2>
-            <p class="slide-desc">{slide.desc}</p>
-            <a href="/contacto" class="slide-cta">
-              Solicitar evaluación
-              <span class="cta-arrow" aria-hidden="true">→</span>
-            </a>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
 
-    <!-- Flechas de navegación -->
-    <button class="swiper-button-prev carousel-arrow" aria-label="Slide anterior"></button>
-    <button class="swiper-button-next carousel-arrow" aria-label="Slide siguiente"></button>
-
-    <!-- Puntos de paginación -->
-    <div class="swiper-pagination carousel-dots"></div>
+    <button class="swiper-button-prev" aria-label="Slide anterior"></button>
+    <button class="swiper-button-next" aria-label="Slide siguiente"></button>
+    <div class="swiper-pagination"></div>
   </div>
 </section>
 
-<!-- Swiper JS -->
 <script is:inline src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script is:inline>
   document.addEventListener('DOMContentLoaded', function () {
@@ -109,7 +88,6 @@ const slides = [
 </script>
 
 <style>
-  /* ── Contenedor ──────────────────────────────────────────── */
   .hero-carousel {
     position: relative;
     width: 100%;
@@ -121,7 +99,6 @@ const slides = [
     min-height: 580px;
   }
 
-  /* ── Slide ───────────────────────────────────────────────── */
   .hero-slide {
     background-size: cover;
     background-position: center center;
@@ -130,7 +107,6 @@ const slides = [
     align-items: center;
   }
 
-  /* Overlay: degradado lateral + capa base semi-transparente */
   .slide-overlay {
     position: absolute;
     inset: 0;
@@ -139,7 +115,6 @@ const slides = [
       linear-gradient(to top, rgba(10, 20, 36, 0.50) 0%, transparent 40%);
   }
 
-  /* ── Contenido ───────────────────────────────────────────── */
   .slide-content {
     position: relative;
     z-index: 2;
@@ -147,10 +122,9 @@ const slides = [
     width: 100%;
     margin: 0 auto;
     padding: 0 1.5rem;
-    padding-top: 64px; /* compensa la navbar fija */
+    padding-top: 64px;
   }
 
-  /* Eyebrow */
   .slide-eyebrow {
     display: flex;
     align-items: center;
@@ -162,7 +136,7 @@ const slides = [
     display: block;
     width: 2rem;
     height: 1px;
-    background: #00C8FF;
+    background: #2B96AD;
     flex-shrink: 0;
   }
 
@@ -172,10 +146,9 @@ const slides = [
     font-weight: 500;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: #00C8FF;
+    color: #2B96AD;
   }
 
-  /* Título */
   .slide-title {
     font-family: 'Inter', system-ui, sans-serif;
     font-size: clamp(2rem, 5vw, 4.25rem);
@@ -187,7 +160,6 @@ const slides = [
     margin-bottom: 1.5rem;
   }
 
-  /* Descripción */
   .slide-desc {
     font-family: 'Inter', system-ui, sans-serif;
     font-size: clamp(1rem, 1.5vw, 1.1875rem);
@@ -197,7 +169,6 @@ const slides = [
     margin-bottom: 2.5rem;
   }
 
-  /* CTA */
   .slide-cta {
     display: inline-flex;
     align-items: center;
@@ -205,8 +176,8 @@ const slides = [
     font-family: 'Inter', system-ui, sans-serif;
     font-weight: 500;
     font-size: 0.9375rem;
-    color: #0D1B2A;
-    background: #00C8FF;
+    color: #ffffff;
+    background: #1B2A4A;
     text-decoration: none;
     padding: 0.875rem 1.75rem;
     border-radius: 7px;
@@ -215,8 +186,8 @@ const slides = [
   }
 
   .slide-cta:hover {
-    background: #19d4ff;
-    box-shadow: 0 0 32px rgba(0, 200, 255, 0.40);
+    background: #253761;
+    box-shadow: 0 0 32px rgba(27, 42, 74, 0.35);
     gap: 0.75rem;
   }
 
@@ -228,9 +199,9 @@ const slides = [
     transform: translateX(3px);
   }
 
-  /* ── Flechas de navegación ───────────────────────────────── */
-  :global(.swiper-button-prev),
-  :global(.swiper-button-next) {
+  /* ── Flechas ─────────────────────────────────────────────── */
+  :global(.hero-swiper .swiper-button-prev),
+  :global(.hero-swiper .swiper-button-next) {
     width: 48px !important;
     height: 48px !important;
     background: rgba(0, 0, 0, 0.35) !important;
@@ -240,33 +211,33 @@ const slides = [
     transition: background 0.2s, color 0.2s !important;
   }
 
-  :global(.swiper-button-prev:hover),
-  :global(.swiper-button-next:hover) {
-    background: rgba(0, 200, 255, 0.25) !important;
+  :global(.hero-swiper .swiper-button-prev:hover),
+  :global(.hero-swiper .swiper-button-next:hover) {
+    background: rgba(43, 150, 173, 0.35) !important;
     color: #ffffff !important;
   }
 
-  :global(.swiper-button-prev::after),
-  :global(.swiper-button-next::after) {
+  :global(.hero-swiper .swiper-button-prev::after),
+  :global(.hero-swiper .swiper-button-next::after) {
     font-size: 1rem !important;
     font-weight: 700 !important;
   }
 
-  /* ── Dots de paginación ──────────────────────────────────── */
-  :global(.swiper-pagination) {
+  /* ── Dots ────────────────────────────────────────────────── */
+  :global(.hero-swiper .swiper-pagination) {
     bottom: 1.75rem !important;
   }
 
-  :global(.swiper-pagination-bullet) {
+  :global(.hero-swiper .swiper-pagination-bullet) {
     width: 8px !important;
     height: 8px !important;
-    background: rgba(255, 255, 255, 0.45) !important;
+    background: rgba(255, 255, 255, 0.40) !important;
     opacity: 1 !important;
     transition: background 0.25s, transform 0.25s !important;
   }
 
-  :global(.swiper-pagination-bullet-active) {
-    background: #00C8FF !important;
+  :global(.hero-swiper .swiper-pagination-bullet-active) {
+    background: #2B96AD !important;
     transform: scale(1.4) !important;
   }
 
@@ -277,8 +248,8 @@ const slides = [
       min-height: 520px;
     }
 
-    :global(.swiper-button-prev),
-    :global(.swiper-button-next) {
+    :global(.hero-swiper .swiper-button-prev),
+    :global(.hero-swiper .swiper-button-next) {
       display: none !important;
     }
 
