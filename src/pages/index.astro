@@ -42,13 +42,13 @@ const heroSlides = [
 ---
 
 <BaseLayout title="Riro Systems | Automatización con criterio">
+
+  <!-- Carousel fuera de main para evitar conflicto con overflow-x: hidden -->
+  <div id="inicio">
+    <HeroCarousel slides={heroSlides} />
+  </div>
+
   <main class="overflow-x-hidden">
-
-    <!-- ══════════════════════════ HERO CAROUSEL ══════════════════════════ -->
-    <div id="inicio">
-      <HeroCarousel slides={heroSlides} />
-    </div>
-
 
     <!-- ══════════════════════ EL CRITERIO ══════════════════════ -->
     <section id="criterio" class="py-32 px-6 bg-white">
