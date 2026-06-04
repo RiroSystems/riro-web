@@ -1,5 +1,44 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import HeroCarousel from "../components/HeroCarousel.astro";
+
+const slides = [
+  {
+    image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=1920&q=80&fit=crop",
+    tag: "Línea residencial",
+    title: "El hogar que se adapta a\nquien lo habita. No al revés.",
+    desc: "Un sistema que se ajusta a tus rutinas y entorno.",
+    cta: { label: "Solicitar diagnóstico", href: "/contacto" },
+  },
+  {
+    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=1920&q=80&fit=crop",
+    tag: "Ingeniería de precisión",
+    title: "De la ingeniería de precisión japonesa\nal control exacto de tu residencia.",
+    desc: "Arquitectura analítica diseñada con metodología de precisión para gestionar cada variable de tu entorno residencial.",
+    cta: { label: "Conocer Riro Home", href: "#categorias" },
+  },
+  {
+    image: "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1920&q=80&fit=crop",
+    tag: "Automatización cotidiana",
+    title: "Automatiza lo cotidiano,\ndisfruta lo importante.",
+    desc: "Riro Home gestiona cada proceso rutinario con precisión para que el tiempo valioso sea siempre tuyo.",
+    cta: { label: "Ver categorías", href: "#categorias" },
+  },
+  {
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&q=80&fit=crop",
+    tag: "Control remoto total",
+    title: "Control total desde donde estés.",
+    desc: "Visibilidad en tiempo real y gestión centralizada de tu residencia desde cualquier dispositivo o ubicación.",
+    cta: { label: "Solicitar diagnóstico", href: "/contacto" },
+  },
+  {
+    image: "https://images.unsplash.com/photo-1558002038-1055907df827?w=1920&q=80&fit=crop",
+    tag: "Autonomía sin condiciones",
+    title: "Autonomía sin condiciones.\nTu hogar, tus reglas.",
+    desc: "Define zonas, horarios y umbrales según tus criterios exactos. Riro Home opera bajo tus parámetros, siempre.",
+    cta: { label: "Hablemos de tu proyecto", href: "/contacto" },
+  },
+];
 ---
 
 <BaseLayout
@@ -8,42 +47,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 >
   <main class="overflow-x-hidden">
 
-    <!-- ══════════════════════════ HERO ══════════════════════════ -->
-    <section class="relative min-h-[70vh] flex items-center overflow-hidden bg-[#0D1B2A]">
-      <div class="hero-grid-bg" aria-hidden="true"></div>
-      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0D1B2A] pointer-events-none" aria-hidden="true"></div>
-
-      <div class="relative z-10 max-w-6xl mx-auto px-6 pt-36 pb-24">
-        <div class="flex items-center gap-3 mb-10">
-          <span class="w-8 h-px bg-[#4A7FA5]"></span>
-          <span class="text-[#4A7FA5] text-xs font-medium tracking-[0.22em] uppercase">Línea Residencial</span>
-        </div>
-
-        <div class="flex items-start gap-4 mb-6">
-          <span class="badge-line badge-line--home">HOME</span>
-        </div>
-
-        <h1 class="text-[clamp(3rem,8vw,6.5rem)] font-bold leading-[0.93] tracking-tight mb-8">
-          <span class="text-white">Tu hogar,</span><br />
-          <span class="title-outline">tus reglas</span><span class="text-[#4A7FA5]">.</span>
-        </h1>
-
-        <p class="text-lg md:text-xl text-white/55 max-w-xl leading-relaxed mb-12">
-          Automatización residencial con hardware que poseés y privacidad
-          que controlás. Sin suscripciones. Sin nubes ajenas.
-        </p>
-
-        <div class="flex flex-wrap gap-4">
-          <a href="/contacto" class="btn-primary-home">
-            Solicitar diagnóstico
-            <span class="btn-arrow">→</span>
-          </a>
-          <a href="#categorias" class="btn-ghost">Ver categorías</a>
-        </div>
-      </div>
-
-      <div class="hero-circles" aria-hidden="true"></div>
-    </section>
+    <!-- ══════════════════════════ HERO CAROUSEL ══════════════════════════ -->
+    <HeroCarousel slides={slides} />
 
 
     <!-- ════════════════════ TRES CATEGORÍAS ════════════════════ -->
@@ -224,36 +229,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     --c-steel:   #4A7FA5;
   }
 
-  /* ── Hero ─────────────────────────────────────────────────── */
-  .hero-grid-bg {
-    position: absolute;
-    inset: 0;
-    background-color: var(--c-navy);
-    background-image:
-      linear-gradient(rgba(74, 127, 165, 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(74, 127, 165, 0.04) 1px, transparent 1px);
-    background-size: 72px 72px;
-  }
-
-  .badge-line {
-    font-size: 0.6875rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    padding: 3px 10px;
-    border-radius: 4px;
-  }
-
-  .badge-line--home {
-    color: var(--c-steel);
-    background: rgba(74, 127, 165, 0.1);
-    border: 1px solid rgba(74, 127, 165, 0.25);
-  }
-
-  .title-outline {
-    color: transparent;
-    -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.22);
-  }
-
   .btn-primary-home {
     display: inline-flex;
     align-items: center;
@@ -262,7 +237,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     font-weight: 500;
     font-size: 0.9375rem;
     color: #fff;
-    background: var(--c-steel);
+    background: #4A7FA5;
     text-decoration: none;
     padding: 0.9rem 1.75rem;
     border-radius: 7px;
@@ -278,49 +253,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
   .btn-arrow { transition: transform 0.2s; }
   .btn-primary-home:hover .btn-arrow { transform: translateX(3px); }
-
-  .btn-ghost {
-    display: inline-flex;
-    align-items: center;
-    font-family: 'Inter', system-ui, sans-serif;
-    font-weight: 400;
-    font-size: 0.9375rem;
-    color: rgba(255, 255, 255, 0.5);
-    text-decoration: none;
-    padding: 0.9rem 1.75rem;
-    border-radius: 7px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: color 0.2s, border-color 0.2s, background 0.2s;
-  }
-
-  .btn-ghost:hover {
-    color: #fff;
-    border-color: rgba(255, 255, 255, 0.25);
-    background: rgba(255, 255, 255, 0.04);
-  }
-
-  .hero-circles {
-    position: absolute;
-    right: -100px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 480px;
-    height: 480px;
-    pointer-events: none;
-  }
-
-  .hero-circles::before,
-  .hero-circles::after {
-    content: '';
-    position: absolute;
-    border-radius: 50%;
-    border: 1px solid rgba(74, 127, 165, 0.09);
-  }
-
-  .hero-circles::before { inset: 0; }
-  .hero-circles::after  { inset: 80px; border-color: rgba(74, 127, 165, 0.13); }
-
-  @media (max-width: 1024px) { .hero-circles { display: none; } }
 
   /* ── Tarjetas de categoría ────────────────────────────────── */
   .cat-card {
