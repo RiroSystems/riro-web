@@ -7,7 +7,7 @@
 
     <!-- Logotipo -->
     <a href="/" class="navbar-logo" aria-label="Riro Systems — Inicio">
-      <span class="logo-riro">RIRO</span><span class="logo-sep">·</span><span class="logo-systems">SYSTEMS</span>
+      <img src="/riro_system_logo.jpeg" alt="Riro Systems" class="navbar-logo-img" />
     </a>
 
     <!-- Navegación desktop -->
@@ -60,13 +60,13 @@
 <style>
   /* ── Tokens ─────────────────────────────────────────────── */
   :root {
-    --c-navy:    #0D1B2A;
-    --c-charcoal:#1C2B3A;
-    --c-cyan:    #00C8FF;
+    --c-navy:    #1B2A4A;
+    --c-charcoal:#F4F7FA;
+    --c-cyan:    #2B96AD;
     --c-steel:   #4A7FA5;
     --c-white:   #FFFFFF;
-    --c-muted:   rgba(255, 255, 255, 0.55);
-    --c-subtle:  rgba(255, 255, 255, 0.07);
+    --c-muted:   rgba(27, 42, 74, 0.55);
+    --c-subtle:  rgba(27, 42, 74, 0.05);
   }
 
   /* ── Contenedor principal ───────────────────────────────── */
@@ -74,16 +74,16 @@
     position: fixed;
     inset: 0 0 auto 0;
     z-index: 100;
-    background: rgba(13, 27, 42, 0.65);
+    background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
-    border-bottom: 1px solid rgba(0, 200, 255, 0.07);
+    border-bottom: 1px solid rgba(27, 42, 74, 0.08);
     transition: background 0.3s ease, border-color 0.3s ease;
   }
 
   .navbar.scrolled {
-    background: rgba(13, 27, 42, 0.94);
-    border-bottom-color: rgba(0, 200, 255, 0.14);
+    background: rgba(255, 255, 255, 0.97);
+    border-bottom-color: rgba(27, 42, 74, 0.12);
   }
 
   .navbar-inner {
@@ -100,37 +100,14 @@
   .navbar-logo {
     text-decoration: none;
     display: flex;
-    align-items: baseline;
+    align-items: center;
     flex-shrink: 0;
-    user-select: none;
   }
 
-  .logo-riro {
-    font-family: 'Inter', 'DM Sans', system-ui, sans-serif;
-    font-weight: 700;
-    font-size: 1.125rem;
-    letter-spacing: 0.14em;
-    color: var(--c-white);
-  }
-
-  .logo-sep {
-    font-weight: 700;
-    font-size: 1.125rem;
-    color: var(--c-cyan);
-    margin: 0 2px;
-    line-height: 1;
-    /* El punto es el nodo — referencia a la Matriz Conectada */
-  }
-
-  .logo-systems {
-    font-family: 'Inter', 'DM Sans', system-ui, sans-serif;
-    font-weight: 400;
-    font-size: 0.575rem;
-    letter-spacing: 0.26em;
-    color: rgba(255, 255, 255, 0.4);
-    text-transform: uppercase;
-    align-self: flex-end;
-    margin-bottom: 2px;
+  .navbar-logo-img {
+    height: 38px;
+    width: auto;
+    display: block;
   }
 
   /* ── Nav desktop ────────────────────────────────────────── */
@@ -156,7 +133,7 @@
   }
 
   .nav-link:hover {
-    color: var(--c-white);
+    color: var(--c-navy);
     background: var(--c-subtle);
   }
 
@@ -199,8 +176,8 @@
     font-weight: 500;
     font-size: 0.8125rem;
     letter-spacing: 0.015em;
-    color: var(--c-navy);
-    background: var(--c-cyan);
+    color: var(--c-white);
+    background: var(--c-navy);
     text-decoration: none;
     padding: 0.45rem 1.1rem;
     border-radius: 6px;
@@ -209,8 +186,8 @@
   }
 
   .btn-demo:hover {
-    background: #19d4ff;
-    box-shadow: 0 0 20px rgba(0, 200, 255, 0.32);
+    background: #253761;
+    box-shadow: 0 0 20px rgba(27, 42, 74, 0.2);
   }
 
   /* ── Hamburguesa ────────────────────────────────────────── */
@@ -231,14 +208,14 @@
     display: block;
     width: 22px;
     height: 2px;
-    background: rgba(255, 255, 255, 0.75);
+    background: rgba(27, 42, 74, 0.65);
     border-radius: 2px;
     transform-origin: center;
     transition: transform 0.25s ease, opacity 0.2s ease, background 0.2s;
   }
 
   .hamburger:hover span {
-    background: var(--c-white);
+    background: var(--c-navy);
   }
 
   /* Animación X al abrir */
@@ -258,8 +235,8 @@
     display: none; /* visible solo en mobile via media query */
     overflow: hidden;
     max-height: 0;
-    background: rgba(13, 27, 42, 0.98);
-    border-top: 1px solid rgba(0, 200, 255, 0.08);
+    background: rgba(255, 255, 255, 0.98);
+    border-top: 1px solid rgba(27, 42, 74, 0.08);
     transition: max-height 0.32s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
@@ -277,10 +254,10 @@
     font-family: 'Inter', 'DM Sans', system-ui, sans-serif;
     font-weight: 400;
     font-size: 1rem;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(27, 42, 74, 0.65);
     text-decoration: none;
     padding: 0.75rem 0.25rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(27, 42, 74, 0.06);
     transition: color 0.18s;
   }
 
@@ -289,7 +266,7 @@
   }
 
   .mobile-link:hover {
-    color: var(--c-white);
+    color: var(--c-navy);
   }
 
   .mobile-cta {
@@ -297,8 +274,8 @@
     font-family: 'Inter', 'DM Sans', system-ui, sans-serif;
     font-weight: 500;
     font-size: 0.9375rem;
-    color: var(--c-navy);
-    background: var(--c-cyan);
+    color: var(--c-white);
+    background: var(--c-navy);
     text-decoration: none;
     text-align: center;
     padding: 0.8rem 1rem;
@@ -308,7 +285,7 @@
   }
 
   .mobile-cta:hover {
-    background: #19d4ff;
+    background: #253761;
   }
 
   /* ── Breakpoint mobile ──────────────────────────────────── */
