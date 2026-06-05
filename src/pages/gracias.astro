@@ -1,0 +1,78 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Mensaje recibido | Riro Systems"
+  description="Gracias por contactarte con Riro Systems. Te respondemos en menos de 24 hs hábiles."
+>
+  <main class="overflow-x-hidden">
+    <section class="min-h-screen flex items-center px-6 py-32 bg-white">
+      <div class="max-w-2xl mx-auto text-center">
+
+        <div class="flex items-center justify-center gap-3 mb-12">
+          <span class="w-8 h-px bg-[#2B96AD]"></span>
+          <span class="text-[#2B96AD] text-xs font-medium tracking-[0.22em] uppercase">Confirmación</span>
+          <span class="w-8 h-px bg-[#2B96AD]"></span>
+        </div>
+
+        <div class="check-icon" aria-hidden="true">✓</div>
+
+        <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight text-[#1B2A4A] mb-6">
+          Mensaje recibido.
+        </h1>
+
+        <p class="text-[#64748b] text-lg max-w-md mx-auto leading-relaxed mb-12">
+          Te respondemos en menos de 24 hs hábiles. Tu información es confidencial
+          y no se comparte con terceros.
+        </p>
+
+        <a href="/" class="btn-home">
+          Volver al inicio
+          <span class="btn-arrow">→</span>
+        </a>
+
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .check-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(43, 150, 173, 0.08);
+    border: 1px solid rgba(43, 150, 173, 0.2);
+    font-size: 1.75rem;
+    color: #2B96AD;
+    margin: 0 auto 2rem;
+  }
+
+  .btn-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    color: #fff;
+    background: #2B96AD;
+    text-decoration: none;
+    padding: 0.9rem 1.75rem;
+    border-radius: 7px;
+    transition: background 0.2s, box-shadow 0.2s, gap 0.2s;
+  }
+
+  .btn-home:hover {
+    background: #239bb2;
+    box-shadow: 0 0 24px rgba(43, 150, 173, 0.3);
+    gap: 0.75rem;
+  }
+
+  .btn-arrow { transition: transform 0.2s; }
+  .btn-home:hover .btn-arrow { transform: translateX(3px); }
+</style>

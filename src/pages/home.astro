@@ -51,7 +51,7 @@ const slides = [
 
 
     <!-- ════════════════════ TRES CATEGORÍAS ════════════════════ -->
-    <section id="categorias" class="py-32 px-6 bg-[#0D1B2A]">
+    <section id="categorias" class="py-32 px-6 bg-white">
       <div class="max-w-6xl mx-auto">
 
         <div class="flex items-center gap-3 mb-6">
@@ -59,10 +59,10 @@ const slides = [
           <span class="text-[#4A7FA5] text-xs font-medium tracking-[0.22em] uppercase">Soluciones</span>
         </div>
 
-        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
+        <h2 class="text-4xl md:text-5xl font-bold text-[#1B2A4A] mb-4 leading-tight">
           Tres niveles.<br />Un mismo criterio.
         </h2>
-        <p class="text-white/45 text-lg max-w-xl leading-relaxed mb-16">
+        <p class="text-[#64748b] text-lg max-w-xl leading-relaxed mb-16">
           Cada hogar tiene necesidades distintas. Elegí el nivel que se adapta
           a tu espacio y presupuesto.
         </p>
@@ -154,7 +154,7 @@ const slides = [
 
 
     <!-- ═══════════════════════ DIFERENCIAL ═══════════════════════ -->
-    <section class="py-32 px-6 bg-[#1C2B3A]">
+    <section class="py-32 px-6 bg-[#F4F7FA]">
       <div class="max-w-6xl mx-auto">
 
         <div class="flex items-center gap-3 mb-6">
@@ -162,7 +162,7 @@ const slides = [
           <span class="text-[#4A7FA5] text-xs font-medium tracking-[0.22em] uppercase">Por qué Riro HOME</span>
         </div>
 
-        <h2 class="text-4xl md:text-5xl font-bold text-white mb-16 leading-tight">
+        <h2 class="text-4xl md:text-5xl font-bold text-[#1B2A4A] mb-16 leading-tight">
           Hardware que poseés.<br />Datos que controlás.
         </h2>
 
@@ -192,7 +192,7 @@ const slides = [
 
 
     <!-- ══════════════════════════ CTA ══════════════════════════ -->
-    <section class="py-32 px-6 bg-[#0D1B2A]">
+    <section class="py-32 px-6 bg-[#F4F7FA]">
       <div class="max-w-6xl mx-auto">
         <div class="cta-banner">
           <div class="cta-grid" aria-hidden="true"></div>
@@ -204,7 +204,7 @@ const slides = [
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 max-w-2xl leading-tight">
               Empezá con un diagnóstico sin compromiso.
             </h2>
-            <p class="text-white/50 text-lg max-w-xl leading-relaxed mb-10">
+            <p class="text-white/55 text-lg max-w-xl leading-relaxed mb-10">
               Evaluamos tu espacio y te proponemos el nivel de automatización
               que realmente necesitás. Sin sobrediseño, sin venta de lo innecesario.
             </p>
@@ -222,9 +222,9 @@ const slides = [
 
 <style>
   :root {
-    --c-navy:    #0D1B2A;
-    --c-charcoal:#1C2B3A;
-    --c-cyan:    #00C8FF;
+    --c-navy:    #1B2A4A;
+    --c-bg:      #F4F7FA;
+    --c-cyan:    #2B96AD;
     --c-steel:   #4A7FA5;
   }
 
@@ -243,7 +243,6 @@ const slides = [
     transition: background 0.2s, box-shadow 0.2s, gap 0.2s;
     white-space: nowrap;
   }
-
   .btn-primary-home:hover {
     background: #5a8fb5;
     box-shadow: 0 0 28px rgba(74, 127, 165, 0.4);
@@ -256,20 +255,18 @@ const slides = [
   /* ── Tarjetas de categoría ────────────────────────────────── */
   .cat-card {
     position: relative;
-    background: var(--c-charcoal);
+    background: #fff;
     border-radius: 12px;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(27, 42, 74, 0.08);
     display: flex;
     flex-direction: column;
     transition: border-color 0.3s, transform 0.3s;
   }
-
   .cat-card:hover {
     transform: translateY(-4px);
     border-color: rgba(74, 127, 165, 0.3);
   }
-
   .cat-card--premium {
     border-color: rgba(74, 127, 165, 0.15);
   }
@@ -283,24 +280,19 @@ const slides = [
     justify-content: center;
     border-bottom: 1px solid rgba(74, 127, 165, 0.1);
   }
-
   .cat-placeholder--featured {
     background: rgba(74, 127, 165, 0.1);
     border-bottom-color: rgba(74, 127, 165, 0.18);
   }
-
   .cat-placeholder-label {
     font-size: 0.75rem;
     font-weight: 500;
     letter-spacing: 0.06em;
-    color: rgba(74, 127, 165, 0.4);
+    color: rgba(74, 127, 165, 0.45);
     text-transform: uppercase;
   }
 
-  .cat-badge-featured {
-    position: relative;
-  }
-
+  .cat-badge-featured { position: relative; }
   .cat-badge-recommended {
     position: absolute;
     top: -14px;
@@ -308,7 +300,7 @@ const slides = [
     font-size: 0.6875rem;
     font-weight: 600;
     letter-spacing: 0.05em;
-    color: var(--c-navy);
+    color: #fff;
     background: var(--c-steel);
     padding: 3px 10px;
     border-radius: 20px;
@@ -331,7 +323,6 @@ const slides = [
     margin-bottom: 1.25rem;
     width: fit-content;
   }
-
   .cat-badge--essentials,
   .cat-badge--premium,
   .cat-badge--accesible {
@@ -344,7 +335,7 @@ const slides = [
     font-family: 'Inter', system-ui, sans-serif;
     font-size: clamp(1.75rem, 3vw, 2.25rem);
     font-weight: 700;
-    color: #fff;
+    color: var(--c-navy);
     line-height: 1.05;
     letter-spacing: -0.02em;
     margin-bottom: 1rem;
@@ -353,7 +344,7 @@ const slides = [
   .cat-desc {
     font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.42);
+    color: #64748b;
     line-height: 1.65;
     margin-bottom: 1.5rem;
   }
@@ -370,9 +361,9 @@ const slides = [
   .cat-feat {
     font-size: 0.75rem;
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.55);
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.07);
+    color: #64748b;
+    background: rgba(27, 42, 74, 0.04);
+    border: 1px solid rgba(27, 42, 74, 0.07);
     padding: 3px 9px;
     border-radius: 4px;
   }
@@ -387,64 +378,57 @@ const slides = [
     margin-top: auto;
     transition: gap 0.2s;
   }
-
   .cat-cta--home { color: var(--c-steel); }
   .cat-cta:hover { gap: 0.8rem; }
 
   /* ── Diferencial ─────────────────────────────────────────── */
   .diff-item {
     padding: 2rem;
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(27, 42, 74, 0.08);
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0.02);
+    background: #fff;
     transition: border-color 0.25s;
   }
-
-  .diff-item:hover {
-    border-color: rgba(74, 127, 165, 0.2);
-  }
+  .diff-item:hover { border-color: rgba(74, 127, 165, 0.2); }
 
   .diff-icon {
     font-size: 1.25rem;
     color: rgba(74, 127, 165, 0.5);
     margin-bottom: 1rem;
   }
-
-  .diff-icon--cyan { color: rgba(0, 200, 255, 0.5); }
+  .diff-icon--cyan { color: rgba(43, 150, 173, 0.6); }
 
   .diff-title {
     font-family: 'Inter', system-ui, sans-serif;
     font-size: 1rem;
     font-weight: 600;
-    color: #fff;
+    color: var(--c-navy);
     margin-bottom: 0.5rem;
   }
-
   .diff-desc {
     font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.4);
+    color: #64748b;
     line-height: 1.6;
   }
 
-  /* ── CTA Banner ───────────────────────────────────────────── */
+  /* ── CTA Banner — oscuro para contraste ──────────────────── */
   .cta-banner {
     position: relative;
-    background: var(--c-charcoal);
+    background: var(--c-navy);
     border-radius: 16px;
     padding: 4.5rem;
     overflow: hidden;
     border: 1px solid rgba(74, 127, 165, 0.1);
   }
-
   @media (max-width: 768px) { .cta-banner { padding: 2.5rem 1.75rem; } }
 
   .cta-grid {
     position: absolute;
     inset: 0;
     background-image:
-      linear-gradient(rgba(74, 127, 165, 0.025) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(74, 127, 165, 0.025) 1px, transparent 1px);
+      linear-gradient(rgba(74, 127, 165, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(74, 127, 165, 0.04) 1px, transparent 1px);
     background-size: 44px 44px;
     pointer-events: none;
   }
@@ -460,7 +444,6 @@ const slides = [
     border-radius: 6px;
     margin-bottom: 1.5rem;
   }
-
   .accesible-dot {
     display: inline-block;
     width: 5px;
@@ -471,14 +454,12 @@ const slides = [
     flex-shrink: 0;
     margin-top: 5px;
   }
-
   .accesible-note p {
     font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.35);
+    color: #64748b;
     line-height: 1.5;
     margin: 0;
     font-style: italic;
   }
-
 </style>
