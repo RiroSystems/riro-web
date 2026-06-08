@@ -13,13 +13,13 @@
     <!-- Navegación desktop -->
     <nav class="navbar-nav" aria-label="Navegación principal">
       <a href="/#inicio" class="nav-link">Inicio</a>
-      <a href="/home" class="nav-link">
+      <a href="/home" class="nav-link" data-funnel-link="home">
         <span class="badge badge-home">HOME</span>
       </a>
-      <a href="/ops" class="nav-link">
+      <a href="/ops" class="nav-link" data-funnel-link="ops">
         <span class="badge badge-ops">OPS</span>
       </a>
-      <a href="/#care" class="nav-link">Riro Care</a>
+      <a href="/#care" class="nav-link" data-funnel-section="home">Riro Care</a>
       <a href="/#proceso" class="nav-link">Proceso</a>
       <a href="/blog" class="nav-link">Blog</a>
       <a href="/contacto" class="nav-link">Contacto</a>
@@ -47,9 +47,9 @@
   <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
     <nav aria-label="Navegación móvil">
       <a href="/#inicio"   class="mobile-link">Inicio</a>
-      <a href="/home"     class="mobile-link">RIRO HOME</a>
-      <a href="/ops"      class="mobile-link">RIRO OPS</a>
-      <a href="/#care"     class="mobile-link">Riro Care</a>
+      <a href="/home"     class="mobile-link" data-funnel-link="home">RIRO HOME</a>
+      <a href="/ops"      class="mobile-link" data-funnel-link="ops">RIRO OPS</a>
+      <a href="/#care"     class="mobile-link" data-funnel-section="home">Riro Care</a>
       <a href="/#proceso"  class="mobile-link">Proceso</a>
       <a href="/contacto"  class="mobile-link">Contacto</a>
       <a href="/contacto" class="mobile-cta">Solicitar Demo</a>
@@ -326,5 +326,14 @@
         menu?.classList.remove('open');
       });
     });
+
+    /* Muro de contención: ocultar la rama contraria según el embudo guardado */
+    const funnel = localStorage.getItem('riro-funnel'); // 'home' | 'ops' | null
+    if (funnel === 'home' || funnel === 'ops') {
+      const opposite = funnel === 'home' ? 'ops' : 'home';
+      document.querySelectorAll(`[data-funnel-link="${opposite}"]`).forEach(el => {
+        (el as HTMLElement).style.display = 'none';
+      });
+    }
   })();
 </script>
