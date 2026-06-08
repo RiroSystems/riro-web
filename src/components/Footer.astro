@@ -109,7 +109,8 @@ const year = new Date().getFullYear();
     width: auto;
     border-radius: 3px;
     opacity: 0.92;
-    transition: opacity 0.2s;
+    filter: brightness(0) invert(1);
+    transition: opacity 0.2s, filter 0.2s;
   }
 
   .footer-logo-link:hover .footer-logo-img {
