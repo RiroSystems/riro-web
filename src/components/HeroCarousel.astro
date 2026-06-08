@@ -5,6 +5,7 @@ interface Slide {
   title: string;
   desc: string;
   cta?: { label: string; href: string };
+  duration?: number;
 }
 
 interface Props {
@@ -28,6 +29,7 @@ const defaultCta = { label: "Solicitar evaluación", href: "/contacto" };
             class="swiper-slide hero-slide"
             style={`background-image: url('${slide.image}')`}
             aria-label={`Slide ${i + 1} de ${slides.length}`}
+            data-swiper-autoplay={slide.duration ?? 5000}
           >
             <div class="slide-overlay" aria-hidden="true"></div>
 
