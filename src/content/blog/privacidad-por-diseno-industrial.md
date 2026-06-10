@@ -16,7 +16,7 @@ Los sistemas de videovigilancia industriales y residenciales convencionales capt
 
 Eso puede ser suficiente para cumplir formalmente con una regulación. No es suficiente para generar confianza real en los operarios ni para sobrevivir una inspección laboral seria.
 
-En Argentina, la Ley 25.326 y el Convenio 187 de la OIT sobre condiciones de trabajo establecen restricciones claras: no podés instalar cámaras en vestuarios, baños ni zonas de descanso. No podés identificar biométricamente a trabajadores sin su consentimiento expreso. No podés almacenar imágenes de personas sin justificación operativa documentada.
+El Convenio 187 de la OIT sobre condiciones de trabajo, la normativa laboral peruana y las regulaciones equivalentes en toda la región establecen restricciones claras: no se pueden instalar cámaras en vestuarios, baños ni zonas de descanso. No se puede identificar biométricamente a trabajadores sin su consentimiento expreso. No se pueden almacenar imágenes de personas sin justificación operativa documentada.
 
 ## Privacidad por diseño: qué significa técnicamente
 
@@ -36,7 +36,7 @@ Más allá de la obligación legal, hay razones operativas para diseñar con pri
 
 Un sistema que los operarios perciben como invasivo genera resistencia. Esa resistencia tiene costo real: mayor rotación, menor colaboración, potencial conflicto sindical.
 
-Un sistema que audita sin identificar — que mide flujos, no personas — puede presentarse a los trabajadores de forma transparente y honesta. "El sistema cuenta cuánta gente hay en cada zona para calcular eficiencia del turno. No sabe quién sos ni te filma en el baño." Esa conversación es posible cuando la arquitectura lo respalda.
+Un sistema que audita sin identificar — que mide flujos, no personas — puede presentarse a los trabajadores de forma transparente y honesta. "El sistema cuenta cuánta gente hay en cada zona para calcular eficiencia del turno. No sabe quién eres ni te filma en el baño." Esa conversación es posible cuando la arquitectura lo respalda.
 
 ## Riro HOME: el mismo principio
 
@@ -46,4 +46,4 @@ Tus hábitos, tus horarios, los movimientos dentro de tu casa: nada de eso sale 
 
 ---
 
-*Si querés entender cómo esto aplica a tu planta o tu hogar, entrá en contacto para una evaluación técnica.*
+*Si quieres entender cómo esto aplica a tu planta o tu hogar, entra en contacto para una evaluación técnica.*

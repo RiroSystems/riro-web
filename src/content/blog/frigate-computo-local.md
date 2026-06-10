@@ -24,7 +24,7 @@ La alternativa sería enviar el video a un servicio de análisis en la nube. Alg
 
 **Dependencia.** Si el proveedor de nube tiene un incidente, tu sistema de monitoreo se cae. Hemos visto plantas industriales sin datos durante horas por problemas de conectividad o caídas de servicio externo.
 
-**Privacidad y compliance.** Enviar video de operarios a servidores externos tiene implicaciones legales directas. En Argentina, la Ley 25.326 de Protección de Datos Personales establece restricciones claras sobre el tratamiento de imágenes de personas.
+**Privacidad y compliance.** Enviar video de operarios a servidores externos tiene implicaciones legales directas. La normativa laboral peruana y el Convenio 187 de la OIT establecen restricciones claras sobre el tratamiento de imágenes de personas en entornos de trabajo.
 
 ## Hardware de aceleración: el Google Coral TPU
 
@@ -42,4 +42,4 @@ El resultado es inteligencia operativa sin nube, sin suscripción, sin datos que
 
 ---
 
-*¿Querés ver cómo funciona esto en un entorno real? Leé el caso del Proyecto Piloto o escribinos.*
+*¿Quieres ver cómo funciona esto en un entorno real? Lee el caso del Proyecto Piloto o escríbenos.*

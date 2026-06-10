@@ -38,4 +38,4 @@ El principio es el mismo en los dos casos: la tecnología sirve cuando resuelve 
 
 ---
 
-*Si querés que evaluemos tu espacio sin compromiso, entrá en contacto.*
+*Si quieres que evaluemos tu espacio sin compromiso, entra en contacto.*
