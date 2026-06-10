@@ -1,6 +1,6 @@
 ---
 interface Props {
-  currentPage?: string; // 'soluciones' | 'metodologia' | 'care' | 'criterio' | 'relevamiento'
+  currentPage?: string; // 'soluciones' | 'metodologia' | 'care' | 'criterio' | 'contacto'
 }
 const { currentPage = '' } = Astro.props;
 ---
@@ -31,7 +31,7 @@ const { currentPage = '' } = Astro.props;
     </nav>
 
     <!-- CTA desktop -->
-    <a href="/home/relevamiento" class="nh-cta">Agendar Relevamiento</a>
+    <a href="/home/contacto" class={`nh-cta ${currentPage === 'contacto' ? 'nh-cta--active' : ''}`}>Contacto</a>
 
     <!-- Hamburguesa mobile -->
     <button
@@ -55,7 +55,7 @@ const { currentPage = '' } = Astro.props;
       <a href="/home/metodologia" class="nh-mobile-link">Metodología</a>
       <a href="/home/care" class="nh-mobile-link">Riro Care</a>
       <a href="/home/criterio" class="nh-mobile-link">El Criterio RIRO</a>
-      <a href="/home/relevamiento" class="nh-mobile-cta">Agendar Relevamiento</a>
+      <a href="/home/contacto" class="nh-mobile-cta">Contacto</a>
     </nav>
   </div>
 </header>
@@ -95,7 +95,7 @@ const { currentPage = '' } = Astro.props;
     flex-shrink: 0;
   }
   .nh-logo-img {
-    height: 40px;
+    height: 76px;
     width: auto;
     display: block;
   }
@@ -152,7 +152,8 @@ const { currentPage = '' } = Astro.props;
     transition: background 0.2s, box-shadow 0.2s;
     white-space: nowrap;
   }
-  .nh-cta:hover {
+  .nh-cta:hover,
+  .nh-cta--active {
     background: #5a8fb5;
     box-shadow: 0 0 18px rgba(74, 127, 165, 0.35);
   }
