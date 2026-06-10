@@ -50,7 +50,7 @@ const slides = [
   <main class="overflow-x-hidden">
 
 
-    <!-- ════════════════════ TRES CATEGORÍAS ════════════════════ -->
+    <!-- ════════════════════ TRES PERFILES ════════════════════ -->
     <section id="categorias" class="py-32 px-6 bg-white">
       <div class="max-w-6xl mx-auto">
 
@@ -60,89 +60,94 @@ const slides = [
         </div>
 
         <h2 class="text-4xl md:text-5xl font-bold text-[#1B2A4A] mb-4 leading-tight">
-          Tres niveles.<br />Un mismo criterio.
+          Tres perfiles.<br />Un mismo criterio.
         </h2>
         <p class="text-[#64748b] text-lg max-w-xl leading-relaxed mb-16">
-          Cada hogar tiene necesidades distintas. Elegí el nivel que se adapta
-          a tu espacio y presupuesto.
+          Cada hogar tiene necesidades distintas. Diseñamos el ecosistema exacto
+          para tu espacio — ni más, ni menos de lo que realmente necesitás.
         </p>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
           <!-- ESSENTIALS -->
-          <div class="cat-card cat-card--essentials">
-            <div class="cat-placeholder" aria-hidden="true">
-              <span class="cat-placeholder-label">Imagen · Essentials</span>
-            </div>
+          <div class="cat-card">
+            <div
+              class="cat-img"
+              style="background-image: url('https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&q=80&fit=crop')"
+              aria-hidden="true"
+            ></div>
             <div class="cat-body">
-              <span class="cat-badge cat-badge--essentials">Essentials</span>
+              <span class="cat-badge">Essentials</span>
               <h3 class="cat-title">Home<br />Essentials</h3>
               <p class="cat-desc">
-                Lo esencial hecho bien. Iluminación, clima, seguridad perimetral
-                y acceso inteligente para la vivienda que funciona.
+                El ecosistema mínimo bien diseñado. Vigilancia perimetral con procesamiento local,
+                acceso inteligente a puertas y portones, y automatizaciones base para iluminación
+                y clima. Sin hardware redundante, sin sobrediseño.
               </p>
               <div class="cat-features">
-                <span class="cat-feat">Iluminación inteligente</span>
-                <span class="cat-feat">Control de clima</span>
-                <span class="cat-feat">Acceso seguro</span>
-                <span class="cat-feat">Alertas locales</span>
+                <span class="cat-feat">Vigilancia perimetral local</span>
+                <span class="cat-feat">Acceso sin llave</span>
+                <span class="cat-feat">Iluminación y clima</span>
+                <span class="cat-feat">Alertas sin nube</span>
               </div>
-              <a href="/contacto" class="cat-cta cat-cta--home">
-                Consultar <span>→</span>
-              </a>
+              <a href="/contacto" class="cat-cta">Consultar <span>→</span></a>
             </div>
           </div>
 
           <!-- PREMIUM -->
-          <div class="cat-card cat-card--premium">
-            <div class="cat-placeholder cat-placeholder--featured" aria-hidden="true">
-              <span class="cat-placeholder-label">Imagen · Premium</span>
-            </div>
-            <div class="cat-badge-featured">
-              <span class="cat-badge-recommended">Más solicitado</span>
+          <div class="cat-card cat-card--highlighted">
+            <div
+              class="cat-img"
+              style="background-image: url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80&fit=crop')"
+              aria-hidden="true"
+            ></div>
+            <div class="cat-img-badge-wrap">
+              <span class="cat-img-badge">Más solicitado</span>
             </div>
             <div class="cat-body">
-              <span class="cat-badge cat-badge--premium">Premium</span>
+              <span class="cat-badge">Premium</span>
               <h3 class="cat-title">Home<br />Premium</h3>
               <p class="cat-desc">
-                Automatización profunda con visión por computadora, detección local de accesos y orquestación total del hogar.
+                Ecosistema invisible. Integración con los sistemas del edificio, visión por
+                computadora con IA local y tiempos de respuesta menores a 500 ms.
+                La automatización no se nota: el hogar simplemente funciona.
               </p>
               <div class="cat-features">
-                <span class="cat-feat">IA de acceso — 100% local</span>
-                <span class="cat-feat">Cámaras locales Frigate</span>
-                <span class="cat-feat">Escenas automáticas</span>
+                <span class="cat-feat">IA local &lt;500 ms</span>
+                <span class="cat-feat">Integración con edificio</span>
+                <span class="cat-feat">Frigate — reconocimiento local</span>
                 <span class="cat-feat">Panel unificado</span>
               </div>
-              <a href="/contacto" class="cat-cta cat-cta--home">
-                Consultar <span>→</span>
-              </a>
+              <a href="/contacto" class="cat-cta">Consultar <span>→</span></a>
             </div>
           </div>
 
           <!-- ACCESIBLE -->
-          <div class="cat-card cat-card--accesible cat-card--accesible-special">
-            <div class="cat-placeholder" aria-hidden="true">
-              <span class="cat-placeholder-label">Imagen · Accesible</span>
-            </div>
+          <div class="cat-card">
+            <div
+              class="cat-img"
+              style="background-image: url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80&fit=crop')"
+              aria-hidden="true"
+            ></div>
             <div class="cat-body">
-              <span class="cat-badge cat-badge--accesible">Accesible</span>
+              <span class="cat-badge">Accesible</span>
               <h3 class="cat-title">Home<br />Accesible</h3>
               <p class="cat-desc">
-                Automatizaciones de asistencia para personas con movilidad reducida
-                o discapacidad. No es un nicho oportunista: es un problema que conocemos
-                desde adentro.
+                Automatizaciones de asistencia real. Apertura sin contacto, detección de caídas,
+                alertas a cuidadores y control por voz procesado localmente. No es un nicho
+                oportunista: es un problema que conocemos desde adentro.
               </p>
               <div class="cat-features">
                 <span class="cat-feat">Apertura sin contacto</span>
                 <span class="cat-feat">Detección de caídas</span>
-                <span class="cat-feat">Alertas a familiares</span>
+                <span class="cat-feat">Alertas a cuidadores</span>
                 <span class="cat-feat">Control por voz — local</span>
               </div>
               <div class="accesible-note">
                 <span class="accesible-dot"></span>
                 <p>Experiencia directa en adaptación de hogar. Diseñamos lo que usamos.</p>
               </div>
-              <a href="/blog/home-accesible-experiencia-real" class="cat-cta cat-cta--home">
+              <a href="/blog/home-accesible-experiencia-real" class="cat-cta">
                 Leer nuestra historia <span>→</span>
               </a>
             </div>
@@ -153,8 +158,8 @@ const slides = [
     </section>
 
 
-    <!-- ═══════════════════════ DIFERENCIAL ═══════════════════════ -->
-    <section class="py-32 px-6 bg-[#F4F7FA]">
+    <!-- ═══════════════════ DIFERENCIALES — FONDO NAVY ═══════════════════ -->
+    <section class="py-32 px-6 bg-[#1B2A4A]">
       <div class="max-w-6xl mx-auto">
 
         <div class="flex items-center gap-3 mb-6">
@@ -162,28 +167,44 @@ const slides = [
           <span class="text-[#4A7FA5] text-xs font-medium tracking-[0.22em] uppercase">Por qué Riro HOME</span>
         </div>
 
-        <h2 class="text-4xl md:text-5xl font-bold text-[#1B2A4A] mb-16 leading-tight">
-          Hardware que poseés.<br />Datos que controlás.
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+          Tu hogar.<br />Tus datos.<br />Tu hardware.
         </h2>
+        <p class="text-white/50 text-lg max-w-xl leading-relaxed mb-20">
+          Tres compromisos que no son marketing. Son las decisiones de arquitectura
+          que tomamos desde el principio — y que no vamos a cambiar.
+        </p>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="diff-grid">
 
           <div class="diff-item">
-            <div class="diff-icon">⬡</div>
-            <h4 class="diff-title">100% Local</h4>
-            <p class="diff-desc">Tu hogar funciona sin internet. Sin servidores de terceros. Sin suscripciones.</p>
+            <div class="diff-num">01</div>
+            <h4 class="diff-title">Privacidad por diseño</h4>
+            <p class="diff-desc">
+              Tus datos no salen de tu casa. El sistema razona localmente, sin enviar
+              información a servidores externos ni nubes de terceros. Privacidad que
+              no requiere configuración.
+            </p>
           </div>
 
-          <div class="diff-item">
-            <div class="diff-icon">⬡</div>
-            <h4 class="diff-title">Hardware tuyo</h4>
-            <p class="diff-desc">Adquirís el equipamiento. No alquilás tecnología ni dependés de una empresa para operar.</p>
+          <div class="diff-item diff-item--border">
+            <div class="diff-num">02</div>
+            <h4 class="diff-title">Autonomía sin internet</h4>
+            <p class="diff-desc">
+              Tu hogar funciona aunque la conexión se corte. La lógica de automatización
+              y seguridad opera sobre hardware local, sin depender de ningún servicio
+              externo para funcionar.
+            </p>
           </div>
 
-          <div class="diff-item">
-            <div class="diff-icon diff-icon--cyan">⬡</div>
-            <h4 class="diff-title">Riro Care</h4>
-            <p class="diff-desc">Soporte continuo, actualizaciones y mejoras. Tu sistema evoluciona con vos.</p>
+          <div class="diff-item diff-item--border">
+            <div class="diff-num">03</div>
+            <h4 class="diff-title">Hardware de tu propiedad</h4>
+            <p class="diff-desc">
+              Adquirís el equipo una vez. No alquilás tecnología ni firmás contratos
+              de dependencia. Si Riro desaparece mañana, tu hogar sigue funcionando
+              exactamente igual.
+            </p>
           </div>
 
         </div>
@@ -191,7 +212,55 @@ const slides = [
     </section>
 
 
-    <!-- ══════════════════════════ CTA ══════════════════════════ -->
+    <!-- ═════════════════ RIRO CARE — SERVICIO OPCIONAL ═════════════════ -->
+    <section id="care" class="py-24 px-6 bg-[#F4F7FA]">
+      <div class="max-w-6xl mx-auto">
+        <div class="care-block">
+          <div class="care-left">
+            <div class="flex items-center gap-3 mb-5">
+              <span class="w-8 h-px bg-[#4A7FA5]"></span>
+              <span class="care-optional-tag">Servicio opcional</span>
+            </div>
+            <h3 class="care-title">Riro Care</h3>
+            <p class="care-body">
+              El tiempo pasa, el hogar cambia y las rutinas evolucionan. Riro Care
+              es un servicio de acompañamiento para mantener el criterio de
+              automatización afinado a lo largo del tiempo.
+            </p>
+            <p class="care-body mt-4">
+              No es un contrato de permanencia: es una decisión que se toma cuando
+              tiene sentido para vos.
+            </p>
+          </div>
+          <div class="care-right">
+            <ul class="care-list">
+              <li class="care-list-item">
+                <span class="care-dot"></span>
+                Revisiones periódicas del sistema
+              </li>
+              <li class="care-list-item">
+                <span class="care-dot"></span>
+                Actualizaciones de firmware y lógica de automatización
+              </li>
+              <li class="care-list-item">
+                <span class="care-dot"></span>
+                Soporte técnico directo, sin intermediarios
+              </li>
+              <li class="care-list-item">
+                <span class="care-dot"></span>
+                Ajuste de automatizaciones cuando cambian tus rutinas
+              </li>
+            </ul>
+            <a href="/contacto" class="care-cta">
+              Preguntar sobre Riro Care <span>→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════ CTA FINAL ══════════════════════════ -->
     <section class="py-32 px-6 bg-[#F4F7FA]">
       <div class="max-w-6xl mx-auto">
         <div class="cta-banner">
@@ -202,14 +271,14 @@ const slides = [
               <span class="text-[#4A7FA5] text-xs font-medium tracking-[0.22em] uppercase">Siguiente paso</span>
             </div>
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 max-w-2xl leading-tight">
-              Empezá con un diagnóstico sin compromiso.
+              El primer paso es un relevamiento sin compromiso.
             </h2>
             <p class="text-white/55 text-lg max-w-xl leading-relaxed mb-10">
-              Evaluamos tu espacio y te proponemos el nivel de automatización
-              que realmente necesitás. Sin sobrediseño, sin venta de lo innecesario.
+              Evaluamos tu espacio y proponemos el nivel de automatización
+              que realmente necesitás. Sin sobrediseño. Sin vender lo que no hace falta.
             </p>
             <a href="/contacto" class="btn-primary-home">
-              Hablemos de tu hogar
+              Agendar relevamiento
               <span class="btn-arrow">→</span>
             </a>
           </div>
@@ -220,14 +289,21 @@ const slides = [
   </main>
 </BaseLayout>
 
+<script>
+  /* Cuando el usuario llega directamente a /home, fijar el embudo para que OPS
+     desaparezca del navbar sin necesidad de pasar por el splitter */
+  localStorage.setItem('riro-funnel', 'home');
+</script>
+
 <style>
   :root {
-    --c-navy:    #1B2A4A;
-    --c-bg:      #F4F7FA;
-    --c-cyan:    #2B96AD;
-    --c-steel:   #4A7FA5;
+    --c-navy:  #1B2A4A;
+    --c-bg:    #F4F7FA;
+    --c-cyan:  #2B96AD;
+    --c-steel: #4A7FA5;
   }
 
+  /* ── CTA principal ───────────────────────────────────────── */
   .btn-primary-home {
     display: inline-flex;
     align-items: center;
@@ -248,11 +324,10 @@ const slides = [
     box-shadow: 0 0 28px rgba(74, 127, 165, 0.4);
     gap: 0.75rem;
   }
-
   .btn-arrow { transition: transform 0.2s; }
   .btn-primary-home:hover .btn-arrow { transform: translateX(3px); }
 
-  /* ── Tarjetas de categoría ────────────────────────────────── */
+  /* ── Tarjetas de perfil ──────────────────────────────────── */
   .cat-card {
     position: relative;
     background: #fff;
@@ -267,36 +342,27 @@ const slides = [
     transform: translateY(-4px);
     border-color: rgba(74, 127, 165, 0.3);
   }
-  .cat-card--premium {
-    border-color: rgba(74, 127, 165, 0.15);
+  .cat-card--highlighted {
+    border-color: rgba(74, 127, 165, 0.2);
   }
 
-  .cat-placeholder {
+  .cat-img {
     width: 100%;
-    height: 180px;
-    background: rgba(74, 127, 165, 0.06);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-bottom: 1px solid rgba(74, 127, 165, 0.1);
-  }
-  .cat-placeholder--featured {
-    background: rgba(74, 127, 165, 0.1);
-    border-bottom-color: rgba(74, 127, 165, 0.18);
-  }
-  .cat-placeholder-label {
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    color: rgba(74, 127, 165, 0.45);
-    text-transform: uppercase;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
   }
 
-  .cat-badge-featured { position: relative; }
-  .cat-badge-recommended {
+  /* Badge "Más solicitado" sobre el borde imagen/cuerpo */
+  .cat-img-badge-wrap {
+    position: relative;
+    height: 0;
+  }
+  .cat-img-badge {
     position: absolute;
-    top: -14px;
-    right: 1.5rem;
+    top: -13px;
+    right: 1.25rem;
     font-size: 0.6875rem;
     font-weight: 600;
     letter-spacing: 0.05em;
@@ -304,6 +370,8 @@ const slides = [
     background: var(--c-steel);
     padding: 3px 10px;
     border-radius: 20px;
+    z-index: 2;
+    white-space: nowrap;
   }
 
   .cat-body {
@@ -322,10 +390,6 @@ const slides = [
     border-radius: 4px;
     margin-bottom: 1.25rem;
     width: fit-content;
-  }
-  .cat-badge--essentials,
-  .cat-badge--premium,
-  .cat-badge--accesible {
     color: var(--c-steel);
     background: rgba(74, 127, 165, 0.1);
     border: 1px solid rgba(74, 127, 165, 0.22);
@@ -342,7 +406,6 @@ const slides = [
   }
 
   .cat-desc {
-    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.9rem;
     color: #64748b;
     line-height: 1.65;
@@ -374,66 +437,13 @@ const slides = [
     gap: 0.5rem;
     font-size: 0.875rem;
     font-weight: 500;
+    color: var(--c-steel);
     text-decoration: none;
     margin-top: auto;
     transition: gap 0.2s;
   }
-  .cat-cta--home { color: var(--c-steel); }
   .cat-cta:hover { gap: 0.8rem; }
 
-  /* ── Diferencial ─────────────────────────────────────────── */
-  .diff-item {
-    padding: 2rem;
-    border: 1px solid rgba(27, 42, 74, 0.08);
-    border-radius: 10px;
-    background: #fff;
-    transition: border-color 0.25s;
-  }
-  .diff-item:hover { border-color: rgba(74, 127, 165, 0.2); }
-
-  .diff-icon {
-    font-size: 1.25rem;
-    color: rgba(74, 127, 165, 0.5);
-    margin-bottom: 1rem;
-  }
-  .diff-icon--cyan { color: rgba(43, 150, 173, 0.6); }
-
-  .diff-title {
-    font-family: 'Inter', system-ui, sans-serif;
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--c-navy);
-    margin-bottom: 0.5rem;
-  }
-  .diff-desc {
-    font-family: 'Inter', system-ui, sans-serif;
-    font-size: 0.875rem;
-    color: #64748b;
-    line-height: 1.6;
-  }
-
-  /* ── CTA Banner — oscuro para contraste ──────────────────── */
-  .cta-banner {
-    position: relative;
-    background: var(--c-navy);
-    border-radius: 16px;
-    padding: 4.5rem;
-    overflow: hidden;
-    border: 1px solid rgba(74, 127, 165, 0.1);
-  }
-  @media (max-width: 768px) { .cta-banner { padding: 2.5rem 1.75rem; } }
-
-  .cta-grid {
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(74, 127, 165, 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(74, 127, 165, 0.04) 1px, transparent 1px);
-    background-size: 44px 44px;
-    pointer-events: none;
-  }
-
-  /* ── Nota auténtica Home Accesible ─────────────────────── */
   .accesible-note {
     display: flex;
     align-items: flex-start;
@@ -455,11 +465,172 @@ const slides = [
     margin-top: 5px;
   }
   .accesible-note p {
-    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.8rem;
     color: #64748b;
     line-height: 1.5;
     margin: 0;
     font-style: italic;
+  }
+
+  /* ── Diferenciales — fondo navy ──────────────────────────── */
+  .diff-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  @media (max-width: 768px) {
+    .diff-grid {
+      grid-template-columns: 1fr;
+    }
+    .diff-item--border {
+      border-left: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+  }
+
+  .diff-item {
+    padding: 2.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    transition: background 0.25s;
+  }
+  .diff-item:hover {
+    background: rgba(74, 127, 165, 0.08);
+  }
+  .diff-item--border {
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .diff-num {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: #4A7FA5;
+    margin-bottom: 1.5rem;
+  }
+
+  .diff-title {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 0.875rem;
+  }
+
+  .diff-desc {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.72;
+  }
+
+  /* ── Riro Care — sutil, opcional ─────────────────────────── */
+  .care-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+    padding: 3rem;
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid rgba(27, 42, 74, 0.08);
+  }
+  @media (max-width: 768px) {
+    .care-block {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      padding: 2rem;
+    }
+  }
+
+  .care-optional-tag {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--c-steel);
+    background: rgba(74, 127, 165, 0.1);
+    border: 1px solid rgba(74, 127, 165, 0.22);
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+
+  .care-title {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--c-navy);
+    letter-spacing: -0.02em;
+    margin-bottom: 1.25rem;
+  }
+
+  .care-body {
+    font-size: 0.9375rem;
+    color: #64748b;
+    line-height: 1.72;
+    margin: 0;
+  }
+
+  .care-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .care-list-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    color: #64748b;
+    line-height: 1.5;
+  }
+
+  .care-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--c-steel);
+    flex-shrink: 0;
+    margin-top: 7px;
+    opacity: 0.7;
+  }
+
+  .care-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--c-steel);
+    text-decoration: none;
+    transition: gap 0.2s;
+  }
+  .care-cta:hover { gap: 0.8rem; }
+
+  /* ── CTA Banner ──────────────────────────────────────────── */
+  .cta-banner {
+    position: relative;
+    background: var(--c-navy);
+    border-radius: 16px;
+    padding: 4.5rem;
+    overflow: hidden;
+    border: 1px solid rgba(74, 127, 165, 0.1);
+  }
+  @media (max-width: 768px) {
+    .cta-banner { padding: 2.5rem 1.75rem; }
+  }
+
+  .cta-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(74, 127, 165, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(74, 127, 165, 0.04) 1px, transparent 1px);
+    background-size: 44px 44px;
+    pointer-events: none;
   }
 </style>
