@@ -1,5 +1,5 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseLayoutHome from "../layouts/BaseLayoutHome.astro";
 import HeroCarousel from "../components/HeroCarousel.astro";
 
 const slides = [
@@ -41,9 +41,10 @@ const slides = [
 ];
 ---
 
-<BaseLayout
-  title="Riro HOME — Ecosistema Residencial Inteligente"
+<BaseLayoutHome
+  title="Ecosistema Residencial Inteligente"
   description="Automatización residencial con hardware de tu propiedad y privacidad 100% local. Home Essentials, Home Premium y Home Accesible."
+  currentPage="soluciones"
 >
   <HeroCarousel slides={slides} />
 
@@ -287,7 +288,7 @@ const slides = [
     </section>
 
   </main>
-</BaseLayout>
+</BaseLayoutHome>
 
 <script>
   /* Cuando el usuario llega directamente a /home, fijar el embudo para que OPS
