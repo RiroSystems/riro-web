@@ -325,11 +325,17 @@
       });
     });
 
-    /* Muro de contención: ocultar la rama contraria según el embudo guardado */
-    const funnel = localStorage.getItem('riro-funnel'); // 'home' | 'ops' | null
-    if (funnel === 'home' || funnel === 'ops') {
-      const opposite = funnel === 'home' ? 'ops' : 'home';
-      document.querySelectorAll(`[data-funnel-link="${opposite}"]`).forEach(el => {
+    /* Muro de contención: solo ocultar el tab contrario cuando se está
+       dentro de una sección de funnel (/home/... o /ops/...), nunca en raíz */
+    const path   = window.location.pathname;
+    const inHome = path.startsWith('/home');
+    const inOps  = path.startsWith('/ops');
+    if (inHome) {
+      document.querySelectorAll('[data-funnel-link="ops"]').forEach(el => {
+        (el as HTMLElement).style.display = 'none';
+      });
+    } else if (inOps) {
+      document.querySelectorAll('[data-funnel-link="home"]').forEach(el => {
         (el as HTMLElement).style.display = 'none';
       });
     }
