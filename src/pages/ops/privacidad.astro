@@ -1,0 +1,477 @@
+---
+import BaseLayoutOps from "../../layouts/BaseLayoutOps.astro";
+---
+
+<BaseLayoutOps
+  title="Privacidad y Auditoría"
+  description="Anonimato por diseño, inferencia matemática y auditoría automática. El sistema que respeta a tus operarios y cumple cualquier inspección laboral. Riro OPS."
+  currentPage="privacidad"
+>
+  <main class="overflow-x-hidden">
+
+    <!-- ══════════ HERO ══════════ -->
+    <section class="relative pt-36 pb-24 px-6 bg-[#1B2A4A] overflow-hidden">
+      <div class="priv-grid-bg" aria-hidden="true"></div>
+      <div class="relative z-10 max-w-5xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="w-8 h-px bg-[#2B96AD]"></span>
+          <span class="text-[#2B96AD] text-xs font-medium tracking-[0.22em] uppercase">Privacidad y Auditoría</span>
+        </div>
+        <h1 class="text-[clamp(2.25rem,5vw,4rem)] font-bold text-white leading-tight mb-6 max-w-3xl">
+          El sistema que mide<br />
+          sin identificar<br />
+          <span class="text-[#2B96AD]">a ninguna persona.</span>
+        </h1>
+        <p class="text-white/55 text-lg max-w-2xl leading-relaxed">
+          Privacidad ética no es un eslogan. Es una restricción técnica implementada en el diseño del sistema, documentada y auditable ante cualquier sindicato, área de RRHH o inspección laboral.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ══════════ TRES BLOQUES ══════════ -->
+
+    <!-- Bloque 1: Anonimato por diseño -->
+    <section class="py-32 px-6 bg-white">
+      <div class="max-w-5xl mx-auto priv-block">
+        <div class="priv-block-label">01 — Anonimato por diseño</div>
+        <div class="priv-block-grid">
+          <div class="priv-block-main">
+            <h2 class="priv-h2">El sistema técnicamente no puede identificar personas.</h2>
+            <p class="priv-p">
+              No existe reconocimiento facial en el stack de Riro OPS. Los modelos de visión artificial operan sobre vectores de movimiento y siluetas: bloques de píxeles sin resolución facial, sin coincidencia con bases de datos biométricas, sin perfiles individuales almacenados.
+            </p>
+            <p class="priv-p">
+              Esta no es una decisión de configuración que pueda cambiarse con un parámetro. Es una restricción de arquitectura: el hardware de procesamiento (Google Coral USB) no tiene la capacidad de ejecutar modelos de reconocimiento facial en tiempo real, y el pipeline de Frigate NVR nunca almacena frames originales.
+            </p>
+          </div>
+          <div class="priv-block-aside">
+            <div class="priv-restriction-card">
+              <div class="prc-header">
+                <span class="prc-dot prc-dot--red"></span>
+                <span class="prc-title">Lo que el sistema no puede hacer</span>
+              </div>
+              <ul class="prc-list">
+                <li>
+                  <span class="prc-mark prc-mark--no">✕</span>
+                  Identificar una persona específica
+                </li>
+                <li>
+                  <span class="prc-mark prc-mark--no">✕</span>
+                  Almacenar imágenes de personas
+                </li>
+                <li>
+                  <span class="prc-mark prc-mark--no">✕</span>
+                  Cruzar datos con bases biométricas externas
+                </li>
+                <li>
+                  <span class="prc-mark prc-mark--no">✕</span>
+                  Enviar datos a servidores fuera de la planta
+                </li>
+                <li>
+                  <span class="prc-mark prc-mark--no">✕</span>
+                  Acceder a zonas de privacidad (baños, vestuarios)
+                </li>
+              </ul>
+              <div class="prc-footer">
+                <span>Restricciones de arquitectura — no de configuración</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Bloque 2: Inferencia matemática / balance de masas -->
+    <section class="py-24 px-6 bg-[#1B2A4A]">
+      <div class="max-w-5xl mx-auto priv-block">
+        <div class="priv-block-label priv-block-label--cyan">02 — Inferencia matemática</div>
+        <div class="priv-block-grid">
+          <div class="priv-block-main">
+            <h2 class="priv-h2 priv-h2--white">Balance de masas para zonas sin cámaras.</h2>
+            <p class="priv-p priv-p--muted">
+              Los baños y vestuarios no tienen cámaras. Punto. La ocupación de esas zonas se calcula con una técnica denominada <strong class="text-white">balance de masas</strong>: contamos cuántas personas entran a una zona y cuántas salen, en períodos definidos. La diferencia es la ocupación estimada.
+            </p>
+            <p class="priv-p priv-p--muted">
+              Es el mismo principio que usa la ingeniería química para calcular inventarios de reactivos sin abrir un reactor. Matemática aplicada a flujos. Sin cámaras dentro, sin datos de identidad, sin posibilidad de perfilar a nadie.
+            </p>
+          </div>
+          <div class="priv-block-aside">
+            <div class="math-card">
+              <div class="math-title">Balance de masas — ejemplo</div>
+              <div class="math-eq">
+                <span class="math-val math-val--in">Entradas: 12</span>
+                <span class="math-op">−</span>
+                <span class="math-val math-val--out">Salidas: 9</span>
+                <div class="math-divider"></div>
+                <span class="math-result">Ocupación estimada: <strong>3</strong></span>
+              </div>
+              <p class="math-note">
+                Sin cámaras interiores. Sin datos personales. Solo conteos en los accesos de la zona.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Comparativa -->
+        <div class="mt-16">
+          <h3 class="text-white/70 text-sm font-medium tracking-[0.14em] uppercase mb-6">Inferencia matemática vs cámaras en zona privada</h3>
+          <div class="compare-table">
+            <div class="compare-row compare-row--header">
+              <div class="compare-cell compare-cell--label"></div>
+              <div class="compare-cell compare-cell--no">Cámaras en el baño</div>
+              <div class="compare-cell compare-cell--si">Balance de masas (Riro)</div>
+            </div>
+            <div class="compare-row">
+              <div class="compare-cell compare-cell--label">Privacidad del operario</div>
+              <div class="compare-cell compare-cell--no">✕ Nula</div>
+              <div class="compare-cell compare-cell--si">✓ Total</div>
+            </div>
+            <div class="compare-row">
+              <div class="compare-cell compare-cell--label">Cumplimiento laboral</div>
+              <div class="compare-cell compare-cell--no">✕ Ilegal en Argentina</div>
+              <div class="compare-cell compare-cell--si">✓ Sin restricción</div>
+            </div>
+            <div class="compare-row">
+              <div class="compare-cell compare-cell--label">Datos almacenados</div>
+              <div class="compare-cell compare-cell--no">Imágenes con identidad</div>
+              <div class="compare-cell compare-cell--si">Solo contadores</div>
+            </div>
+            <div class="compare-row">
+              <div class="compare-cell compare-cell--label">Auditable ante sindicato</div>
+              <div class="compare-cell compare-cell--no">✕ Genera conflicto</div>
+              <div class="compare-cell compare-cell--si">✓ Documentado</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Bloque 3: Paquete auditoría automático -->
+    <section class="py-32 px-6 bg-white">
+      <div class="max-w-5xl mx-auto priv-block">
+        <div class="priv-block-label">03 — Auditoría automática</div>
+        <div class="priv-block-grid">
+          <div class="priv-block-main">
+            <h2 class="priv-h2">Registros de cumplimiento generados sin intervención manual.</h2>
+            <p class="priv-p">
+              El sistema genera semanalmente un paquete de auditoría que documenta qué métricas se procesaron, qué zonas estuvieron bajo monitoreo y qué datos salieron del sistema (que son cero, porque nada sale de la planta).
+            </p>
+            <p class="priv-p">
+              Estos registros están disponibles para descarga interna desde el dashboard y pueden ser presentados ante una inspección laboral, un área de RRHH o una auditoría de cumplimiento sindical. No requieren que Riro Systems esté presente para ser interpretados.
+            </p>
+
+            <div class="audit-checks">
+              <div class="audit-check-item">
+                <span class="audit-check-icon">✓</span>
+                <div>
+                  <strong>Log de zonas monitoreadas</strong>
+                  <p>Qué cámaras estuvieron activas, en qué período y en qué zona de la planta.</p>
+                </div>
+              </div>
+              <div class="audit-check-item">
+                <span class="audit-check-icon">✓</span>
+                <div>
+                  <strong>Historial de datos procesados</strong>
+                  <p>Registro de métricas calculadas y cero registros de identidad almacenados.</p>
+                </div>
+              </div>
+              <div class="audit-check-item">
+                <span class="audit-check-icon">✓</span>
+                <div>
+                  <strong>Certificación de arquitectura</strong>
+                  <p>Documento técnico firmado que describe las restricciones de privacidad implementadas.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="priv-block-aside">
+            <img
+              src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80&fit=crop"
+              alt="Análisis de documentos y auditoría"
+              class="priv-aside-img"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-20 pt-16 border-t border-[rgba(27,42,74,0.07)] text-center">
+          <h3 class="text-2xl md:text-3xl font-bold text-[#1B2A4A] mb-4">
+            ¿Tu área de RRHH o el sindicato tiene preguntas?
+          </h3>
+          <p class="text-[#64748b] mb-8 max-w-lg mx-auto">
+            Preparamos una presentación técnica que responde punto por punto a las objeciones de privacidad más comunes. Sin costo, sin compromiso.
+          </p>
+          <a href="/ops/contacto" class="btn-cyan">
+            Solicitar presentación técnica
+            <span class="btn-arrow">→</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+</BaseLayoutOps>
+
+<style>
+  .priv-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(43, 150, 173, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(43, 150, 173, 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+    pointer-events: none;
+  }
+
+  .priv-block { }
+  .priv-block-label {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: rgba(27, 42, 74, 0.3);
+    margin-bottom: 2.5rem;
+  }
+  .priv-block-label--cyan { color: rgba(43, 150, 173, 0.6); }
+
+  .priv-block-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 4rem;
+    align-items: flex-start;
+  }
+  @media (max-width: 768px) { .priv-block-grid { grid-template-columns: 1fr; } }
+
+  .priv-h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    color: #1B2A4A;
+    line-height: 1.25;
+    margin-bottom: 1.5rem;
+  }
+  .priv-h2--white { color: #fff; }
+
+  .priv-p {
+    font-size: 0.9375rem;
+    color: #64748b;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+  .priv-p--muted { color: rgba(255, 255, 255, 0.5); }
+
+  /* Restriction card */
+  .priv-restriction-card {
+    background: #F4F7FA;
+    border: 1px solid rgba(27, 42, 74, 0.08);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .prc-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid rgba(27, 42, 74, 0.07);
+  }
+  .prc-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .prc-dot--red { background: #ef4444; }
+  .prc-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: rgba(27, 42, 74, 0.55);
+    letter-spacing: 0.04em;
+  }
+  .prc-list {
+    list-style: none;
+    padding: 1.25rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .prc-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.875rem;
+    color: rgba(27, 42, 74, 0.65);
+    line-height: 1.45;
+  }
+  .prc-mark { flex-shrink: 0; font-size: 0.7rem; font-weight: 700; margin-top: 2px; }
+  .prc-mark--no { color: rgba(239, 68, 68, 0.6); }
+  .prc-footer {
+    padding: 0.875rem 1.25rem;
+    border-top: 1px solid rgba(27, 42, 74, 0.07);
+    font-size: 0.75rem;
+    color: rgba(27, 42, 74, 0.3);
+    font-style: italic;
+  }
+
+  /* Math card */
+  .math-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(43, 150, 173, 0.2);
+    border-radius: 10px;
+    padding: 1.75rem;
+  }
+  .math-title {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: rgba(43, 150, 173, 0.7);
+    margin-bottom: 1.5rem;
+  }
+  .math-eq {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .math-val {
+    font-size: 0.9375rem;
+    font-weight: 500;
+  }
+  .math-val--in  { color: rgba(255,255,255,0.65); }
+  .math-val--out { color: rgba(255,255,255,0.65); }
+  .math-op {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.25);
+    padding-left: 0.25rem;
+  }
+  .math-divider {
+    height: 1px;
+    background: rgba(43, 150, 173, 0.3);
+    margin: 0.25rem 0;
+  }
+  .math-result {
+    font-size: 1rem;
+    color: white;
+  }
+  .math-result strong { color: #2B96AD; }
+  .math-note {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.35);
+    line-height: 1.55;
+    font-style: italic;
+    margin: 0;
+  }
+
+  /* Compare table */
+  .compare-table {
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .compare-row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .compare-row:last-child { border-bottom: none; }
+  .compare-row--header { background: rgba(255,255,255,0.04); }
+  .compare-cell {
+    padding: 0.875rem 1rem;
+    font-size: 0.8125rem;
+    line-height: 1.4;
+  }
+  .compare-cell--label { color: rgba(255,255,255,0.5); }
+  .compare-row--header .compare-cell--label {}
+  .compare-cell--no {
+    color: rgba(239,68,68,0.7);
+    border-left: 1px solid rgba(255,255,255,0.06);
+  }
+  .compare-row--header .compare-cell--no {
+    color: rgba(239,68,68,0.5);
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+  }
+  .compare-cell--si {
+    color: #2B96AD;
+    border-left: 1px solid rgba(255,255,255,0.06);
+  }
+  .compare-row--header .compare-cell--si {
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+  }
+  @media (max-width: 640px) {
+    .compare-table { display: none; }
+  }
+
+  /* Audit checks */
+  .audit-checks {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+  .audit-check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem;
+    background: rgba(43,150,173,0.04);
+    border: 1px solid rgba(43,150,173,0.12);
+    border-radius: 8px;
+  }
+  .audit-check-icon {
+    flex-shrink: 0;
+    color: #2B96AD;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-top: 1px;
+  }
+  .audit-check-item strong {
+    display: block;
+    font-size: 0.9375rem;
+    color: #1B2A4A;
+    margin-bottom: 0.25rem;
+  }
+  .audit-check-item p {
+    font-size: 0.875rem;
+    color: #64748b;
+    margin: 0;
+    line-height: 1.55;
+  }
+
+  .priv-aside-img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+  }
+
+  .btn-cyan {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    color: #fff;
+    background: #2B96AD;
+    text-decoration: none;
+    padding: 0.9rem 1.75rem;
+    border-radius: 7px;
+    transition: background 0.2s, box-shadow 0.2s, gap 0.2s;
+  }
+  .btn-cyan:hover {
+    background: #239bb2;
+    box-shadow: 0 0 28px rgba(43, 150, 173, 0.35);
+    gap: 0.75rem;
+  }
+  .btn-arrow { transition: transform 0.2s; }
+  .btn-cyan:hover .btn-arrow { transform: translateX(3px); }
+</style>
