@@ -77,7 +77,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
         <div class="loreatec-block">
           <div class="loreatec-logo-area">
-            <div class="loreatec-badge">Loreatec</div>
+            <img
+              src="/loreatec-logo.png"
+              alt="Loreatec"
+              class="loreatec-logo"
+              width="200"
+              height="65"
+              loading="lazy"
+            />
             <p class="loreatec-domain">loreatec.jp</p>
           </div>
           <div class="loreatec-body">
@@ -239,7 +246,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             </h2>
             <p class="text-white/55 text-lg max-w-lg leading-relaxed mb-8">
               El primer paso es un relevamiento sin compromiso. Evaluamos
-              tu espacio y proponemos solo lo que realmente necesitás.
+              tu espacio y proponemos solo lo que realmente necesitas.
             </p>
             <a href="/contacto" class="qs-btn-cta">
               Hablar con nosotros
@@ -424,20 +431,24 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.5rem;
-    padding-top: 0.25rem;
+    gap: 1rem;
+    padding: 1.75rem;
+    background: #F4F7FA;
+    border: 1px solid rgba(27, 42, 74, 0.06);
+    border-radius: 12px;
   }
-  .loreatec-badge {
-    font-family: 'Inter', system-ui, sans-serif;
-    font-size: 1.75rem;
-    font-weight: 700;
-    color: #1B2A4A;
-    letter-spacing: -0.03em;
+  .loreatec-logo {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    height: auto;
   }
   .loreatec-domain {
     font-size: 0.8125rem;
+    font-weight: 500;
     color: #2B96AD;
     letter-spacing: 0.04em;
+    padding-left: 2px;
   }
   .loreatec-link {
     display: inline-flex;
