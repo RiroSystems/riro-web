@@ -76,13 +76,15 @@ import BaseLayoutOps from "../../layouts/BaseLayoutOps.astro";
       <div class="max-w-5xl mx-auto">
         <div class="loreatec-grid">
           <div class="loreatec-img-col">
-            <img
-              src="https://images.unsplash.com/photo-1492571350019-22de08371fd3?w=800&q=80&fit=crop"
-              alt="Tokyo — sede de Loreatec Japan"
-              class="loreatec-img"
-              loading="lazy"
-            />
-            <div class="loreatec-img-tag">Tokyo, Japón</div>
+            <div class="loreatec-logo-card">
+              <img
+                src="/loreatec-logo.png"
+                alt="Loreatec Co., Ltd."
+                class="loreatec-logo-img"
+                loading="lazy"
+              />
+              <span class="loreatec-logo-cap">Empresa matriz · Tokio, Japón</span>
+            </div>
           </div>
           <div class="loreatec-content">
             <div class="flex items-center gap-3 mb-6">
@@ -326,25 +328,30 @@ import BaseLayoutOps from "../../layouts/BaseLayoutOps.astro";
   }
   @media (max-width: 768px) { .loreatec-grid { grid-template-columns: 1fr; } }
   .loreatec-img-col { position: relative; }
-  .loreatec-img {
-    width: 100%;
-    aspect-ratio: 3/4;
-    object-fit: cover;
+  .loreatec-logo-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    padding: 2.75rem 2rem;
+    background: #fff;
+    border: 1px solid rgba(27, 42, 74, 0.08);
     border-radius: 10px;
+  }
+  .loreatec-logo-img {
+    width: 100%;
+    max-width: 240px;
+    height: auto;
     display: block;
   }
-  .loreatec-img-tag {
-    position: absolute;
-    bottom: 1rem;
-    left: 1rem;
-    background: rgba(27, 42, 74, 0.85);
-    backdrop-filter: blur(8px);
-    border-radius: 5px;
-    padding: 4px 10px;
+  .loreatec-logo-cap {
     font-size: 0.6875rem;
     font-weight: 500;
-    color: rgba(255,255,255,0.65);
-    letter-spacing: 0.06em;
+    color: #94a3b8;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
   }
 
   /* IA grid */

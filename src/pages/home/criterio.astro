@@ -84,12 +84,15 @@ import BaseLayoutHome from "../../layouts/BaseLayoutHome.astro";
       <div class="max-w-6xl mx-auto">
         <div class="loreatec-block">
           <div class="loreatec-left">
-            <img
-              src="https://images.unsplash.com/photo-1513828583688-c52646db42da?w=800&q=80&fit=crop"
-              alt="Arquitectura de precisión japonesa"
-              class="loreatec-img"
-              loading="lazy"
-            />
+            <div class="loreatec-logo-card">
+              <img
+                src="/loreatec-logo.png"
+                alt="Loreatec Co., Ltd."
+                class="loreatec-logo-img"
+                loading="lazy"
+              />
+              <span class="loreatec-logo-cap">Empresa matriz · Tokio, Japón</span>
+            </div>
           </div>
           <div class="loreatec-right">
             <div class="flex items-center gap-3 mb-6">
@@ -397,13 +400,31 @@ import BaseLayoutHome from "../../layouts/BaseLayoutHome.astro";
   @media (max-width: 768px) {
     .loreatec-block { grid-template-columns: 1fr; gap: 2.5rem; }
   }
-  .loreatec-img {
-    width: 100%;
+  .loreatec-logo-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
     aspect-ratio: 4 / 3;
-    object-fit: cover;
-    border-radius: 12px;
-    display: block;
+    padding: 2.5rem;
+    background: #fff;
     border: 1px solid rgba(27, 42, 74, 0.07);
+    border-radius: 12px;
+  }
+  .loreatec-logo-img {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    display: block;
+  }
+  .loreatec-logo-cap {
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #94a3b8;
+    text-align: center;
   }
   .loreatec-badge {
     display: inline-flex;
