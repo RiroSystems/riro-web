@@ -16,7 +16,7 @@ Los catálogos de domótica muestran hogares perfectos. Pantallas táctiles bril
 
 Ningún catálogo muestra lo que pasa cuando el asistente de voz no entiende una pronunciación alterada por una condición neurológica. O cuando el panel táctil está a una altura que no contempló que no todos se paran.
 
-Esos detalles no se ven desde afuera. Se ven cuando vivís el problema.
+Esos detalles no se ven desde afuera. Se ven cuando vives el problema.
 
 ## Qué hace diferente a una automatización de asistencia
 
@@ -46,4 +46,4 @@ Eso cambia el estándar que nos exigimos.
 
 ---
 
-*Si tenés un familiar o alguien a tu cargo que podría beneficiarse de una automatización de asistencia, hablemos. El diagnóstico inicial es sin cargo.*
+*Si tienes un familiar o alguien a tu cargo que podría beneficiarse de una automatización de asistencia, hablemos. El diagnóstico inicial es sin cargo.*

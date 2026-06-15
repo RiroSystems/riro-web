@@ -1,0 +1,447 @@
+---
+import BaseLayoutHome from "../../layouts/BaseLayoutHome.astro";
+---
+
+<BaseLayoutHome
+  title="Metodología"
+  description="No vendemos cajas. Aplicamos un proceso estructurado en 4 pasos: relevamiento, diseño con criterio, instalación local y entrega con propiedad total."
+  currentPage="metodologia"
+>
+  <main class="overflow-x-hidden">
+
+    <!-- ═══════════════════════ HERO ═══════════════════════ -->
+    <section class="relative pt-36 pb-24 px-6 bg-white overflow-hidden">
+      <div class="page-grid-bg" aria-hidden="true"></div>
+      <div class="relative z-10 max-w-6xl mx-auto">
+
+        <div class="flex items-center gap-3 mb-8">
+          <span class="w-8 h-px bg-[#4A7FA5]"></span>
+          <span class="text-[#4A7FA5] text-xs font-medium tracking-[0.22em] uppercase">Cómo trabajamos</span>
+        </div>
+
+        <h1 class="text-[clamp(2.75rem,6vw,5rem)] font-bold leading-[0.95] tracking-tight text-[#1B2A4A] mb-6">
+          No vendemos cajas.<br />
+          <span class="h1-outline">Aplicamos un proceso.</span>
+        </h1>
+
+        <p class="text-[#64748b] text-lg md:text-xl max-w-2xl leading-relaxed">
+          Cada ecosistema que diseñamos empieza por entender el espacio y termina
+          cuando el cliente tiene propiedad real sobre su sistema. Cuatro pasos,
+          sin atajos.
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════ 4 PASOS ═══════════════════════ -->
+    <section class="py-24 px-6 bg-white">
+      <div class="max-w-6xl mx-auto">
+
+        <!-- PASO 1 -->
+        <div class="step-row">
+          <div class="step-left">
+            <div class="step-number">01</div>
+            <div class="step-line" aria-hidden="true"></div>
+          </div>
+          <div class="step-content">
+            <div class="step-photo-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=80&fit=crop"
+                alt="Visita técnica en hogar"
+                class="step-photo"
+                loading="lazy"
+              />
+            </div>
+            <div class="flex items-center gap-3 mb-4">
+              <span class="step-tag">Primer contacto</span>
+            </div>
+            <h2 class="step-title">Relevamiento</h2>
+            <p class="step-desc">
+              El hogar habla antes de que diseñemos algo. Realizamos una visita técnica
+              para entender el espacio, las rutinas y los puntos de fricción reales.
+              No usamos cuestionarios genéricos: es una conversación estructurada que
+              produce un mapa de automatización honesto.
+            </p>
+            <p class="step-desc mt-3">
+              El resultado no es una propuesta de ventas. Es un diagnóstico técnico que
+              define qué automatizar, en qué orden, y con qué presupuesto real.
+            </p>
+            <div class="step-detail-list">
+              <p class="step-detail-heading">Lo que analizamos</p>
+              <ul class="step-list">
+                <li>Planta y distribución del espacio</li>
+                <li>Rutinas del hogar y patrones de uso</li>
+                <li>Infraestructura eléctrica y de red existente</li>
+                <li>Accesos, perímetro y zonas sensibles</li>
+                <li>Puntos de fricción declarados vs. observados</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- PASO 2 -->
+        <div class="step-row">
+          <div class="step-left">
+            <div class="step-number">02</div>
+            <div class="step-line" aria-hidden="true"></div>
+          </div>
+          <div class="step-content">
+            <div class="step-photo-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80&fit=crop"
+                alt="Diseño técnico de ecosistema"
+                class="step-photo"
+                loading="lazy"
+              />
+            </div>
+            <div class="flex items-center gap-3 mb-4">
+              <span class="step-tag">Arquitectura</span>
+            </div>
+            <h2 class="step-title">Diseño con criterio</h2>
+            <p class="step-desc">
+              Elegimos solo lo que resuelve un problema real. Cada dispositivo propuesto
+              tiene una función específica y medible. No instalamos tecnología para que el
+              catálogo quede completo.
+            </p>
+            <p class="step-desc mt-3">
+              El diseño incluye el diagrama de arquitectura del ecosistema, la selección
+              de hardware con justificación funcional y un presupuesto cerrado sin costos
+              ocultos. Sin propuestas infladas ni items decorativos.
+            </p>
+            <div class="step-detail-list">
+              <p class="step-detail-heading">Lo que producimos</p>
+              <ul class="step-list">
+                <li>Diagrama de arquitectura del ecosistema</li>
+                <li>Lista de hardware con justificación funcional</li>
+                <li>Lógica de automatización documentada</li>
+                <li>Presupuesto cerrado sin costos variables</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- PASO 3 -->
+        <div class="step-row">
+          <div class="step-left">
+            <div class="step-number">03</div>
+            <div class="step-line" aria-hidden="true"></div>
+          </div>
+          <div class="step-content">
+            <div class="step-photo-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1558002038-1055907df827?w=900&q=80&fit=crop"
+                alt="Instalación de red local en hogar"
+                class="step-photo"
+                loading="lazy"
+              />
+            </div>
+            <div class="flex items-center gap-3 mb-4">
+              <span class="step-tag">Implementación</span>
+            </div>
+            <h2 class="step-title">Instalación de la red local</h2>
+            <p class="step-desc">
+              El ecosistema funciona sobre tu infraestructura, no sobre la nube.
+              Instalamos y configuramos el servidor local, conectamos los dispositivos
+              y validamos cada automatización en condiciones reales antes de dar el
+              sistema por entregado.
+            </p>
+            <p class="step-desc mt-3">
+              La red de dispositivos IoT queda segmentada del resto de tu red doméstica.
+              La lógica de control corre localmente, con tiempos de respuesta menores
+              a 500 ms sin depender de conexión a internet.
+            </p>
+            <div class="step-detail-list">
+              <p class="step-detail-heading">Lo que configuramos</p>
+              <ul class="step-list">
+                <li>Servidor local (NUC o hardware equivalente)</li>
+                <li>Red segmentada para dispositivos IoT</li>
+                <li>Lógica de automatización y reglas de control</li>
+                <li>Integración entre subsistemas (cámaras, accesos, clima)</li>
+                <li>Validación de cada automatización con el cliente presente</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- PASO 4 -->
+        <div class="step-row step-row--last">
+          <div class="step-left">
+            <div class="step-number">04</div>
+          </div>
+          <div class="step-content">
+            <div class="step-photo-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=900&q=80&fit=crop"
+                alt="Entrega del sistema al cliente"
+                class="step-photo"
+                loading="lazy"
+              />
+            </div>
+            <div class="flex items-center gap-3 mb-4">
+              <span class="step-tag">Entrega</span>
+            </div>
+            <h2 class="step-title">Soporte y entrega con propiedad</h2>
+            <p class="step-desc">
+              El sistema es tuyo desde el primer día. Entregamos acceso de administrador
+              completo, documentamos cada decisión de configuración y explicamos el
+              funcionamiento del ecosistema. No somos el intermediario necesario para
+              que tu hogar opere.
+            </p>
+            <p class="step-desc mt-3">
+              Treinta días de soporte post-instalación están incluidos en todo proyecto.
+              Si después de eso quieres acompañamiento continuo, existe Riro Care — pero
+              es una decisión que tomas tú, no una condición de entrega.
+            </p>
+            <div class="step-detail-list">
+              <p class="step-detail-heading">Lo que recibes</p>
+              <ul class="step-list">
+                <li>Acceso de administrador al servidor y todos los subsistemas</li>
+                <li>Documentación completa de la configuración</li>
+                <li>Manual de uso adaptado al hogar</li>
+                <li>30 días de soporte técnico post-instalación incluido</li>
+                <li>El hardware, que es tuyo desde el primer día</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════ CTA ══════════════════════════ -->
+    <section class="py-28 px-6 bg-[#F4F7FA]">
+      <div class="max-w-6xl mx-auto">
+        <div class="cta-banner">
+          <div class="cta-grid" aria-hidden="true"></div>
+          <div class="relative z-10">
+            <div class="flex items-center gap-3 mb-8">
+              <span class="w-8 h-px bg-[#4A7FA5]"></span>
+              <span class="text-[#4A7FA5] text-xs font-medium tracking-[0.22em] uppercase">Primer paso</span>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 max-w-2xl leading-tight">
+              El relevamiento empieza con una conversación honesta.
+            </h2>
+            <p class="text-white/55 text-lg max-w-xl leading-relaxed mb-10">
+              Sin propuesta inflada, sin tecnología de adorno. Agendamos una visita
+              técnica y evaluamos qué nivel de automatización tiene sentido para tu hogar.
+            </p>
+            <a href="/home/contacto" class="btn-steel">
+              Contactar
+              <span class="btn-arrow">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</BaseLayoutHome>
+
+<style>
+  :root {
+    --c-navy:  #1B2A4A;
+    --c-steel: #4A7FA5;
+    --c-bg:    #F4F7FA;
+  }
+
+  /* Header */
+  .page-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(74, 127, 165, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(74, 127, 165, 0.03) 1px, transparent 1px);
+    background-size: 64px 64px;
+    pointer-events: none;
+  }
+  .h1-outline {
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(27, 42, 74, 0.18);
+  }
+
+  /* Pasos */
+  .step-row {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 0 2.5rem;
+    padding-bottom: 5rem;
+    border-bottom: 1px solid rgba(27, 42, 74, 0.06);
+    margin-bottom: 5rem;
+  }
+  .step-row--last {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  @media (max-width: 640px) {
+    .step-row {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    .step-line { display: none; }
+  }
+
+  .step-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0.25rem;
+  }
+  .step-number {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: #4A7FA5;
+    background: rgba(74, 127, 165, 0.1);
+    border: 1px solid rgba(74, 127, 165, 0.22);
+    padding: 3px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+  .step-line {
+    width: 1px;
+    flex: 1;
+    background: rgba(74, 127, 165, 0.15);
+    margin-top: 1rem;
+    min-height: 3rem;
+  }
+
+  .step-content { min-width: 0; }
+
+  .step-photo-wrap {
+    width: 100%;
+    height: 280px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(27, 42, 74, 0.07);
+  }
+  .step-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+  .step-photo-wrap:hover .step-photo { transform: scale(1.03); }
+
+  .step-tag {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #4A7FA5;
+    background: rgba(74, 127, 165, 0.08);
+    border: 1px solid rgba(74, 127, 165, 0.2);
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+
+  .step-title {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: var(--c-navy);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 1.25rem;
+  }
+
+  .step-desc {
+    font-size: 0.9375rem;
+    color: #64748b;
+    line-height: 1.72;
+    margin: 0;
+    max-width: 640px;
+  }
+
+  .step-detail-list {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: #F4F7FA;
+    border-radius: 10px;
+    border: 1px solid rgba(27, 42, 74, 0.06);
+    max-width: 640px;
+  }
+  .step-detail-heading {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #94a3b8;
+    margin: 0 0 0.875rem;
+  }
+  .step-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .step-list li {
+    font-size: 0.875rem;
+    color: #475569;
+    line-height: 1.5;
+    padding-left: 1rem;
+    position: relative;
+  }
+  .step-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #4A7FA5;
+    opacity: 0.6;
+  }
+
+  /* CTA */
+  .cta-banner {
+    position: relative;
+    background: var(--c-navy);
+    border-radius: 16px;
+    padding: 4.5rem;
+    overflow: hidden;
+    border: 1px solid rgba(74, 127, 165, 0.1);
+  }
+  @media (max-width: 768px) { .cta-banner { padding: 2.5rem 1.75rem; } }
+  .cta-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(74, 127, 165, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(74, 127, 165, 0.04) 1px, transparent 1px);
+    background-size: 44px 44px;
+    pointer-events: none;
+  }
+
+  .btn-steel {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    color: #fff;
+    background: #4A7FA5;
+    text-decoration: none;
+    padding: 0.9rem 1.75rem;
+    border-radius: 7px;
+    transition: background 0.2s, box-shadow 0.2s, gap 0.2s;
+  }
+  .btn-steel:hover {
+    background: #5a8fb5;
+    box-shadow: 0 0 28px rgba(74, 127, 165, 0.4);
+    gap: 0.75rem;
+  }
+  .btn-arrow { transition: transform 0.2s; }
+  .btn-steel:hover .btn-arrow { transform: translateX(3px); }
+</style>

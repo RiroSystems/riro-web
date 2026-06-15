@@ -7,25 +7,19 @@
 
     <!-- Logotipo -->
     <a href="/" class="navbar-logo" aria-label="Riro Systems — Inicio">
-      <span class="logo-riro">RIRO</span><span class="logo-sep">·</span><span class="logo-systems">SYSTEMS</span>
+      <img src="/Riro.svg" alt="Riro Systems" class="navbar-logo-img" />
     </a>
 
     <!-- Navegación desktop -->
     <nav class="navbar-nav" aria-label="Navegación principal">
       <a href="/#inicio" class="nav-link">Inicio</a>
-      <a href="/home" class="nav-link">
-        <span class="badge badge-home">HOME</span>
-      </a>
-      <a href="/ops" class="nav-link">
-        <span class="badge badge-ops">OPS</span>
-      </a>
-      <a href="/#care" class="nav-link">Riro Care</a>
-      <a href="/#proceso" class="nav-link">Proceso</a>
+      <a href="/quienes-somos" class="nav-link">Quiénes somos</a>
+      <a href="/blog" class="nav-link">Blog</a>
       <a href="/contacto" class="nav-link">Contacto</a>
     </nav>
 
     <!-- CTA principal -->
-    <a href="/contacto" class="btn-demo">Solicitar Demo</a>
+    <a href="/contacto" class="btn-demo">Contacto</a>
 
     <!-- Botón hamburguesa (mobile) -->
     <button
@@ -46,43 +40,34 @@
   <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
     <nav aria-label="Navegación móvil">
       <a href="/#inicio"   class="mobile-link">Inicio</a>
-      <a href="/home"     class="mobile-link">RIRO HOME</a>
-      <a href="/ops"      class="mobile-link">RIRO OPS</a>
-      <a href="/#care"     class="mobile-link">Riro Care</a>
-      <a href="/#proceso"  class="mobile-link">Proceso</a>
+      <a href="/quienes-somos" class="mobile-link">Quiénes somos</a>
       <a href="/contacto"  class="mobile-link">Contacto</a>
-      <a href="/contacto" class="mobile-cta">Solicitar Demo</a>
+      <a href="/contacto" class="mobile-cta">Contacto</a>
     </nav>
   </div>
 </header>
 
 <style>
-  /* ── Tokens ─────────────────────────────────────────────── */
-  :root {
-    --c-navy:    #0D1B2A;
-    --c-charcoal:#1C2B3A;
-    --c-cyan:    #00C8FF;
-    --c-steel:   #4A7FA5;
-    --c-white:   #FFFFFF;
-    --c-muted:   rgba(255, 255, 255, 0.55);
-    --c-subtle:  rgba(255, 255, 255, 0.07);
-  }
+  /* ── Tokens locales (valores explícitos para evitar conflictos con Footer) */
+  .navbar        { --nb-navy:   #1B2A4A; --nb-cyan: #2B96AD; }
+  .nav-link      { --nb-muted:  rgba(27, 42, 74, 0.62); }
+  .hamburger     { --nb-subtle: rgba(27, 42, 74, 0.05); }
 
   /* ── Contenedor principal ───────────────────────────────── */
   .navbar {
     position: fixed;
     inset: 0 0 auto 0;
     z-index: 100;
-    background: rgba(13, 27, 42, 0.65);
+    background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
-    border-bottom: 1px solid rgba(0, 200, 255, 0.07);
+    border-bottom: 1px solid rgba(27, 42, 74, 0.08);
     transition: background 0.3s ease, border-color 0.3s ease;
   }
 
   .navbar.scrolled {
-    background: rgba(13, 27, 42, 0.94);
-    border-bottom-color: rgba(0, 200, 255, 0.14);
+    background: rgba(255, 255, 255, 0.97);
+    border-bottom-color: rgba(27, 42, 74, 0.12);
   }
 
   .navbar-inner {
@@ -99,37 +84,14 @@
   .navbar-logo {
     text-decoration: none;
     display: flex;
-    align-items: baseline;
+    align-items: center;
     flex-shrink: 0;
-    user-select: none;
   }
 
-  .logo-riro {
-    font-family: 'Inter', 'DM Sans', system-ui, sans-serif;
-    font-weight: 700;
-    font-size: 1.125rem;
-    letter-spacing: 0.14em;
-    color: var(--c-white);
-  }
-
-  .logo-sep {
-    font-weight: 700;
-    font-size: 1.125rem;
-    color: var(--c-cyan);
-    margin: 0 2px;
-    line-height: 1;
-    /* El punto es el nodo — referencia a la Matriz Conectada */
-  }
-
-  .logo-systems {
-    font-family: 'Inter', 'DM Sans', system-ui, sans-serif;
-    font-weight: 400;
-    font-size: 0.575rem;
-    letter-spacing: 0.26em;
-    color: rgba(255, 255, 255, 0.4);
-    text-transform: uppercase;
-    align-self: flex-end;
-    margin-bottom: 2px;
+  .navbar-logo-img {
+    height: 76px;
+    width: auto;
+    display: block;
   }
 
   /* ── Nav desktop ────────────────────────────────────────── */
@@ -144,7 +106,7 @@
     font-family: 'Inter', 'DM Sans', system-ui, sans-serif;
     font-weight: 400;
     font-size: 0.875rem;
-    color: var(--c-muted);
+    color: rgba(27, 42, 74, 0.62);
     text-decoration: none;
     padding: 0.375rem 0.75rem;
     border-radius: 6px;
@@ -155,8 +117,8 @@
   }
 
   .nav-link:hover {
-    color: var(--c-white);
-    background: var(--c-subtle);
+    color: #1B2A4A;
+    background: rgba(27, 42, 74, 0.05);
   }
 
   /* Badges HOME / OPS */
@@ -170,7 +132,7 @@
   }
 
   .badge-home {
-    color: var(--c-steel);
+    color: #4A7FA5;
     background: rgba(74, 127, 165, 0.12);
     border: 1px solid rgba(74, 127, 165, 0.28);
   }
@@ -181,14 +143,14 @@
   }
 
   .badge-ops {
-    color: var(--c-cyan);
-    background: rgba(0, 200, 255, 0.08);
-    border: 1px solid rgba(0, 200, 255, 0.22);
+    color: #2B96AD;
+    background: rgba(43, 150, 173, 0.08);
+    border: 1px solid rgba(43, 150, 173, 0.25);
   }
 
   .nav-link:hover .badge-ops {
-    background: rgba(0, 200, 255, 0.16);
-    border-color: rgba(0, 200, 255, 0.44);
+    background: rgba(43, 150, 173, 0.16);
+    border-color: rgba(43, 150, 173, 0.45);
   }
 
   /* ── CTA "Solicitar Demo" ───────────────────────────────── */
@@ -198,8 +160,8 @@
     font-weight: 500;
     font-size: 0.8125rem;
     letter-spacing: 0.015em;
-    color: var(--c-navy);
-    background: var(--c-cyan);
+    color: #FFFFFF;
+    background: #1B2A4A;
     text-decoration: none;
     padding: 0.45rem 1.1rem;
     border-radius: 6px;
@@ -208,8 +170,8 @@
   }
 
   .btn-demo:hover {
-    background: #19d4ff;
-    box-shadow: 0 0 20px rgba(0, 200, 255, 0.32);
+    background: #253761;
+    box-shadow: 0 0 20px rgba(27, 42, 74, 0.2);
   }
 
   /* ── Hamburguesa ────────────────────────────────────────── */
@@ -230,14 +192,14 @@
     display: block;
     width: 22px;
     height: 2px;
-    background: rgba(255, 255, 255, 0.75);
+    background: rgba(27, 42, 74, 0.65);
     border-radius: 2px;
     transform-origin: center;
     transition: transform 0.25s ease, opacity 0.2s ease, background 0.2s;
   }
 
   .hamburger:hover span {
-    background: var(--c-white);
+    background: #1B2A4A;
   }
 
   /* Animación X al abrir */
@@ -257,8 +219,8 @@
     display: none; /* visible solo en mobile via media query */
     overflow: hidden;
     max-height: 0;
-    background: rgba(13, 27, 42, 0.98);
-    border-top: 1px solid rgba(0, 200, 255, 0.08);
+    background: rgba(255, 255, 255, 0.98);
+    border-top: 1px solid rgba(27, 42, 74, 0.08);
     transition: max-height 0.32s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
@@ -276,10 +238,10 @@
     font-family: 'Inter', 'DM Sans', system-ui, sans-serif;
     font-weight: 400;
     font-size: 1rem;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(27, 42, 74, 0.65);
     text-decoration: none;
     padding: 0.75rem 0.25rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(27, 42, 74, 0.06);
     transition: color 0.18s;
   }
 
@@ -288,7 +250,7 @@
   }
 
   .mobile-link:hover {
-    color: var(--c-white);
+    color: #1B2A4A;
   }
 
   .mobile-cta {
@@ -296,8 +258,8 @@
     font-family: 'Inter', 'DM Sans', system-ui, sans-serif;
     font-weight: 500;
     font-size: 0.9375rem;
-    color: var(--c-navy);
-    background: var(--c-cyan);
+    color: #FFFFFF;
+    background: #1B2A4A;
     text-decoration: none;
     text-align: center;
     padding: 0.8rem 1rem;
@@ -307,7 +269,7 @@
   }
 
   .mobile-cta:hover {
-    background: #19d4ff;
+    background: #253761;
   }
 
   /* ── Breakpoint mobile ──────────────────────────────────── */
@@ -354,5 +316,20 @@
         menu?.classList.remove('open');
       });
     });
+
+    /* Muro de contención: solo ocultar el tab contrario cuando se está
+       dentro de una sección de funnel (/home/... o /ops/...), nunca en raíz */
+    const path   = window.location.pathname;
+    const inHome = path.startsWith('/home');
+    const inOps  = path.startsWith('/ops');
+    if (inHome) {
+      document.querySelectorAll('[data-funnel-link="ops"]').forEach(el => {
+        (el as HTMLElement).style.display = 'none';
+      });
+    } else if (inOps) {
+      document.querySelectorAll('[data-funnel-link="home"]').forEach(el => {
+        (el as HTMLElement).style.display = 'none';
+      });
+    }
   })();
 </script>

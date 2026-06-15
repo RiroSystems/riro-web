@@ -1,0 +1,266 @@
+---
+interface Slide {
+  image: string;
+  tag: string;
+  title: string;
+  desc: string;
+  cta?: { label: string; href: string };
+  duration?: number;
+}
+
+interface Props {
+  slides: Slide[];
+}
+
+const { slides } = Astro.props;
+const defaultCta = { label: "Solicitar evaluación", href: "/contacto" };
+---
+
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<section class="hero-carousel" aria-label="Carousel principal">
+  <div class="swiper hero-swiper">
+    <div class="swiper-wrapper">
+      {slides.map((slide, i) => {
+        const cta = slide.cta ?? defaultCta;
+        return (
+          <div
+            class="swiper-slide hero-slide"
+            style={`background-image: url('${slide.image}')`}
+            aria-label={`Slide ${i + 1} de ${slides.length}`}
+            data-swiper-autoplay={slide.duration ?? 5000}
+          >
+            <div class="slide-overlay" aria-hidden="true"></div>
+
+            <div class="slide-content">
+              <div class="slide-eyebrow">
+                <span class="eyebrow-line" aria-hidden="true"></span>
+                <span class="eyebrow-tag">{slide.tag}</span>
+              </div>
+              <h2 class="slide-title">
+                {slide.title.split('\n').map((line, j, arr) => (
+                  <span class="title-line">{line}{j < arr.length - 1 && <br />}</span>
+                ))}
+              </h2>
+              <p class="slide-desc">{slide.desc}</p>
+              <a href={cta.href} class="slide-cta">
+                {cta.label}
+                <span class="cta-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+
+    <button class="swiper-button-prev" aria-label="Slide anterior"></button>
+    <button class="swiper-button-next" aria-label="Slide siguiente"></button>
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
+<script is:inline src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function () {
+    new Swiper('.hero-swiper', {
+      loop: true,
+      speed: 900,
+      effect: 'fade',
+      fadeEffect: { crossFade: true },
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      a11y: {
+        prevSlideMessage: 'Slide anterior',
+        nextSlideMessage: 'Slide siguiente',
+      },
+    });
+  });
+</script>
+
+<style>
+  .hero-carousel {
+    position: relative;
+    width: 100%;
+  }
+
+  .hero-swiper {
+    width: 100%;
+    height: 100vh;
+    min-height: 580px;
+  }
+
+  .hero-slide {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+  }
+
+  .slide-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to right, rgba(10, 20, 36, 0.90) 0%, rgba(10, 20, 36, 0.60) 55%, rgba(10, 20, 36, 0.25) 100%),
+      linear-gradient(to top, rgba(10, 20, 36, 0.50) 0%, transparent 40%);
+  }
+
+  .slide-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    padding-top: 64px;
+  }
+
+  .slide-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .eyebrow-line {
+    display: block;
+    width: 2rem;
+    height: 1px;
+    background: #2B96AD;
+    flex-shrink: 0;
+  }
+
+  .eyebrow-tag {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #2B96AD;
+  }
+
+  .slide-title {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: clamp(2rem, 5vw, 4.25rem);
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    max-width: 820px;
+    margin-bottom: 1.5rem;
+  }
+
+  .title-line {
+    display: block;
+  }
+
+  .slide-desc {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: clamp(1rem, 1.5vw, 1.1875rem);
+    color: rgba(255, 255, 255, 0.68);
+    max-width: 560px;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+  }
+
+  .slide-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    color: #ffffff;
+    background: #1B2A4A;
+    text-decoration: none;
+    padding: 0.875rem 1.75rem;
+    border-radius: 7px;
+    transition: background 0.2s ease, box-shadow 0.2s ease, gap 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .slide-cta:hover {
+    background: #253761;
+    box-shadow: 0 0 32px rgba(27, 42, 74, 0.35);
+    gap: 0.75rem;
+  }
+
+  .cta-arrow {
+    transition: transform 0.2s ease;
+  }
+
+  .slide-cta:hover .cta-arrow {
+    transform: translateX(3px);
+  }
+
+  /* ── Flechas ─────────────────────────────────────────────── */
+  :global(.hero-swiper .swiper-button-prev),
+  :global(.hero-swiper .swiper-button-next) {
+    width: 48px !important;
+    height: 48px !important;
+    background: rgba(0, 0, 0, 0.35) !important;
+    border-radius: 50% !important;
+    backdrop-filter: blur(8px) !important;
+    color: rgba(255, 255, 255, 0.80) !important;
+    transition: background 0.2s, color 0.2s !important;
+  }
+
+  :global(.hero-swiper .swiper-button-prev:hover),
+  :global(.hero-swiper .swiper-button-next:hover) {
+    background: rgba(43, 150, 173, 0.35) !important;
+    color: #ffffff !important;
+  }
+
+  :global(.hero-swiper .swiper-button-prev::after),
+  :global(.hero-swiper .swiper-button-next::after) {
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+  }
+
+  /* ── Dots ────────────────────────────────────────────────── */
+  :global(.hero-swiper .swiper-pagination) {
+    bottom: 1.75rem !important;
+  }
+
+  :global(.hero-swiper .swiper-pagination-bullet) {
+    width: 8px !important;
+    height: 8px !important;
+    background: rgba(255, 255, 255, 0.40) !important;
+    opacity: 1 !important;
+    transition: background 0.25s, transform 0.25s !important;
+  }
+
+  :global(.hero-swiper .swiper-pagination-bullet-active) {
+    background: #2B96AD !important;
+    transform: scale(1.4) !important;
+  }
+
+  /* ── Responsive ──────────────────────────────────────────── */
+  @media (max-width: 768px) {
+    .hero-swiper {
+      height: 92svh;
+      min-height: 520px;
+    }
+
+    :global(.hero-swiper .swiper-button-prev),
+    :global(.hero-swiper .swiper-button-next) {
+      display: none !important;
+    }
+
+    .slide-content {
+      padding-top: 80px;
+    }
+  }
+</style>

@@ -1,0 +1,447 @@
+---
+import BaseLayoutOps from "../../layouts/BaseLayoutOps.astro";
+---
+
+<BaseLayoutOps
+  title="Evaluación Técnica"
+  description="Inicia una conversación técnica directa con Riro Systems. Evaluación sin costo para manufactura, logística y plantas industriales."
+  currentPage="contacto"
+>
+  <main class="overflow-x-hidden">
+
+    <!-- ══════════ HERO ══════════ -->
+    <section class="relative pt-36 pb-24 px-6 bg-[#1B2A4A] overflow-hidden">
+      <div class="cont-grid-bg" aria-hidden="true"></div>
+      <div class="relative z-10 max-w-5xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="w-8 h-px bg-[#2B96AD]"></span>
+          <span class="text-[#2B96AD] text-xs font-medium tracking-[0.22em] uppercase">Evaluación Técnica</span>
+        </div>
+        <h1 class="text-[clamp(2.25rem,5vw,4rem)] font-bold text-white leading-tight mb-6 max-w-3xl">
+          Una conversación técnica.<br />
+          <span class="text-[#2B96AD]">Sin demos innecesarias.</span>
+        </h1>
+        <p class="text-white/55 text-lg max-w-xl leading-relaxed">
+          Describe tu planta, tu proceso y el problema que quieres resolver. Un ingeniero de Riro Systems analiza si nuestra plataforma es la solución adecuada para ese caso específico.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ══════════ PILARES ══════════ -->
+    <section class="py-20 px-6 bg-white border-b border-[rgba(27,42,74,0.07)]">
+      <div class="max-w-5xl mx-auto">
+        <div class="pillars-grid">
+          <div class="pillar">
+            <span class="pillar-num">01</span>
+            <h3 class="pillar-title">Sin compromiso previo</h3>
+            <p class="pillar-desc">La evaluación técnica no genera obligación de avanzar. Si el sistema no es la solución correcta para tu caso, te lo decimos directamente.</p>
+          </div>
+          <div class="pillar pillar--border">
+            <span class="pillar-num">02</span>
+            <h3 class="pillar-title">Respuesta en 48 horas</h3>
+            <p class="pillar-desc">Un ingeniero analiza tu caso y responde con una evaluación real, no una respuesta automática ni un folleto de producto.</p>
+          </div>
+          <div class="pillar pillar--border">
+            <span class="pillar-num">03</span>
+            <h3 class="pillar-title">Conversación directa</h3>
+            <p class="pillar-desc">Sin intermediarios de ventas, sin proceso de demos largas. Cuando hay una oportunidad real, coordinamos directamente con el responsable técnico.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════ FORMULARIO + DATOS ══════════ -->
+    <section class="py-32 px-6 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="contact-grid">
+
+          <!-- Formulario -->
+          <div class="contact-form-col">
+            <h2 class="text-2xl md:text-3xl font-bold text-[#1B2A4A] mb-2 leading-tight">
+              Solicitar evaluación técnica
+            </h2>
+            <p class="text-[#64748b] text-sm mb-8">
+              Completa los datos. Toda la información que compartes es confidencial.
+            </p>
+
+            <form class="ops-form" name="ops-contacto" method="POST" action="/gracias">
+              <input type="hidden" name="form-name" value="ops-contacto" />
+              <input type="hidden" name="funnel" value="ops" />
+
+              <div class="form-row form-row--half">
+                <div class="form-group">
+                  <label for="nombre">Nombre y apellido <span class="req">*</span></label>
+                  <input type="text" id="nombre" name="nombre" required placeholder="Juan García" />
+                </div>
+                <div class="form-group">
+                  <label for="cargo">Cargo / Rol</label>
+                  <input type="text" id="cargo" name="cargo" placeholder="Dir. de Operaciones" />
+                </div>
+              </div>
+
+              <div class="form-row form-row--half">
+                <div class="form-group">
+                  <label for="email">Email corporativo <span class="req">*</span></label>
+                  <input type="email" id="email" name="email" required placeholder="juan@empresa.com" />
+                </div>
+                <div class="form-group">
+                  <label for="telefono">Teléfono</label>
+                  <input type="tel" id="telefono" name="telefono" placeholder="+51 9XX XXX XXX" />
+                </div>
+              </div>
+
+              <div class="form-row form-row--half">
+                <div class="form-group">
+                  <label for="rubro">Rubro de la planta <span class="req">*</span></label>
+                  <select id="rubro" name="rubro" required>
+                    <option value="" disabled selected>Seleccionar...</option>
+                    <option value="alimentos">Alimentos y bebidas</option>
+                    <option value="farmaceutica">Farmacéutica</option>
+                    <option value="automotriz">Automotriz / Autopartes</option>
+                    <option value="textil">Textil / Confección</option>
+                    <option value="quimica">Química / Petroquímica</option>
+                    <option value="metalmecanica">Metalmecánica</option>
+                    <option value="logistica">Logística / Distribución</option>
+                    <option value="plasticos">Plásticos / Caucho</option>
+                    <option value="electronica">Electrónica / Electrodomésticos</option>
+                    <option value="otro">Otro</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="tamano">Tamaño de la planta <span class="req">*</span></label>
+                  <select id="tamano" name="tamano" required>
+                    <option value="" disabled selected>Seleccionar...</option>
+                    <option value="pequeña">Pequeña (hasta 50 operarios)</option>
+                    <option value="mediana">Mediana (50–200 operarios)</option>
+                    <option value="grande">Grande (200–500 operarios)</option>
+                    <option value="muy-grande">Muy grande (+500 operarios)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="problema">¿Qué problema quieres resolver? <span class="req">*</span></label>
+                <textarea
+                  id="problema"
+                  name="problema"
+                  required
+                  rows="5"
+                  placeholder="Describe el proceso, el problema de medición o la ineficiencia que quieres resolver. Cuanto más contexto, mejor será la evaluación."
+                ></textarea>
+              </div>
+
+              <div class="form-group form-group--checkbox">
+                <label class="checkbox-label">
+                  <input type="checkbox" name="privacidad" required />
+                  <span>Acepté la <a href="/privacidad" target="_blank">Política de Privacidad</a>. Entiendo que mi información es confidencial y no será compartida con terceros.</span>
+                </label>
+              </div>
+
+              <button type="submit" class="btn-submit">
+                Enviar solicitud de evaluación
+                <span class="btn-arrow">→</span>
+              </button>
+            </form>
+          </div>
+
+          <!-- Datos de contacto -->
+          <div class="contact-aside-col">
+
+            <div class="contact-aside-block">
+              <h3 class="aside-title">Contacto directo</h3>
+              <p class="aside-desc">
+                Si prefieres una respuesta más rápida, escríbenos directamente por email. El mismo ingeniero que evalúa las solicitudes del formulario responde por este canal.
+              </p>
+              <a
+                href="mailto:rirosystem@loreatec.jp?subject=Solicitud%20de%20evaluaci%C3%B3n%20t%C3%A9cnica&body=Hola%2C%20quiero%20solicitar%20una%20evaluaci%C3%B3n%20t%C3%A9cnica%20para%20mi%20planta."
+                class="btn-email-contacto"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" class="email-icon">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+                Escribir por email
+              </a>
+              <p class="aside-email-line">
+                o escríbenos a:
+                <a href="mailto:rirosystem@loreatec.jp" class="aside-email-link">rirosystem@loreatec.jp</a>
+              </p>
+            </div>
+
+            <div class="contact-aside-block contact-aside-block--border">
+              <h3 class="aside-title">¿Para qué tipo de planta?</h3>
+              <ul class="aside-list">
+                <li>
+                  <span class="aside-mark">→</span>
+                  Manufactura discreta (autopartes, electrónica, textil)
+                </li>
+                <li>
+                  <span class="aside-mark">→</span>
+                  Alimentos y bebidas con normativas de higiene estrictas
+                </li>
+                <li>
+                  <span class="aside-mark">→</span>
+                  Farmacéutica con cumplimiento regulatorio (GMP / DIGEMID)
+                </li>
+                <li>
+                  <span class="aside-mark">→</span>
+                  Logística y centros de distribución
+                </li>
+                <li>
+                  <span class="aside-mark">→</span>
+                  Cualquier planta con más de 15 operarios en piso
+                </li>
+              </ul>
+            </div>
+
+            <div class="contact-promise">
+              <p>
+                "Antes de presentar una propuesta, un ingeniero de Riro Systems visita la planta o realiza una videollamada técnica para validar que el sistema es la solución correcta para el caso específico."
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</BaseLayoutOps>
+
+<style>
+  .cont-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(43, 150, 173, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(43, 150, 173, 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+    pointer-events: none;
+  }
+
+  /* Pillars */
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+  @media (max-width: 640px) {
+    .pillars-grid { grid-template-columns: 1fr; }
+    .pillar--border { border-left: none; border-top: 1px solid rgba(27,42,74,0.08); }
+  }
+  .pillar { padding: 2rem; }
+  .pillar--border { border-left: 1px solid rgba(27,42,74,0.08); }
+  .pillar-num {
+    display: block;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: #2B96AD;
+    margin-bottom: 0.875rem;
+  }
+  .pillar-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1B2A4A;
+    margin-bottom: 0.625rem;
+    line-height: 1.3;
+  }
+  .pillar-desc {
+    font-size: 0.875rem;
+    color: #64748b;
+    line-height: 1.6;
+  }
+
+  /* Contact grid */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 5rem;
+    align-items: flex-start;
+  }
+  @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } }
+
+  /* Form */
+  .ops-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .form-row { display: flex; gap: 1rem; }
+  .form-row--half > .form-group { flex: 1; min-width: 0; }
+  @media (max-width: 640px) { .form-row--half { flex-direction: column; } }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+  }
+  .form-group label {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: rgba(27,42,74,0.65);
+    letter-spacing: 0.02em;
+  }
+  .req { color: #2B96AD; }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.9375rem;
+    color: #1B2A4A;
+    background: white;
+    border: 1px solid rgba(27,42,74,0.15);
+    border-radius: 7px;
+    padding: 0.7rem 0.9rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: #2B96AD;
+    box-shadow: 0 0 0 3px rgba(43,150,173,0.12);
+  }
+  .form-group textarea { resize: vertical; min-height: 120px; }
+  .form-group select { cursor: pointer; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%231B2A4A' stroke-opacity='0.35' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 0.9rem center; padding-right: 2.5rem; }
+
+  .form-group--checkbox label {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0.75rem;
+    cursor: pointer;
+  }
+  .checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    cursor: pointer;
+    font-size: 0.8125rem !important;
+  }
+  .checkbox-label input { width: 16px; height: 16px; margin-top: 1px; flex-shrink: 0; accent-color: #2B96AD; cursor: pointer; }
+  .checkbox-label span { color: rgba(27,42,74,0.55); line-height: 1.5; }
+  .checkbox-label a { color: #2B96AD; text-decoration: underline; }
+
+  .btn-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #fff;
+    background: #2B96AD;
+    border: none;
+    cursor: pointer;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    transition: background 0.2s, box-shadow 0.2s, gap 0.2s;
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+  .btn-submit:hover {
+    background: #239bb2;
+    box-shadow: 0 0 32px rgba(43,150,173,0.35);
+    gap: 0.75rem;
+  }
+  .btn-arrow { transition: transform 0.2s; }
+  .btn-submit:hover .btn-arrow { transform: translateX(3px); }
+
+  /* Aside */
+  .contact-aside-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: sticky;
+    top: 90px;
+  }
+  .contact-aside-block {
+    background: #F4F7FA;
+    border: 1px solid rgba(27,42,74,0.07);
+    border-radius: 10px;
+    padding: 1.75rem;
+  }
+  .contact-aside-block--border { }
+  .aside-title {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #1B2A4A;
+    margin-bottom: 0.75rem;
+  }
+  .aside-desc {
+    font-size: 0.875rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+  }
+
+  .btn-email-contacto {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    color: #fff;
+    background: #2B96AD;
+    text-decoration: none;
+    padding: 0.8rem 1.25rem;
+    border-radius: 7px;
+    transition: background 0.2s, box-shadow 0.2s;
+    margin-bottom: 0.875rem;
+  }
+  .btn-email-contacto:hover {
+    background: #239bb2;
+    box-shadow: 0 0 20px rgba(43,150,173,0.3);
+  }
+  .email-icon { flex-shrink: 0; }
+
+  .aside-email-line {
+    font-size: 0.8125rem;
+    color: rgba(27,42,74,0.45);
+  }
+  .aside-email-link {
+    color: #2B96AD;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .aside-email-link:hover { text-decoration: underline; }
+
+  .aside-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+  .aside-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.625rem;
+    font-size: 0.875rem;
+    color: rgba(27,42,74,0.65);
+    line-height: 1.45;
+  }
+  .aside-mark { color: #2B96AD; flex-shrink: 0; font-weight: 700; margin-top: 1px; }
+
+  .contact-promise {
+    padding: 1.5rem;
+    border: 1px solid rgba(43,150,173,0.15);
+    border-radius: 10px;
+    background: rgba(43,150,173,0.04);
+  }
+  .contact-promise p {
+    font-size: 0.875rem;
+    color: rgba(27,42,74,0.55);
+    line-height: 1.65;
+    font-style: italic;
+    margin: 0;
+  }
+</style>

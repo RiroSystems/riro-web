@@ -1,0 +1,183 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const updated = "2025-06-01";
+---
+
+<BaseLayout
+  title="Términos de Uso"
+  description="Términos de uso del sitio web de Riro Systems. Condiciones de acceso y uso del contenido publicado en rirosystems.com."
+>
+  <main class="overflow-x-hidden">
+
+    <!-- HERO -->
+    <section class="relative pt-36 pb-16 px-6 bg-white overflow-hidden">
+      <div class="legal-grid-bg" aria-hidden="true"></div>
+      <div class="relative z-10 max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="w-8 h-px bg-[#4A7FA5]"></span>
+          <span class="text-[#4A7FA5] text-xs font-medium tracking-[0.22em] uppercase">Legal</span>
+        </div>
+        <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold text-[#1B2A4A] leading-tight mb-4">
+          Términos de Uso
+        </h1>
+        <p class="text-[#64748b] text-sm">Última actualización: {updated}</p>
+      </div>
+    </section>
+
+    <!-- CONTENIDO -->
+    <section class="py-16 px-6 bg-white">
+      <div class="max-w-3xl mx-auto">
+        <div class="legal-body">
+
+          <div class="legal-section">
+            <h2>1. Aceptación de los términos</h2>
+            <p>
+              Al acceder y utilizar el sitio web <strong>rirosystems.com</strong> aceptas los presentes Términos de Uso. Si no estás de acuerdo con alguna de estas condiciones, te pedimos que no utilices el sitio.
+            </p>
+          </div>
+
+          <div class="legal-section">
+            <h2>2. Descripción del servicio</h2>
+            <p>
+              Este sitio web es la presencia digital de Riro Systems, división tecnológica de Loreatec Japan. Su propósito es informar sobre nuestros servicios de automatización residencial e industrial y permitir que potenciales clientes tomen contacto con el equipo.
+            </p>
+            <p>
+              El contenido publicado tiene fines informativos. No constituye una oferta vinculante de servicios ni un contrato de ningún tipo hasta que exista un acuerdo escrito firmado por ambas partes.
+            </p>
+          </div>
+
+          <div class="legal-section">
+            <h2>3. Propiedad intelectual</h2>
+            <p>
+              Todos los textos, imágenes, marcas, logotipos y contenido de este sitio son propiedad de Riro Systems / Loreatec Japan o de sus respectivos titulares, y están protegidos por la legislación de propiedad intelectual aplicable.
+            </p>
+            <p>
+              Queda prohibida la reproducción, distribución o modificación de cualquier contenido de este sitio sin autorización previa y por escrito. Puedes compartir enlaces al sitio sin restricción.
+            </p>
+          </div>
+
+          <div class="legal-section">
+            <h2>4. Exactitud de la información</h2>
+            <p>
+              Procuramos que la información publicada sea precisa y esté actualizada. Sin embargo, las especificaciones técnicas, precios y disponibilidad de servicios pueden cambiar sin previo aviso. Ante cualquier duda, contáctanos directamente.
+            </p>
+          </div>
+
+          <div class="legal-section">
+            <h2>5. Limitación de responsabilidad</h2>
+            <p>
+              Riro Systems no se responsabiliza por daños directos o indirectos derivados del uso o la imposibilidad de uso de este sitio web, incluyendo interrupciones del servicio, errores en el contenido o pérdida de datos.
+            </p>
+            <p>
+              Este sitio puede contener enlaces a sitios de terceros. No tenemos control sobre su contenido y no asumimos responsabilidad por ellos.
+            </p>
+          </div>
+
+          <div class="legal-section">
+            <h2>6. Uso adecuado</h2>
+            <p>Te comprometés a utilizar este sitio de manera legítima y a no:</p>
+            <ul>
+              <li>Intentar acceder a sistemas o áreas restringidas sin autorización.</li>
+              <li>Enviar contenido ilegal, engañoso o perjudicial a través de los formularios.</li>
+              <li>Realizar actividades que puedan dañar, sobrecargar o comprometer la disponibilidad del sitio.</li>
+              <li>Reproducir o extraer contenido con fines comerciales sin autorización.</li>
+            </ul>
+          </div>
+
+          <div class="legal-section">
+            <h2>7. Modificaciones</h2>
+            <p>
+              Riro Systems se reserva el derecho de modificar estos Términos en cualquier momento. Los cambios entran en vigencia desde su publicación en esta página. El uso continuado del sitio después de los cambios implica aceptación de los nuevos términos.
+            </p>
+          </div>
+
+          <div class="legal-section">
+            <h2>8. Ley aplicable</h2>
+            <p>
+              Estos Términos se rigen por la legislación de la República del Perú. Cualquier disputa será sometida a la jurisdicción de los tribunales ordinarios de la ciudad de Lima.
+            </p>
+          </div>
+
+          <div class="legal-section">
+            <h2>9. Contacto</h2>
+            <p>
+              Para consultas sobre estos términos puedes escribirnos a <a href="mailto:rirosystem@loreatec.jp">rirosystem@loreatec.jp</a>.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="legal-back">
+          <a href="/" class="back-link">← Volver al inicio</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>
+
+<style>
+  .legal-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(74, 127, 165, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(74, 127, 165, 0.03) 1px, transparent 1px);
+    background-size: 64px 64px;
+    pointer-events: none;
+  }
+
+  .legal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .legal-section h2 {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: #1B2A4A;
+    margin: 0 0 0.875rem;
+  }
+
+  .legal-section p {
+    font-size: 0.9375rem;
+    color: #475569;
+    line-height: 1.75;
+    margin: 0 0 0.75rem;
+  }
+  .legal-section p:last-child { margin-bottom: 0; }
+
+  .legal-section ul {
+    padding-left: 1.25rem;
+    margin: 0.5rem 0 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .legal-section li {
+    font-size: 0.9375rem;
+    color: #475569;
+    line-height: 1.65;
+  }
+
+  .legal-section a {
+    color: #4A7FA5;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .legal-back {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(27, 42, 74, 0.07);
+  }
+  .back-link {
+    font-size: 0.875rem;
+    color: #4A7FA5;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .back-link:hover { opacity: 0.75; }
+</style>

@@ -9,16 +9,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <main class="overflow-x-hidden">
 
     <!-- ══════════════════════════ HERO ══════════════════════════ -->
-    <section class="relative min-h-[80vh] flex items-center overflow-hidden">
+    <section class="relative min-h-[80vh] flex items-center overflow-hidden bg-white">
 
       <div class="pms-hero-bg" aria-hidden="true"></div>
-      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0D1B2A] pointer-events-none" aria-hidden="true"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white pointer-events-none" aria-hidden="true"></div>
 
       <div class="relative z-10 max-w-6xl mx-auto px-6 pt-36 pb-24">
 
         <div class="flex items-center gap-3 mb-10">
-          <span class="w-8 h-px bg-[#00C8FF]"></span>
-          <span class="text-[#00C8FF] text-xs font-medium tracking-[0.22em] uppercase">
+          <span class="w-8 h-px bg-[#2B96AD]"></span>
+          <span class="text-[#2B96AD] text-xs font-medium tracking-[0.22em] uppercase">
             RIRO OPS — Caso de Uso Real
           </span>
         </div>
@@ -26,14 +26,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <div class="pms-hero-badge mb-8">PMS</div>
 
         <h1 class="text-[clamp(2.25rem,6vw,5.5rem)] font-bold leading-[0.95] tracking-tight mb-6">
-          <span class="text-white">Inteligencia Operativa.</span><br />
+          <span class="text-[#1B2A4A]">Inteligencia Operativa.</span><br />
           <span class="pms-title-outline">Privacidad Garantizada.</span>
         </h1>
 
-        <p class="text-lg md:text-xl text-white/50 max-w-2xl leading-relaxed mb-4">
-          Sistema de Monitoreo de Personal <span class="text-white/70 font-medium">(PMS)</span>
+        <p class="text-lg md:text-xl text-[#64748b] max-w-2xl leading-relaxed mb-4">
+          Sistema de Monitoreo de Personal <span class="text-[#1B2A4A] font-medium">(PMS)</span>
         </p>
-        <p class="text-base text-white/40 max-w-xl leading-relaxed mb-12">
+        <p class="text-base text-[#94a3b8] max-w-xl leading-relaxed mb-12">
           Auditoría operativa en plantas industriales sin violar la privacidad de las personas.
           Flujos, no rostros.
         </p>
@@ -55,7 +55,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 
     <!-- ══════════════════════ EL PROBLEMA ══════════════════════ -->
-    <section id="problema" class="py-32 px-6 bg-[#0D1B2A]">
+    <section id="problema" class="py-32 px-6 bg-white">
       <div class="max-w-6xl mx-auto">
 
         <div class="flex items-center gap-3 mb-6">
@@ -63,10 +63,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           <span class="text-[#4A7FA5] text-xs font-medium tracking-[0.22em] uppercase">El Desafío</span>
         </div>
 
-        <h2 class="text-4xl md:text-5xl font-bold text-white mb-5 leading-tight">
+        <h2 class="text-4xl md:text-5xl font-bold text-[#1B2A4A] mb-5 leading-tight">
           El Problema
         </h2>
-        <p class="text-white/40 text-lg max-w-2xl mb-16 leading-relaxed">
+        <p class="text-[#64748b] text-lg max-w-2xl mb-16 leading-relaxed">
           Los sistemas de visión convencionales fallan en entornos industriales por dos obstáculos
           estructurales que no son técnicos: son legales y humanos.
         </p>
@@ -88,13 +88,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               completa.
             </p>
             <p class="problema-desc mt-4">
-              Los sistemas de reconocimiento facial estándar <strong class="text-white/70">pierden efectividad total</strong>
+              Los sistemas de reconocimiento facial estándar <strong class="text-[#1B2A4A]/70">pierden efectividad total</strong>
               en estos entornos, generando falsos negativos masivos y auditorías inútiles.
             </p>
           </div>
 
           <div class="problema-card problema-card--right">
-            <div class="problema-icon problema-icon--right">
+            <div class="problema-icon problema-icon--accent">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
                 <path d="M7 11V7a5 5 0 0110 0v4"/>
@@ -103,8 +103,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             <h3 class="problema-title">Zonas Restringidas</h3>
             <p class="problema-desc">
               Los vestuarios, baños y salas de descanso son zonas donde instalar cámaras de
-              vigilancia es <strong class="text-white/70">ilegal en Argentina</strong> (Ley 25.326 de Protección de
-              Datos Personales) y en la mayoría de las jurisdicciones.
+              vigilancia es <strong class="text-[#1B2A4A]/70">ilegal en la mayoría de jurisdicciones laborales</strong>,
+              incluyendo la normativa peruana y el Convenio 187 de la OIT.
             </p>
             <p class="problema-desc mt-4">
               Sin embargo, el tiempo real que el personal pasa en estas áreas es un dato
@@ -118,18 +118,18 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 
     <!-- ══════════════════ ANONIMATO POR DISEÑO ══════════════════ -->
-    <section id="solucion" class="py-32 px-6 bg-[#1C2B3A]">
+    <section id="solucion" class="py-32 px-6 bg-[#F4F7FA]">
       <div class="max-w-6xl mx-auto">
 
         <div class="flex items-center gap-3 mb-6">
-          <span class="w-8 h-px bg-[#00C8FF]"></span>
-          <span class="text-[#00C8FF] text-xs font-medium tracking-[0.22em] uppercase">Nuestra Solución</span>
+          <span class="w-8 h-px bg-[#2B96AD]"></span>
+          <span class="text-[#2B96AD] text-xs font-medium tracking-[0.22em] uppercase">Nuestra Solución</span>
         </div>
 
-        <h2 class="text-4xl md:text-5xl font-bold text-white mb-5 leading-tight">
+        <h2 class="text-4xl md:text-5xl font-bold text-[#1B2A4A] mb-5 leading-tight">
           Anonimato por Diseño
         </h2>
-        <p class="text-white/40 text-lg max-w-2xl mb-16 leading-relaxed">
+        <p class="text-[#64748b] text-lg max-w-2xl mb-16 leading-relaxed">
           El sistema ignora por completo los rasgos faciales. Mide flujos de personas, no identidades.
           Es privacidad integrada en la arquitectura, no un parche legal.
         </p>
@@ -157,7 +157,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                   <h4 class="principio-title">Inferencia, no observación</h4>
                   <p class="principio-desc">
                     Las zonas privadas no tienen cámara. Su ocupación se
-                    <em class="text-white/70 not-italic">infiere matemáticamente</em> a partir de los flujos
+                    <em class="text-[#1B2A4A]/70 not-italic font-medium">infiere matemáticamente</em> a partir de los flujos
                     en las zonas adyacentes permitidas.
                   </p>
                 </div>
@@ -179,10 +179,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
           <!-- Placeholder Dashboard -->
           <div>
-            <div class="w-full bg-neutral-800/50 border border-neutral-700 aspect-video rounded-lg flex items-center justify-center text-neutral-500 font-mono text-sm">
+            <div class="w-full bg-[#e2e8f0] border border-[#cbd5e1] aspect-video rounded-lg flex items-center justify-center text-[#94a3b8] font-mono text-sm">
               Placeholder: Dashboard PMS — Mapa de Planta con heatmap de ocupación por zona
             </div>
-            <p class="text-white/30 text-xs mt-3 font-mono">
+            <p class="text-[#94a3b8] text-xs mt-3 font-mono">
               ↑ Dashboard React 18 — Vista en tiempo real. Dato: flujo/hora por zona.
             </p>
           </div>
@@ -193,23 +193,23 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 
     <!-- ══════════════════ INFERENCIA MATEMÁTICA ══════════════════ -->
-    <section id="inferencia" class="py-32 px-6 bg-[#0D1B2A]">
+    <section id="inferencia" class="py-32 px-6 bg-white">
       <div class="max-w-6xl mx-auto">
 
         <div class="flex items-center gap-3 mb-6">
-          <span class="w-8 h-px bg-[#00C8FF]"></span>
-          <span class="text-[#00C8FF] text-xs font-medium tracking-[0.22em] uppercase">Núcleo Técnico</span>
+          <span class="w-8 h-px bg-[#2B96AD]"></span>
+          <span class="text-[#2B96AD] text-xs font-medium tracking-[0.22em] uppercase">Núcleo Técnico</span>
         </div>
 
-        <h2 class="text-4xl md:text-5xl font-bold text-white mb-5 leading-tight">
+        <h2 class="text-4xl md:text-5xl font-bold text-[#1B2A4A] mb-5 leading-tight">
           Inferencia Matemática
         </h2>
-        <p class="text-white/40 text-lg max-w-2xl mb-16 leading-relaxed">
-          El sistema aplica el principio de <strong class="text-white/65">balance de masas</strong> —
+        <p class="text-[#64748b] text-lg max-w-2xl mb-16 leading-relaxed">
+          El sistema aplica el principio de <strong class="text-[#1B2A4A]/65">balance de masas</strong> —
           usado en ingeniería de procesos — para inferir lo que no puede observarse directamente.
         </p>
 
-        <!-- Fórmula destacada -->
+        <!-- Fórmula destacada — código se mantiene oscuro por semántica de terminal -->
         <div class="formula-wrapper">
           <div class="formula-header">
             <span class="formula-label">balance_masas.py</span>
@@ -275,7 +275,7 @@ ocupacion_banos = calcular_ocupacion_zona_privada(
 
 
     <!-- ══════════════════ ARQUITECTURA TÉCNICA ══════════════════ -->
-    <section id="arquitectura" class="py-32 px-6 bg-[#1C2B3A]">
+    <section id="arquitectura" class="py-32 px-6 bg-[#F4F7FA]">
       <div class="max-w-6xl mx-auto">
 
         <div class="flex items-center gap-3 mb-6">
@@ -283,10 +283,10 @@ ocupacion_banos = calcular_ocupacion_zona_privada(
           <span class="text-[#4A7FA5] text-xs font-medium tracking-[0.22em] uppercase">Stack Técnico</span>
         </div>
 
-        <h2 class="text-4xl md:text-5xl font-bold text-white mb-5 leading-tight">
+        <h2 class="text-4xl md:text-5xl font-bold text-[#1B2A4A] mb-5 leading-tight">
           Arquitectura Técnica
         </h2>
-        <p class="text-white/40 text-lg max-w-2xl mb-16 leading-relaxed">
+        <p class="text-[#64748b] text-lg max-w-2xl mb-16 leading-relaxed">
           Cuatro capas desacopladas. Cada una reemplazable, cada una auditada, toda la cadena
           procesando localmente en tu infraestructura.
         </p>
@@ -343,10 +343,10 @@ ocupacion_banos = calcular_ocupacion_zona_privada(
 
         </div>
 
-        <!-- Placeholder diagrama alternativo -->
+        <!-- Placeholder diagrama -->
         <div class="mt-12">
-          <div class="w-full bg-neutral-800/50 border border-neutral-700 rounded-lg" style="aspect-ratio: 16/5; display:flex; align-items:center; justify-content:center;">
-            <span class="text-neutral-500 font-mono text-sm">Placeholder: Diagrama de arquitectura — flujo de datos Frigate → FastAPI → React</span>
+          <div class="w-full bg-[#e2e8f0] border border-[#cbd5e1] rounded-lg" style="aspect-ratio: 16/5; display:flex; align-items:center; justify-content:center;">
+            <span class="text-[#94a3b8] font-mono text-sm">Placeholder: Diagrama de arquitectura — flujo de datos Frigate → FastAPI → React</span>
           </div>
         </div>
 
@@ -366,7 +366,7 @@ ocupacion_banos = calcular_ocupacion_zona_privada(
           </div>
           <div class="spec-item spec-item--accent">
             <span class="spec-value spec-value--accent">Legal</span>
-            <span class="spec-label">Ley 25.326 compliant</span>
+            <span class="spec-label">Normativa OIT / LFPDPPP compliant</span>
           </div>
         </div>
 
@@ -375,7 +375,7 @@ ocupacion_banos = calcular_ocupacion_zona_privada(
 
 
     <!-- ════════════════════════ CTA FINAL ════════════════════════ -->
-    <section class="py-32 px-6 bg-[#0D1B2A]">
+    <section class="py-32 px-6 bg-white">
       <div class="max-w-6xl mx-auto">
 
         <div class="cta-banner">
@@ -384,8 +384,8 @@ ocupacion_banos = calcular_ocupacion_zona_privada(
 
           <div class="cta-content">
             <div class="flex items-center gap-3 mb-8">
-              <span class="w-8 h-px bg-[#00C8FF]"></span>
-              <span class="text-[#00C8FF] text-xs font-medium tracking-[0.22em] uppercase">
+              <span class="w-8 h-px bg-[#2B96AD]"></span>
+              <span class="text-[#2B96AD] text-xs font-medium tracking-[0.22em] uppercase">
                 RIRO OPS — Próximo Paso
               </span>
             </div>
@@ -394,7 +394,7 @@ ocupacion_banos = calcular_ocupacion_zona_privada(
               ¿Tu planta puede<br />auditarse sin cámaras invasivas?
             </h2>
 
-            <p class="text-white/50 text-lg max-w-xl leading-relaxed mb-10">
+            <p class="text-white/55 text-lg max-w-xl leading-relaxed mb-10">
               Hacemos un relevamiento sin costo de tu planta y te mostramos qué zonas
               podemos auditar con inferencia matemática. Sin compromiso.
             </p>
@@ -404,7 +404,7 @@ ocupacion_banos = calcular_ocupacion_zona_privada(
                 Solicitar relevamiento
                 <span class="btn-arrow">→</span>
               </a>
-              <a href="/ops" class="btn-ghost">
+              <a href="/ops" class="btn-ghost-dark">
                 Conocer Riro OPS
               </a>
             </div>
@@ -420,13 +420,13 @@ ocupacion_banos = calcular_ocupacion_zona_privada(
 
 <style>
   :root {
-    --c-navy:     #0D1B2A;
-    --c-charcoal: #1C2B3A;
-    --c-cyan:     #00C8FF;
+    --c-navy:     #1B2A4A;
+    --c-bg:       #F4F7FA;
+    --c-cyan:     #2B96AD;
     --c-steel:    #4A7FA5;
   }
 
-  /* ══ Botones (mismo patrón que index.astro) ══════════════════ */
+  /* ══ Botones ═════════════════════════════════════════════════ */
   .btn-primary {
     display: inline-flex;
     align-items: center;
@@ -434,7 +434,7 @@ ocupacion_banos = calcular_ocupacion_zona_privada(
     font-family: 'Inter', system-ui, sans-serif;
     font-weight: 500;
     font-size: 0.9375rem;
-    color: var(--c-navy);
+    color: #fff;
     background: var(--c-cyan);
     text-decoration: none;
     padding: 0.9rem 1.75rem;
@@ -443,8 +443,8 @@ ocupacion_banos = calcular_ocupacion_zona_privada(
     white-space: nowrap;
   }
   .btn-primary:hover {
-    background: #19d4ff;
-    box-shadow: 0 0 32px rgba(0, 200, 255, 0.38);
+    background: #239bb2;
+    box-shadow: 0 0 28px rgba(43, 150, 173, 0.35);
     gap: 0.75rem;
   }
   .btn-arrow { transition: transform 0.2s; }
@@ -456,27 +456,46 @@ ocupacion_banos = calcular_ocupacion_zona_privada(
     font-family: 'Inter', system-ui, sans-serif;
     font-weight: 400;
     font-size: 0.9375rem;
-    color: rgba(255,255,255,0.5);
+    color: rgba(27,42,74,0.55);
     text-decoration: none;
     padding: 0.9rem 1.75rem;
     border-radius: 7px;
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid rgba(27,42,74,0.12);
     transition: color 0.2s, border-color 0.2s, background 0.2s;
   }
   .btn-ghost:hover {
+    color: var(--c-navy);
+    border-color: rgba(27,42,74,0.25);
+    background: rgba(27,42,74,0.04);
+  }
+
+  .btn-ghost-dark {
+    display: inline-flex;
+    align-items: center;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 400;
+    font-size: 0.9375rem;
+    color: rgba(255,255,255,0.55);
+    text-decoration: none;
+    padding: 0.9rem 1.75rem;
+    border-radius: 7px;
+    border: 1px solid rgba(255,255,255,0.12);
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
+  }
+  .btn-ghost-dark:hover {
     color: #fff;
-    border-color: rgba(255,255,255,0.25);
-    background: rgba(255,255,255,0.04);
+    border-color: rgba(255,255,255,0.28);
+    background: rgba(255,255,255,0.06);
   }
 
   /* ══ HERO ════════════════════════════════════════════════════ */
   .pms-hero-bg {
     position: absolute;
     inset: 0;
-    background-color: var(--c-navy);
+    background-color: #fff;
     background-image:
-      linear-gradient(rgba(0,200,255,0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0,200,255,0.03) 1px, transparent 1px);
+      linear-gradient(rgba(43,150,173,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(43,150,173,0.03) 1px, transparent 1px);
     background-size: 72px 72px;
   }
 
@@ -486,15 +505,15 @@ ocupacion_banos = calcular_ocupacion_zona_privada(
     font-weight: 700;
     letter-spacing: 0.18em;
     color: var(--c-cyan);
-    background: rgba(0,200,255,0.08);
-    border: 1px solid rgba(0,200,255,0.22);
+    background: rgba(43,150,173,0.08);
+    border: 1px solid rgba(43,150,173,0.22);
     padding: 4px 12px;
     border-radius: 4px;
   }
 
   .pms-title-outline {
     color: transparent;
-    -webkit-text-stroke: 1.5px rgba(255,255,255,0.22);
+    -webkit-text-stroke: 1.5px rgba(27,42,74,0.18);
   }
 
   .pms-hero-circles {
@@ -511,13 +530,13 @@ ocupacion_banos = calcular_ocupacion_zona_privada(
     content: '';
     position: absolute;
     border-radius: 50%;
-    border: 1px solid rgba(0,200,255,0.06);
+    border: 1px solid rgba(43,150,173,0.07);
   }
   .pms-hero-circles::before { inset: 0; }
   .pms-hero-circles::after {
     inset: 80px;
-    border-color: rgba(0,200,255,0.09);
-    box-shadow: inset 0 0 60px rgba(0,200,255,0.025);
+    border-color: rgba(43,150,173,0.1);
+    box-shadow: inset 0 0 60px rgba(43,150,173,0.02);
   }
   @media (max-width: 1024px) { .pms-hero-circles { display: none; } }
 
@@ -525,24 +544,20 @@ ocupacion_banos = calcular_ocupacion_zona_privada(
   .problema-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    border: 1px solid rgba(255,255,255,0.07);
+    border: 1px solid rgba(27,42,74,0.08);
     border-radius: 12px;
     overflow: hidden;
   }
-  @media (max-width: 768px) {
-    .problema-grid { grid-template-columns: 1fr; }
-  }
+  @media (max-width: 768px) { .problema-grid { grid-template-columns: 1fr; } }
 
-  .problema-card {
-    padding: 3rem;
-  }
+  .problema-card { padding: 3rem; }
   .problema-card--right {
-    border-left: 1px solid rgba(255,255,255,0.07);
+    border-left: 1px solid rgba(27,42,74,0.08);
   }
   @media (max-width: 768px) {
     .problema-card--right {
       border-left: none;
-      border-top: 1px solid rgba(255,255,255,0.07);
+      border-top: 1px solid rgba(27,42,74,0.08);
     }
   }
 
@@ -553,26 +568,26 @@ ocupacion_banos = calcular_ocupacion_zona_privada(
     width: 52px;
     height: 52px;
     border-radius: 10px;
-    background: rgba(255,255,255,0.05);
-    color: rgba(255,255,255,0.35);
+    background: rgba(27,42,74,0.05);
+    color: rgba(27,42,74,0.35);
     margin-bottom: 1.5rem;
   }
-  .problema-icon--right {
-    background: rgba(0,200,255,0.06);
-    color: rgba(0,200,255,0.5);
+  .problema-icon--accent {
+    background: rgba(43,150,173,0.07);
+    color: var(--c-cyan);
   }
 
   .problema-title {
     font-family: 'Inter', system-ui, sans-serif;
     font-size: 1.25rem;
     font-weight: 600;
-    color: #fff;
+    color: var(--c-navy);
     margin-bottom: 1rem;
   }
   .problema-desc {
     font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.9375rem;
-    color: rgba(255,255,255,0.45);
+    color: #64748b;
     line-height: 1.7;
   }
 
@@ -583,20 +598,18 @@ ocupacion_banos = calcular_ocupacion_zona_privada(
     align-items: flex-start;
     padding: 1.5rem;
     border-radius: 10px;
-    background: rgba(255,255,255,0.02);
-    border: 1px solid rgba(255,255,255,0.05);
+    background: #fff;
+    border: 1px solid rgba(27,42,74,0.07);
     transition: border-color 0.2s;
   }
-  .principio-item:hover {
-    border-color: rgba(0,200,255,0.15);
-  }
+  .principio-item:hover { border-color: rgba(43,150,173,0.2); }
 
   .principio-num {
     flex-shrink: 0;
     font-size: 0.6875rem;
     font-weight: 700;
     letter-spacing: 0.12em;
-    color: rgba(0,200,255,0.5);
+    color: rgba(43,150,173,0.55);
     padding-top: 3px;
   }
 
@@ -604,21 +617,21 @@ ocupacion_banos = calcular_ocupacion_zona_privada(
     font-family: 'Inter', system-ui, sans-serif;
     font-size: 1rem;
     font-weight: 600;
-    color: #fff;
+    color: var(--c-navy);
     margin-bottom: 0.5rem;
   }
   .principio-desc {
     font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.875rem;
-    color: rgba(255,255,255,0.45);
+    color: #64748b;
     line-height: 1.65;
   }
 
-  /* ══ FÓRMULA / CODE BLOCK ════════════════════════════════════ */
+  /* ══ FÓRMULA / CODE BLOCK — se mantiene oscuro ═══════════════ */
   .formula-wrapper {
     border-radius: 12px;
     overflow: hidden;
-    border: 1px solid rgba(0,200,255,0.12);
+    border: 1px solid rgba(43,150,173,0.15);
     background: #0a1520;
   }
 
@@ -627,27 +640,24 @@ ocupacion_banos = calcular_ocupacion_zona_privada(
     align-items: center;
     justify-content: space-between;
     padding: 0.75rem 1.25rem;
-    background: rgba(0,200,255,0.04);
-    border-bottom: 1px solid rgba(0,200,255,0.08);
+    background: rgba(43,150,173,0.05);
+    border-bottom: 1px solid rgba(43,150,173,0.1);
   }
 
   .formula-label {
     font-family: 'JetBrains Mono', 'Courier New', monospace;
     font-size: 0.75rem;
-    color: rgba(0,200,255,0.6);
+    color: rgba(43,150,173,0.7);
     letter-spacing: 0.05em;
   }
 
-  .formula-dots {
-    display: flex;
-    gap: 6px;
-  }
+  .formula-dots { display: flex; gap: 6px; }
   .formula-dots span {
     display: block;
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.1);
   }
 
   .formula-code {
@@ -662,51 +672,45 @@ ocupacion_banos = calcular_ocupacion_zona_privada(
 
   .formula-comment { color: rgba(255,255,255,0.28); }
   .formula-keyword { color: #79d4fd; }
-  .formula-fn      { color: var(--c-cyan); }
+  .formula-fn      { color: #2B96AD; }
   .formula-num     { color: #f78c6c; }
 
   /* ══ INFERENCIA CARDS ════════════════════════════════════════ */
   .inferencia-card {
     padding: 2rem;
     border-radius: 10px;
-    background: rgba(255,255,255,0.02);
-    border: 1px solid rgba(255,255,255,0.06);
-    transition: border-color 0.2s, background 0.2s;
+    background: #fff;
+    border: 1px solid rgba(27,42,74,0.07);
+    transition: border-color 0.2s;
   }
-  .inferencia-card:hover {
-    border-color: rgba(255,255,255,0.12);
-    background: rgba(255,255,255,0.035);
-  }
+  .inferencia-card:hover { border-color: rgba(27,42,74,0.14); }
   .inferencia-card--accent {
-    border-color: rgba(0,200,255,0.1);
-    background: rgba(0,200,255,0.03);
+    border-color: rgba(43,150,173,0.12);
+    background: rgba(43,150,173,0.04);
   }
-  .inferencia-card--accent:hover {
-    border-color: rgba(0,200,255,0.2);
-    background: rgba(0,200,255,0.05);
-  }
+  .inferencia-card--accent:hover { border-color: rgba(43,150,173,0.22); }
 
   .inferencia-icon {
     font-size: 2rem;
     font-weight: 300;
-    color: rgba(255,255,255,0.15);
+    color: rgba(27,42,74,0.15);
     font-family: 'Inter', system-ui, sans-serif;
     margin-bottom: 1rem;
     line-height: 1;
   }
-  .inferencia-icon--accent { color: rgba(0,200,255,0.4); }
+  .inferencia-icon--accent { color: rgba(43,150,173,0.5); }
 
   .inferencia-title {
     font-family: 'Inter', system-ui, sans-serif;
     font-size: 1rem;
     font-weight: 600;
-    color: #fff;
+    color: var(--c-navy);
     margin-bottom: 0.625rem;
   }
   .inferencia-desc {
     font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.875rem;
-    color: rgba(255,255,255,0.42);
+    color: #64748b;
     line-height: 1.65;
   }
 
@@ -716,32 +720,26 @@ ocupacion_banos = calcular_ocupacion_zona_privada(
     align-items: stretch;
     gap: 0;
   }
-  @media (max-width: 900px) {
-    .arq-flow {
-      flex-direction: column;
-    }
-  }
+  @media (max-width: 900px) { .arq-flow { flex-direction: column; } }
 
   .arq-node {
     flex: 1;
     padding: 2rem 1.75rem;
     border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.06);
-    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(27,42,74,0.08);
+    background: #fff;
     transition: border-color 0.2s, transform 0.2s;
   }
-  .arq-node:hover {
-    transform: translateY(-3px);
-  }
+  .arq-node:hover { transform: translateY(-3px); }
   .arq-node--vision:hover   { border-color: rgba(74,127,165,0.3); }
-  .arq-node--backend:hover  { border-color: rgba(0,200,255,0.25); }
-  .arq-node--frontend:hover { border-color: rgba(0,200,255,0.35); }
+  .arq-node--backend:hover  { border-color: rgba(43,150,173,0.25); }
+  .arq-node--frontend:hover { border-color: rgba(43,150,173,0.35); }
 
   .arq-node-badge {
     font-size: 0.625rem;
     font-weight: 700;
     letter-spacing: 0.14em;
-    color: rgba(255,255,255,0.2);
+    color: rgba(27,42,74,0.2);
     text-transform: uppercase;
     margin-bottom: 1rem;
   }
@@ -760,20 +758,20 @@ ocupacion_banos = calcular_ocupacion_zona_privada(
   .arq-node--frontend .arq-node-icon,
   .arq-node--backend .arq-node-icon {
     color: var(--c-cyan);
-    background: rgba(0,200,255,0.07);
+    background: rgba(43,150,173,0.08);
   }
 
   .arq-node-title {
     font-family: 'Inter', system-ui, sans-serif;
     font-size: 1.0625rem;
     font-weight: 600;
-    color: #fff;
+    color: var(--c-navy);
     margin-bottom: 0.625rem;
   }
   .arq-node-desc {
     font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.875rem;
-    color: rgba(255,255,255,0.38);
+    color: #64748b;
     line-height: 1.65;
   }
 
@@ -786,17 +784,13 @@ ocupacion_banos = calcular_ocupacion_zona_privada(
     gap: 0.25rem;
   }
   @media (max-width: 900px) {
-    .arq-arrow {
-      flex-direction: row;
-      padding: 0.75rem 0;
-      gap: 0.5rem;
-    }
+    .arq-arrow { flex-direction: row; padding: 0.75rem 0; gap: 0.5rem; }
   }
 
   .arq-arrow-label {
     font-family: 'JetBrains Mono', 'Courier New', monospace;
     font-size: 0.625rem;
-    color: rgba(0,200,255,0.35);
+    color: rgba(43,150,173,0.4);
     letter-spacing: 0.06em;
     white-space: nowrap;
     writing-mode: vertical-rl;
@@ -806,10 +800,7 @@ ocupacion_banos = calcular_ocupacion_zona_privada(
     .arq-arrow-label { writing-mode: horizontal-tb; transform: none; }
   }
 
-  .arq-arrow-line {
-    font-size: 1.25rem;
-    color: rgba(0,200,255,0.25);
-  }
+  .arq-arrow-line { font-size: 1.25rem; color: rgba(43,150,173,0.3); }
 
   /* ══ SPECS ═══════════════════════════════════════════════════ */
   .spec-item {
@@ -818,38 +809,38 @@ ocupacion_banos = calcular_ocupacion_zona_privada(
     gap: 0.375rem;
     padding: 1.5rem;
     border-radius: 10px;
-    background: rgba(255,255,255,0.025);
-    border: 1px solid rgba(255,255,255,0.06);
+    background: #fff;
+    border: 1px solid rgba(27,42,74,0.08);
     text-align: center;
   }
   .spec-item--accent {
-    border-color: rgba(0,200,255,0.1);
-    background: rgba(0,200,255,0.03);
+    border-color: rgba(43,150,173,0.12);
+    background: rgba(43,150,173,0.04);
   }
 
   .spec-value {
     font-family: 'Inter', system-ui, sans-serif;
     font-size: 1.875rem;
     font-weight: 700;
-    color: #fff;
+    color: var(--c-navy);
     line-height: 1;
   }
   .spec-value--accent { color: var(--c-cyan); }
 
   .spec-label {
     font-size: 0.8125rem;
-    color: rgba(255,255,255,0.38);
+    color: #94a3b8;
     line-height: 1.4;
   }
 
-  /* ══ CTA FINAL ═══════════════════════════════════════════════ */
+  /* ══ CTA FINAL — banner oscuro en sección clara ══════════════ */
   .cta-banner {
     position: relative;
-    background: var(--c-charcoal);
+    background: var(--c-navy);
     border-radius: 16px;
     padding: 5rem 4.5rem;
     overflow: hidden;
-    border: 1px solid rgba(0,200,255,0.08);
+    border: 1px solid rgba(43,150,173,0.1);
   }
   @media (max-width: 768px) { .cta-banner { padding: 3rem 2rem; } }
 
@@ -859,8 +850,8 @@ ocupacion_banos = calcular_ocupacion_zona_privada(
     position: absolute;
     inset: 0;
     background-image:
-      linear-gradient(rgba(0,200,255,0.025) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0,200,255,0.025) 1px, transparent 1px);
+      linear-gradient(rgba(43,150,173,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(43,150,173,0.04) 1px, transparent 1px);
     background-size: 44px 44px;
     pointer-events: none;
   }
@@ -879,13 +870,13 @@ ocupacion_banos = calcular_ocupacion_zona_privada(
     content: '';
     position: absolute;
     border-radius: 50%;
-    border: 1px solid rgba(0,200,255,0.06);
+    border: 1px solid rgba(43,150,173,0.08);
   }
   .cta-circles::before { inset: 0; }
   .cta-circles::after {
     inset: 70px;
-    border-color: rgba(0,200,255,0.08);
-    background: rgba(0,200,255,0.015);
+    border-color: rgba(43,150,173,0.1);
+    background: rgba(43,150,173,0.02);
   }
   @media (max-width: 1024px) { .cta-circles { display: none; } }
 </style>

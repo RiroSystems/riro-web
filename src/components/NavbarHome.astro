@@ -1,0 +1,263 @@
+---
+interface Props {
+  currentPage?: string; // 'soluciones' | 'metodologia' | 'care' | 'criterio' | 'contacto'
+}
+const { currentPage = '' } = Astro.props;
+---
+
+<header id="navbar-home" class="navbar-home">
+  <div class="nh-inner">
+
+    <!-- Logo + badge de sección -->
+    <a href="/home" class="nh-logo" aria-label="Riro HOME — Inicio">
+      <img src="/Riro.svg" alt="Riro Systems" class="nh-logo-img" />
+      <span class="nh-section-badge">HOME</span>
+    </a>
+
+    <!-- Nav desktop -->
+    <nav class="nh-nav" aria-label="Navegación Riro HOME">
+      <a href="/home#categorias" class={`nh-link ${currentPage === 'soluciones' ? 'nh-link--active' : ''}`}>
+        Soluciones
+      </a>
+      <a href="/home/metodologia" class={`nh-link ${currentPage === 'metodologia' ? 'nh-link--active' : ''}`}>
+        Metodología
+      </a>
+      <a href="/home/care" class={`nh-link ${currentPage === 'care' ? 'nh-link--active' : ''}`}>
+        Riro Care
+      </a>
+      <a href="/home/criterio" class={`nh-link ${currentPage === 'criterio' ? 'nh-link--active' : ''}`}>
+        El Criterio
+      </a>
+    </nav>
+
+    <!-- CTA desktop -->
+    <a href="/home/contacto" class={`nh-cta ${currentPage === 'contacto' ? 'nh-cta--active' : ''}`}>Contacto</a>
+
+    <!-- Hamburguesa mobile -->
+    <button
+      id="nh-toggle"
+      class="nh-hamburger"
+      aria-label="Abrir menú"
+      aria-expanded="false"
+      aria-controls="nh-mobile-menu"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </div>
+
+  <!-- Menú mobile -->
+  <div id="nh-mobile-menu" class="nh-mobile" aria-hidden="true">
+    <nav aria-label="Navegación Riro HOME móvil">
+      <a href="/home#categorias" class="nh-mobile-link">Soluciones</a>
+      <a href="/home/metodologia" class="nh-mobile-link">Metodología</a>
+      <a href="/home/care" class="nh-mobile-link">Riro Care</a>
+      <a href="/home/criterio" class="nh-mobile-link">El Criterio RIRO</a>
+      <a href="/home/contacto" class="nh-mobile-cta">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .navbar-home {
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(27, 42, 74, 0.08);
+    transition: background 0.3s, border-color 0.3s;
+  }
+  .navbar-home.scrolled {
+    background: rgba(255, 255, 255, 0.97);
+    border-bottom-color: rgba(27, 42, 74, 0.12);
+  }
+
+  .nh-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  /* Logo + badge */
+  .nh-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+  .nh-logo-img {
+    height: 76px;
+    width: auto;
+    display: block;
+  }
+  .nh-section-badge {
+    font-size: 0.625rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: #4A7FA5;
+    background: rgba(74, 127, 165, 0.12);
+    border: 1px solid rgba(74, 127, 165, 0.3);
+    padding: 2px 7px;
+    border-radius: 4px;
+    margin-top: 1px;
+  }
+
+  /* Nav */
+  .nh-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.125rem;
+    margin-left: auto;
+  }
+  .nh-link {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 400;
+    font-size: 0.875rem;
+    color: rgba(27, 42, 74, 0.62);
+    text-decoration: none;
+    padding: 0.375rem 0.75rem;
+    border-radius: 6px;
+    transition: color 0.18s, background 0.18s;
+    white-space: nowrap;
+  }
+  .nh-link:hover {
+    color: #1B2A4A;
+    background: rgba(27, 42, 74, 0.05);
+  }
+  .nh-link--active {
+    color: #4A7FA5;
+    background: rgba(74, 127, 165, 0.08);
+  }
+
+  /* CTA */
+  .nh-cta {
+    flex-shrink: 0;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 500;
+    font-size: 0.8125rem;
+    color: #fff;
+    background: #4A7FA5;
+    text-decoration: none;
+    padding: 0.45rem 1.1rem;
+    border-radius: 6px;
+    transition: background 0.2s, box-shadow 0.2s;
+    white-space: nowrap;
+  }
+  .nh-cta:hover,
+  .nh-cta--active {
+    background: #5a8fb5;
+    box-shadow: 0 0 18px rgba(74, 127, 165, 0.35);
+  }
+
+  /* Hamburguesa */
+  .nh-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px 4px;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+  .nh-hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: rgba(27, 42, 74, 0.65);
+    border-radius: 2px;
+    transform-origin: center;
+    transition: transform 0.25s, opacity 0.2s;
+  }
+  .nh-hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nh-hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  .nh-hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* Menú mobile */
+  .nh-mobile {
+    display: none;
+    overflow: hidden;
+    max-height: 0;
+    background: rgba(255, 255, 255, 0.98);
+    border-top: 1px solid rgba(27, 42, 74, 0.07);
+    transition: max-height 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .nh-mobile.open { max-height: 400px; }
+  .nh-mobile nav {
+    display: flex;
+    flex-direction: column;
+    padding: 0.75rem 1.5rem 1.5rem;
+  }
+  .nh-mobile-link {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 1rem;
+    color: rgba(27, 42, 74, 0.65);
+    text-decoration: none;
+    padding: 0.75rem 0.25rem;
+    border-bottom: 1px solid rgba(27, 42, 74, 0.06);
+    transition: color 0.18s;
+  }
+  .nh-mobile-link:hover { color: #1B2A4A; }
+  .nh-mobile-cta {
+    display: block;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    color: #fff;
+    background: #4A7FA5;
+    text-decoration: none;
+    text-align: center;
+    padding: 0.8rem 1rem;
+    border-radius: 6px;
+    margin-top: 1rem;
+    transition: background 0.2s;
+  }
+  .nh-mobile-cta:hover { background: #5a8fb5; }
+
+  @media (max-width: 768px) {
+    .nh-nav, .nh-cta { display: none; }
+    .nh-hamburger { display: flex; }
+    .nh-mobile { display: block; }
+  }
+</style>
+
+<script>
+  (() => {
+    const navbar = document.getElementById('navbar-home');
+    const toggle = document.getElementById('nh-toggle');
+    const menu   = document.getElementById('nh-mobile-menu');
+
+    window.addEventListener('scroll', () => {
+      navbar?.classList.toggle('scrolled', window.scrollY > 24);
+    }, { passive: true });
+
+    toggle?.addEventListener('click', () => {
+      const opening = toggle.getAttribute('aria-expanded') !== 'true';
+      toggle.setAttribute('aria-expanded', String(opening));
+      menu?.setAttribute('aria-hidden', String(!opening));
+      menu?.classList.toggle('open', opening);
+    });
+
+    menu?.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        toggle?.setAttribute('aria-expanded', 'false');
+        menu?.setAttribute('aria-hidden', 'true');
+        menu?.classList.remove('open');
+      });
+    });
+
+    /* Confirmar funnel HOME siempre que se esté en este navbar */
+    localStorage.setItem('riro-funnel', 'home');
+  })();
+</script>

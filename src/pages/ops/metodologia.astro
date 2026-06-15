@@ -1,0 +1,418 @@
+---
+import BaseLayoutOps from "../../layouts/BaseLayoutOps.astro";
+---
+
+<BaseLayoutOps
+  title="Metodología de Implementación"
+  description="Cuatro fases para instalar inteligencia operativa en planta. Sin interrupciones de producción, sin datos enviados a la nube. Riro OPS."
+  currentPage="metodologia"
+>
+  <main class="overflow-x-hidden">
+
+    <!-- ══════════ HERO ══════════ -->
+    <section class="relative pt-36 pb-24 px-6 bg-[#1B2A4A] overflow-hidden">
+      <div class="meto-grid-bg" aria-hidden="true"></div>
+      <div class="relative z-10 max-w-5xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="w-8 h-px bg-[#2B96AD]"></span>
+          <span class="text-[#2B96AD] text-xs font-medium tracking-[0.22em] uppercase">Cuatro fases</span>
+        </div>
+        <h1 class="text-[clamp(2.25rem,5vw,4rem)] font-bold text-white leading-tight mb-6 max-w-3xl">
+          De la planta real<br />al dato procesable.
+        </h1>
+        <p class="text-white/55 text-lg max-w-2xl leading-relaxed">
+          Cada implementación sigue cuatro fases con entregables concretos y sin interrupciones de producción. El sistema empieza a generar métricas reales desde la semana uno de operación.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ══════════ FASES ══════════ -->
+    <section class="py-32 px-6 bg-white">
+      <div class="max-w-5xl mx-auto">
+
+        <!-- Fase 1 -->
+        <div class="fase-row">
+          <div class="fase-left">
+            <div class="fase-num-col">
+              <span class="fase-num">01</span>
+              <div class="fase-line"></div>
+            </div>
+            <div class="fase-content">
+              <span class="fase-label">DISEÑO ESTRATÉGICO</span>
+              <h2 class="fase-title">Mapeamos tu planta antes de instalar nada.</h2>
+              <p class="fase-desc">
+                El primer paso no tiene cámaras. Llegamos a la planta con un formulario técnico y pasamos entre 4 y 8 horas relevando flujos, zonas, turnos y normas de seguridad vigentes.
+              </p>
+              <p class="fase-desc">
+                El resultado es un documento de diseño que define exactamente qué se mide, dónde se instalan los sensores y cuáles son los umbrales esperados de operación normal. Nada se instala sin ese documento aprobado por el cliente.
+              </p>
+              <ul class="fase-list">
+                <li>Relevamiento de zonas productivas y flujos de operarios</li>
+                <li>Definición de métricas clave por proceso</li>
+                <li>Diseño de perímetro de privacidad — qué áreas quedan fuera por diseño</li>
+                <li>Documento de arquitectura técnica firmado por ambas partes</li>
+              </ul>
+            </div>
+          </div>
+          <div class="fase-visual">
+            <img
+              src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80&fit=crop"
+              alt="Ingenieros relevando planta industrial"
+              class="fase-img"
+              loading="lazy"
+            />
+            <div class="fase-img-tag">
+              <span>Fase 1 · Diseño Estratégico</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fase 2 -->
+        <div class="fase-row fase-row--reverse">
+          <div class="fase-left">
+            <div class="fase-num-col">
+              <span class="fase-num fase-num--active">02</span>
+              <div class="fase-line"></div>
+            </div>
+            <div class="fase-content">
+              <span class="fase-label">PLATAFORMA FÍSICA</span>
+              <h2 class="fase-title">Infraestructura instalada en un día.</h2>
+              <p class="fase-desc">
+                Instalamos el servidor edge — el Riro Box — directamente en la planta, en rack o en gabinete, según el entorno. Sin dependencia de internet, sin latencia de nube, sin datos que salgan del predio.
+              </p>
+              <p class="fase-desc">
+                Las cámaras industriales se colocan según el documento de diseño: solo en zonas productivas, nunca en áreas privadas. El cableado queda documentado y el personal de IT tiene acceso completo a la configuración.
+              </p>
+              <ul class="fase-list">
+                <li>Instalación de servidor edge Riro Box (Intel NUC o equivalente)</li>
+                <li>Montaje y cableado de cámaras industriales IP</li>
+                <li>Configuración de red local aislada sin exposición a internet</li>
+                <li>Prueba de cobertura visual en todas las zonas definidas</li>
+              </ul>
+            </div>
+          </div>
+          <div class="fase-visual">
+            <img
+              src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80&fit=crop"
+              alt="Rack de servidores en planta industrial"
+              class="fase-img"
+              loading="lazy"
+            />
+            <div class="fase-img-tag">
+              <span>Fase 2 · Plataforma Física</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fase 3 -->
+        <div class="fase-row">
+          <div class="fase-left">
+            <div class="fase-num-col">
+              <span class="fase-num">03</span>
+              <div class="fase-line"></div>
+            </div>
+            <div class="fase-content">
+              <span class="fase-label">CAPTURA Y ALGORITMOS</span>
+              <h2 class="fase-title">El motor aprende la distribución estadística de tu planta.</h2>
+              <p class="fase-desc">
+                Durante la primera semana de operación el sistema opera en modo aprendizaje. Los algoritmos de inferencia matemática procesan el flujo real de la planta y construyen el baseline: la distribución estadística de lo que es operación normal.
+              </p>
+              <p class="fase-desc">
+                Todo el procesamiento ocurre en el Riro Box. Las imágenes nunca se almacenan: solo los vectores de movimiento y los conteos derivados de la inferencia. El sistema nunca identifica personas; opera sobre siluetas y patrones.
+              </p>
+              <ul class="fase-list">
+                <li>Calibración de modelos Frigate + FastAPI en entorno real</li>
+                <li>Construcción del baseline estadístico por turno y zona</li>
+                <li>Ajuste de umbrales de anomalía específicos para la operación</li>
+                <li>Validación cruzada con registros manuales existentes</li>
+              </ul>
+            </div>
+          </div>
+          <div class="fase-visual">
+            <img
+              src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80&fit=crop"
+              alt="Monitor con análisis de datos industriales"
+              class="fase-img"
+              loading="lazy"
+            />
+            <div class="fase-img-tag">
+              <span>Fase 3 · Captura y Algoritmos</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fase 4 -->
+        <div class="fase-row fase-row--last">
+          <div class="fase-left">
+            <div class="fase-num-col">
+              <span class="fase-num fase-num--cyan">04</span>
+            </div>
+            <div class="fase-content">
+              <span class="fase-label">PLATAFORMA LÓGICA</span>
+              <h2 class="fase-title">Dashboard operativo activo. Métricas en tiempo real.</h2>
+              <p class="fase-desc">
+                El panel React queda disponible en la red local de planta. Métricas de turno, cadencia de producción, alertas de desvío y comparativa histórica, todo sin salir del perímetro de la empresa.
+              </p>
+              <p class="fase-desc">
+                El equipo operativo recibe capacitación en la lectura del dashboard. Los paquetes de auditoría automáticos se generan semanalmente y quedan disponibles para descarga interna. No hay datos en la nube que auditar.
+              </p>
+              <ul class="fase-list">
+                <li>Dashboard React on-premise activo y configurado</li>
+                <li>Alertas de desvío con umbral validado por el cliente</li>
+                <li>Capacitación al equipo de operaciones (4 horas)</li>
+                <li>Paquetes de auditoría automática configurados</li>
+                <li>Documentación técnica completa entregada al cliente</li>
+              </ul>
+
+              <div class="mt-10">
+                <a href="/ops/contacto" class="btn-cyan">
+                  Agendar evaluación técnica
+                  <span class="btn-arrow">→</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="fase-visual">
+            <img
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80&fit=crop"
+              alt="Dashboard de producción en pantalla"
+              class="fase-img"
+              loading="lazy"
+            />
+            <div class="fase-img-tag fase-img-tag--cyan">
+              <span>Fase 4 · Plataforma Lógica</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════ GARANTÍAS ══════════ -->
+    <section class="py-24 px-6 bg-[#F4F7FA]">
+      <div class="max-w-5xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="w-8 h-px bg-[#2B96AD]"></span>
+          <span class="text-[#2B96AD] text-xs font-medium tracking-[0.22em] uppercase">Lo que garantizamos</span>
+        </div>
+        <h2 class="text-3xl md:text-4xl font-bold text-[#1B2A4A] mb-12 leading-tight">
+          Sin sorpresas en la implementación.
+        </h2>
+        <div class="guarantee-grid">
+          <div class="guarantee-item">
+            <span class="g-check">✓</span>
+            <span>Sin interrupciones de producción durante la instalación</span>
+          </div>
+          <div class="guarantee-item">
+            <span class="g-check">✓</span>
+            <span>Sin datos enviados a servidores externos en ningún momento</span>
+          </div>
+          <div class="guarantee-item">
+            <span class="g-check">✓</span>
+            <span>El cliente tiene acceso total a la configuración del sistema</span>
+          </div>
+          <div class="guarantee-item">
+            <span class="g-check">✓</span>
+            <span>Ninguna cámara instalada en zonas de privacidad por diseño</span>
+          </div>
+          <div class="guarantee-item">
+            <span class="g-check">✓</span>
+            <span>Métricas validadas cruzadas con registros manuales antes del lanzamiento</span>
+          </div>
+          <div class="guarantee-item">
+            <span class="g-check">✓</span>
+            <span>Documentación técnica completa entregada al finalizar la implementación</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</BaseLayoutOps>
+
+<style>
+  .meto-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(43, 150, 173, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(43, 150, 173, 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+    pointer-events: none;
+  }
+
+  .fase-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    padding-bottom: 5rem;
+    margin-bottom: 5rem;
+    border-bottom: 1px solid rgba(27, 42, 74, 0.07);
+  }
+  .fase-row--reverse { direction: rtl; }
+  .fase-row--reverse > * { direction: ltr; }
+  .fase-row--last {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  @media (max-width: 768px) {
+    .fase-row { grid-template-columns: 1fr; gap: 2.5rem; direction: ltr; }
+    .fase-row .fase-visual { order: -1; }
+  }
+
+  .fase-left {
+    display: flex;
+    gap: 1.75rem;
+  }
+  .fase-num-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    flex-shrink: 0;
+  }
+  .fase-num {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: rgba(27, 42, 74, 0.2);
+    writing-mode: horizontal-tb;
+    padding-top: 4px;
+    min-width: 22px;
+    text-align: center;
+  }
+  .fase-num--active { color: rgba(27, 42, 74, 0.5); }
+  .fase-num--cyan   { color: #2B96AD; }
+  .fase-line {
+    width: 1px;
+    flex: 1;
+    background: rgba(27, 42, 74, 0.1);
+    margin-top: 0.75rem;
+    min-height: 60px;
+  }
+
+  .fase-label {
+    display: block;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    color: #2B96AD;
+    margin-bottom: 0.875rem;
+  }
+  .fase-title {
+    font-size: clamp(1.25rem, 2.5vw, 1.625rem);
+    font-weight: 700;
+    color: #1B2A4A;
+    line-height: 1.25;
+    margin-bottom: 1.25rem;
+  }
+  .fase-desc {
+    font-size: 0.9375rem;
+    color: #64748b;
+    line-height: 1.75;
+    margin-bottom: 0.75rem;
+  }
+  .fase-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.25rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .fase-list li {
+    font-size: 0.875rem;
+    color: rgba(27, 42, 74, 0.65);
+    padding-left: 1.25rem;
+    position: relative;
+    line-height: 1.55;
+  }
+  .fase-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 5px;
+    height: 1px;
+    background: #2B96AD;
+  }
+
+  .fase-visual { position: relative; }
+  .fase-img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+  }
+  .fase-img-tag {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    background: rgba(27, 42, 74, 0.85);
+    backdrop-filter: blur(8px);
+    border-radius: 5px;
+    padding: 4px 10px;
+  }
+  .fase-img-tag span {
+    font-size: 0.6875rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.65);
+    letter-spacing: 0.06em;
+  }
+  .fase-img-tag--cyan { background: rgba(43, 150, 173, 0.85); }
+  .fase-img-tag--cyan span { color: #fff; }
+
+  .btn-cyan {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    color: #fff;
+    background: #2B96AD;
+    text-decoration: none;
+    padding: 0.9rem 1.75rem;
+    border-radius: 7px;
+    transition: background 0.2s, box-shadow 0.2s, gap 0.2s;
+  }
+  .btn-cyan:hover {
+    background: #239bb2;
+    box-shadow: 0 0 28px rgba(43, 150, 173, 0.35);
+    gap: 0.75rem;
+  }
+  .btn-arrow { transition: transform 0.2s; }
+  .btn-cyan:hover .btn-arrow { transform: translateX(3px); }
+
+  .guarantee-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  @media (max-width: 640px) { .guarantee-grid { grid-template-columns: 1fr; } }
+
+  .guarantee-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.875rem;
+    background: white;
+    border: 1px solid rgba(27, 42, 74, 0.07);
+    border-radius: 8px;
+    padding: 1.25rem;
+    font-size: 0.9rem;
+    color: rgba(27, 42, 74, 0.7);
+    line-height: 1.5;
+  }
+  .g-check {
+    flex-shrink: 0;
+    font-size: 0.875rem;
+    color: #2B96AD;
+    font-weight: 700;
+    margin-top: 1px;
+  }
+</style>

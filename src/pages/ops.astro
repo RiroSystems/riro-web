@@ -1,199 +1,182 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseLayoutOps from "../layouts/BaseLayoutOps.astro";
+import HeroCarousel from "../components/HeroCarousel.astro";
+
+const slides = [
+  {
+    image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1920&q=80&fit=crop",
+    tag: "Inteligencia operativa",
+    title: "Visión artificial\nsin invadir a nadie.",
+    desc: "Medimos flujos, ocupación y ritmo de producción con inferencia matemática. Sin perfiles, sin identificación, sin datos personales que salgan de la planta.",
+    cta: { label: "Ver soluciones", href: "#soluciones" },
+  },
+  {
+    image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=1920&q=80&fit=crop",
+    tag: "Monitoreo de personal",
+    title: "Funciona con mascarilla.\nFunciona con casco.\nFunciona con todo el EPP.",
+    desc: "Diseñado para entornos con normativas estrictas de higiene y seguridad. La cobertura de rostro no es un obstáculo: es el escenario por defecto de operación.",
+    cta: { label: "Conocer el sistema", href: "#monitoreo" },
+  },
+  {
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&q=80&fit=crop",
+    tag: "Privacidad ética",
+    title: "Nunca instalamos una cámara\ndonde no debe haber una.",
+    desc: "Vestuarios, sanitarios y zonas restringidas quedan fuera del sistema por diseño, no por configuración. El perímetro de privacidad es inviolable y auditable.",
+    cta: { label: "Conocer el enfoque", href: "/ops/privacidad" },
+  },
+];
 ---
 
-<BaseLayout
-  title="Riro OPS — Inteligencia Operativa para Manufactura"
-  description="Monitoreo industrial y visión por computadora 100% local. Sin cámaras invasivas, sin datos en la nube. Inteligencia operativa con criterio para la manufactura moderna."
+<BaseLayoutOps
+  title="Inteligencia Operativa para Manufactura"
+  description="Monitoreo industrial y visión por computadora 100% local. Sin cámaras invasivas, sin datos en la nube. Cumplimiento objetivo, privacidad ética y fricción mínima."
+  currentPage="ops"
 >
+  <HeroCarousel slides={slides} />
+
   <main class="overflow-x-hidden">
 
-    <!-- ══════════════════════════ HERO ══════════════════════════ -->
-    <section class="relative min-h-[75vh] flex items-center overflow-hidden bg-[#0D1B2A]">
-      <div class="hero-grid-bg" aria-hidden="true"></div>
-      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0D1B2A] pointer-events-none" aria-hidden="true"></div>
+    <!-- ══════════════════ FRICCIÓN VS INCIDENCIA ══════════════════ -->
+    <section id="soluciones" class="py-32 px-6 bg-white">
+      <div class="max-w-6xl mx-auto">
 
-      <div class="relative z-10 max-w-6xl mx-auto px-6 pt-36 pb-24">
-        <div class="flex items-center gap-3 mb-10">
-          <span class="w-8 h-px bg-[#00C8FF]"></span>
-          <span class="text-[#00C8FF] text-xs font-medium tracking-[0.22em] uppercase">Línea Industrial</span>
+        <div class="flex items-center gap-3 mb-6">
+          <span class="w-8 h-px bg-[#2B96AD]"></span>
+          <span class="text-[#2B96AD] text-xs font-medium tracking-[0.22em] uppercase">El problema que resolvemos</span>
         </div>
 
-        <div class="flex items-start gap-4 mb-6">
-          <span class="badge-line badge-line--ops">OPS</span>
-        </div>
-
-        <h1 class="text-[clamp(3rem,8vw,6.5rem)] font-bold leading-[0.93] tracking-tight mb-8">
-          <span class="text-white">Visibilidad</span><br />
-          <span class="title-outline">real</span><span class="text-[#00C8FF]">.</span>
-        </h1>
-
-        <p class="text-lg md:text-xl text-white/55 max-w-xl leading-relaxed mb-12">
-          Inteligencia operativa en manufactura sin cámaras invasivas ni datos
-          en la nube. Tu planta, tu información, tu control.
+        <h2 class="text-4xl md:text-5xl font-bold text-[#1B2A4A] mb-6 leading-tight">
+          Fricción operativa<br />vs. incidencia real.
+        </h2>
+        <p class="text-[#64748b] text-lg max-w-2xl leading-relaxed mb-16">
+          Una línea de producción genera miles de eventos por turno. La mayoría son variaciones esperadas dentro del rango normal de operación — fricción inherente al proceso. Un sistema mal calibrado convierte esa fricción en ruido de alertas. Un Director de Operaciones no puede gestionar ruido.
         </p>
 
-        <div class="flex flex-wrap gap-4">
-          <a href="/contacto" class="btn-primary-ops">
-            Solicitar evaluación
-            <span class="btn-arrow">→</span>
-          </a>
-          <a href="/proyecto-piloto" class="btn-ghost">
-            Ver caso piloto
-          </a>
-        </div>
-      </div>
-
-      <div class="hero-circles" aria-hidden="true"></div>
-    </section>
-
-
-    <!-- ════════════════════ EL PROBLEMA ════════════════════ -->
-    <section class="py-32 px-6 bg-[#0D1B2A]">
-      <div class="max-w-6xl mx-auto">
-
-        <div class="flex items-center gap-3 mb-6">
-          <span class="w-8 h-px bg-[#00C8FF]"></span>
-          <span class="text-[#00C8FF] text-xs font-medium tracking-[0.22em] uppercase">El contexto</span>
-        </div>
-
-        <h2 class="text-4xl md:text-5xl font-bold text-white mb-16 leading-tight">
-          Lo que la manufactura<br />necesita hoy.
-        </h2>
-
-        <div class="problema-grid">
-
-          <div class="problema-col problema-col--no">
+        <div class="friction-grid">
+          <div class="friction-col friction-col--no">
             <div class="flex items-center gap-3 mb-8">
-              <span class="prob-num">01</span>
-              <span class="w-10 h-px bg-white/10"></span>
+              <span class="fc-num">01</span>
+              <span class="w-10 h-px bg-[#1B2A4A]/10"></span>
             </div>
-            <h3 class="text-xl font-medium text-white/40 mb-8">Lo que no funciona</h3>
-            <ul class="space-y-5">
-              <li class="prob-item prob-item--no">
-                <span class="prob-mark prob-mark--no">✕</span>
-                <span>Cámaras de seguridad que invaden la privacidad del operario</span>
+            <h3 class="fc-heading fc-heading--muted">Sin inteligencia operativa</h3>
+            <ul class="fc-list">
+              <li class="fc-item fc-item--no">
+                <span class="fc-mark fc-mark--no">✕</span>
+                Alertas que el operador ignora porque siempre están activas
               </li>
-              <li class="prob-item prob-item--no">
-                <span class="prob-mark prob-mark--no">✕</span>
-                <span>Datos de producción en servidores de terceros</span>
+              <li class="fc-item fc-item--no">
+                <span class="fc-mark fc-mark--no">✕</span>
+                Métricas de producción calculadas al final del turno, no en tiempo real
               </li>
-              <li class="prob-item prob-item--no">
-                <span class="prob-mark prob-mark--no">✕</span>
-                <span>Soluciones SaaS que facturan por siempre y por todo</span>
+              <li class="fc-item fc-item--no">
+                <span class="fc-mark fc-mark--no">✕</span>
+                Registros manuales con margen de error humano
               </li>
-              <li class="prob-item prob-item--no">
-                <span class="prob-mark prob-mark--no">✕</span>
-                <span>Métricas que llegan tarde cuando el daño ya está hecho</span>
+              <li class="fc-item fc-item--no">
+                <span class="fc-mark fc-mark--no">✕</span>
+                Cámaras que invaden la privacidad del operario sin agregar valor operativo
               </li>
             </ul>
           </div>
 
-          <div class="problema-col problema-col--si">
+          <div class="friction-col friction-col--si">
             <div class="flex items-center gap-3 mb-8">
-              <span class="prob-num prob-num--si">02</span>
-              <span class="w-10 h-px bg-white/10"></span>
+              <span class="fc-num fc-num--cyan">02</span>
+              <span class="w-10 h-px bg-[#2B96AD]/20"></span>
             </div>
-            <h3 class="text-xl font-medium text-[#00C8FF] mb-8">Lo que Riro OPS ofrece</h3>
-            <ul class="space-y-5">
-              <li class="prob-item prob-item--si">
-                <span class="prob-mark prob-mark--si">→</span>
-                <span>Inferencia matemática sin identificar personas</span>
+            <h3 class="fc-heading fc-heading--cyan">Con Riro OPS</h3>
+            <ul class="fc-list">
+              <li class="fc-item fc-item--si">
+                <span class="fc-mark fc-mark--si">→</span>
+                El operador recibe una alerta solo cuando los datos superan el umbral de anomalía real
               </li>
-              <li class="prob-item prob-item--si">
-                <span class="prob-mark prob-mark--si">→</span>
-                <span>Procesamiento 100% on-premise, cero latencia de nube</span>
+              <li class="fc-item fc-item--si">
+                <span class="fc-mark fc-mark--si">→</span>
+                Métricas de turno actualizadas en tiempo real desde el piso de planta
               </li>
-              <li class="prob-item prob-item--si">
-                <span class="prob-mark prob-mark--si">→</span>
-                <span>Inversión única. Hardware que adquirís y poseés</span>
+              <li class="fc-item fc-item--si">
+                <span class="fc-mark fc-mark--si">→</span>
+                Inferencia matemática sin intervención humana en el conteo
               </li>
-              <li class="prob-item prob-item--si">
-                <span class="prob-mark prob-mark--si">→</span>
-                <span>Alertas en tiempo real con datos accionables</span>
+              <li class="fc-item fc-item--si">
+                <span class="fc-mark fc-mark--si">→</span>
+                Privacidad ética documentada y auditable por diseño
               </li>
             </ul>
           </div>
-
         </div>
+
       </div>
     </section>
 
 
-    <!-- ═════════════════════ CAPACIDADES ═════════════════════ -->
-    <section class="py-32 px-6 bg-[#1C2B3A]">
+    <!-- ══════════════════ CAPACIDADES ══════════════════ -->
+    <section id="monitoreo" class="py-32 px-6 bg-[#1B2A4A]">
       <div class="max-w-6xl mx-auto">
 
         <div class="flex items-center gap-3 mb-6">
-          <span class="w-8 h-px bg-[#00C8FF]"></span>
-          <span class="text-[#00C8FF] text-xs font-medium tracking-[0.22em] uppercase">Stack técnico</span>
+          <span class="w-8 h-px bg-[#2B96AD]"></span>
+          <span class="text-[#2B96AD] text-xs font-medium tracking-[0.22em] uppercase">Stack técnico</span>
         </div>
 
-        <h2 class="text-4xl md:text-5xl font-bold text-white mb-16 leading-tight">
-          Qué hace Riro OPS.
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+          Cuatro capacidades.<br />Un solo sistema.
         </h2>
+        <p class="text-white/50 text-lg max-w-xl leading-relaxed mb-16">
+          Cada módulo fue diseñado para operar de forma independiente o integrada, sobre el mismo servidor edge instalado en la planta.
+        </p>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="cap-grid">
 
-          <!-- Capacidad 1 -->
           <div class="cap-card">
             <div class="cap-num">01</div>
-            <h3 class="cap-title">Conteo de unidades por visión</h3>
+            <h3 class="cap-title">Conteo de producción por visión</h3>
             <p class="cap-desc">
-              Cámaras industriales con modelos Frigate + FastAPI cuentan
-              unidades en línea sin identificar operarios. Métricas de
-              producción en tiempo real.
+              Cámaras industriales con modelos Frigate + FastAPI cuentan unidades en línea sin identificar operarios. Métricas de cadencia, proyección de turno y eficiencia por zona en tiempo real.
             </p>
-            <div class="cap-tag-row">
-              <span class="cap-tag">Frigate</span>
+            <div class="cap-tags">
+              <span class="cap-tag">Frigate NVR</span>
               <span class="cap-tag">FastAPI</span>
               <span class="cap-tag">Edge compute</span>
             </div>
           </div>
 
-          <!-- Capacidad 2 -->
           <div class="cap-card">
             <div class="cap-num">02</div>
-            <h3 class="cap-title">Dashboard operativo en tiempo real</h3>
+            <h3 class="cap-title">Monitoreo de personal adaptativo</h3>
             <p class="cap-desc">
-              Panel React con métricas de turno, alertas de desvío y
-              comparativa histórica. Visualización del piso de planta
-              sin abandonar la seguridad del servidor local.
+              El motor de visión opera sobre siluetas y vectores de movimiento. Funciona con EPP completo — mascarilla, casco, gafas, indumentaria — sin degradación de precisión. Diseñado para la realidad del piso de planta.
             </p>
-            <div class="cap-tag-row">
-              <span class="cap-tag">React</span>
-              <span class="cap-tag">WebSocket</span>
-              <span class="cap-tag">On-premise</span>
+            <div class="cap-tags">
+              <span class="cap-tag">Sin reconocimiento facial</span>
+              <span class="cap-tag">Siluetas + movimiento</span>
+              <span class="cap-tag">EPP compatible</span>
             </div>
           </div>
 
-          <!-- Capacidad 3 -->
           <div class="cap-card">
             <div class="cap-num">03</div>
-            <h3 class="cap-title">Inferencia matemática de productividad</h3>
+            <h3 class="cap-title">Balance de masas para zonas restringidas</h3>
             <p class="cap-desc">
-              Algoritmos que calculan ritmo de producción, proyección de
-              turno y eficiencia por zona sin almacenar imágenes de personas
-              ni requerir datos personales.
+              La ocupación de baños y vestuarios se calcula por balance de entrada y salida: entradas menos salidas en un período definido. Sin cámaras interiores. Sin datos de identidad. Solo matemática aplicada a flujos.
             </p>
-            <div class="cap-tag-row">
-              <span class="cap-tag">Privacidad by design</span>
-              <span class="cap-tag">Python</span>
+            <div class="cap-tags">
+              <span class="cap-tag">Sin cámaras en zonas privadas</span>
+              <span class="cap-tag">Inferencia matemática</span>
+              <span class="cap-tag">Auditable</span>
             </div>
           </div>
 
-          <!-- Capacidad 4 -->
           <div class="cap-card cap-card--highlight">
             <div class="cap-num cap-num--cyan">04</div>
-            <h3 class="cap-title">Riro Care Industrial</h3>
+            <h3 class="cap-title">Dashboard operativo on-premise</h3>
             <p class="cap-desc">
-              Soporte técnico continuo, actualizaciones de modelos de visión
-              y monitoreo proactivo del sistema. Tu operación nunca se detiene
-              por fallas de infraestructura.
+              Panel React con métricas de turno, alertas de desvío, comparativa histórica y paquetes de auditoría automáticos. Acceso desde la red local de planta, sin exponer datos a internet.
             </p>
-            <div class="cap-tag-row">
-              <span class="cap-tag cap-tag--cyan">SLA garantizado</span>
-              <span class="cap-tag cap-tag--cyan">Soporte 24/7</span>
+            <div class="cap-tags">
+              <span class="cap-tag cap-tag--cyan">React + WebSocket</span>
+              <span class="cap-tag cap-tag--cyan">On-premise</span>
+              <span class="cap-tag cap-tag--cyan">Auditoría automática</span>
             </div>
           </div>
 
@@ -202,32 +185,68 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </section>
 
 
-    <!-- ══════════════════ CASO PILOTO BANNER ══════════════════ -->
-    <section class="py-32 px-6 bg-[#0D1B2A]">
+    <!-- ══════════════════ DIFERENCIALES ══════════════════ -->
+    <section class="py-32 px-6 bg-white">
+      <div class="max-w-6xl mx-auto">
+
+        <div class="flex items-center gap-3 mb-6">
+          <span class="w-8 h-px bg-[#2B96AD]"></span>
+          <span class="text-[#2B96AD] text-xs font-medium tracking-[0.22em] uppercase">Tres pilares</span>
+        </div>
+
+        <h2 class="text-4xl md:text-5xl font-bold text-[#1B2A4A] mb-16 leading-tight">
+          Cumplimiento objetivo.<br />Privacidad ética.<br />Fricción mínima.
+        </h2>
+
+        <div class="diff-grid">
+          <div class="diff-item">
+            <div class="diff-num">01</div>
+            <h4 class="diff-title">Cumplimiento objetivo</h4>
+            <p class="diff-desc">
+              Las métricas no dependen de registros manuales ni de la subjetividad del turno. El sistema mide, el algoritmo calcula, el dashboard informa. El cumplimiento es un dato, no una estimación.
+            </p>
+          </div>
+          <div class="diff-item diff-item--border">
+            <div class="diff-num">02</div>
+            <h4 class="diff-title">Privacidad ética</h4>
+            <p class="diff-desc">
+              El sistema nunca captura datos que identifiquen personas. No hay reconocimiento facial, no hay perfiles, no hay almacenamiento de imágenes de operarios. Auditable ante cualquier organismo sindical o laboral.
+            </p>
+          </div>
+          <div class="diff-item diff-item--border">
+            <div class="diff-num">03</div>
+            <h4 class="diff-title">Operación con fricción mínima</h4>
+            <p class="diff-desc">
+              El sistema aprende la distribución estadística de tu planta y solo alerta cuando hay anomalía real. Los operadores reciben contexto accionable, no ruido de notificaciones. Cero falsas urgencias.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════ BANNER PILOTO ══════════════════ -->
+    <section class="py-32 px-6 bg-[#F4F7FA]">
       <div class="max-w-6xl mx-auto">
         <div class="pilot-banner">
           <div class="pilot-grid" aria-hidden="true"></div>
           <div class="pilot-circles" aria-hidden="true"></div>
-
           <div class="pilot-content">
             <div class="flex items-center gap-3 mb-8">
-              <span class="w-8 h-px bg-[#00C8FF]"></span>
-              <span class="text-[#00C8FF] text-xs font-medium tracking-[0.22em] uppercase">Caso de Uso Real</span>
+              <span class="w-8 h-px bg-[#2B96AD]"></span>
+              <span class="text-[#2B96AD] text-xs font-medium tracking-[0.22em] uppercase">Caso de uso real</span>
             </div>
-
             <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6 max-w-2xl">
               Planta manufacturera.<br />
               Resultado medible.<br />
-              <span class="text-[#00C8FF]">Sin invadir a nadie.</span>
+              <span class="text-[#2B96AD]">Sin invadir a nadie.</span>
             </h2>
-
-            <p class="text-white/50 text-lg max-w-xl leading-relaxed mb-10">
-              Implementamos el primer caso OPS en un entorno real de manufactura.
-              4 fases, métricas en vivo, privacidad garantizada.
+            <p class="text-white/55 text-lg max-w-xl leading-relaxed mb-10">
+              El primer despliegue OPS en entorno real de manufactura. 4 fases, métricas en vivo, privacidad garantizada y documentada.
             </p>
-
-            <a href="/proyecto-piloto" class="btn-primary-ops">
-              Ver Proyecto Piloto completo
+            <a href="/proyecto-piloto" class="btn-cyan">
+              Ver proyecto piloto completo
               <span class="btn-arrow">→</span>
             </a>
           </div>
@@ -236,26 +255,22 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </section>
 
 
-    <!-- ══════════════════════════ CTA FINAL ══════════════════════════ -->
-    <section class="py-32 px-6 bg-[#1C2B3A]">
+    <!-- ══════════════════ CTA FINAL ══════════════════ -->
+    <section class="py-32 px-6 bg-white">
       <div class="max-w-6xl mx-auto text-center">
         <div class="flex items-center justify-center gap-3 mb-6">
-          <span class="w-8 h-px bg-[#00C8FF]"></span>
-          <span class="text-[#00C8FF] text-xs font-medium tracking-[0.22em] uppercase">Próximo paso</span>
-          <span class="w-8 h-px bg-[#00C8FF]"></span>
+          <span class="w-8 h-px bg-[#2B96AD]"></span>
+          <span class="text-[#2B96AD] text-xs font-medium tracking-[0.22em] uppercase">Evaluación técnica</span>
+          <span class="w-8 h-px bg-[#2B96AD]"></span>
         </div>
-
-        <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+        <h2 class="text-4xl md:text-5xl font-bold text-[#1B2A4A] mb-6 leading-tight">
           ¿Cuánto produce tu planta?<br />
-          <span class="text-[#00C8FF]">Averigualo con datos reales.</span>
+          <span class="text-[#2B96AD]">Averigualo con datos reales.</span>
         </h2>
-
-        <p class="text-white/50 text-lg max-w-xl mx-auto leading-relaxed mb-12">
-          Agendá una evaluación técnica sin costo. Analizamos tu flujo
-          de producción y diseñamos el sistema mínimo necesario.
+        <p class="text-[#64748b] text-lg max-w-xl mx-auto leading-relaxed mb-12">
+          Agendá una evaluación técnica sin costo. Analizamos tu flujo de producción y diseñamos el sistema mínimo necesario para obtener métricas reales.
         </p>
-
-        <a href="/contacto" class="btn-primary-ops">
+        <a href="/ops/contacto" class="btn-cyan">
           Agendar evaluación técnica
           <span class="btn-arrow">→</span>
         </a>
@@ -263,150 +278,72 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </section>
 
   </main>
-</BaseLayout>
+</BaseLayoutOps>
 
 <style>
   :root {
-    --c-navy:    #0D1B2A;
-    --c-charcoal:#1C2B3A;
-    --c-cyan:    #00C8FF;
-    --c-steel:   #4A7FA5;
+    --c-navy: #1B2A4A;
+    --c-cyan: #2B96AD;
+    --c-bg:   #F4F7FA;
   }
 
-  /* ── Hero ─────────────────────────────────────────────────── */
-  .hero-grid-bg {
-    position: absolute;
-    inset: 0;
-    background-color: var(--c-navy);
-    background-image:
-      linear-gradient(rgba(0, 200, 255, 0.035) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0, 200, 255, 0.035) 1px, transparent 1px);
-    background-size: 72px 72px;
-  }
-
-  .badge-line {
-    font-size: 0.6875rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    padding: 3px 10px;
-    border-radius: 4px;
-  }
-
-  .badge-line--ops {
-    color: var(--c-cyan);
-    background: rgba(0, 200, 255, 0.08);
-    border: 1px solid rgba(0, 200, 255, 0.22);
-  }
-
-  .title-outline {
-    color: transparent;
-    -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.22);
-  }
-
-  .btn-primary-ops {
+  .btn-cyan {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
     font-family: 'Inter', system-ui, sans-serif;
     font-weight: 500;
     font-size: 0.9375rem;
-    color: var(--c-navy);
-    background: var(--c-cyan);
+    color: #fff;
+    background: #2B96AD;
     text-decoration: none;
     padding: 0.9rem 1.75rem;
     border-radius: 7px;
     transition: background 0.2s, box-shadow 0.2s, gap 0.2s;
     white-space: nowrap;
   }
-
-  .btn-primary-ops:hover {
-    background: #19d4ff;
-    box-shadow: 0 0 32px rgba(0, 200, 255, 0.38);
+  .btn-cyan:hover {
+    background: #239bb2;
+    box-shadow: 0 0 32px rgba(43, 150, 173, 0.38);
     gap: 0.75rem;
   }
-
   .btn-arrow { transition: transform 0.2s; }
-  .btn-primary-ops:hover .btn-arrow { transform: translateX(3px); }
+  .btn-cyan:hover .btn-arrow { transform: translateX(3px); }
 
-  .btn-ghost {
-    display: inline-flex;
-    align-items: center;
-    font-family: 'Inter', system-ui, sans-serif;
-    font-weight: 400;
-    font-size: 0.9375rem;
-    color: rgba(255, 255, 255, 0.5);
-    text-decoration: none;
-    padding: 0.9rem 1.75rem;
-    border-radius: 7px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: color 0.2s, border-color 0.2s, background 0.2s;
-  }
-
-  .btn-ghost:hover {
-    color: #fff;
-    border-color: rgba(255, 255, 255, 0.25);
-    background: rgba(255, 255, 255, 0.04);
-  }
-
-  .hero-circles {
-    position: absolute;
-    right: -100px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 520px;
-    height: 520px;
-    pointer-events: none;
-  }
-
-  .hero-circles::before,
-  .hero-circles::after {
-    content: '';
-    position: absolute;
-    border-radius: 50%;
-    border: 1px solid rgba(0, 200, 255, 0.07);
-  }
-
-  .hero-circles::before { inset: 0; }
-  .hero-circles::after  { inset: 80px; border-color: rgba(0, 200, 255, 0.1); box-shadow: inset 0 0 80px rgba(0, 200, 255, 0.03); }
-
-  @media (max-width: 1024px) { .hero-circles { display: none; } }
-
-  /* ── Problema grid ────────────────────────────────────────── */
-  .problema-grid {
+  /* Fricción grid */
+  .friction-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    border: 1px solid rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(27, 42, 74, 0.08);
     border-radius: 12px;
     overflow: hidden;
   }
+  @media (max-width: 768px) { .friction-grid { grid-template-columns: 1fr; } }
 
+  .friction-col { padding: 3rem; }
+  .friction-col--si { border-left: 1px solid rgba(27, 42, 74, 0.08); }
   @media (max-width: 768px) {
-    .problema-grid { grid-template-columns: 1fr; }
+    .friction-col--si { border-left: none; border-top: 1px solid rgba(27, 42, 74, 0.08); }
   }
 
-  .problema-col { padding: 3rem; }
-
-  .problema-col--si {
-    border-left: 1px solid rgba(255, 255, 255, 0.07);
-  }
-
-  @media (max-width: 768px) {
-    .problema-col--si {
-      border-left: none;
-      border-top: 1px solid rgba(255, 255, 255, 0.07);
-    }
-  }
-
-  .prob-num {
+  .fc-num {
     font-size: 0.6875rem;
     font-weight: 600;
     letter-spacing: 0.14em;
-    color: rgba(255, 255, 255, 0.2);
+    color: rgba(27, 42, 74, 0.2);
   }
+  .fc-num--cyan { color: rgba(43, 150, 173, 0.6); }
 
-  .prob-num--si { color: rgba(0, 200, 255, 0.5); }
+  .fc-heading {
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+  }
+  .fc-heading--muted { color: rgba(27, 42, 74, 0.35); }
+  .fc-heading--cyan  { color: #2B96AD; }
 
-  .prob-item {
+  .fc-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1.25rem; }
+  .fc-item {
     display: flex;
     align-items: flex-start;
     gap: 0.875rem;
@@ -414,38 +351,31 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     font-size: 0.9375rem;
     line-height: 1.55;
   }
+  .fc-item--no { color: rgba(27, 42, 74, 0.38); }
+  .fc-item--si { color: rgba(27, 42, 74, 0.85); }
+  .fc-mark { flex-shrink: 0; font-size: 0.75rem; font-weight: 600; margin-top: 3px; }
+  .fc-mark--no { color: rgba(27, 42, 74, 0.18); }
+  .fc-mark--si { color: #2B96AD; }
 
-  .prob-item--no { color: rgba(255, 255, 255, 0.4); }
-  .prob-item--si { color: rgba(255, 255, 255, 0.85); }
-
-  .prob-mark {
-    flex-shrink: 0;
-    font-size: 0.75rem;
-    font-weight: 600;
-    margin-top: 3px;
+  /* Capacidades — dark */
+  .cap-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    overflow: hidden;
   }
+  @media (max-width: 768px) { .cap-grid { grid-template-columns: 1fr; } }
 
-  .prob-mark--no { color: rgba(255, 255, 255, 0.18); }
-  .prob-mark--si { color: var(--c-cyan); }
-
-  /* ── Capacidades ──────────────────────────────────────────── */
   .cap-card {
     padding: 2.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.02);
-    transition: border-color 0.25s, transform 0.25s;
+    background: rgba(255, 255, 255, 0.03);
+    transition: background 0.25s;
   }
-
-  .cap-card:hover {
-    border-color: rgba(0, 200, 255, 0.2);
-    transform: translateY(-3px);
-  }
-
-  .cap-card--highlight {
-    border-color: rgba(0, 200, 255, 0.1);
-    background: rgba(0, 200, 255, 0.03);
-  }
+  .cap-card:hover { background: rgba(43, 150, 173, 0.07); }
+  .cap-card--highlight { background: rgba(43, 150, 173, 0.05); }
 
   .cap-num {
     font-size: 0.6875rem;
@@ -454,72 +384,97 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     color: rgba(255, 255, 255, 0.2);
     margin-bottom: 1.25rem;
   }
-
-  .cap-num--cyan { color: rgba(0, 200, 255, 0.6); }
+  .cap-num--cyan { color: rgba(43, 150, 173, 0.75); }
 
   .cap-title {
-    font-family: 'Inter', system-ui, sans-serif;
-    font-size: 1.125rem;
+    font-size: 1.0625rem;
     font-weight: 600;
     color: #fff;
     margin-bottom: 0.875rem;
     line-height: 1.3;
   }
-
   .cap-desc {
-    font-family: 'Inter', system-ui, sans-serif;
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.42);
-    line-height: 1.65;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.7;
     margin-bottom: 1.5rem;
   }
-
-  .cap-tag-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-  }
-
+  .cap-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
   .cap-tag {
     font-size: 0.7rem;
     font-weight: 500;
     color: rgba(255, 255, 255, 0.45);
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.07);
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 2px 8px;
     border-radius: 4px;
   }
-
   .cap-tag--cyan {
-    color: rgba(0, 200, 255, 0.75);
-    background: rgba(0, 200, 255, 0.06);
-    border-color: rgba(0, 200, 255, 0.15);
+    color: #2B96AD;
+    background: rgba(43, 150, 173, 0.1);
+    border-color: rgba(43, 150, 173, 0.25);
   }
 
-  /* ── Pilot Banner ─────────────────────────────────────────── */
+  /* Diferenciales */
+  .diff-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border: 1px solid rgba(27, 42, 74, 0.08);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  @media (max-width: 768px) {
+    .diff-grid { grid-template-columns: 1fr; }
+    .diff-item--border { border-left: none; border-top: 1px solid rgba(27, 42, 74, 0.08); }
+  }
+
+  .diff-item {
+    padding: 2.5rem;
+    transition: background 0.2s;
+  }
+  .diff-item:hover { background: rgba(43, 150, 173, 0.04); }
+  .diff-item--border { border-left: 1px solid rgba(27, 42, 74, 0.08); }
+
+  .diff-num {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: #2B96AD;
+    margin-bottom: 1.5rem;
+  }
+  .diff-title {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--c-navy);
+    margin-bottom: 0.875rem;
+  }
+  .diff-desc {
+    font-size: 0.875rem;
+    color: #64748b;
+    line-height: 1.7;
+  }
+
+  /* Pilot banner */
   .pilot-banner {
     position: relative;
-    background: var(--c-charcoal);
+    background: var(--c-navy);
     border-radius: 16px;
     padding: 5rem 4.5rem;
     overflow: hidden;
-    border: 1px solid rgba(0, 200, 255, 0.08);
+    border: 1px solid rgba(43, 150, 173, 0.1);
   }
-
   @media (max-width: 768px) { .pilot-banner { padding: 3rem 2rem; } }
-
   .pilot-content { position: relative; z-index: 2; }
-
   .pilot-grid {
     position: absolute;
     inset: 0;
     background-image:
-      linear-gradient(rgba(0, 200, 255, 0.025) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0, 200, 255, 0.025) 1px, transparent 1px);
+      linear-gradient(rgba(43, 150, 173, 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(43, 150, 173, 0.035) 1px, transparent 1px);
     background-size: 44px 44px;
     pointer-events: none;
   }
-
   .pilot-circles {
     position: absolute;
     right: -80px;
@@ -529,17 +484,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     height: 440px;
     pointer-events: none;
   }
-
   .pilot-circles::before,
   .pilot-circles::after {
     content: '';
     position: absolute;
     border-radius: 50%;
-    border: 1px solid rgba(0, 200, 255, 0.06);
+    border: 1px solid rgba(43, 150, 173, 0.08);
   }
-
   .pilot-circles::before { inset: 0; }
-  .pilot-circles::after  { inset: 70px; border-color: rgba(0, 200, 255, 0.08); background: rgba(0, 200, 255, 0.015); }
-
+  .pilot-circles::after  { inset: 70px; border-color: rgba(43, 150, 173, 0.1); background: rgba(43, 150, 173, 0.015); }
   @media (max-width: 1024px) { .pilot-circles { display: none; } }
 </style>

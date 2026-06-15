@@ -8,9 +8,9 @@ const year = new Date().getFullYear();
 
     <!-- Columna 1: Líneas de negocio -->
     <div class="footer-col">
-      <p class="footer-brand">
-        <span class="brand-riro">RIRO</span><span class="brand-sep">·</span><span class="brand-sys">SYSTEMS</span>
-      </p>
+      <a href="/" class="footer-logo-link">
+        <img src="/Riro.svg" alt="Riro Systems" class="footer-logo-img" loading="lazy" />
+      </a>
       <p class="footer-tagline">Automatización con criterio.</p>
 
       <div class="biz-lines">
@@ -44,8 +44,8 @@ const year = new Date().getFullYear();
       <nav class="footer-nav" aria-label="Contacto">
         <a href="/contacto" class="footer-link">Solicitar Relevamiento</a>
         <a href="/#proceso" class="footer-link">Ver el Proceso</a>
-        <a href="https://wa.me/5491100000000" class="footer-link footer-link--cta" target="_blank" rel="noopener noreferrer">
-          WhatsApp directo →
+        <a href="mailto:rirosystem@loreatec.jp" class="footer-link footer-link--cta">
+          Escríbenos por email →
         </a>
       </nav>
       <a href="/contacto" class="footer-demo">Solicitar Demo</a>
@@ -59,16 +59,16 @@ const year = new Date().getFullYear();
       © {year} Riro Systems. Todos los derechos reservados.
     </p>
     <p class="footer-origin">
-      <span class="origin-dot"></span> Argentina — Hardware tuyo. Criterio nuestro.
+      <span class="origin-dot"></span> Perú — Hardware tuyo. Criterio nuestro.
     </p>
   </div>
 </footer>
 
 <style>
   :root {
-    --c-navy:    #0D1B2A;
-    --c-charcoal:#1C2B3A;
-    --c-cyan:    #00C8FF;
+    --c-navy:    #1B2A4A;
+    --c-charcoal:#253761;
+    --c-cyan:    #2B96AD;
     --c-steel:   #4A7FA5;
     --c-white:   #FFFFFF;
     --c-muted:   rgba(255, 255, 255, 0.45);
@@ -78,7 +78,7 @@ const year = new Date().getFullYear();
   /* ── Contenedor ─────────────────────────────────────────── */
   .footer {
     background: var(--c-navy);
-    border-top: 1px solid rgba(0, 200, 255, 0.08);
+    border-top: 1px solid rgba(43, 150, 173, 0.15);
     margin-top: 6rem;
   }
 
@@ -98,39 +98,23 @@ const year = new Date().getFullYear();
     gap: 0;
   }
 
-  /* ── Marca ───────────────────────────────────────────────── */
-  .footer-brand {
-    display: flex;
-    align-items: baseline;
-    gap: 0;
-    user-select: none;
+  /* ── Logo ────────────────────────────────────────────────── */
+  .footer-logo-link {
+    display: inline-block;
     margin: 0 0 0.35rem;
   }
 
-  .brand-riro {
-    font-family: 'Inter', 'DM Sans', system-ui, sans-serif;
-    font-weight: 700;
-    font-size: 1rem;
-    letter-spacing: 0.14em;
-    color: var(--c-white);
+  .footer-logo-img {
+    height: 68px;
+    width: auto;
+    border-radius: 3px;
+    opacity: 0.92;
+    filter: brightness(0) invert(1);
+    transition: opacity 0.2s, filter 0.2s;
   }
 
-  .brand-sep {
-    font-weight: 700;
-    font-size: 1rem;
-    color: var(--c-cyan);
-    margin: 0 2px;
-  }
-
-  .brand-sys {
-    font-family: 'Inter', 'DM Sans', system-ui, sans-serif;
-    font-weight: 400;
-    font-size: 0.5rem;
-    letter-spacing: 0.26em;
-    color: rgba(255, 255, 255, 0.35);
-    text-transform: uppercase;
-    align-self: flex-end;
-    margin-bottom: 1px;
+  .footer-logo-link:hover .footer-logo-img {
+    opacity: 1;
   }
 
   .footer-tagline {
@@ -180,8 +164,8 @@ const year = new Date().getFullYear();
 
   .biz-ops {
     color: var(--c-cyan);
-    background: rgba(0, 200, 255, 0.08);
-    border: 1px solid rgba(0, 200, 255, 0.2);
+    background: rgba(43, 150, 173, 0.1);
+    border: 1px solid rgba(43, 150, 173, 0.22);
   }
 
   .biz-label {
@@ -264,8 +248,8 @@ const year = new Date().getFullYear();
   }
 
   .footer-demo:hover {
-    background: #19d4ff;
-    box-shadow: 0 0 16px rgba(0, 200, 255, 0.28);
+    background: #3AABBD;
+    box-shadow: 0 0 16px rgba(43, 150, 173, 0.35);
   }
 
   /* ── Barra inferior ──────────────────────────────────────── */

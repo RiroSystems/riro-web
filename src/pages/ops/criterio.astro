@@ -1,0 +1,464 @@
+---
+import BaseLayoutOps from "../../layouts/BaseLayoutOps.astro";
+---
+
+<BaseLayoutOps
+  title="El Criterio RIRO"
+  description="理路 — pensamiento lógico y claro. Por qué Riro OPS procesa todo localmente, sin nube, y qué significa eso para la privacidad y la autonomía operativa."
+  currentPage="criterio"
+>
+  <main class="overflow-x-hidden">
+
+    <!-- ══════════ HERO OSCURO ══════════ -->
+    <section class="relative pt-36 pb-32 px-6 bg-[#1B2A4A] overflow-hidden">
+      <div class="crit-grid-bg" aria-hidden="true"></div>
+      <div class="kanji-watermark" aria-hidden="true">理路</div>
+      <div class="relative z-10 max-w-5xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="w-8 h-px bg-[#2B96AD]"></span>
+          <span class="text-[#2B96AD] text-xs font-medium tracking-[0.22em] uppercase">El Criterio RIRO</span>
+        </div>
+        <h1 class="text-[clamp(2.5rem,5vw,4.5rem)] font-bold text-white leading-tight mb-6 max-w-3xl">
+          理路 — el principio<br />
+          que no negociamos.
+        </h1>
+        <p class="text-white/55 text-lg max-w-2xl leading-relaxed">
+          理路 (riro) es un término japonés que significa "pensamiento lógico y claro, libre de contradicciones". Es el principio que guía cada decisión técnica: si la arquitectura no puede justificarse con lógica clara, no se implementa.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ══════════ ETIMOLOGÍA ══════════ -->
+    <section class="py-24 px-6 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="etim-grid">
+          <div class="etim-main">
+            <div class="flex items-center gap-3 mb-6">
+              <span class="w-8 h-px bg-[#2B96AD]"></span>
+              <span class="text-[#2B96AD] text-xs font-medium tracking-[0.22em] uppercase">Origen del nombre</span>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-[#1B2A4A] mb-6 leading-tight">
+              Dos kanjis.<br />Una filosofía de trabajo.
+            </h2>
+            <p class="text-[#64748b] text-base leading-relaxed mb-4">
+              La elección del nombre no fue estética. Loreatec Japan opera desde Japón con una raíz cultural que valora la precisión, la discreción y el respeto por los procesos. Esos mismos valores son los que rigen cómo diseñamos los sistemas.
+            </p>
+            <p class="text-[#64748b] text-base leading-relaxed">
+              Un sistema de monitoreo industrial bien diseñado debe ser silencioso, preciso y no invasivo. Debe hacer su trabajo sin hacerse notar. Eso es 理路 aplicado a la tecnología industrial.
+            </p>
+          </div>
+          <div class="etim-cards">
+            <div class="kanji-card">
+              <div class="kanji-char">理</div>
+              <div class="kanji-info">
+                <span class="kanji-rom">Ri</span>
+                <span class="kanji-mean">Razón lógica · Principio ordenador</span>
+                <span class="kanji-note">La lógica que estructura el pensamiento y los procesos.</span>
+              </div>
+            </div>
+            <div class="kanji-card kanji-card--cyan">
+              <div class="kanji-char kanji-char--cyan">路</div>
+              <div class="kanji-info">
+                <span class="kanji-rom">Ro</span>
+                <span class="kanji-mean">Camino · Trayectoria definida</span>
+                <span class="kanji-note">La dirección clara hacia un objetivo sin desvíos innecesarios.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════ LOREATEC ══════════ -->
+    <section class="py-24 px-6 bg-[#F4F7FA]">
+      <div class="max-w-5xl mx-auto">
+        <div class="loreatec-grid">
+          <div class="loreatec-img-col">
+            <img
+              src="https://images.unsplash.com/photo-1492571350019-22de08371fd3?w=800&q=80&fit=crop"
+              alt="Tokyo — sede de Loreatec Japan"
+              class="loreatec-img"
+              loading="lazy"
+            />
+            <div class="loreatec-img-tag">Tokyo, Japón</div>
+          </div>
+          <div class="loreatec-content">
+            <div class="flex items-center gap-3 mb-6">
+              <span class="w-8 h-px bg-[#2B96AD]"></span>
+              <span class="text-[#2B96AD] text-xs font-medium tracking-[0.22em] uppercase">La raíz</span>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-[#1B2A4A] mb-5 leading-tight">
+              Loreatec Japan.
+            </h2>
+            <p class="text-[#64748b] text-base leading-relaxed mb-4">
+              Riro Systems es la división tecnológica de Loreatec Japan, empresa con raíces en Japón y operaciones en Latinoamérica. Esa base cultural no es decorativa: define cómo pensamos la privacidad, la precisión y el respeto por el operario.
+            </p>
+            <p class="text-[#64748b] text-base leading-relaxed mb-4">
+              En la manufactura japonesa existe un concepto llamado <em>kaizen</em> — mejora continua sin desperdicios. En tecnología industrial, el mayor desperdicio es un sistema que genera ruido operativo sin agregar valor. Riro OPS fue diseñado para eliminar ese desperdicio.
+            </p>
+            <p class="text-[#64748b] text-base leading-relaxed">
+              La privacidad ética es otro principio proveniente de esa raíz cultural: el operario en una planta tiene el mismo derecho a la privacidad que cualquier persona. Un sistema que lo viola no es solo éticamente incorrecto — es técnicamente innecesario cuando existe la inferencia matemática.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════ IA LOCAL VS NUBE ══════════ -->
+    <section class="py-32 px-6 bg-[#1B2A4A]">
+      <div class="max-w-5xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="w-8 h-px bg-[#2B96AD]"></span>
+          <span class="text-[#2B96AD] text-xs font-medium tracking-[0.22em] uppercase">Decisión técnica fundamental</span>
+        </div>
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+          IA local.<br />
+          <span class="text-[#2B96AD]">No en la nube.</span>
+        </h2>
+        <p class="text-white/50 text-lg max-w-xl leading-relaxed mb-16">
+          Procesamos todo en el servidor edge instalado en la planta. Esta decisión no es de costo — es de principio. Y tiene consecuencias concretas para la privacidad, la resiliencia y la autonomía del cliente.
+        </p>
+
+        <div class="ia-grid">
+          <div class="ia-card">
+            <div class="ia-num">01</div>
+            <h3 class="ia-title">Velocidad sin latencia</h3>
+            <p class="ia-desc">
+              El procesamiento ocurre a menos de 500ms del evento. Sin latencia de red, sin dependencia de ancho de banda, sin cola de procesamiento en la nube. La alerta llega cuando el evento ocurre, no varios segundos después.
+            </p>
+            <div class="ia-metric">
+              <span class="ia-metric-val">&lt;500ms</span>
+              <span class="ia-metric-label">latencia de procesamiento</span>
+            </div>
+          </div>
+
+          <div class="ia-card">
+            <div class="ia-num">02</div>
+            <h3 class="ia-title">Resiliencia sin dependencia</h3>
+            <p class="ia-desc">
+              Si el proveedor de nube tiene una caída, el sistema sigue funcionando. Si el internet de la planta falla, el sistema sigue funcionando. La operación del cliente no depende de la continuidad del servicio de ningún tercero.
+            </p>
+            <div class="ia-metric">
+              <span class="ia-metric-val">100%</span>
+              <span class="ia-metric-label">operativo sin internet</span>
+            </div>
+          </div>
+
+          <div class="ia-card ia-card--highlight">
+            <div class="ia-num ia-num--cyan">03</div>
+            <h3 class="ia-title">Privacidad ética por arquitectura</h3>
+            <p class="ia-desc">
+              Los datos de producción, los conteos de operarios y las métricas de turno nunca salen de la planta. No es una política de privacidad — es una imposibilidad técnica. El dato nació en la planta y muere en la planta.
+            </p>
+            <div class="ia-metric">
+              <span class="ia-metric-val">0</span>
+              <span class="ia-metric-label">datos enviados a la nube</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tabla comparativa -->
+        <div class="mt-20">
+          <h3 class="text-white/60 text-sm font-medium tracking-[0.14em] uppercase mb-8">Riro OPS vs plataformas de visión en nube</h3>
+          <div class="comp-table">
+            <div class="comp-header">
+              <div class="comp-col-label"></div>
+              <div class="comp-col comp-col--no">Plataformas cloud</div>
+              <div class="comp-col comp-col--si">Riro OPS</div>
+            </div>
+            <div class="comp-row">
+              <div class="comp-col-label">Datos salen de la planta</div>
+              <div class="comp-col comp-col--no">Sí — a servidores del proveedor</div>
+              <div class="comp-col comp-col--si">No — procesamiento local</div>
+            </div>
+            <div class="comp-row">
+              <div class="comp-col-label">Funciona sin internet</div>
+              <div class="comp-col comp-col--no">No</div>
+              <div class="comp-col comp-col--si">Sí</div>
+            </div>
+            <div class="comp-row">
+              <div class="comp-col-label">El cliente controla los datos</div>
+              <div class="comp-col comp-col--no">Parcialmente</div>
+              <div class="comp-col comp-col--si">Totalmente</div>
+            </div>
+            <div class="comp-row">
+              <div class="comp-col-label">Latencia de análisis</div>
+              <div class="comp-col comp-col--no">2–5 segundos (depende de red)</div>
+              <div class="comp-col comp-col--si">&lt;500ms</div>
+            </div>
+            <div class="comp-row">
+              <div class="comp-col-label">Costo por uso escala con datos</div>
+              <div class="comp-col comp-col--no">Sí</div>
+              <div class="comp-col comp-col--si">No — hardware propio</div>
+            </div>
+            <div class="comp-row">
+              <div class="comp-col-label">Auditable ante inspección laboral</div>
+              <div class="comp-col comp-col--no">Depende del proveedor</div>
+              <div class="comp-col comp-col--si">Sí — documentación completa</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════ CTA FINAL ══════════ -->
+    <section class="py-32 px-6 bg-white">
+      <div class="max-w-5xl mx-auto text-center">
+        <div class="flex items-center justify-center gap-3 mb-6">
+          <span class="w-8 h-px bg-[#2B96AD]"></span>
+          <span class="text-[#2B96AD] text-xs font-medium tracking-[0.22em] uppercase">理路</span>
+          <span class="w-8 h-px bg-[#2B96AD]"></span>
+        </div>
+        <h2 class="text-4xl md:text-5xl font-bold text-[#1B2A4A] mb-6 leading-tight">
+          El criterio es simple:<br />
+          <span class="text-[#2B96AD]">funciona, mide y no invade.</span>
+        </h2>
+        <p class="text-[#64748b] text-lg max-w-lg mx-auto leading-relaxed mb-12">
+          Si eso es lo que buscas para tu planta, hablemos. Sin presión, sin demos innecesarias — una conversación técnica directa.
+        </p>
+        <a href="/ops/contacto" class="btn-cyan">
+          Iniciar conversación técnica
+          <span class="btn-arrow">→</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+</BaseLayoutOps>
+
+<style>
+  .crit-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(43, 150, 173, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(43, 150, 173, 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+    pointer-events: none;
+  }
+
+  .kanji-watermark {
+    position: absolute;
+    right: -2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 22rem;
+    font-weight: 900;
+    color: rgba(43, 150, 173, 0.035);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+    letter-spacing: -0.05em;
+  }
+  @media (max-width: 768px) {
+    .kanji-watermark { font-size: 10rem; right: -0.5rem; }
+  }
+
+  /* Etimología */
+  .etim-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  @media (max-width: 768px) { .etim-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+
+  .etim-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .kanji-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 1.5rem;
+    background: #F4F7FA;
+    border: 1px solid rgba(27, 42, 74, 0.07);
+    border-radius: 10px;
+  }
+  .kanji-card--cyan {
+    background: rgba(43, 150, 173, 0.05);
+    border-color: rgba(43, 150, 173, 0.15);
+  }
+  .kanji-char {
+    font-size: 3rem;
+    font-weight: 900;
+    color: rgba(27, 42, 74, 0.15);
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .kanji-char--cyan { color: rgba(43, 150, 173, 0.45); }
+  .kanji-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .kanji-rom {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: #2B96AD;
+  }
+  .kanji-mean {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #1B2A4A;
+  }
+  .kanji-note {
+    font-size: 0.8rem;
+    color: #64748b;
+    line-height: 1.5;
+  }
+
+  /* Loreatec */
+  .loreatec-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 4rem;
+    align-items: flex-start;
+  }
+  @media (max-width: 768px) { .loreatec-grid { grid-template-columns: 1fr; } }
+  .loreatec-img-col { position: relative; }
+  .loreatec-img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+  }
+  .loreatec-img-tag {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    background: rgba(27, 42, 74, 0.85);
+    backdrop-filter: blur(8px);
+    border-radius: 5px;
+    padding: 4px 10px;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.65);
+    letter-spacing: 0.06em;
+  }
+
+  /* IA grid */
+  .ia-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  @media (max-width: 768px) { .ia-grid { grid-template-columns: 1fr; } }
+
+  .ia-card {
+    padding: 2.5rem;
+    background: rgba(255,255,255,0.03);
+    transition: background 0.25s;
+  }
+  .ia-card:hover { background: rgba(43,150,173,0.07); }
+  .ia-card--highlight { background: rgba(43,150,173,0.05); }
+
+  .ia-num {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: rgba(255,255,255,0.2);
+    margin-bottom: 1.25rem;
+  }
+  .ia-num--cyan { color: rgba(43,150,173,0.75); }
+
+  .ia-title {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.875rem;
+    line-height: 1.3;
+  }
+  .ia-desc {
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+  .ia-metric {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+  }
+  .ia-metric-val {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #2B96AD;
+    line-height: 1;
+  }
+  .ia-metric-label {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.04em;
+  }
+
+  /* Comparativa tabla */
+  .comp-table {
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .comp-header, .comp-row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .comp-row:last-child { border-bottom: none; }
+  .comp-header { background: rgba(255,255,255,0.04); }
+  .comp-col-label {
+    padding: 0.875rem 1rem;
+    font-size: 0.8125rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.4;
+  }
+  .comp-col {
+    padding: 0.875rem 1rem;
+    font-size: 0.8125rem;
+    line-height: 1.4;
+    border-left: 1px solid rgba(255,255,255,0.06);
+  }
+  .comp-col--no { color: rgba(239,68,68,0.7); }
+  .comp-col--si { color: #2B96AD; }
+  .comp-header .comp-col {
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+  }
+  @media (max-width: 640px) { .comp-table { display: none; } }
+
+  .btn-cyan {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    color: #fff;
+    background: #2B96AD;
+    text-decoration: none;
+    padding: 0.9rem 1.75rem;
+    border-radius: 7px;
+    transition: background 0.2s, box-shadow 0.2s, gap 0.2s;
+  }
+  .btn-cyan:hover {
+    background: #239bb2;
+    box-shadow: 0 0 28px rgba(43, 150, 173, 0.35);
+    gap: 0.75rem;
+  }
+  .btn-arrow { transition: transform 0.2s; }
+  .btn-cyan:hover .btn-arrow { transform: translateX(3px); }
+</style>

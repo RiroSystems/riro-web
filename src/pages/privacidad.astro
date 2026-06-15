@@ -1,0 +1,183 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const updated = "2025-06-01";
+---
+
+<BaseLayout
+  title="Política de Privacidad"
+  description="Política de privacidad de Riro Systems. Procesamiento local por diseño. Tus datos permanecen en tu infraestructura."
+>
+  <main class="overflow-x-hidden">
+
+    <!-- HERO -->
+    <section class="relative pt-36 pb-16 px-6 bg-white overflow-hidden">
+      <div class="legal-grid-bg" aria-hidden="true"></div>
+      <div class="relative z-10 max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="w-8 h-px bg-[#4A7FA5]"></span>
+          <span class="text-[#4A7FA5] text-xs font-medium tracking-[0.22em] uppercase">Legal</span>
+        </div>
+        <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold text-[#1B2A4A] leading-tight mb-4">
+          Política de Privacidad
+        </h1>
+        <p class="text-[#64748b] text-sm">Última actualización: {updated}</p>
+      </div>
+    </section>
+
+    <!-- CONTENIDO -->
+    <section class="py-16 px-6 bg-white">
+      <div class="max-w-3xl mx-auto">
+        <div class="legal-body">
+
+          <div class="legal-section">
+            <h2>1. Responsable del tratamiento</h2>
+            <p>
+              Riro Systems, división tecnológica de Loreatec Japan, es responsable del tratamiento de los datos personales recabados a través de este sitio web (<strong>rirosystems.com</strong>). Para consultas sobre privacidad puedes contactarnos en <a href="mailto:rirosystem@loreatec.jp">rirosystem@loreatec.jp</a>.
+            </p>
+          </div>
+
+          <div class="legal-section">
+            <h2>2. Datos que recopilamos</h2>
+            <p>Solo recopilamos los datos que nos proporcionas voluntariamente:</p>
+            <ul>
+              <li><strong>Nombre y apellido</strong> — para identificar tu consulta.</li>
+              <li><strong>Dirección de email</strong> — para responderte.</li>
+              <li><strong>Teléfono</strong> — si lo proporcionas, para contacto directo.</li>
+              <li><strong>Descripción del proyecto</strong> — el texto libre que ingresas en el formulario.</li>
+            </ul>
+            <p>
+              No utilizamos cookies de seguimiento, píxeles publicitarios ni herramientas de analítica de terceros.
+            </p>
+          </div>
+
+          <div class="legal-section">
+            <h2>3. Finalidad del tratamiento</h2>
+            <p>Usamos tus datos exclusivamente para:</p>
+            <ul>
+              <li>Responder tu consulta o solicitud de relevamiento.</li>
+              <li>Coordinar una visita técnica si la solicitás.</li>
+              <li>Enviar información relacionada con tu proyecto, si nos lo pedís expresamente.</li>
+            </ul>
+            <p>No utilizamos tus datos para marketing no solicitado, perfilado ni transferencias a terceros.</p>
+          </div>
+
+          <div class="legal-section" id="datos">
+            <h2>4. Procesamiento de datos</h2>
+            <p>
+              Riro Systems está construida sobre el principio de <strong>procesamiento local por diseño</strong>. Los datos de comportamiento de los ecosistemas residenciales e industriales que instalamos permanecen en la infraestructura del cliente. No accedemos a ellos remotamente salvo acuerdo explícito y documentado en el contrato de servicio.
+            </p>
+            <p>
+              Los datos del formulario de contacto de este sitio web son almacenados en servidores de acceso restringido y no son transferidos a terceros sin consentimiento.
+            </p>
+          </div>
+
+          <div class="legal-section">
+            <h2>5. Plazo de conservación</h2>
+            <p>
+              Conservamos tus datos de contacto mientras exista una relación comercial activa o consulta en curso. Una vez finalizada, los eliminamos en un plazo máximo de 12 meses, salvo obligación legal que exija un período mayor.
+            </p>
+          </div>
+
+          <div class="legal-section">
+            <h2>6. Tus derechos</h2>
+            <p>Puedes ejercer en cualquier momento los siguientes derechos escribiéndonos a <a href="mailto:rirosystem@loreatec.jp">rirosystem@loreatec.jp</a>:</p>
+            <ul>
+              <li><strong>Acceso</strong> — saber qué datos tenemos sobre vos.</li>
+              <li><strong>Rectificación</strong> — corregir datos incorrectos.</li>
+              <li><strong>Supresión</strong> — solicitar la eliminación de tus datos.</li>
+              <li><strong>Oposición</strong> — oponerte al tratamiento para fines específicos.</li>
+              <li><strong>Portabilidad</strong> — recibir tus datos en formato legible.</li>
+            </ul>
+            <p>Respondemos solicitudes en un plazo máximo de 30 días hábiles.</p>
+          </div>
+
+          <div class="legal-section">
+            <h2>7. Seguridad</h2>
+            <p>
+              Implementamos medidas técnicas y organizativas razonables para proteger tus datos contra acceso no autorizado, pérdida o alteración. El sitio opera sobre HTTPS con certificado válido.
+            </p>
+          </div>
+
+          <div class="legal-section">
+            <h2>8. Cambios a esta política</h2>
+            <p>
+              Podemos actualizar esta política para reflejar cambios en nuestras prácticas o en la legislación aplicable. Te notificaremos publicando la versión actualizada en esta misma URL con la fecha de revisión al inicio del documento.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="legal-back">
+          <a href="/" class="back-link">← Volver al inicio</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>
+
+<style>
+  .legal-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(74, 127, 165, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(74, 127, 165, 0.03) 1px, transparent 1px);
+    background-size: 64px 64px;
+    pointer-events: none;
+  }
+
+  .legal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .legal-section h2 {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: #1B2A4A;
+    margin: 0 0 0.875rem;
+  }
+
+  .legal-section p {
+    font-size: 0.9375rem;
+    color: #475569;
+    line-height: 1.75;
+    margin: 0 0 0.75rem;
+  }
+  .legal-section p:last-child { margin-bottom: 0; }
+
+  .legal-section ul {
+    padding-left: 1.25rem;
+    margin: 0.5rem 0 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .legal-section li {
+    font-size: 0.9375rem;
+    color: #475569;
+    line-height: 1.65;
+  }
+
+  .legal-section a {
+    color: #4A7FA5;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .legal-back {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(27, 42, 74, 0.07);
+  }
+  .back-link {
+    font-size: 0.875rem;
+    color: #4A7FA5;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .back-link:hover { opacity: 0.75; }
+</style>
