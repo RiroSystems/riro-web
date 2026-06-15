@@ -119,6 +119,7 @@ const { currentPage = '' } = Astro.props;
     margin-left: auto;
   }
   .nh-link {
+    position: relative;
     font-family: 'Inter', system-ui, sans-serif;
     font-weight: 400;
     font-size: 0.875rem;
@@ -126,16 +127,32 @@ const { currentPage = '' } = Astro.props;
     text-decoration: none;
     padding: 0.375rem 0.75rem;
     border-radius: 6px;
-    transition: color 0.18s, background 0.18s;
+    transition: color 0.18s;
     white-space: nowrap;
+  }
+  .nh-link::after {
+    content: "";
+    position: absolute;
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: 0.1rem;
+    height: 1.5px;
+    background: #4A7FA5;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.22s ease;
   }
   .nh-link:hover {
     color: #1B2A4A;
-    background: rgba(27, 42, 74, 0.05);
+  }
+  .nh-link:hover::after {
+    transform: scaleX(1);
   }
   .nh-link--active {
     color: #4A7FA5;
-    background: rgba(74, 127, 165, 0.08);
+  }
+  .nh-link--active::after {
+    transform: scaleX(1);
   }
 
   /* CTA */

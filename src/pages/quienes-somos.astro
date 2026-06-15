@@ -78,33 +78,48 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <div class="loreatec-block">
           <div class="loreatec-logo-area">
             <img
-              src="/loreatec-logo.png"
-              alt="Loreatec"
+              src="/loreatec_logo_v.png"
+              alt="Loreatec Co., Ltd."
               class="loreatec-logo"
-              width="200"
-              height="65"
+              width="190"
+              height="190"
               loading="lazy"
             />
-            <p class="loreatec-domain">loreatec.jp</p>
           </div>
           <div class="loreatec-body">
             <h2 class="qs-section-title mb-4">
-              Respaldo tecnológico<br />desde Japón.
+              La misma ingeniería<br />que ya opera en Japón.
             </h2>
             <p class="qs-body">
-              Loreatec es una empresa japonesa de tecnología especializada en
-              sistemas de ingeniería y automatización. Riro Systems opera como
-              su división regional para Latinoamérica, aplicando los mismos
-              estándares de precisión y criterio técnico en cada proyecto.
+              Loreatec Co., Ltd. es una empresa de tecnología fundada en Japón en 2011.
+              Durante más de una década ha sido el socio técnico de fabricantes, integradores
+              y marcas globales que despliegan tecnología en todo el país — desde infraestructura
+              de red y monitoreo hasta visión por computadora con IA instalada en planta.
             </p>
             <p class="qs-body mt-4">
-              Esto significa que detrás de cada instalación de Riro hay una
-              metodología probada, no improvisada — arquitecturas que se diseñan
-              con el rigor de la ingeniería japonesa y se adaptan al contexto
-              real de cada cliente en la región.
+              Ese es el punto. Riro Systems no traduce teorías sobre «ingeniería japonesa»:
+              traslada a Latinoamérica sistemas que ya funcionan en el mercado más exigente
+              del mundo. La visión por computadora local que cuida tu planta o tu hogar pertenece
+              a la misma familia de soluciones que Loreatec opera en fábricas y comercios
+              japoneses — donde la precisión, la privacidad y la continuidad no son negociables.
             </p>
+
+            <div class="loreatec-stats">
+              <div class="loreatec-stat">
+                <span class="stat-num">2011</span>
+                <span class="stat-label">Fundada en Japón</span>
+              </div>
+              <div class="loreatec-stat">
+                <span class="stat-num">47</span>
+                <span class="stat-label">Prefecturas de Japón con operación</span>
+              </div>
+              <div class="loreatec-stat">
+                <span class="stat-num">IA local</span>
+                <span class="stat-label">Visión por computadora en planta</span>
+              </div>
+            </div>
             <a
-              href="https://loreatec.jp"
+              href="https://loreatec.jp/e/"
               target="_blank"
               rel="noopener noreferrer"
               class="loreatec-link"
@@ -304,7 +319,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   .qs-hero-bg {
     position: absolute;
     inset: 0;
-    background-image: url('https://images.unsplash.com/photo-1513828583688-c52646db42da?w=1920&q=80&fit=crop');
+    background-image: url('https://images.unsplash.com/photo-1563770660941-20978e870e26?w=1920&q=80&fit=crop');
     background-size: cover;
     background-position: center;
   }
@@ -414,7 +429,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     display: grid;
     grid-template-columns: 220px 1fr;
     gap: 4rem;
-    align-items: start;
+    align-items: stretch;
     background: #fff;
     border: 1px solid rgba(27, 42, 74, 0.08);
     border-radius: 16px;
@@ -429,26 +444,44 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   }
   .loreatec-logo-area {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 1.75rem;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
     background: #F4F7FA;
-    border: 1px solid rgba(27, 42, 74, 0.06);
     border-radius: 12px;
   }
   .loreatec-logo {
     display: block;
     width: 100%;
-    max-width: 200px;
+    max-width: 160px;
     height: auto;
   }
-  .loreatec-domain {
-    font-size: 0.8125rem;
-    font-weight: 500;
-    color: #2B96AD;
-    letter-spacing: 0.04em;
-    padding-left: 2px;
+  .loreatec-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    margin-top: 2rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid rgba(27, 42, 74, 0.1);
+  }
+  .loreatec-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+  .stat-num {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1B2A4A;
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.75rem;
+    color: #64748b;
+    line-height: 1.35;
+    max-width: 11rem;
   }
   .loreatec-link {
     display: inline-flex;
@@ -459,7 +492,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     font-weight: 500;
     color: #2B96AD;
     text-decoration: none;
-    margin-top: 1.5rem;
+    margin-top: 1.75rem;
     border-bottom: 1px solid rgba(43, 150, 173, 0.3);
     padding-bottom: 2px;
     transition: border-color 0.2s, gap 0.2s;

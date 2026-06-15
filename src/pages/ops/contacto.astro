@@ -66,9 +66,9 @@ import BaseLayoutOps from "../../layouts/BaseLayoutOps.astro";
               Completa los datos. Toda la información que compartes es confidencial.
             </p>
 
-            <form class="ops-form" name="ops-contacto" method="POST" action="/gracias">
-              <input type="hidden" name="form-name" value="ops-contacto" />
-              <input type="hidden" name="funnel" value="ops" />
+            <form class="ops-form" name="ops-contacto" method="POST" action="/api/contacto">
+              <input type="hidden" name="funnel" value="OPS" />
+              <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" />
 
               <div class="form-row form-row--half">
                 <div class="form-group">
@@ -155,7 +155,7 @@ import BaseLayoutOps from "../../layouts/BaseLayoutOps.astro";
                 Si prefieres una respuesta más rápida, escríbenos directamente por email. El mismo ingeniero que evalúa las solicitudes del formulario responde por este canal.
               </p>
               <a
-                href="mailto:rirosystem@loreatec.jp?subject=Solicitud%20de%20evaluaci%C3%B3n%20t%C3%A9cnica&body=Hola%2C%20quiero%20solicitar%20una%20evaluaci%C3%B3n%20t%C3%A9cnica%20para%20mi%20planta."
+                href="mailto:rirosystems@loreatec.jp?subject=Solicitud%20de%20evaluaci%C3%B3n%20t%C3%A9cnica&body=Hola%2C%20quiero%20solicitar%20una%20evaluaci%C3%B3n%20t%C3%A9cnica%20para%20mi%20planta."
                 class="btn-email-contacto"
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" class="email-icon">
@@ -166,7 +166,7 @@ import BaseLayoutOps from "../../layouts/BaseLayoutOps.astro";
               </a>
               <p class="aside-email-line">
                 o escríbenos a:
-                <a href="mailto:rirosystem@loreatec.jp" class="aside-email-link">rirosystem@loreatec.jp</a>
+                <a href="mailto:rirosystems@loreatec.jp" class="aside-email-link">rirosystems@loreatec.jp</a>
               </p>
             </div>
 

@@ -1,7 +1,7 @@
 ---
 import BaseLayoutHome from "../../layouts/BaseLayoutHome.astro";
 
-const EMAIL = "rirosystem@loreatec.jp";
+const EMAIL = "rirosystems@loreatec.jp";
 ---
 
 <BaseLayoutHome
@@ -85,9 +85,11 @@ const EMAIL = "rirosystem@loreatec.jp";
             <form
               name="contacto-home"
               method="POST"
-              action="/gracias"
+              action="/api/contacto"
               class="contacto-form"
             >
+              <input type="hidden" name="funnel" value="HOME" />
+              <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" />
 
               <div class="form-group">
                 <label for="nombre" class="form-label">Nombre *</label>
@@ -172,8 +174,7 @@ const EMAIL = "rirosystem@loreatec.jp";
     pointer-events: none;
   }
   .h1-outline {
-    color: transparent;
-    -webkit-text-stroke: 1.5px rgba(27, 42, 74, 0.18);
+    color: #4A7FA5;
   }
 
   /* Grid */
