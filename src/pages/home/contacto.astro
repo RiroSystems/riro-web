@@ -51,18 +51,18 @@ const EMAIL = "rirosystem@loreatec.jp";
             </p>
 
             <!-- Email — canal de contacto -->
-            <a href={`mailto:${EMAIL}`} class="canal-wa">
-              <div class="canal-wa-icon">
+            <a href={`mailto:${EMAIL}`} class="canal-mail">
+              <div class="canal-mail-icon">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                   <polyline points="22,6 12,13 2,6"/>
                 </svg>
               </div>
-              <div class="canal-wa-body">
-                <span class="canal-wa-label">Escríbenos por email</span>
-                <span class="canal-wa-num">{EMAIL}</span>
+              <div class="canal-mail-body">
+                <span class="canal-mail-label">Escríbenos por email</span>
+                <span class="canal-mail-num">{EMAIL}</span>
               </div>
-              <span class="canal-wa-arrow">→</span>
+              <span class="canal-mail-arrow">→</span>
             </a>
 
             <div class="info-divider"></div>
@@ -196,7 +196,7 @@ const EMAIL = "rirosystem@loreatec.jp";
   }
 
   /* Email — bloque prominente */
-  .canal-wa {
+  .canal-mail {
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -208,12 +208,12 @@ const EMAIL = "rirosystem@loreatec.jp";
     transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
     margin-bottom: 0.875rem;
   }
-  .canal-wa:hover {
+  .canal-mail:hover {
     border-color: rgba(43, 150, 173, 0.55);
     transform: translateY(-2px);
     box-shadow: 0 6px 24px rgba(43, 150, 173, 0.08);
   }
-  .canal-wa-icon {
+  .canal-mail-icon {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -224,27 +224,27 @@ const EMAIL = "rirosystem@loreatec.jp";
     color: #2B96AD;
     flex-shrink: 0;
   }
-  .canal-wa-body {
+  .canal-mail-body {
     display: flex;
     flex-direction: column;
     gap: 2px;
     flex-grow: 1;
   }
-  .canal-wa-label {
+  .canal-mail-label {
     font-size: 0.8125rem;
     font-weight: 600;
     color: var(--c-navy);
   }
-  .canal-wa-num {
+  .canal-mail-num {
     font-size: 0.8rem;
     color: #64748b;
   }
-  .canal-wa-arrow {
+  .canal-mail-arrow {
     font-size: 1rem;
     color: #cbd5e1;
     transition: color 0.2s, transform 0.2s;
   }
-  .canal-wa:hover .canal-wa-arrow {
+  .canal-mail:hover .canal-mail-arrow {
     color: #2B96AD;
     transform: translateX(3px);
   }
