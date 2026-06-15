@@ -1,0 +1,115 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Página no encontrada"
+  description="La página que buscás no existe o fue movida. Volvé al inicio de Riro Systems."
+>
+  <main class="overflow-x-hidden">
+    <section class="min-h-screen flex items-center px-6 py-32 bg-white relative overflow-hidden">
+      <div class="nf-grid-bg" aria-hidden="true"></div>
+
+      <div class="relative z-10 max-w-2xl mx-auto text-center">
+
+        <div class="flex items-center justify-center gap-3 mb-10">
+          <span class="w-8 h-px bg-[#2B96AD]"></span>
+          <span class="text-[#2B96AD] text-xs font-medium tracking-[0.22em] uppercase">Error 404</span>
+          <span class="w-8 h-px bg-[#2B96AD]"></span>
+        </div>
+
+        <div class="nf-code" aria-hidden="true">404</div>
+
+        <h1 class="text-[clamp(1.75rem,4.5vw,3rem)] font-bold leading-tight text-[#1B2A4A] mb-6">
+          Esta ruta no existe.
+        </h1>
+
+        <p class="text-[#64748b] text-lg max-w-md mx-auto leading-relaxed mb-12">
+          La página que buscás fue movida o nunca existió. Volvé al inicio
+          o escribinos si necesitás algo puntual.
+        </p>
+
+        <div class="nf-actions">
+          <a href="/" class="btn-home">
+            Volver al inicio
+            <span class="btn-arrow">→</span>
+          </a>
+          <a href="/contacto" class="btn-ghost">Contacto</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .nf-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(43,150,173,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(43,150,173,0.04) 1px, transparent 1px);
+    background-size: 72px 72px;
+    pointer-events: none;
+  }
+
+  .nf-code {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 700;
+    font-size: clamp(4.5rem, 16vw, 9rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(27, 42, 74, 0.16);
+    margin-bottom: 1.5rem;
+  }
+
+  .nf-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    color: #fff;
+    background: #2B96AD;
+    text-decoration: none;
+    padding: 0.9rem 1.75rem;
+    border-radius: 7px;
+    transition: background 0.2s, box-shadow 0.2s, gap 0.2s;
+  }
+  .btn-home:hover {
+    background: #239bb2;
+    box-shadow: 0 0 24px rgba(43, 150, 173, 0.3);
+    gap: 0.75rem;
+  }
+  .btn-arrow { transition: transform 0.2s; }
+  .btn-home:hover .btn-arrow { transform: translateX(3px); }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    color: #1B2A4A;
+    background: transparent;
+    text-decoration: none;
+    padding: 0.9rem 1.5rem;
+    border-radius: 7px;
+    border: 1px solid rgba(27, 42, 74, 0.15);
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .btn-ghost:hover {
+    border-color: rgba(43, 150, 173, 0.5);
+    background: rgba(43, 150, 173, 0.04);
+  }
+</style>
