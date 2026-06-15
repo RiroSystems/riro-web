@@ -4,7 +4,7 @@ import BaseLayoutHome from "../../layouts/BaseLayoutHome.astro";
 
 <BaseLayoutHome
   title="El Criterio RIRO"
-  description="理路: hilo lógico, razonamiento coherente. La filosofía detrás de cada ecosistema que diseñamos. IA local, privacidad ética y respaldo institucional Loreatec Japan."
+  description="理路: hilo lógico, razonamiento coherente. La filosofía detrás de cada ecosistema que diseñamos. IA local, privacidad ética y respaldo institucional Loreatec Co., Ltd."
   currentPage="criterio"
 >
   <main class="overflow-x-hidden">
@@ -84,24 +84,26 @@ import BaseLayoutHome from "../../layouts/BaseLayoutHome.astro";
       <div class="max-w-6xl mx-auto">
         <div class="loreatec-block">
           <div class="loreatec-left">
-            <div class="loreatec-logo-card">
-              <img
-                src="/loreatec-logo.png"
-                alt="Loreatec Co., Ltd."
-                class="loreatec-logo-img"
-                loading="lazy"
-              />
-              <span class="loreatec-logo-cap">Empresa matriz · Tokio, Japón</span>
-            </div>
+            <img
+              src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80&fit=crop"
+              alt="Tecnología de precisión"
+              class="loreatec-img"
+              loading="lazy"
+            />
           </div>
           <div class="loreatec-right">
             <div class="flex items-center gap-3 mb-6">
               <span class="w-8 h-px bg-[#4A7FA5]"></span>
               <span class="text-[#4A7FA5] text-xs font-medium tracking-[0.22em] uppercase">Respaldo institucional</span>
             </div>
-            <h2 class="section-title">Loreatec Japan</h2>
+            <img
+              src="/loreatec-logo.png"
+              alt="Loreatec Co., Ltd."
+              class="loreatec-wordmark"
+              loading="lazy"
+            />
             <p class="section-desc mt-6">
-              Riro Systems opera como división tecnológica de Loreatec Japan, una empresa
+              Riro Systems opera como división tecnológica de Loreatec Co., Ltd., una empresa
               japonesa de tecnología aplicada. Este respaldo institucional no es decorativo:
               define los estándares de rigor con los que diseñamos, documentamos y entregamos
               cada proyecto.
@@ -112,7 +114,7 @@ import BaseLayoutHome from "../../layouts/BaseLayoutHome.astro";
               sistema funcione décadas después de la instalación — no solo el primer año.
             </p>
             <div class="loreatec-badge">
-              <span class="badge-label">Loreatec Japan</span>
+              <span class="badge-label">Tokio, Japón</span>
               <span class="badge-dot">·</span>
               <span class="badge-sub">Tecnología aplicada</span>
             </div>
@@ -400,31 +402,20 @@ import BaseLayoutHome from "../../layouts/BaseLayoutHome.astro";
   @media (max-width: 768px) {
     .loreatec-block { grid-template-columns: 1fr; gap: 2.5rem; }
   }
-  .loreatec-logo-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1.5rem;
-    aspect-ratio: 4 / 3;
-    padding: 2.5rem;
-    background: #fff;
-    border: 1px solid rgba(27, 42, 74, 0.07);
-    border-radius: 12px;
-  }
-  .loreatec-logo-img {
+  .loreatec-img {
     width: 100%;
-    max-width: 280px;
-    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 12px;
     display: block;
+    border: 1px solid rgba(27, 42, 74, 0.07);
   }
-  .loreatec-logo-cap {
-    font-size: 0.6875rem;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: #94a3b8;
-    text-align: center;
+  .loreatec-wordmark {
+    display: block;
+    width: 100%;
+    max-width: 210px;
+    height: auto;
+    margin-bottom: 0.25rem;
   }
   .loreatec-badge {
     display: inline-flex;

@@ -42,7 +42,7 @@ import BaseLayoutOps from "../../layouts/BaseLayoutOps.astro";
               Dos kanjis.<br />Una filosofía de trabajo.
             </h2>
             <p class="text-[#64748b] text-base leading-relaxed mb-4">
-              La elección del nombre no fue estética. Loreatec Japan opera desde Japón con una raíz cultural que valora la precisión, la discreción y el respeto por los procesos. Esos mismos valores son los que rigen cómo diseñamos los sistemas.
+              La elección del nombre no fue estética. Loreatec Co., Ltd. opera desde Japón con una raíz cultural que valora la precisión, la discreción y el respeto por los procesos. Esos mismos valores son los que rigen cómo diseñamos los sistemas.
             </p>
             <p class="text-[#64748b] text-base leading-relaxed">
               Un sistema de monitoreo industrial bien diseñado debe ser silencioso, preciso y no invasivo. Debe hacer su trabajo sin hacerse notar. Eso es 理路 aplicado a la tecnología industrial.
@@ -76,26 +76,26 @@ import BaseLayoutOps from "../../layouts/BaseLayoutOps.astro";
       <div class="max-w-5xl mx-auto">
         <div class="loreatec-grid">
           <div class="loreatec-img-col">
-            <div class="loreatec-logo-card">
-              <img
-                src="/loreatec-logo.png"
-                alt="Loreatec Co., Ltd."
-                class="loreatec-logo-img"
-                loading="lazy"
-              />
-              <span class="loreatec-logo-cap">Empresa matriz · Tokio, Japón</span>
-            </div>
+            <img
+              src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80&fit=crop"
+              alt="Ingeniería tecnológica aplicada"
+              class="loreatec-img"
+              loading="lazy"
+            />
           </div>
           <div class="loreatec-content">
             <div class="flex items-center gap-3 mb-6">
               <span class="w-8 h-px bg-[#2B96AD]"></span>
               <span class="text-[#2B96AD] text-xs font-medium tracking-[0.22em] uppercase">La raíz</span>
             </div>
-            <h2 class="text-3xl md:text-4xl font-bold text-[#1B2A4A] mb-5 leading-tight">
-              Loreatec Japan.
-            </h2>
+            <img
+              src="/loreatec-logo.png"
+              alt="Loreatec Co., Ltd."
+              class="loreatec-wordmark"
+              loading="lazy"
+            />
             <p class="text-[#64748b] text-base leading-relaxed mb-4">
-              Riro Systems es la división tecnológica de Loreatec Japan, empresa con raíces en Japón y operaciones en Latinoamérica. Esa base cultural no es decorativa: define cómo pensamos la privacidad, la precisión y el respeto por el operario.
+              Riro Systems es la división tecnológica de Loreatec Co., Ltd., empresa con raíces en Japón y operaciones en Latinoamérica. Esa base cultural no es decorativa: define cómo pensamos la privacidad, la precisión y el respeto por el operario.
             </p>
             <p class="text-[#64748b] text-base leading-relaxed mb-4">
               En la manufactura japonesa existe un concepto llamado <em>kaizen</em> — mejora continua sin desperdicios. En tecnología industrial, el mayor desperdicio es un sistema que genera ruido operativo sin agregar valor. Riro OPS fue diseñado para eliminar ese desperdicio.
@@ -328,30 +328,20 @@ import BaseLayoutOps from "../../layouts/BaseLayoutOps.astro";
   }
   @media (max-width: 768px) { .loreatec-grid { grid-template-columns: 1fr; } }
   .loreatec-img-col { position: relative; }
-  .loreatec-logo-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1.25rem;
-    padding: 2.75rem 2rem;
-    background: #fff;
-    border: 1px solid rgba(27, 42, 74, 0.08);
-    border-radius: 10px;
-  }
-  .loreatec-logo-img {
+  .loreatec-img {
     width: 100%;
-    max-width: 240px;
-    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 10px;
     display: block;
+    border: 1px solid rgba(27, 42, 74, 0.07);
   }
-  .loreatec-logo-cap {
-    font-size: 0.6875rem;
-    font-weight: 500;
-    color: #94a3b8;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    text-align: center;
+  .loreatec-wordmark {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 1.25rem;
   }
 
   /* IA grid */

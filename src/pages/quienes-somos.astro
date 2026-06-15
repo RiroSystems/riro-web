@@ -85,7 +85,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               height="190"
               loading="lazy"
             />
-            <p class="loreatec-domain">loreatec.jp</p>
           </div>
           <div class="loreatec-body">
             <h2 class="qs-section-title mb-4">
@@ -304,7 +303,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   .qs-hero-bg {
     position: absolute;
     inset: 0;
-    background-image: url('https://images.unsplash.com/photo-1513828583688-c52646db42da?w=1920&q=80&fit=crop');
+    background-image: url('https://images.unsplash.com/photo-1563770660941-20978e870e26?w=1920&q=80&fit=crop');
     background-size: cover;
     background-position: center;
   }
@@ -414,7 +413,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     display: grid;
     grid-template-columns: 220px 1fr;
     gap: 4rem;
-    align-items: start;
+    align-items: stretch;
     background: #fff;
     border: 1px solid rgba(27, 42, 74, 0.08);
     border-radius: 16px;
@@ -429,26 +428,17 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   }
   .loreatec-logo-area {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 1rem;
-    padding: 2rem 1.5rem;
-    background: #fff;
-    border: 1px solid rgba(27, 42, 74, 0.07);
+    justify-content: center;
+    padding: 2rem;
+    background: #F4F7FA;
     border-radius: 12px;
   }
   .loreatec-logo {
     display: block;
     width: 100%;
-    max-width: 170px;
+    max-width: 160px;
     height: auto;
-  }
-  .loreatec-domain {
-    font-size: 0.8125rem;
-    font-weight: 500;
-    color: #2B96AD;
-    letter-spacing: 0.04em;
-    text-align: center;
   }
   .loreatec-link {
     display: inline-flex;
