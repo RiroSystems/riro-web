@@ -102,6 +102,7 @@
   }
 
   .nav-link {
+    position: relative;
     font-family: 'Inter', 'DM Sans', system-ui, sans-serif;
     font-weight: 400;
     font-size: 0.875rem;
@@ -109,15 +110,31 @@
     text-decoration: none;
     padding: 0.375rem 0.75rem;
     border-radius: 6px;
-    transition: color 0.18s, background 0.18s;
+    transition: color 0.18s;
     white-space: nowrap;
     display: flex;
     align-items: center;
   }
 
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: 0.1rem;
+    height: 1.5px;
+    background: #2B96AD;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.22s ease;
+  }
+
   .nav-link:hover {
     color: #1B2A4A;
-    background: rgba(27, 42, 74, 0.05);
+  }
+
+  .nav-link:hover::after {
+    transform: scaleX(1);
   }
 
   /* Badges HOME / OPS */
