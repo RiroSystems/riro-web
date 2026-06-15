@@ -66,9 +66,9 @@ import BaseLayoutOps from "../../layouts/BaseLayoutOps.astro";
               Completa los datos. Toda la información que compartes es confidencial.
             </p>
 
-            <form class="ops-form" name="ops-contacto" method="POST" action="/gracias">
-              <input type="hidden" name="form-name" value="ops-contacto" />
-              <input type="hidden" name="funnel" value="ops" />
+            <form class="ops-form" name="ops-contacto" method="POST" action="/api/contacto">
+              <input type="hidden" name="funnel" value="OPS" />
+              <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" />
 
               <div class="form-row form-row--half">
                 <div class="form-group">
