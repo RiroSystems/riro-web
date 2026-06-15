@@ -43,7 +43,7 @@ const year = new Date().getFullYear();
       <p class="col-heading">Contacto</p>
       <nav class="footer-nav" aria-label="Contacto">
         <a href="/contacto" class="footer-link">Solicitar Relevamiento</a>
-        <a href="mailto:contacto@rirosystems.com" class="footer-link footer-link--cta">
+        <a href="#" class="footer-link footer-link--cta email-obf" data-u="contacto" data-d="rirosystems.com">
           Escríbenos por email →
         </a>
       </nav>
@@ -318,3 +318,13 @@ const year = new Date().getFullYear();
     }
   }
 </style>
+
+<script>
+  document.querySelectorAll('a.email-obf').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const href = 'mailto:' + a.dataset.u + '@' + a.dataset.d + (a.dataset.p || '');
+      window.location.href = href;
+    });
+  });
+</script>
