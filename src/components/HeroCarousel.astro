@@ -6,6 +6,7 @@ interface Slide {
   desc: string;
   cta?: { label: string; href: string };
   duration?: number;
+  flip?: boolean;
 }
 
 interface Props {
@@ -26,7 +27,7 @@ const defaultCta = { label: "Solicitar evaluación", href: "/contacto" };
         const cta = slide.cta ?? defaultCta;
         return (
           <div
-            class="swiper-slide hero-slide"
+            class={`swiper-slide hero-slide${slide.flip ? ' flip' : ''}`}
             style={`background-image: url('${slide.image}')`}
             aria-label={`Slide ${i + 1} de ${slides.length}`}
             data-swiper-autoplay={slide.duration ?? 5000}
@@ -203,6 +204,24 @@ const defaultCta = { label: "Solicitar evaluación", href: "/contacto" };
 
   .slide-cta:hover .cta-arrow {
     transform: translateX(3px);
+  }
+
+  /* ── Flip: texto a la derecha (para no tapar detecciones de la izquierda) ── */
+  .hero-slide.flip .slide-overlay {
+    background:
+      linear-gradient(to left, rgba(10, 20, 36, 0.90) 0%, rgba(10, 20, 36, 0.60) 55%, rgba(10, 20, 36, 0.25) 100%),
+      linear-gradient(to top, rgba(10, 20, 36, 0.50) 0%, transparent 40%);
+  }
+
+  .hero-slide.flip .slide-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+  }
+
+  .hero-slide.flip .slide-eyebrow {
+    flex-direction: row-reverse;
   }
 
   /* ── Flechas ─────────────────────────────────────────────── */
