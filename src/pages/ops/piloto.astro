@@ -435,7 +435,7 @@ section{padding:8rem 1.5rem}
            Overlay de detección adulto con zonas, 1600x900. Fuente: best/overlay_cam_3_peak13_1900.jpg
            (v3: reemplaza la de cam_4 que tenía un falso positivo — caja "adulto" sobre césped vacío — detectado 28-ago.)
            NOTA privacidad: rostros visibles (pequeños/lejanos). Blur de niños pendiente de decisión antes de publicar. -->
-      <div class="swiper-slide hero-slide flip" style="background-image:url('/ops/hero-lucca-blur.png')" data-swiper-autoplay="6000">
+      <div class="swiper-slide hero-slide flip" style="background-image:url('/ops/hero-lucca-blur.jpg')" data-swiper-autoplay="6000">
         <div class="slide-overlay" aria-hidden="true"></div>
         <div class="slide-content">
           <div class="slide-eyebrow"><span class="line"></span><span class="tag">Caso de uso real</span></div>
@@ -706,7 +706,7 @@ ocupacion_privada = calcular_ocupacion_zona_privada(
             </div>
           </div>
           <div class="swiper-slide proof-slide">
-            <div class="proof-shot"><img src="/ops/piloto/screenshots/06-incidents.png" alt="Incidencias con evidencia"></div>
+            <div class="proof-shot"><img src="/ops/piloto/screenshots/06-incidents.jpg" alt="Incidencias con evidencia"></div>
             <div class="proof-text">
               <span class="tag">Incidencias con evidencia</span>
               <h3>Cada incidente, con su clip de video</h3>
@@ -715,7 +715,7 @@ ocupacion_privada = calcular_ocupacion_zona_privada(
             </div>
           </div>
           <div class="swiper-slide proof-slide">
-            <div class="proof-shot"><img src="/ops/piloto/screenshots/05-events.png" alt="Registro de eventos"></div>
+            <div class="proof-shot"><img src="/ops/piloto/screenshots/05-events.jpg" alt="Registro de eventos"></div>
             <div class="proof-text">
               <span class="tag">Registro de eventos</span>
               <h3>Entradas y salidas, minuto a minuto</h3>
@@ -724,7 +724,7 @@ ocupacion_privada = calcular_ocupacion_zona_privada(
             </div>
           </div>
           <div class="swiper-slide proof-slide">
-            <div class="proof-shot"><img src="/ops/piloto/screenshots/04-zones.png" alt="Reglas por zona"></div>
+            <div class="proof-shot"><img src="/ops/piloto/screenshots/04-zones.jpg" alt="Reglas por zona"></div>
             <div class="proof-text">
               <span class="tag">Reglas por zona</span>
               <h3>Aforo y compliance por área</h3>
@@ -733,7 +733,7 @@ ocupacion_privada = calcular_ocupacion_zona_privada(
             </div>
           </div>
           <div class="swiper-slide proof-slide">
-            <div class="proof-shot"><img src="/ops/piloto/screenshots/08-analytics.png" alt="Analítica de ocupación"></div>
+            <div class="proof-shot"><img src="/ops/piloto/screenshots/08-analytics.jpg" alt="Analítica de ocupación"></div>
             <div class="proof-text">
               <span class="tag">Analítica de ocupación</span>
               <h3>Datos para decidir, no intuición</h3>
@@ -842,8 +842,10 @@ ocupacion_privada = calcular_ocupacion_zona_privada(
     <div class="eyebrow center"><span class="line"></span><span class="tag">Evaluación técnica</span><span class="line"></span></div>
     <h2 class="h2">¿Cuánto te está diciendo tu local?<br><span style="color:var(--cyan)">Averigualo con datos reales.</span></h2>
     <p class="lead" style="margin:0 auto">Agendá una evaluación técnica sin costo. Te mostramos, sobre TUS cámaras y en 48–72h, qué datos de operación estás dejando sobre la mesa.</p>
-    <form class="cta-form" onsubmit="return false">
-      <input type="email" placeholder="tu@email.com" aria-label="Email" required>
+    <form class="cta-form" method="POST" action="/api/contacto">
+      <input type="hidden" name="funnel" value="OPS-Piloto">
+      <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;">
+      <input type="email" name="email" placeholder="tu@email.com" aria-label="Email" required>
       <button class="btn-cyan" type="submit">Quiero mi diagnóstico <span class="btn-arrow">→</span></button>
     </form>
     <small class="cta-note">🔒 Cero hardware nuevo · cero imágenes a la nube · en español, con soporte cercano.</small>
