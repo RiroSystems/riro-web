@@ -267,6 +267,34 @@ section{padding:8rem 1.5rem}
 .diff-title{font-size:1.0625rem;font-weight:600;color:var(--navy);margin-bottom:.875rem}
 .diff-desc{font-size:.875rem;color:var(--muted);line-height:1.7}
 
+/* ============ NÚCLEO TÉCNICO — fórmula + inferencia ============ */
+.formula-wrapper{margin-top:2rem;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#0f1b30}
+.formula-header{display:flex;align-items:center;justify-content:space-between;padding:.7rem 1rem;background:#0a1424;border-bottom:1px solid rgba(255,255,255,.08)}
+.formula-label{font-size:.75rem;font-weight:600;color:#ffffff80;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.formula-dots{display:flex;gap:.4rem}
+.formula-dots span{width:10px;height:10px;border-radius:50%;background:#ffffff26;display:block}
+.formula-code{margin:0;padding:1.5rem;overflow-x:auto;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.82rem;line-height:1.7;color:#cbd5e1}
+.formula-code code{white-space:pre}
+.formula-comment{color:#64748b}
+.formula-keyword{color:var(--cyan);font-weight:600}
+.formula-fn{color:#7dd3fc}
+.formula-num{color:#f0b866}
+.inf-icon{font-size:1.6rem;font-weight:700;color:var(--cyan);margin-bottom:1rem;line-height:1}
+.inf-icon--accent{color:var(--steel)}
+
+/* ============ ARQUITECTURA — flujo de capas ============ */
+.arq-flow{display:flex;align-items:stretch;gap:1rem;margin-top:2rem;flex-wrap:wrap}
+.arq-node{flex:1;min-width:220px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:1.75rem}
+.arq-badge{display:inline-block;font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--cyan);background:#2b96ad14;border:1px solid #2b96ad33;padding:2px 8px;border-radius:4px;margin-bottom:1rem}
+.arq-title{font-size:1.0625rem;font-weight:700;color:var(--navy);margin-bottom:.6rem}
+.arq-desc{font-size:.875rem;color:var(--muted);line-height:1.65}
+.arq-arrow{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.3rem;flex-shrink:0}
+.arq-arrow-label{font-size:.6rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#94a3b8;white-space:nowrap}
+.arq-arrow span:last-child{font-size:1.4rem;font-weight:700;color:var(--cyan)}
+@media(max-width:768px){.arq-arrow{transform:rotate(90deg);padding:.4rem 0}.arq-node{min-width:100%}}
+.arq-specs{margin-top:2rem;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.arq-legal{font-size:clamp(1.4rem,2.6vw,2rem)!important;color:var(--cyan)}
+
 /* ============ SECTORES ============ */
 .sectors{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem}
 @media(max-width:900px){.sectors{grid-template-columns:repeat(2,1fr)}}
@@ -358,6 +386,7 @@ section{padding:8rem 1.5rem}
     <nav class="no-nav" aria-label="Navegación Riro OPS">
       <a href="#top" class="no-link no-link--active">Inteligencia Operativa</a>
       <a href="#motor" class="no-link">El motor</a>
+      <a href="#inferencia" class="no-link">Cómo funciona</a>
       <a href="#prueba" class="no-link">Prueba viva</a>
       <a href="#privacidad" class="no-link">Privacidad</a>
       <a href="#sectores" class="no-link">Tu sector</a>
@@ -370,6 +399,7 @@ section{padding:8rem 1.5rem}
   <div id="no-mobile-menu" class="no-mobile" aria-hidden="true">
     <nav aria-label="Navegación Riro OPS móvil">
       <a href="#motor" class="no-mobile-link">El motor</a>
+      <a href="#inferencia" class="no-mobile-link">Cómo funciona</a>
       <a href="#prueba" class="no-mobile-link">Prueba viva</a>
       <a href="#privacidad" class="no-mobile-link">Privacidad</a>
       <a href="#sectores" class="no-mobile-link">Tu sector</a>
@@ -507,6 +537,93 @@ section{padding:8rem 1.5rem}
         <p class="cap-desc">Qué zonas se usan más — para rediseñar layout, salas o distribución de personal.</p>
         <div class="cap-tags"><span class="cap-tag cap-tag--cyan">Layout</span><span class="cap-tag cap-tag--cyan">Oficinas</span></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NÚCLEO TÉCNICO · INFERENCIA ============ -->
+<section id="inferencia">
+  <div class="inner">
+    <div class="eyebrow"><span class="line"></span><span class="tag">Núcleo técnico</span></div>
+    <h2 class="h2">Inferencia matemática.<br>Ver sin mirar de más.</h2>
+    <p class="lead" style="margin-bottom:1rem">El sistema aplica el principio de <b>balance de masas</b> —el mismo de la ingeniería de procesos— para inferir lo que no necesita observarse directamente. Menos cámaras, más dato.</p>
+
+    <div class="formula-wrapper">
+      <div class="formula-header">
+        <span class="formula-label">balance_masas.py</span>
+        <div class="formula-dots"><span></span><span></span><span></span></div>
+      </div>
+      <pre class="formula-code"><code><span class="formula-comment"># Principio de balance de masas aplicado</span>
+
+<span class="formula-keyword">def</span> <span class="formula-fn">calcular_ocupacion_zona_privada</span>(ingresos_totales, detectados_en_zonas):
+    <span class="formula-comment">"""Σ Total ingresado − Σ Detectado en zonas = Ocupación inferida"""</span>
+    ocupacion_inferida = ingresos_totales - sum(detectados_en_zonas)
+    <span class="formula-keyword">return</span> max(<span class="formula-num">0</span>, ocupacion_inferida)
+
+
+<span class="formula-comment"># Ejemplo en producción — turno mañana</span>
+ingresaron_al_sector = <span class="formula-num">47</span>   <span class="formula-comment"># detectados en entrada</span>
+en_linea_produccion  = <span class="formula-num">31</span>   <span class="formula-comment"># cámara zona A</span>
+en_area_embalaje     = <span class="formula-num">12</span>   <span class="formula-comment"># cámara zona B</span>
+
+ocupacion_privada = calcular_ocupacion_zona_privada(
+    ingresos_totales    = ingresaron_al_sector,
+    detectados_en_zonas = [en_linea_produccion, en_area_embalaje])
+<span class="formula-comment"># resultado: 4 personas — sin una sola cámara en zona privada</span></code></pre>
+    </div>
+
+    <div class="diff-grid" style="margin-top:2rem">
+      <div class="diff-item">
+        <div class="inf-icon">∑</div>
+        <h4 class="diff-title">Conservación de flujo</h4>
+        <p class="diff-desc">La cantidad de personas que ingresa a un sector se distribuye entre todas las zonas. Si las zonas visibles suman N, el resto está en las no monitoreadas.</p>
+      </div>
+      <div class="diff-item diff-item--border">
+        <div class="inf-icon">Δt</div>
+        <h4 class="diff-title">Ventana temporal</h4>
+        <p class="diff-desc">El cálculo se actualiza cada 30 segundos con datos en vivo. Detecta ausentismo, descansos extendidos y patrones de movimiento anómalos.</p>
+      </div>
+      <div class="diff-item diff-item--border">
+        <div class="inf-icon inf-icon--accent">⚖</div>
+        <h4 class="diff-title">Cumplimiento legal</h4>
+        <p class="diff-desc">Cero cámaras en zonas privadas, cero datos biométricos, cero imágenes de personas almacenadas. Auditable ante cualquier inspección laboral.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ARQUITECTURA TÉCNICA ============ -->
+<section id="arquitectura" class="sect-bg">
+  <div class="inner">
+    <div class="eyebrow"><span class="line"></span><span class="tag">Stack técnico</span></div>
+    <h2 class="h2">Arquitectura técnica.<br>Tres capas, todas locales.</h2>
+    <p class="lead" style="margin-bottom:1rem">Cada capa es reemplazable y auditada. Toda la cadena procesa en tu infraestructura — nada sale del local.</p>
+
+    <div class="arq-flow">
+      <div class="arq-node">
+        <div class="arq-badge">Capa 1</div>
+        <h4 class="arq-title">Frigate</h4>
+        <p class="arq-desc">Motor de visión por computadora. Detección de objetos en tiempo real sobre hardware local (Coral TPU / GPU).</p>
+      </div>
+      <div class="arq-arrow" aria-hidden="true"><span class="arq-arrow-label">MQTT / HTTP</span><span>→</span></div>
+      <div class="arq-node">
+        <div class="arq-badge">Capa 2</div>
+        <h4 class="arq-title">FastAPI · Python</h4>
+        <p class="arq-desc">Backend de inferencia. Recibe eventos, aplica el balance de masas y persiste métricas en base de datos local.</p>
+      </div>
+      <div class="arq-arrow" aria-hidden="true"><span class="arq-arrow-label">REST / WebSocket</span><span>→</span></div>
+      <div class="arq-node">
+        <div class="arq-badge">Capa 3</div>
+        <h4 class="arq-title">React · SPA</h4>
+        <p class="arq-desc">Dashboard operativo en tiempo real: mapa de planta, heatmaps de ocupación e históricos por turno.</p>
+      </div>
+    </div>
+
+    <div class="stat-grid arq-specs">
+      <div class="stat"><div class="big">100<small>%</small></div><div class="lbl">procesamiento local</div></div>
+      <div class="stat"><div class="big">30<small>s</small></div><div class="lbl">ciclo de actualización</div></div>
+      <div class="stat"><div class="big">0<small>KB</small></div><div class="lbl">video enviado a la nube</div></div>
+      <div class="stat"><div class="big arq-legal">Legal</div><div class="lbl">normativa laboral y de privacidad</div></div>
     </div>
   </div>
 </section>
