@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Turnstile from "../components/Turnstile.astro";
 
 const EMAIL           = "contacto@rirosystems.com";
 ---
@@ -141,6 +142,8 @@ const EMAIL           = "contacto@rirosystems.com";
                   class="form-input form-textarea"
                 ></textarea>
               </div>
+
+              <Turnstile />
 
               <button type="submit" class="form-submit">
                 Enviar mensaje

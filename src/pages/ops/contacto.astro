@@ -1,5 +1,6 @@
 ---
 import BaseLayoutOps from "../../layouts/BaseLayoutOps.astro";
+import Turnstile from "../../components/Turnstile.astro";
 ---
 
 <BaseLayoutOps
@@ -138,6 +139,8 @@ import BaseLayoutOps from "../../layouts/BaseLayoutOps.astro";
                   <span>Acepté la <a href="/privacidad" target="_blank">Política de Privacidad</a>. Entiendo que mi información es confidencial y no será compartida con terceros.</span>
                 </label>
               </div>
+
+              <Turnstile />
 
               <button type="submit" class="btn-submit">
                 Enviar solicitud de evaluación
