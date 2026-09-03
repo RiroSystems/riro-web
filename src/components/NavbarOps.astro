@@ -26,6 +26,9 @@ const { currentPage = '' } = Astro.props;
       <a href="/ops/criterio" class={`no-link ${currentPage === 'criterio' ? 'no-link--active' : ''}`}>
         El Criterio
       </a>
+      <a href="/ops/piloto" class={`no-link no-link--pilot ${currentPage === 'piloto' ? 'no-link--pilot-active' : ''}`}>
+        <span class="pilot-dot" aria-hidden="true"></span>Piloto Lucca
+      </a>
     </nav>
 
     <a href="/ops/contacto" class={`no-cta ${currentPage === 'contacto' ? 'no-cta--active' : ''}`}>
@@ -50,6 +53,9 @@ const { currentPage = '' } = Astro.props;
       <a href="/ops/metodologia" class="no-mobile-link">Metodología</a>
       <a href="/ops/privacidad" class="no-mobile-link">Privacidad y Auditoría</a>
       <a href="/ops/criterio" class="no-mobile-link">El Criterio RIRO</a>
+      <a href="/ops/piloto" class="no-mobile-link no-mobile-link--pilot">
+        <span class="pilot-dot" aria-hidden="true"></span>Piloto Lucca · Prueba viva
+      </a>
       <a href="/ops/contacto" class="no-mobile-cta">Contacto</a>
     </nav>
   </div>
@@ -146,6 +152,51 @@ const { currentPage = '' } = Astro.props;
   }
   .no-link--active::after {
     transform: scaleX(1);
+  }
+
+  /* ── Pestaña destacada: Piloto Lucca ─────────────────────── */
+  .no-link--pilot {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    color: #2B96AD;
+    font-weight: 600;
+    background: rgba(43, 150, 173, 0.10);
+    border: 1px solid rgba(43, 150, 173, 0.35);
+    margin-left: 0.35rem;
+  }
+  .no-link--pilot::after { display: none; }
+  .no-link--pilot:hover {
+    color: #fff;
+    background: #2B96AD;
+    box-shadow: 0 0 18px rgba(43, 150, 173, 0.45);
+  }
+  .no-link--pilot-active {
+    color: #fff;
+    background: #2B96AD;
+  }
+  .pilot-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #2ecc71;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.5);
+    animation: pilotPulse 1.8s infinite;
+  }
+  .no-link--pilot:hover .pilot-dot,
+  .no-link--pilot-active .pilot-dot { background: #fff; }
+  @keyframes pilotPulse {
+    0%   { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.5); }
+    70%  { box-shadow: 0 0 0 6px rgba(46, 204, 113, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0); }
+  }
+  .no-mobile-link--pilot {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #2B96AD;
+    font-weight: 600;
   }
 
   .no-cta {

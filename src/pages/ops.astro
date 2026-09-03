@@ -4,25 +4,26 @@ import HeroCarousel from "../components/HeroCarousel.astro";
 
 const slides = [
   {
-    image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1920&q=80&fit=crop",
+    image: "/ops/hero-1.jpg",
     tag: "Inteligencia operativa",
-    title: "Visión artificial\nsin invadir a nadie.",
-    desc: "Medimos flujos, ocupación y ritmo de producción con inferencia matemática. Sin perfiles, sin identificación, sin datos personales que salgan de la planta.",
-    cta: { label: "Ver soluciones", href: "#soluciones" },
+    title: "Las cámaras que ya tienes,\nconvertidas en datos.",
+    desc: "Riro OPS lee tus cámaras existentes y las transforma en aforo en tiempo real, reglas por zona y un registro auditable de incidentes. Sin hardware nuevo. Sin nube.",
+    cta: { label: "Ver el motor", href: "#soluciones" },
   },
   {
-    image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=1920&q=80&fit=crop",
-    tag: "Monitoreo de personal",
-    title: "Funciona con mascarilla.\nFunciona con casco.\nFunciona con todo el EPP.",
-    desc: "Diseñado para entornos con normativas estrictas de higiene y seguridad. La cobertura de rostro no es un obstáculo: es el escenario por defecto de operación.",
-    cta: { label: "Conocer el sistema", href: "#monitoreo" },
-  },
-  {
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&q=80&fit=crop",
+    image: "/ops/hero-2.jpg",
     tag: "Privacidad ética",
-    title: "Nunca instalamos una cámara\ndonde no debe haber una.",
-    desc: "Vestuarios, sanitarios y zonas restringidas quedan fuera del sistema por diseño, no por configuración. El perímetro de privacidad es inviolable y auditable.",
-    cta: { label: "Conocer el enfoque", href: "/ops/privacidad" },
+    title: "Procesamiento 100% local.\nNada sale del local.",
+    desc: "Sin reconocimiento facial, sin imágenes en la nube, sin datos que crucen internet. Más privado que un CCTV corriente — y auditable por diseño.",
+    cta: { label: "Conocer el enfoque", href: "#monitoreo" },
+  },
+  {
+    image: "/ops/hero-lucca-blur.jpg",
+    tag: "Caso de uso real",
+    title: "Probado en operación real.\n7 semanas. Sin fallar.",
+    desc: "El piloto Lucca corre sobre 4 cámaras corrientes: 200+ incidencias detectadas, cada una con su clip de evidencia. Si cuida a niños, cuida tu operación.",
+    cta: { label: "Ver soluciones", href: "#soluciones" },
+    flip: true,
   },
 ];
 ---
@@ -245,7 +246,7 @@ const slides = [
             <p class="text-white/55 text-lg max-w-xl leading-relaxed mb-10">
               El primer despliegue OPS en entorno real de manufactura. 4 fases, métricas en vivo, privacidad garantizada y documentada.
             </p>
-            <a href="/proyecto-piloto" class="btn-cyan">
+            <a href="/ops/piloto" class="btn-cyan">
               Ver proyecto piloto completo
               <span class="btn-arrow">→</span>
             </a>

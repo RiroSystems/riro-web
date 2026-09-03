@@ -1,0 +1,56 @@
+---
+// Widget de Cloudflare Turnstile (anti-spam / captcha invisible).
+// La site key es pública y se inyecta en build desde PUBLIC_TURNSTILE_SITEKEY.
+// Si no hay clave configurada, no se renderiza nada y el formulario sigue
+// funcionando (el servidor valida en "falla-abierto" mientras no haya secret).
+interface Props {
+  theme?: "light" | "dark" | "auto";
+  lang?: string;
+}
+const { theme = "light", lang = "auto" } = Astro.props;
+const sitekey = import.meta.env.PUBLIC_TURNSTILE_SITEKEY || "";
+---
+{sitekey && (
+  <>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer is:inline></script>
+    <div
+      class="cf-turnstile"
+      data-sitekey={sitekey}
+      data-theme={theme}
+      data-language={lang}
+      data-callback="riroTsOk"
+      data-error-callback="riroTsErr"
+      data-expired-callback="riroTsExp"
+      style="margin:0 0 1.1rem;min-height:65px;"
+    ></div>
+    <script is:inline>
+      (function () {
+        // Gating de UX: deshabilita el botón de envío hasta resolver el reto.
+        // Falla-abierto: ante error o si el script no carga, se re-habilita
+        // (la seguridad real la aplica el servidor en /api/contacto).
+        function submitBtns() {
+          var out = [];
+          document.querySelectorAll(".cf-turnstile").forEach(function (w) {
+            var f = w.closest("form");
+            if (!f) return;
+            f.querySelectorAll("button[type=submit],input[type=submit]").forEach(
+              function (b) { out.push(b); }
+            );
+          });
+          return out;
+        }
+        function setDisabled(v) {
+          submitBtns().forEach(function (b) { b.disabled = v; });
+        }
+        document.addEventListener("DOMContentLoaded", function () { setDisabled(true); });
+        window.riroTsOk = function () { setDisabled(false); };
+        window.riroTsExp = function () {
+          setDisabled(true);
+          if (window.turnstile) window.turnstile.reset();
+        };
+        window.riroTsErr = function () { setDisabled(false); };
+        setTimeout(function () { if (!window.turnstile) setDisabled(false); }, 8000);
+      })();
+    </script>
+  </>
+)}

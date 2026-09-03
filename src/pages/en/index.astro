@@ -1,0 +1,550 @@
+---
+import BaseLayoutEn from "../../layouts/BaseLayoutEn.astro";
+import Turnstile from "../../components/Turnstile.astro";
+
+const capabilities = [
+  {
+    k: "01",
+    title: "AI you own, not rent",
+    body: "The model runs on your own infrastructure. No per-inference fees, no data leaving your perimeter, no vendor lock-in.",
+  },
+  {
+    k: "02",
+    title: "Local by design",
+    body: "Computer vision and inference at the industrial edge. Decisions in under 500 ms — with or without external connectivity.",
+  },
+  {
+    k: "03",
+    title: "Privacy as architecture",
+    body: "What happens in your plant stays in your plant. Local processing isn't a feature we added — it's the foundation we build on.",
+  },
+  {
+    k: "04",
+    title: "Automation with judgment",
+    body: "Not everything that can be automated should be. We design only what solves a concrete operational problem. The rest, we leave out.",
+  },
+];
+---
+
+<BaseLayoutEn
+  title="Industrial edge intelligence"
+  description="Riro Systems builds industrial edge AI you own and run locally. The product brand of Loreatec Co., Ltd., Tokyo."
+>
+  <main class="overflow-x-hidden">
+
+    <!-- ═══════════════════════ HERO ═══════════════════════ -->
+    <section id="top" class="hero">
+      <div class="hero-photo" aria-hidden="true"></div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-grid-bg" aria-hidden="true"></div>
+      <div class="hero-inner">
+
+        <div class="hero-eyebrow">
+          <span class="hero-eyebrow-line"></span>
+          <span class="hero-eyebrow-text">Riro Systems</span>
+        </div>
+
+        <h1 class="hero-title">
+          Industrial intelligence,<br />
+          <span class="hero-title-accent">engineered with judgment.</span>
+        </h1>
+
+        <p class="hero-desc">
+          Edge AI for industry. Hardware you own, processing that stays on-site,
+          and decisions grounded in coherent reasoning — <span class="kanji">理路</span>, the
+          root of our name.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#capabilities" class="hero-cta-primary">What we do<span class="arr">→</span></a>
+          <a href="#company" class="hero-cta-ghost">Who we are</a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════ CAPABILITIES ═══════════════════════ -->
+    <section id="capabilities" class="caps">
+      <div class="section-head">
+        <span class="section-kicker">What we do</span>
+        <h2 class="section-title">
+          The same engineering behind demanding<br class="dh" /> operations — brought to your perimeter.
+        </h2>
+      </div>
+
+      <div class="caps-grid">
+        {capabilities.map((c) => (
+          <article class="cap-card">
+            <span class="cap-key">{c.k}</span>
+            <h3 class="cap-title">{c.title}</h3>
+            <p class="cap-body">{c.body}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════ COMPANY ═══════════════════════ -->
+    <section id="company" class="company">
+      <div class="company-grid-bg" aria-hidden="true"></div>
+      <div class="company-inner">
+
+        <span class="section-kicker section-kicker--light">Who we are</span>
+
+        <p class="company-lead">
+          Riro Systems is the product brand of <strong>Loreatec Co., Ltd.</strong>,
+          a technology company established in <strong>Tokyo, Japan</strong> in 2011.
+        </p>
+
+        <p class="company-body">
+          For over a decade, Loreatec has delivered on-premise computer vision, network
+          monitoring and IT infrastructure across all 47 prefectures of Japan — one of
+          the most demanding technology markets in the world. Riro brings that same
+          engineering discipline to new markets: local intelligence, owned hardware,
+          and systems that keep working when the connection doesn't.
+        </p>
+
+        <div class="company-facts">
+          <div class="fact">
+            <span class="fact-num">2011</span>
+            <span class="fact-label">Established in Tokyo</span>
+          </div>
+          <div class="fact">
+            <span class="fact-num">47</span>
+            <span class="fact-label">Prefectures served in Japan</span>
+          </div>
+          <div class="fact">
+            <span class="fact-num">理路</span>
+            <span class="fact-label">Coherent reasoning</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════ CONTACT ═══════════════════════ -->
+    <section id="contact" class="contact">
+      <div class="contact-inner">
+
+        <div class="contact-intro">
+          <span class="section-kicker">Get in touch</span>
+          <h2 class="contact-title">Let's talk.</h2>
+          <p class="contact-sub">
+            Partnerships, press, or a technical conversation — reach out and we'll
+            get back to you within 24 business hours.
+          </p>
+        </div>
+
+        <form
+          name="contacto-en"
+          method="POST"
+          action="/api/contacto"
+          class="contact-form"
+        >
+          <input type="hidden" name="funnel" value="International (EN)" />
+          <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" />
+
+          <div class="form-group">
+            <label for="nombre" class="form-label">Name *</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Your full name" required class="form-input" />
+          </div>
+
+          <div class="form-group">
+            <label for="empresa" class="form-label">Company / Organization</label>
+            <input type="text" id="empresa" name="empresa" placeholder="Your company" class="form-input" />
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="form-label">Email *</label>
+            <input type="email" id="email" name="email" placeholder="you@email.com" required class="form-input" />
+          </div>
+
+          <div class="form-group">
+            <label for="detalles" class="form-label">Message</label>
+            <textarea id="detalles" name="detalles" rows="5" placeholder="Tell us how we can help." class="form-input form-textarea"></textarea>
+          </div>
+
+          <Turnstile lang="en" />
+
+          <button type="submit" class="form-submit">
+            Send message <span class="form-submit-arrow">→</span>
+          </button>
+
+          <p class="form-note">
+            Your information is confidential and never shared with third parties.
+          </p>
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+</BaseLayoutEn>
+
+<style>
+  :root {
+    --c-navy:  #1B2A4A;
+    --c-charcoal: #253761;
+    --c-cyan:  #2B96AD;
+    --c-steel: #4A7FA5;
+    --c-bg:    #F4F7FA;
+  }
+
+  .kanji { font-weight: 600; color: #7de8f8; letter-spacing: 0.02em; }
+  .dh { display: none; }
+  @media (min-width: 768px) { .dh { display: inline; } }
+
+  /* ══ HERO ══════════════════════════════════════════════════ */
+  .hero {
+    position: relative;
+    min-height: 92vh;
+    display: flex;
+    align-items: center;
+    background: var(--c-navy);
+    overflow: hidden;
+    padding: 8rem 1.5rem 5rem;
+  }
+
+  /* Foto de fondo (imagen del carrusel del home) */
+  .hero-photo {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1920&q=80&fit=crop');
+    background-size: cover;
+    background-position: center;
+    pointer-events: none;
+  }
+
+  /* Overlay navy para legibilidad y coherencia de marca */
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      105deg,
+      rgba(27, 42, 74, 0.94) 0%,
+      rgba(27, 42, 74, 0.82) 45%,
+      rgba(43, 150, 173, 0.55) 100%
+    );
+    pointer-events: none;
+  }
+
+  .hero-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 64px 64px;
+    -webkit-mask-image: radial-gradient(ellipse 80% 70% at 30% 40%, #000 30%, transparent 80%);
+    mask-image: radial-gradient(ellipse 80% 70% at 30% 40%, #000 30%, transparent 80%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .hero-eyebrow { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2rem; }
+  .hero-eyebrow-line { width: 2rem; height: 1px; background: #7de8f8; }
+  .hero-eyebrow-text {
+    font-size: 0.75rem; font-weight: 500; letter-spacing: 0.22em;
+    text-transform: uppercase; color: #7de8f8;
+  }
+
+  .hero-title {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: clamp(2.5rem, 6.5vw, 5.25rem);
+    font-weight: 800;
+    line-height: 0.98;
+    letter-spacing: -0.03em;
+    color: #FFFFFF;
+    margin: 0 0 1.75rem;
+    text-shadow: 0 2px 30px rgba(0,0,0,0.25);
+  }
+  .hero-title-accent { color: #7de8f8; }
+
+  .hero-desc {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: clamp(1.05rem, 2vw, 1.35rem);
+    line-height: 1.6;
+    color: rgba(255,255,255,0.82);
+    max-width: 640px;
+    margin: 0 0 2.75rem;
+  }
+
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; }
+
+  .hero-cta-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    color: var(--c-navy);
+    background: #fff;
+    text-decoration: none;
+    padding: 0.85rem 1.75rem;
+    border-radius: 8px;
+    transition: background 0.2s, box-shadow 0.2s, gap 0.2s, transform 0.2s;
+  }
+  .hero-cta-primary:hover { background: #eaf6f9; box-shadow: 0 0 28px rgba(125,232,248,0.35); gap: 0.75rem; transform: translateY(-1px); }
+  .hero-cta-primary .arr { transition: transform 0.2s; }
+  .hero-cta-primary:hover .arr { transform: translateX(3px); }
+
+  .hero-cta-ghost {
+    display: inline-flex;
+    align-items: center;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.85rem 1.5rem;
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 8px;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .hero-cta-ghost:hover { border-color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.08); }
+
+  /* ══ SECCIÓN — encabezados genéricos ════════════════════════ */
+  .section-kicker {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #2B96AD;
+    margin-bottom: 1rem;
+  }
+  .section-kicker--light { color: #7de8f8; }
+
+  .section-title {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: clamp(1.6rem, 3.4vw, 2.6rem);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    color: var(--c-navy);
+    margin: 0;
+  }
+
+  /* ══ CAPABILITIES ═══════════════════════════════════════════ */
+  .caps { max-width: 1100px; margin: 0 auto; padding: 7rem 1.5rem 5rem; }
+  .section-head { margin-bottom: 3.5rem; max-width: 720px; }
+
+  .caps-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+  @media (max-width: 720px) { .caps-grid { grid-template-columns: 1fr; } }
+
+  .cap-card {
+    background: #fff;
+    border: 1px solid rgba(27,42,74,0.08);
+    border-radius: 14px;
+    padding: 2.25rem 2rem;
+    transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+  }
+  .cap-card:hover {
+    border-color: rgba(43,150,173,0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 14px 40px -18px rgba(27,42,74,0.25);
+  }
+
+  .cap-key {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #2B96AD;
+    opacity: 0.6;
+  }
+
+  .cap-title {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--c-navy);
+    margin: 0.85rem 0 0.65rem;
+  }
+
+  .cap-body {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: #64748b;
+    margin: 0;
+  }
+
+  /* ══ COMPANY ════════════════════════════════════════════════ */
+  .company {
+    position: relative;
+    background: var(--c-navy);
+    overflow: hidden;
+    padding: 6.5rem 1.5rem;
+  }
+
+  .company-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(43,150,173,0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(43,150,173,0.08) 1px, transparent 1px);
+    background-size: 64px 64px;
+    -webkit-mask-image: radial-gradient(ellipse 70% 80% at 80% 20%, #000 20%, transparent 75%);
+    mask-image: radial-gradient(ellipse 70% 80% at 80% 20%, #000 20%, transparent 75%);
+    pointer-events: none;
+  }
+
+  .company-inner { position: relative; z-index: 2; max-width: 900px; margin: 0 auto; }
+
+  .company-lead {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: clamp(1.4rem, 3vw, 2.1rem);
+    font-weight: 600;
+    line-height: 1.32;
+    letter-spacing: -0.015em;
+    color: #fff;
+    margin: 0 0 1.75rem;
+  }
+  .company-lead strong { color: #7de8f8; font-weight: 700; }
+
+  .company-body {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.62);
+    max-width: 720px;
+    margin: 0 0 3.25rem;
+  }
+
+  .company-facts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 2.5rem;
+  }
+  @media (max-width: 600px) { .company-facts { grid-template-columns: 1fr; gap: 1.75rem; } }
+
+  .fact { display: flex; flex-direction: column; gap: 0.4rem; }
+  .fact-num {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #fff;
+    line-height: 1;
+  }
+  .fact-label {
+    font-size: 0.8125rem;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.02em;
+  }
+
+  /* ══ CONTACT ════════════════════════════════════════════════ */
+  .contact { background: #fff; padding: 7rem 1.5rem; }
+  .contact-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 4.5rem;
+    align-items: start;
+  }
+  @media (max-width: 860px) { .contact-inner { grid-template-columns: 1fr; gap: 3rem; } }
+
+  .contact-title {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--c-navy);
+    margin: 0 0 1rem;
+    line-height: 1;
+  }
+  .contact-sub {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 1rem;
+    line-height: 1.65;
+    color: #64748b;
+    margin: 0;
+    max-width: 360px;
+  }
+
+  .contact-form {
+    background: var(--c-bg);
+    border: 1px solid rgba(27,42,74,0.07);
+    border-radius: 16px;
+    padding: 2.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.375rem;
+  }
+  @media (max-width: 640px) { .contact-form { padding: 1.75rem; } }
+
+  .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+  .form-label {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: #475569;
+  }
+  .form-input {
+    width: 100%;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.9375rem;
+    color: var(--c-navy);
+    background: #fff;
+    border: 1px solid rgba(27,42,74,0.12);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+  }
+  .form-input::placeholder { color: #cbd5e1; }
+  .form-input:focus { border-color: rgba(43,150,173,0.45); box-shadow: 0 0 0 3px rgba(43,150,173,0.08); }
+  .form-input:hover:not(:focus) { border-color: rgba(27,42,74,0.2); }
+  .form-textarea { resize: vertical; min-height: 130px; line-height: 1.6; }
+
+  .form-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    color: #fff;
+    background: var(--c-cyan);
+    border: none;
+    border-radius: 8px;
+    padding: 0.9rem 2rem;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s, gap 0.2s;
+    width: 100%;
+    margin-top: 0.25rem;
+  }
+  .form-submit:hover { background: #239bb2; box-shadow: 0 0 24px rgba(43,150,173,0.3); gap: 0.875rem; }
+  .form-submit-arrow { transition: transform 0.2s; }
+  .form-submit:hover .form-submit-arrow { transform: translateX(3px); }
+
+  .form-note {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    text-align: center;
+    line-height: 1.6;
+    margin: 0;
+  }
+</style>

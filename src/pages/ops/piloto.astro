@@ -1,0 +1,994 @@
+---
+import Turnstile from "../../components/Turnstile.astro";
+---
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Piloto Lucca — Prueba viva | Riro OPS</title>
+<meta name="description" content="Convierte las cámaras que ya tienes en datos de operación y seguridad — 100% local, sin nube. Probado en el piloto Lucca: 7 semanas, 200+ incidencias con evidencia.">
+<link rel="icon" type="image/png" href="/riro_favicon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<style is:global>
+/* ============================================================
+   RIRO OPS — design system (fiel a rirosystems.com/ops)
+   navy #1B2A4A · cyan #2B96AD · steel #4A7FA5 · bg #F4F7FA · Inter
+   ============================================================ */
+:root{
+  --navy:#1B2A4A; --charcoal:#253761; --cyan:#2B96AD; --cyan-hover:#239bb2;
+  --cyan-bright:#3aabbd; --steel:#4A7FA5; --bg:#F4F7FA; --muted:#64748b;
+  --line:rgba(27,42,74,.08); --white:#fff;
+  --font:Inter,DM Sans,system-ui,-apple-system,sans-serif;
+  --maxw:1200px; --content:72rem;
+  /* chart tokens (mapeados a la marca) */
+  --seq-400:#2B96AD; --seq-250:#4A7FA5; --s1:#2B96AD; --s2:#4A7FA5;
+  --grid:rgba(27,42,74,.09); --axis:#94a3b8; --ink:#1B2A4A; --plane:#fff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font);background:var(--white);color:var(--navy);
+  line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+h1,h2,h3,h4{margin:0;line-height:1.15;letter-spacing:-.02em;font-weight:700}
+p{margin:0}
+.wrap{max-width:var(--content);margin:0 auto;padding:0 1.5rem}
+section{padding:8rem 1.5rem}
+@media(max-width:768px){section{padding:5rem 1.25rem}}
+.inner{max-width:var(--content);margin:0 auto}
+
+/* eyebrow (línea + texto cyan tracking) */
+.eyebrow{display:flex;align-items:center;gap:.75rem;margin-bottom:1.5rem}
+.eyebrow.center{justify-content:center}
+.eyebrow .line{display:block;width:2rem;height:1px;background:var(--cyan);flex-shrink:0}
+.eyebrow .tag{font-size:.7rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--cyan)}
+.h2{font-size:clamp(2rem,4.4vw,3rem);font-weight:700;color:var(--navy);line-height:1.12;margin-bottom:1.5rem}
+.h2.on-dark{color:#fff}
+.lead{font-size:clamp(1rem,1.4vw,1.125rem);color:var(--muted);line-height:1.7;max-width:42rem}
+.lead.on-dark{color:rgba(255,255,255,.55)}
+
+/* botones */
+.btn-cyan{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--font);font-weight:500;
+  font-size:.9375rem;color:#fff;background:var(--cyan);padding:.9rem 1.75rem;border-radius:7px;
+  transition:background .2s,box-shadow .2s,gap .2s;white-space:nowrap;border:none;cursor:pointer}
+.btn-cyan:hover{background:var(--cyan-hover);box-shadow:0 0 32px #2b96ad61;gap:.75rem}
+.btn-navy{display:inline-flex;align-items:center;gap:.5rem;font-weight:500;font-size:.9375rem;color:#fff;
+  background:var(--navy);padding:.9rem 1.75rem;border-radius:7px;transition:background .2s,box-shadow .2s,gap .2s;white-space:nowrap}
+.btn-navy:hover{background:var(--charcoal);box-shadow:0 0 32px #1b2a4a59;gap:.75rem}
+.btn-arrow{transition:transform .2s}
+.btn-cyan:hover .btn-arrow,.btn-navy:hover .btn-arrow{transform:translate(3px)}
+
+/* ============ NAVBAR OPS ============ */
+.navbar-ops{position:fixed;inset:0 0 auto;z-index:100;background:#ffffffe0;
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line);transition:background .3s,border-color .3s}
+.navbar-ops.scrolled{background:#fffffff7;border-bottom-color:#1b2a4a1f}
+.no-inner{max-width:var(--maxw);margin:0 auto;padding:0 1.5rem;height:64px;display:flex;align-items:center;gap:1.5rem}
+.no-logo{display:flex;align-items:center;gap:.6rem;flex-shrink:0}
+.no-logo-img{height:40px;width:auto}
+.no-section-badge{font-size:.625rem;font-weight:700;letter-spacing:.12em;color:var(--cyan);
+  background:#2b96ad1a;border:1px solid rgba(43,150,173,.3);padding:2px 7px;border-radius:4px;margin-top:1px}
+.no-nav{display:flex;align-items:center;gap:.125rem;margin-left:auto}
+.no-link{position:relative;font-weight:400;font-size:.875rem;color:#1b2a4a9e;
+  padding:.375rem .75rem;border-radius:6px;transition:color .18s;white-space:nowrap}
+.no-link:after{content:"";position:absolute;left:.75rem;right:.75rem;bottom:.1rem;height:1.5px;
+  background:var(--cyan);transform:scaleX(0);transform-origin:left;transition:transform .22s ease}
+.no-link:hover{color:var(--navy)}
+.no-link:hover:after{transform:scaleX(1)}
+.no-link--active{color:var(--cyan)}
+.no-link--active:after{transform:scaleX(1)}
+.no-cta{flex-shrink:0;font-weight:500;font-size:.8125rem;color:#fff;background:var(--cyan);
+  padding:.45rem 1.1rem;border-radius:6px;transition:background .2s,box-shadow .2s;white-space:nowrap}
+.no-cta:hover{background:var(--cyan-hover);box-shadow:0 0 18px #2b96ad59}
+.no-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;
+  border:none;cursor:pointer;padding:8px 4px;margin-left:auto;flex-shrink:0}
+.no-hamburger span{display:block;width:22px;height:2px;background:#1b2a4aa6;border-radius:2px;
+  transform-origin:center;transition:transform .25s,opacity .2s}
+.no-hamburger[aria-expanded=true] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.no-hamburger[aria-expanded=true] span:nth-child(2){opacity:0;transform:scaleX(0)}
+.no-hamburger[aria-expanded=true] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.no-mobile{display:none;overflow:hidden;max-height:0;background:#fffffffa;
+  border-top:1px solid rgba(27,42,74,.07);transition:max-height .32s cubic-bezier(.4,0,.2,1)}
+.no-mobile.open{max-height:400px}
+.no-mobile nav{display:flex;flex-direction:column;padding:.75rem 1.5rem 1.5rem}
+.no-mobile-link{font-size:1rem;color:#1b2a4aa6;padding:.75rem .25rem;
+  border-bottom:1px solid rgba(27,42,74,.06);transition:color .18s}
+.no-mobile-link:hover{color:var(--navy)}
+.no-mobile-cta{display:block;font-weight:500;font-size:.9375rem;color:#fff;background:var(--cyan);
+  text-align:center;padding:.8rem 1rem;border-radius:6px;margin-top:1rem;transition:background .2s}
+@media(max-width:900px){.no-nav,.no-cta{display:none}.no-hamburger{display:flex}.no-mobile{display:block}}
+
+/* ============ HERO SWIPER ============ */
+.hero-carousel{position:relative;width:100%}
+.hero-swiper{width:100%;height:100vh;min-height:600px}
+.hero-slide{background-size:cover;background-position:center;background-repeat:no-repeat;display:flex;align-items:center}
+.slide-overlay{position:absolute;inset:0;background:linear-gradient(to right,#0a1424e6,#0a142499 55%,#0a142440),linear-gradient(to top,rgba(10,20,36,.5) 0%,transparent 40%)}
+.slide-content{position:relative;z-index:2;max-width:var(--maxw);width:100%;margin:0 auto;padding:0 1.5rem;padding-top:64px}
+.slide-eyebrow{display:flex;align-items:center;gap:.75rem;margin-bottom:1.75rem}
+.slide-eyebrow .line{display:block;width:2rem;height:1px;background:var(--cyan);flex-shrink:0}
+.slide-eyebrow .tag{font-size:.7rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--cyan)}
+.slide-title{font-size:clamp(2rem,5vw,4.25rem);font-weight:700;color:#fff;line-height:1.12;
+  letter-spacing:-.02em;max-width:820px;margin-bottom:1.5rem}
+.slide-desc{font-size:clamp(1rem,1.5vw,1.1875rem);color:#ffffffad;max-width:560px;line-height:1.7;margin-bottom:2.5rem}
+.slide-cta{display:inline-flex;align-items:center;gap:.5rem;font-weight:500;font-size:.9375rem;color:#fff;
+  background:var(--navy);padding:.875rem 1.75rem;border-radius:7px;
+  transition:background .2s,box-shadow .2s,gap .2s;white-space:nowrap}
+.slide-cta:hover{background:var(--charcoal);box-shadow:0 0 32px #1b2a4a59;gap:.75rem}
+.slide-cta .cta-arrow{transition:transform .2s}
+.slide-cta:hover .cta-arrow{transform:translate(3px)}
+/* Slide con captura real: texto a la derecha para no tapar las detecciones (izquierda de la imagen) */
+.hero-slide.flip .slide-overlay{background:linear-gradient(to left,#0a1424e6,#0a142499 55%,#0a142440),linear-gradient(to top,rgba(10,20,36,.5) 0%,transparent 40%)}
+.hero-slide.flip .slide-content{display:flex;flex-direction:column;align-items:flex-end;text-align:right}
+.hero-slide.flip .slide-eyebrow{flex-direction:row-reverse}
+.hero-swiper .swiper-button-prev,.hero-swiper .swiper-button-next{width:48px!important;height:48px!important;
+  background:#00000059!important;border-radius:50%!important;backdrop-filter:blur(8px)!important;
+  color:#fffc!important;transition:background .2s,color .2s!important}
+.hero-swiper .swiper-button-prev:hover,.hero-swiper .swiper-button-next:hover{background:#2b96ad59!important;color:#fff!important}
+.hero-swiper .swiper-button-prev:after,.hero-swiper .swiper-button-next:after{font-size:1rem!important;font-weight:700!important}
+.hero-swiper .swiper-pagination{bottom:1.75rem!important}
+.hero-swiper .swiper-pagination-bullet{width:8px!important;height:8px!important;background:#fff6!important;
+  opacity:1!important;transition:background .25s,transform .25s!important}
+.hero-swiper .swiper-pagination-bullet-active{background:var(--cyan)!important;transform:scale(1.4)!important}
+@media(max-width:768px){.hero-swiper{height:92svh;min-height:520px}
+  .hero-swiper .swiper-button-prev,.hero-swiper .swiper-button-next{display:none!important}
+  .slide-content{padding-top:80px}}
+
+/* ============ STAT STRIP ============ */
+.stat-band{background:var(--bg);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+@media(max-width:768px){.stat-grid{grid-template-columns:repeat(2,1fr)}}
+.stat{padding:2.25rem 1.5rem;border-left:1px solid var(--line)}
+.stat:first-child{border-left:none}
+@media(max-width:768px){.stat:nth-child(3){border-left:none}}
+.stat .big{font-size:clamp(2rem,3.6vw,2.6rem);font-weight:700;color:var(--navy);letter-spacing:-.03em;line-height:1}
+.stat .big small{color:var(--cyan);font-size:.6em;font-weight:700}
+.stat .lbl{color:var(--muted);font-size:.85rem;margin-top:.55rem;line-height:1.4}
+
+/* ============ FRICTION GRID ============ */
+.friction-grid{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:1rem}
+@media(max-width:768px){.friction-grid{grid-template-columns:1fr}}
+.friction-col{padding:3rem}
+@media(max-width:768px){.friction-col{padding:2rem}}
+.friction-col--si{border-left:1px solid var(--line)}
+@media(max-width:768px){.friction-col--si{border-left:none;border-top:1px solid var(--line)}}
+.fc-head{display:flex;align-items:center;gap:.75rem;margin-bottom:2rem}
+.fc-num{font-size:.6875rem;font-weight:600;letter-spacing:.14em;color:#1b2a4a33}
+.fc-num--cyan{color:#2b96ad99}
+.fc-rule{flex:1;height:1px;background:var(--line);max-width:2.5rem}
+.fc-heading{font-size:1.125rem;font-weight:500;margin-bottom:2rem}
+.fc-heading--muted{color:#1b2a4a59}
+.fc-heading--cyan{color:var(--cyan)}
+.fc-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:1.25rem}
+.fc-item{display:flex;align-items:flex-start;gap:.875rem;font-size:.9375rem;line-height:1.55}
+.fc-item--no{color:#1b2a4a61}
+.fc-item--si{color:#1b2a4ad9}
+.fc-mark{flex-shrink:0;font-size:.75rem;font-weight:600;margin-top:3px}
+.fc-mark--no{color:#1b2a4a3d}
+.fc-mark--si{color:var(--cyan)}
+
+/* ============ CAP GRID (navy section) ============ */
+.sect-navy{background:var(--navy)}
+.cap-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#ffffff12;
+  border:1px solid rgba(255,255,255,.08);border-radius:12px;overflow:hidden;margin-top:1rem}
+@media(max-width:768px){.cap-grid{grid-template-columns:1fr}}
+.cap-card{padding:2.5rem;background:#ffffff08;transition:background .25s}
+.cap-card:hover{background:#2b96ad14}
+.cap-card--highlight{background:#2b96ad0d}
+.cap-num{font-size:.6875rem;font-weight:600;letter-spacing:.14em;color:#ffffff4d;margin-bottom:1.25rem}
+.cap-num--cyan{color:#2b96adbf}
+.cap-title{font-size:1.0625rem;font-weight:600;color:#fff;margin-bottom:.875rem;line-height:1.3}
+.cap-desc{font-size:.875rem;color:#ffffff80;line-height:1.7;margin-bottom:1.5rem}
+.cap-tags{display:flex;flex-wrap:wrap;gap:.4rem}
+.cap-tag{font-size:.7rem;font-weight:500;color:#ffffff73;background:#ffffff0f;
+  border:1px solid rgba(255,255,255,.1);padding:2px 8px;border-radius:4px}
+.cap-tag--cyan{color:var(--cyan);background:#2b96ad1a;border-color:#2b96ad40}
+
+/* ============ PILOT BANNER (caso Lucca) ============ */
+.sect-bg{background:var(--bg)}
+.pilot-banner{position:relative;background:var(--navy);border-radius:16px;padding:5rem 4.5rem;
+  overflow:hidden;border:1px solid rgba(43,150,173,.1)}
+@media(max-width:768px){.pilot-banner{padding:3rem 2rem}}
+.pilot-content{position:relative;z-index:2}
+.pilot-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(43,150,173,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(43,150,173,.035) 1px,transparent 1px);background-size:44px 44px;pointer-events:none}
+.pilot-circles{position:absolute;right:-80px;top:50%;transform:translateY(-50%);width:440px;height:440px;pointer-events:none}
+.pilot-circles:before,.pilot-circles:after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(43,150,173,.08)}
+.pilot-circles:before{inset:0}
+.pilot-circles:after{inset:70px;border-color:#2b96ad1a;background:#2b96ad04}
+@media(max-width:1024px){.pilot-circles{display:none}}
+.pilot-quote{font-size:clamp(1.15rem,2vw,1.5rem);font-weight:500;color:#fff;line-height:1.5;max-width:44rem;margin:1.5rem 0}
+.pilot-quote b{color:var(--cyan)}
+.pilot-facts{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:2rem}
+.pilot-fact{font-size:.8rem;font-weight:500;color:#ffffffcc;background:#ffffff0f;
+  border:1px solid rgba(255,255,255,.12);padding:.45rem .85rem;border-radius:6px}
+.client-chip{display:inline-flex;align-items:center;gap:.7rem;background:#ffffff0f;
+  border:1px solid rgba(255,255,255,.14);padding:.4rem .95rem .4rem .4rem;border-radius:999px;margin-bottom:1.75rem}
+.client-chip img{width:46px;height:46px;border-radius:50%;background:#fff;flex-shrink:0}
+.client-chip .cc-name{font-size:.9rem;font-weight:600;color:#fff;line-height:1.15}
+.client-chip .cc-sub{font-size:.72rem;color:#ffffff99;font-weight:500}
+
+/* ============ PROOF / CHARTS ============ */
+.proof-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:1rem}
+@media(max-width:860px){.proof-grid{grid-template-columns:1fr}}
+.panel{background:#fff;border:1px solid var(--line);border-radius:12px;padding:1.75rem}
+.panel h3{font-size:1.0625rem;font-weight:600;color:var(--navy);margin-bottom:.2rem}
+.panel .sub{font-size:.82rem;color:var(--muted);margin-bottom:1.25rem}
+.legend{display:flex;gap:1.25rem;font-size:.78rem;color:var(--muted);margin-top:.6rem;flex-wrap:wrap}
+.legend span{display:inline-flex;align-items:center;gap:.4rem}
+.legend i{width:11px;height:11px;border-radius:3px;display:inline-block}
+.tip{position:fixed;pointer-events:none;z-index:120;background:var(--navy);color:#fff;font-size:.76rem;
+  font-weight:600;padding:.35rem .55rem;border-radius:8px;opacity:0;transform:translate(-50%,-120%);
+  transition:opacity .1s;white-space:nowrap;box-shadow:0 6px 20px -6px rgba(0,0,0,.5)}
+.axis-lbl{fill:var(--axis);font-size:10px;font-family:var(--font)}
+.grid-line{stroke:var(--grid);stroke-width:1}
+.bar{transition:.12s}.bar:hover{filter:brightness(1.08)}
+/* proof carousel — tour del producto (capturas verticales grandes) */
+.proof-carousel{margin-top:2rem;position:relative}
+.proof-swiper{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--bg)}
+.proof-slide{display:grid;grid-template-columns:1.5fr 1fr;align-items:stretch;min-height:660px}
+@media(max-width:820px){.proof-slide{grid-template-columns:1fr;min-height:0}}
+.proof-shot{background:var(--navy);display:flex;align-items:center;justify-content:center;padding:2rem 2.5rem;
+  background-image:linear-gradient(rgba(43,150,173,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(43,150,173,.05) 1px,transparent 1px);background-size:38px 38px}
+.proof-shot img,.proof-shot video{max-height:620px;width:auto;max-width:100%;border-radius:12px;
+  box-shadow:0 28px 70px -20px rgba(0,0,0,.7);border:1px solid rgba(255,255,255,.1)}
+.proof-shot{position:relative}
+.proof-live-badge{position:absolute;top:1.4rem;right:1.6rem;z-index:2;display:inline-flex;align-items:center;gap:.4rem;
+  background:#0a1424cc;backdrop-filter:blur(4px);color:#fff;font-size:.7rem;font-weight:600;letter-spacing:.08em;
+  text-transform:uppercase;padding:.35rem .6rem;border-radius:999px;border:1px solid rgba(255,255,255,.14)}
+.proof-live-badge i{width:7px;height:7px;border-radius:50%;background:#2ecc71;box-shadow:0 0 0 0 #2ecc7166;animation:pulseDot 1.8s infinite}
+@keyframes pulseDot{0%{box-shadow:0 0 0 0 #2ecc7180}70%{box-shadow:0 0 0 7px #2ecc7100}100%{box-shadow:0 0 0 0 #2ecc7100}}
+@media(max-width:820px){.proof-shot{padding:1.75rem}.proof-shot img,.proof-shot video{max-height:460px}}
+.proof-text{padding:2.5rem 3rem;display:flex;flex-direction:column;justify-content:center;background:#fff}
+@media(max-width:820px){.proof-text{padding:2rem}}
+.proof-text .tag{font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);margin-bottom:1rem}
+.proof-text h3{font-size:1.35rem;font-weight:700;color:var(--navy);margin-bottom:.75rem;line-height:1.2}
+.proof-text p{font-size:.95rem;color:var(--muted);line-height:1.7}
+.proof-count{font-size:.8rem;font-weight:600;color:#1b2a4a4d;margin-top:1.5rem}
+.proof-count b{color:var(--cyan)}
+.proof-nav{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1.5rem}
+.proof-btn{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--navy);
+  cursor:pointer;display:grid;place-items:center;transition:.18s;font-size:1.1rem}
+.proof-btn:hover{background:var(--cyan);color:#fff;border-color:var(--cyan);box-shadow:0 0 18px #2b96ad4d}
+.proof-pagination{display:flex;align-items:center;gap:.5rem}
+.proof-pagination .swiper-pagination-bullet{width:8px;height:8px;background:#1b2a4a2e;opacity:1;border-radius:50%;transition:.25s;cursor:pointer}
+.proof-pagination .swiper-pagination-bullet-active{background:var(--cyan);transform:scale(1.35)}
+
+/* ============ DIFF GRID (3 pilares — privacidad) ============ */
+.diff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:1rem}
+@media(max-width:768px){.diff-grid{grid-template-columns:1fr}}
+.diff-item{padding:2.5rem;transition:background .2s}
+.diff-item:hover{background:#2b96ad0a}
+.diff-item--border{border-left:1px solid var(--line)}
+@media(max-width:768px){.diff-item--border{border-left:none;border-top:1px solid var(--line)}}
+.diff-num{font-size:.6875rem;font-weight:700;letter-spacing:.14em;color:var(--cyan);margin-bottom:1.5rem}
+.diff-title{font-size:1.0625rem;font-weight:600;color:var(--navy);margin-bottom:.875rem}
+.diff-desc{font-size:.875rem;color:var(--muted);line-height:1.7}
+
+/* ============ NÚCLEO TÉCNICO — fórmula + inferencia ============ */
+.formula-wrapper{margin-top:2rem;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#0f1b30}
+.formula-header{display:flex;align-items:center;justify-content:space-between;padding:.7rem 1rem;background:#0a1424;border-bottom:1px solid rgba(255,255,255,.08)}
+.formula-label{font-size:.75rem;font-weight:600;color:#ffffff80;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.formula-dots{display:flex;gap:.4rem}
+.formula-dots span{width:10px;height:10px;border-radius:50%;background:#ffffff26;display:block}
+.formula-code{margin:0;padding:1.5rem;overflow-x:auto;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.82rem;line-height:1.7;color:#cbd5e1}
+.formula-code code{white-space:pre}
+.formula-comment{color:#64748b}
+.formula-keyword{color:var(--cyan);font-weight:600}
+.formula-fn{color:#7dd3fc}
+.formula-num{color:#f0b866}
+.inf-icon{font-size:1.6rem;font-weight:700;color:var(--cyan);margin-bottom:1rem;line-height:1}
+.inf-icon--accent{color:var(--steel)}
+
+/* ============ ARQUITECTURA — flujo de capas ============ */
+.arq-flow{display:flex;align-items:stretch;gap:1rem;margin-top:2rem;flex-wrap:wrap}
+.arq-node{flex:1;min-width:220px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:1.75rem}
+.arq-badge{display:inline-block;font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--cyan);background:#2b96ad14;border:1px solid #2b96ad33;padding:2px 8px;border-radius:4px;margin-bottom:1rem}
+.arq-title{font-size:1.0625rem;font-weight:700;color:var(--navy);margin-bottom:.6rem}
+.arq-desc{font-size:.875rem;color:var(--muted);line-height:1.65}
+.arq-arrow{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.3rem;flex-shrink:0}
+.arq-arrow-label{font-size:.6rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#94a3b8;white-space:nowrap}
+.arq-arrow span:last-child{font-size:1.4rem;font-weight:700;color:var(--cyan)}
+@media(max-width:768px){.arq-arrow{transform:rotate(90deg);padding:.4rem 0}.arq-node{min-width:100%}}
+.arq-specs{margin-top:2rem;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.arq-legal{font-size:clamp(1.4rem,2.6vw,2rem)!important;color:var(--cyan)}
+
+/* ============ SECTORES ============ */
+.sectors{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem}
+@media(max-width:900px){.sectors{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.sectors{grid-template-columns:1fr}}
+.sector{background:#fff;border:1px solid var(--line);border-radius:12px;padding:1.5rem;
+  display:flex;gap:.9rem;align-items:flex-start;transition:.2s}
+.sector:hover{border-color:#2b96ad55;box-shadow:0 12px 30px -22px rgba(27,42,74,.4)}
+.sector .e{font-size:1.5rem;line-height:1}
+.sector .tag{font-size:.62rem;font-weight:700;color:var(--cyan);text-transform:uppercase;letter-spacing:.1em}
+.sector h3{font-size:1rem;font-weight:600;color:var(--navy);margin:.3rem 0 .25rem}
+.sector p{font-size:.86rem;color:var(--muted)}
+
+/* ============ CÓMO FUNCIONA + PLANES ============ */
+.steps{display:grid;grid-template-columns:repeat(6,1fr);gap:.75rem;margin-top:1rem;counter-reset:step}
+@media(max-width:900px){.steps{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:560px){.steps{grid-template-columns:repeat(2,1fr)}}
+.step{background:#fff;border:1px solid var(--line);border-radius:12px;padding:1.25rem}
+.step::before{counter-increment:step;content:counter(step);display:grid;place-items:center;width:28px;height:28px;
+  border-radius:7px;background:var(--cyan);color:#fff;font-weight:700;font-size:.85rem;margin-bottom:.7rem}
+.step b{font-size:.92rem;color:var(--navy)}
+.step p{font-size:.8rem;color:var(--muted);margin-top:.25rem}
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:2rem}
+@media(max-width:760px){.plans{grid-template-columns:1fr}}
+.plan{background:#fff;border:1px solid var(--line);border-radius:12px;padding:1.75rem}
+.plan.feat{border-color:var(--cyan);box-shadow:0 0 0 1px var(--cyan)}
+.plan .tier{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan)}
+.plan h3{font-size:1.15rem;font-weight:700;color:var(--navy);margin:.4rem 0}
+.plan .note{font-size:.9rem;color:var(--muted)}
+.plan ul{list-style:none;padding:0;margin:1rem 0 0;display:grid;gap:.6rem}
+.plan li{display:flex;gap:.6rem;font-size:.9rem;color:#1b2a4ad9;line-height:1.4}
+.plan li svg{width:17px;height:17px;color:var(--cyan);flex:0 0 auto;margin-top:2px}
+.plan .price{font-size:.85rem;color:var(--muted);margin-top:1rem;font-weight:600}
+.plan .price b{color:var(--cyan);font-weight:700}
+
+/* ============ CTA FINAL ============ */
+.cta-final{text-align:center}
+.cta-form{display:flex;gap:.6rem;max-width:520px;margin:2rem auto 0;flex-wrap:wrap}
+.cta-form input{flex:1;min-width:200px;padding:.9rem 1.1rem;border-radius:7px;
+  border:1px solid var(--line);font-size:1rem;font-family:inherit;color:var(--navy)}
+.cta-form input:focus{outline:none;border-color:var(--cyan)}
+.cta-note{display:block;margin-top:1rem;color:var(--muted);font-size:.82rem}
+
+/* ============ FOOTER (fiel a Riro) ============ */
+.footer{background:var(--navy);border-top:1px solid rgba(43,150,173,.15);margin-top:0}
+.footer-inner{max-width:var(--maxw);margin:0 auto;padding:3.5rem 1.5rem 2.5rem;
+  display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:3rem}
+.footer-col{display:flex;flex-direction:column}
+.footer-brand{font-size:1.35rem;font-weight:800;color:#fff;letter-spacing:-.02em;margin-bottom:.35rem}
+.footer-brand span{color:var(--cyan)}
+.footer-tagline{font-size:.8rem;font-style:italic;color:rgba(255,255,255,.45);margin:0 0 1.75rem}
+.biz-lines{display:flex;flex-direction:column;gap:.65rem}
+.biz-item{display:flex;align-items:center;gap:.6rem;transition:opacity .18s}
+.biz-item:hover{opacity:.85}
+.biz-badge{font-size:.6rem;font-weight:600;letter-spacing:.07em;padding:2px 6px;border-radius:3px;flex-shrink:0}
+.biz-home{color:var(--steel);background:#4a7fa51f;border:1px solid rgba(74,127,165,.25)}
+.biz-ops{color:var(--cyan);background:#2b96ad1a;border:1px solid rgba(43,150,173,.22)}
+.biz-label{font-size:.775rem;color:rgba(255,255,255,.45);line-height:1.3}
+.col-heading{font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  color:#ffffff4d;margin:0 0 1.25rem}
+.footer-nav{display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.25rem}
+.footer-link{font-size:.8375rem;color:rgba(255,255,255,.45);transition:color .18s;line-height:1.4}
+.footer-link:hover{color:#ffffffd9}
+.footer-link--cta{color:var(--cyan);opacity:.85}
+.footer-link--cta:hover{opacity:1}
+.privacy-note{font-size:.725rem;color:#ffffff38;line-height:1.5;margin:0;padding-top:.5rem;
+  border-top:1px solid rgba(255,255,255,.05)}
+.footer-demo{display:inline-block;align-self:flex-start;font-weight:500;font-size:.8125rem;color:var(--navy);
+  background:var(--cyan);padding:.5rem 1.1rem;border-radius:5px;margin-top:1rem;transition:background .2s,box-shadow .2s}
+.footer-demo:hover{background:var(--cyan-bright);box-shadow:0 0 16px #2b96ad59}
+.footer-bottom{max-width:var(--maxw);margin:0 auto;padding:1.25rem 1.5rem;border-top:1px solid rgba(255,255,255,.05);
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.footer-copy,.footer-origin{font-size:.725rem;color:#fff3;margin:0}
+.footer-origin{display:flex;align-items:center;gap:.4rem}
+.origin-dot{width:5px;height:5px;border-radius:50%;background:var(--cyan);opacity:.5}
+@media(max-width:900px){.footer-inner{grid-template-columns:1fr 1fr;gap:2.5rem}.footer-col:first-child{grid-column:1/-1}}
+@media(max-width:560px){.footer-inner{grid-template-columns:1fr;gap:2rem;padding:2.5rem 1.25rem 2rem}
+  .footer-col:first-child{grid-column:auto}.footer-bottom{flex-direction:column;align-items:flex-start;gap:.4rem}}
+</style>
+</head>
+<body>
+
+<!-- ============ NAVBAR OPS ============ -->
+<header id="navbar-ops" class="navbar-ops">
+  <div class="no-inner">
+    <a href="/ops" class="no-logo" aria-label="Riro OPS — Inicio">
+      <img src="/ops/piloto/riro-logo.svg" alt="Riro Systems" class="no-logo-img">
+      <span class="no-section-badge">OPS</span>
+    </a>
+    <nav class="no-nav" aria-label="Navegación Riro OPS">
+      <a href="#top" class="no-link no-link--active">Inteligencia Operativa</a>
+      <a href="#motor" class="no-link">El motor</a>
+      <a href="#inferencia" class="no-link">Cómo funciona</a>
+      <a href="#prueba" class="no-link">Prueba viva</a>
+      <a href="#privacidad" class="no-link">Privacidad</a>
+      <a href="#sectores" class="no-link">Tu sector</a>
+    </nav>
+    <a href="#cta" class="no-cta">Diagnóstico gratis</a>
+    <button id="no-toggle" class="no-hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="no-mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div id="no-mobile-menu" class="no-mobile" aria-hidden="true">
+    <nav aria-label="Navegación Riro OPS móvil">
+      <a href="#motor" class="no-mobile-link">El motor</a>
+      <a href="#inferencia" class="no-mobile-link">Cómo funciona</a>
+      <a href="#prueba" class="no-mobile-link">Prueba viva</a>
+      <a href="#privacidad" class="no-mobile-link">Privacidad</a>
+      <a href="#sectores" class="no-mobile-link">Tu sector</a>
+      <a href="#cta" class="no-mobile-cta">Diagnóstico gratis</a>
+    </nav>
+  </div>
+</header>
+
+<a id="top"></a>
+<!-- ============ HERO SWIPER ============ -->
+<section class="hero-carousel" aria-label="Carousel principal">
+  <div class="swiper hero-swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide hero-slide" style="background-image:url('/ops/hero-1.jpg')" data-swiper-autoplay="6000">
+        <div class="slide-overlay" aria-hidden="true"></div>
+        <div class="slide-content">
+          <div class="slide-eyebrow"><span class="line"></span><span class="tag">Inteligencia operativa</span></div>
+          <h2 class="slide-title">Las cámaras que ya tienes,<br>convertidas en datos.</h2>
+          <p class="slide-desc">Riro OPS lee tus cámaras existentes y las transforma en aforo en tiempo real, reglas por zona y un registro auditable de incidentes. Sin hardware nuevo. Sin nube.</p>
+          <a href="#motor" class="slide-cta">Ver el motor <span class="cta-arrow" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <div class="swiper-slide hero-slide" style="background-image:url('/ops/hero-2.jpg')" data-swiper-autoplay="6000">
+        <div class="slide-overlay" aria-hidden="true"></div>
+        <div class="slide-content">
+          <div class="slide-eyebrow"><span class="line"></span><span class="tag">Privacidad ética</span></div>
+          <h2 class="slide-title">Procesamiento 100% local.<br>Nada sale del local.</h2>
+          <p class="slide-desc">Sin reconocimiento facial, sin imágenes en la nube, sin datos que crucen internet. Más privado que un CCTV corriente — y auditable por diseño.</p>
+          <a href="#privacidad" class="slide-cta">Conocer el enfoque <span class="cta-arrow" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <!-- SLIDE 3 · Captura REAL del piloto Lucca (cam_3/Channel3, pico 25-ago 18:59:03 Lima, 13 personas simultáneas).
+           Overlay de detección adulto con zonas, 1600x900. Fuente: best/overlay_cam_3_peak13_1900.jpg
+           (v3: reemplaza la de cam_4 que tenía un falso positivo — caja "adulto" sobre césped vacío — detectado 28-ago.)
+           NOTA privacidad: rostros visibles (pequeños/lejanos). Blur de niños pendiente de decisión antes de publicar. -->
+      <div class="swiper-slide hero-slide flip" style="background-image:url('/ops/hero-lucca-blur.jpg')" data-swiper-autoplay="6000">
+        <div class="slide-overlay" aria-hidden="true"></div>
+        <div class="slide-content">
+          <div class="slide-eyebrow"><span class="line"></span><span class="tag">Caso de uso real</span></div>
+          <h2 class="slide-title">Probado en operación real.<br>7 semanas. Sin fallar.</h2>
+          <p class="slide-desc">El piloto Lucca corre sobre 4 cámaras corrientes: 200+ incidencias detectadas, cada una con su clip de evidencia. Si cuida a niños, cuida tu operación.</p>
+          <a href="#prueba" class="slide-cta">Ver la prueba viva <span class="cta-arrow" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+    <button class="swiper-button-prev" aria-label="Slide anterior"></button>
+    <button class="swiper-button-next" aria-label="Slide siguiente"></button>
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
+<!-- ============ STAT STRIP ============ -->
+<div class="stat-band">
+  <div class="inner" style="max-width:var(--maxw)">
+    <div class="stat-grid">
+      <div class="stat"><div class="big">7 sem.</div><div class="lbl">de operación continua sobre cámaras reales</div></div>
+      <div class="stat"><div class="big">200<small>+</small></div><div class="lbl">incidencias detectadas — 100% con clip de evidencia</div></div>
+      <div class="stat"><div class="big">4</div><div class="lbl">cámaras existentes reutilizadas · 0 hardware nuevo</div></div>
+      <div class="stat"><div class="big">0</div><div class="lbl">imágenes subidas a la nube — todo on-premise</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ EL PROBLEMA (friction) ============ -->
+<section id="problema">
+  <div class="inner">
+    <div class="eyebrow"><span class="line"></span><span class="tag">El problema que resolvemos</span></div>
+    <h2 class="h2">Tu CCTV graba.<br>Pero nadie lo está leyendo.</h2>
+    <p class="lead" style="margin-bottom:1rem">La mayoría de los locales ya tienen cámaras — y sin embargo operan a ciegas. El video se acumula, nadie lo mira, y las decisiones se toman por intuición. Riro OPS convierte esa señal desperdiciada en datos accionables.</p>
+    <div class="friction-grid">
+      <div class="friction-col friction-col--no">
+        <div class="fc-head"><span class="fc-num">01</span><span class="fc-rule"></span></div>
+        <h3 class="fc-heading fc-heading--muted">Sin capa de datos</h3>
+        <ul class="fc-list">
+          <li class="fc-item fc-item--no"><span class="fc-mark fc-mark--no">✕</span>Cámaras que solo graban — nadie revisa las horas de video</li>
+          <li class="fc-item fc-item--no"><span class="fc-mark fc-mark--no">✕</span>Aforo y ocupación estimados a ojo, no medidos</li>
+          <li class="fc-item fc-item--no"><span class="fc-mark fc-mark--no">✕</span>Puestos desatendidos que nadie detecta a tiempo</li>
+          <li class="fc-item fc-item--no"><span class="fc-mark fc-mark--no">✕</span>Incidentes sin evidencia lista cuando se necesita</li>
+        </ul>
+      </div>
+      <div class="friction-col friction-col--si">
+        <div class="fc-head"><span class="fc-num fc-num--cyan">02</span><span class="fc-rule"></span></div>
+        <h3 class="fc-heading fc-heading--cyan">Con Riro OPS</h3>
+        <ul class="fc-list">
+          <li class="fc-item fc-item--si"><span class="fc-mark fc-mark--si">→</span>Aforo y ocupación en tiempo real, por zona</li>
+          <li class="fc-item fc-item--si"><span class="fc-mark fc-mark--si">→</span>Reglas de negocio automáticas: aforo máximo, presencia mínima</li>
+          <li class="fc-item fc-item--si"><span class="fc-mark fc-mark--si">→</span>Alertas de puesto desatendido que se escalan solas</li>
+          <li class="fc-item fc-item--si"><span class="fc-mark fc-mark--si">→</span>Cada incidente con su clip de evidencia auditable</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EL MOTOR (cap-grid navy) ============ -->
+<section id="motor" class="sect-navy">
+  <div class="inner">
+    <div class="eyebrow"><span class="line"></span><span class="tag">Lo que realmente vendemos</span></div>
+    <h2 class="h2 on-dark">No es un CCTV más.<br>Es la capa de datos que le faltaba.</h2>
+    <p class="lead on-dark" style="margin-bottom:1rem">El mismo motor que hoy cuida una sala de juegos sirve para cualquier local con cámaras. Cada capacidad es horizontal, sobre el mismo servidor edge instalado en tu local.</p>
+    <div class="cap-grid">
+      <div class="cap-card">
+        <div class="cap-num">01</div>
+        <h3 class="cap-title">Conteo y aforo en tiempo real</h3>
+        <p class="cap-desc">Personas dentro del local sin duplicar, distinción adulto/niño, conteo por zona — sin identificar a nadie.</p>
+        <div class="cap-tags"><span class="cap-tag">Retail</span><span class="cap-tag">Gimnasios</span><span class="cap-tag">Eventos</span></div>
+      </div>
+      <div class="cap-card">
+        <div class="cap-num">02</div>
+        <h3 class="cap-title">Analítica de ocupación</h3>
+        <p class="cap-desc">Picos, promedios y horas valle. Dimensiona tu staff y tu espacio con datos, no con intuición.</p>
+        <div class="cap-tags"><span class="cap-tag">Staffing</span><span class="cap-tag">Layout</span><span class="cap-tag">Operación</span></div>
+      </div>
+      <div class="cap-card">
+        <div class="cap-num">03</div>
+        <h3 class="cap-title">Reglas de negocio por zona</h3>
+        <p class="cap-desc">Aforo máximo, presencia mínima, zonas restringidas. Compliance operativo automático y verificable.</p>
+        <div class="cap-tags"><span class="cap-tag">Seguridad</span><span class="cap-tag">Compliance</span></div>
+      </div>
+      <div class="cap-card">
+        <div class="cap-num">04</div>
+        <h3 class="cap-title">Alertas de puesto desatendido</h3>
+        <p class="cap-desc">"Ausencia en recepción", SLA de atención en mostrador. Se escala solo si nadie responde a tiempo.</p>
+        <div class="cap-tags"><span class="cap-tag">Recepciones</span><span class="cap-tag">Mostradores</span></div>
+      </div>
+      <div class="cap-card">
+        <div class="cap-num">05</div>
+        <h3 class="cap-title">Registro auditable con video</h3>
+        <p class="cap-desc">Cada incidente guarda su clip. Evidencia lista para seguridad, RRHH, seguros o legal.</p>
+        <div class="cap-tags"><span class="cap-tag">RRHH</span><span class="cap-tag">Seguros</span><span class="cap-tag">Legal</span></div>
+      </div>
+      <div class="cap-card cap-card--highlight">
+        <div class="cap-num cap-num--cyan">06</div>
+        <h3 class="cap-title">Mapas de calor de tránsito</h3>
+        <p class="cap-desc">Qué zonas se usan más — para rediseñar layout, salas o distribución de personal.</p>
+        <div class="cap-tags"><span class="cap-tag cap-tag--cyan">Layout</span><span class="cap-tag cap-tag--cyan">Oficinas</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NÚCLEO TÉCNICO · INFERENCIA ============ -->
+<section id="inferencia">
+  <div class="inner">
+    <div class="eyebrow"><span class="line"></span><span class="tag">Núcleo técnico</span></div>
+    <h2 class="h2">Inferencia matemática.<br>Ver sin mirar de más.</h2>
+    <p class="lead" style="margin-bottom:1rem">El sistema aplica el principio de <b>balance de masas</b> —el mismo de la ingeniería de procesos— para inferir lo que no necesita observarse directamente. Menos cámaras, más dato.</p>
+
+    <div class="formula-wrapper">
+      <div class="formula-header">
+        <span class="formula-label">balance_masas.py</span>
+        <div class="formula-dots"><span></span><span></span><span></span></div>
+      </div>
+      <pre class="formula-code"><code><span class="formula-comment"># Principio de balance de masas aplicado</span>
+
+<span class="formula-keyword">def</span> <span class="formula-fn">calcular_ocupacion_zona_privada</span>(ingresos_totales, detectados_en_zonas):
+    <span class="formula-comment">"""Σ Total ingresado − Σ Detectado en zonas = Ocupación inferida"""</span>
+    ocupacion_inferida = ingresos_totales - sum(detectados_en_zonas)
+    <span class="formula-keyword">return</span> max(<span class="formula-num">0</span>, ocupacion_inferida)
+
+
+<span class="formula-comment"># Ejemplo en producción — turno mañana</span>
+ingresaron_al_sector = <span class="formula-num">47</span>   <span class="formula-comment"># detectados en entrada</span>
+en_linea_produccion  = <span class="formula-num">31</span>   <span class="formula-comment"># cámara zona A</span>
+en_area_embalaje     = <span class="formula-num">12</span>   <span class="formula-comment"># cámara zona B</span>
+
+ocupacion_privada = calcular_ocupacion_zona_privada(
+    ingresos_totales    = ingresaron_al_sector,
+    detectados_en_zonas = [en_linea_produccion, en_area_embalaje])
+<span class="formula-comment"># resultado: 4 personas — sin una sola cámara en zona privada</span></code></pre>
+    </div>
+
+    <div class="diff-grid" style="margin-top:2rem">
+      <div class="diff-item">
+        <div class="inf-icon">∑</div>
+        <h4 class="diff-title">Conservación de flujo</h4>
+        <p class="diff-desc">La cantidad de personas que ingresa a un sector se distribuye entre todas las zonas. Si las zonas visibles suman N, el resto está en las no monitoreadas.</p>
+      </div>
+      <div class="diff-item diff-item--border">
+        <div class="inf-icon">Δt</div>
+        <h4 class="diff-title">Ventana temporal</h4>
+        <p class="diff-desc">El cálculo se actualiza cada 30 segundos con datos en vivo. Detecta ausentismo, descansos extendidos y patrones de movimiento anómalos.</p>
+      </div>
+      <div class="diff-item diff-item--border">
+        <div class="inf-icon inf-icon--accent">⚖</div>
+        <h4 class="diff-title">Cumplimiento legal</h4>
+        <p class="diff-desc">Cero cámaras en zonas privadas, cero datos biométricos, cero imágenes de personas almacenadas. Auditable ante cualquier inspección laboral.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ARQUITECTURA TÉCNICA ============ -->
+<section id="arquitectura" class="sect-bg">
+  <div class="inner">
+    <div class="eyebrow"><span class="line"></span><span class="tag">Stack técnico</span></div>
+    <h2 class="h2">Arquitectura técnica.<br>Tres capas, todas locales.</h2>
+    <p class="lead" style="margin-bottom:1rem">Cada capa es reemplazable y auditada. Toda la cadena procesa en tu infraestructura — nada sale del local.</p>
+
+    <div class="arq-flow">
+      <div class="arq-node">
+        <div class="arq-badge">Capa 1</div>
+        <h4 class="arq-title">Frigate</h4>
+        <p class="arq-desc">Motor de visión por computadora. Detección de objetos en tiempo real sobre hardware local (Coral TPU / GPU).</p>
+      </div>
+      <div class="arq-arrow" aria-hidden="true"><span class="arq-arrow-label">MQTT / HTTP</span><span>→</span></div>
+      <div class="arq-node">
+        <div class="arq-badge">Capa 2</div>
+        <h4 class="arq-title">FastAPI · Python</h4>
+        <p class="arq-desc">Backend de inferencia. Recibe eventos, aplica el balance de masas y persiste métricas en base de datos local.</p>
+      </div>
+      <div class="arq-arrow" aria-hidden="true"><span class="arq-arrow-label">REST / WebSocket</span><span>→</span></div>
+      <div class="arq-node">
+        <div class="arq-badge">Capa 3</div>
+        <h4 class="arq-title">React · SPA</h4>
+        <p class="arq-desc">Dashboard operativo en tiempo real: mapa de planta, heatmaps de ocupación e históricos por turno.</p>
+      </div>
+    </div>
+
+    <div class="stat-grid arq-specs">
+      <div class="stat"><div class="big">100<small>%</small></div><div class="lbl">procesamiento local</div></div>
+      <div class="stat"><div class="big">30<small>s</small></div><div class="lbl">ciclo de actualización</div></div>
+      <div class="stat"><div class="big">0<small>KB</small></div><div class="lbl">video enviado a la nube</div></div>
+      <div class="stat"><div class="big arq-legal">Legal</div><div class="lbl">normativa laboral y de privacidad</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CASO LUCCA (pilot banner) ============ -->
+<section id="lucca" class="sect-bg">
+  <div class="inner">
+    <div class="pilot-banner">
+      <div class="pilot-grid-bg" aria-hidden="true"></div>
+      <div class="pilot-circles" aria-hidden="true"></div>
+      <div class="pilot-content">
+        <div class="client-chip">
+          <img src="/ops/piloto/lucca-logo.png" alt="Lucca — Salón recreativo">
+          <span><span class="cc-name">Lucca · Salón recreativo</span><br><span class="cc-sub">Cliente piloto — Lima, Perú</span></span>
+        </div>
+        <div class="eyebrow"><span class="line"></span><span class="tag">Caso de éxito · deployment real</span></div>
+        <h2 class="h2 on-dark" style="margin-bottom:0">Lucca: 7 semanas cuidando niños<br>sobre 4 cámaras corrientes.</h2>
+        <p class="pilot-quote">"Si es capaz de cuidar la seguridad de niños de 6 años sobre cámaras corrientes, sin fallar y <b>sin subir una sola imagen a internet</b>… imagina lo que hace por la operación de tu negocio."</p>
+        <div class="pilot-facts">
+          <span class="pilot-fact">🗓️ 7 semanas continuas</span>
+          <span class="pilot-fact">🎥 4 cámaras existentes</span>
+          <span class="pilot-fact">🧩 4 zonas monitorizadas</span>
+          <span class="pilot-fact">👶 Detección adulto / niño</span>
+          <span class="pilot-fact">📎 200+ incidencias con clip</span>
+          <span class="pilot-fact">🔒 0 datos a la nube</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRUEBA VIVA (charts) ============ -->
+<section id="prueba">
+  <div class="inner">
+    <div class="eyebrow"><span class="line"></span><span class="tag">Prueba de que funciona</span></div>
+    <h2 class="h2">No es una demo.<br>Es un sistema en producción.</h2>
+    <p class="lead" style="margin-bottom:1rem">Gráficas construidas con los datos reales que el sistema produjo en Lucca. Cifras exportadas de la API en vivo del piloto.</p>
+    <div class="proof-grid">
+      <div class="panel">
+        <h3>Aforo por hora</h3>
+        <p class="sub">Ritmo real de operación — promedio y pico de personas detectadas.</p>
+        <div id="occChart"></div>
+      </div>
+      <div class="panel">
+        <h3>Incidencias por semana</h3>
+        <p class="sub">Actividad sostenida durante 8 semanas de operación.</p>
+        <div id="wkChart"></div>
+      </div>
+      <div class="panel">
+        <h3>Tipos de incidencia detectada</h3>
+        <p class="sub">Cada una con su clip de evidencia asociado.</p>
+        <div id="typeChart"></div>
+        <div class="legend">
+          <span><i style="background:var(--s1)"></i>Ausencia en recepción</span>
+          <span><i style="background:var(--s2)"></i>Niños sin supervisión</span>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>Actividad por cámara</h3>
+        <p class="sub">Minutos de presencia detectada — base del mapa de calor por zona.</p>
+        <div id="camChart"></div>
+      </div>
+    </div>
+    <div class="proof-carousel">
+      <div class="swiper proof-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide proof-slide">
+            <div class="proof-shot">
+              <span class="proof-live-badge"><i></i>En vivo</span>
+              <video poster="/ops/piloto/panel-live-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Panel operativo en vivo del piloto Lucca: cumplimiento de zonas y aforo actualizándose durante la operación real">
+                <source src="/ops/piloto/panel-live.webm" type="video/webm">
+                <source src="/ops/piloto/panel-live.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="proof-text">
+              <span class="tag">Panel operativo</span>
+              <h3>Todo tu local, en una pantalla</h3>
+              <p>Vista principal en tiempo real: aforo actual, estado de cada zona y alertas activas de un vistazo. Grabación real del piloto — el cumplimiento de zonas sube a 100% a medida que la operación avanza. Corriendo 100% on-premise.</p>
+              <div class="proof-count">01 — <b>Dashboard en vivo</b></div>
+            </div>
+          </div>
+          <div class="swiper-slide proof-slide">
+            <div class="proof-shot"><img src="/ops/piloto/screenshots/06-incidents.jpg" alt="Incidencias con evidencia"></div>
+            <div class="proof-text">
+              <span class="tag">Incidencias con evidencia</span>
+              <h3>Cada incidente, con su clip de video</h3>
+              <p>Toda detección relevante queda registrada con su evidencia en video, lista para seguridad, RRHH, seguros o legal. 200+ incidencias en el piloto — el 100% con clip.</p>
+              <div class="proof-count">02 — <b>Incidencias</b></div>
+            </div>
+          </div>
+          <div class="swiper-slide proof-slide">
+            <div class="proof-shot"><img src="/ops/piloto/screenshots/05-events.jpg" alt="Registro de eventos"></div>
+            <div class="proof-text">
+              <span class="tag">Registro de eventos</span>
+              <h3>Entradas y salidas, minuto a minuto</h3>
+              <p>Flujo de detecciones en tiempo real, sin intervención manual. La base de datos operativa desde la que se calculan aforo, ocupación y balance de zonas.</p>
+              <div class="proof-count">03 — <b>Eventos</b></div>
+            </div>
+          </div>
+          <div class="swiper-slide proof-slide">
+            <div class="proof-shot"><img src="/ops/piloto/screenshots/04-zones.jpg" alt="Reglas por zona"></div>
+            <div class="proof-text">
+              <span class="tag">Reglas por zona</span>
+              <h3>Aforo y compliance por área</h3>
+              <p>Cada zona con su aforo, ocupación y umbrales configurables. Aforo máximo, presencia mínima, zonas restringidas — compliance operativo automático y verificable.</p>
+              <div class="proof-count">04 — <b>Zonas</b></div>
+            </div>
+          </div>
+          <div class="swiper-slide proof-slide">
+            <div class="proof-shot"><img src="/ops/piloto/screenshots/08-analytics.jpg" alt="Analítica de ocupación"></div>
+            <div class="proof-text">
+              <span class="tag">Analítica de ocupación</span>
+              <h3>Datos para decidir, no intuición</h3>
+              <p>Picos, promedios y horas valle por zona. Dimensiona tu staff y tu espacio con datos reales — el mismo análisis que en el piloto reveló el ritmo de operación de la tarde.</p>
+              <div class="proof-count">05 — <b>Analítica</b></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="proof-nav">
+        <button class="proof-btn proof-prev" aria-label="Anterior">‹</button>
+        <div class="proof-pagination"></div>
+        <button class="proof-btn proof-next" aria-label="Siguiente">›</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRIVACIDAD (diff grid — 3 pilares) ============ -->
+<section id="privacidad">
+  <div class="inner">
+    <div class="eyebrow"><span class="line"></span><span class="tag">El diferenciador #1 en LATAM</span></div>
+    <h2 class="h2">Privacidad por diseño.<br>Procesamiento 100% local.<br>Evidencia auditable.</h2>
+    <div class="diff-grid">
+      <div class="diff-item">
+        <div class="diff-num">01</div>
+        <h4 class="diff-title">Sin reconocimiento facial</h4>
+        <p class="diff-desc">No identificamos personas. El motor cuenta y ubica sobre siluetas y movimiento — nunca "reconoce". Auditable ante cualquier cliente, empleado o regulador.</p>
+      </div>
+      <div class="diff-item diff-item--border">
+        <div class="diff-num">02</div>
+        <h4 class="diff-title">Procesado 100% local</h4>
+        <p class="diff-desc">Todo corre en un equipo del propio local. Nada sube a internet, y la operación sigue aunque se caiga la conexión. Más privado que un CCTV corriente.</p>
+      </div>
+      <div class="diff-item diff-item--border">
+        <div class="diff-num">03</div>
+        <h4 class="diff-title">Blindaje legal y reputacional</h4>
+        <p class="diff-desc">Cada incidente queda documentado con evidencia. Un argumento sólido frente a clientes, empleados y reguladores — cumplimiento como dato, no como estimación.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTORES ============ -->
+<section id="sectores" class="sect-bg">
+  <div class="inner">
+    <div class="eyebrow"><span class="line"></span><span class="tag">El mismo motor, tu beneficio</span></div>
+    <h2 class="h2">Para tu sector.</h2>
+    <p class="lead" style="margin-bottom:1rem">La web habla horizontal; tu operación es específica. Esto hace el motor por cada rubro:</p>
+    <div class="sectors">
+      <div class="sector"><span class="e">🛍️</span><div><span class="tag">Prioridad 1</span><h3>Retail / tiendas</h3><p>Conteo de visitantes, horas pico, mapa de calor, alerta de mostrador desatendido.</p></div></div>
+      <div class="sector"><span class="e">🏋️</span><div><span class="tag">Prioridad 2</span><h3>Gimnasios</h3><p>Aforo por zona, ocupación por hora, uso de salas, staffing por demanda.</p></div></div>
+      <div class="sector"><span class="e">🍽️</span><div><span class="tag">Prioridad 3</span><h3>Restaurantes</h3><p>Aforo, tiempos de espera, ocupación de mesas, optimización de personal.</p></div></div>
+      <div class="sector"><span class="e">🧸</span><div><span class="tag">Gemelo de Lucca</span><h3>Salas de juego</h3><p>Supervisión infantil, ratio adulto/niño, prevención de salidas.</p></div></div>
+      <div class="sector"><span class="e">🏢</span><div><span class="tag">Espacios</span><h3>Oficinas / coworking</h3><p>Ocupación de espacios, uso de salas, optimización de m² caros.</p></div></div>
+      <div class="sector"><span class="e">📦</span><div><span class="tag">Perímetro</span><h3>Bodegas / logística</h3><p>Presencia en zonas, seguridad perimetral, zonas restringidas.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CÓMO FUNCIONA + PLANES ============ -->
+<section id="modelo">
+  <div class="inner">
+    <div class="eyebrow"><span class="line"></span><span class="tag">Cómo funciona</span></div>
+    <h2 class="h2">Del diagnóstico gratis<br>a tu operación con datos.</h2>
+    <div class="steps">
+      <div class="step"><b>Diagnóstico gratis</b><p>Auditamos qué pueden ver tus cámaras actuales. Costo 0.</p></div>
+      <div class="step"><b>Wow en 48–72h</b><p>Datos reales de TU local: conteo, ocupación, zonas.</p></div>
+      <div class="step"><b>Propuesta</b><p>Qué hace hoy + qué puede hacer por tu negocio.</p></div>
+      <div class="step"><b>Llave en mano</b><p>Instalamos y entregamos funcionando. Sin fricción.</p></div>
+      <div class="step"><b>Mantenimiento</b><p>Opcional: updates, monitoreo, nuevas reglas y reportes.</p></div>
+      <div class="step"><b>Referido</b><p>Cada cliente feliz = un caso de éxito nuevo, como Lucca.</p></div>
+    </div>
+    <div class="plans">
+      <div class="plan feat">
+        <span class="tier">Pago único</span>
+        <h3>Setup llave en mano</h3>
+        <p class="note">Escala por número de cámaras y zonas.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Diagnóstico e instalación del equipo local</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Configuración de zonas y reglas a tu operación</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Puesta en marcha y capacitación del equipo</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Funciona por sí solo — sin cuota obligatoria</li>
+        </ul>
+        <p class="price">3 tamaños según cámaras · <b>consultá tu diagnóstico</b></p>
+      </div>
+      <div class="plan">
+        <span class="tier">Suscripción opcional</span>
+        <h3>Mantenimiento</h3>
+        <p class="note">Todo el valor recurrente, sin obligación.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Actualizaciones de software y nuevas capacidades</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Monitoreo de salud del sistema</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Soporte prioritario y ajuste de reglas</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Alertas por email/Telegram y reportes avanzados</li>
+        </ul>
+        <p class="price">Mensual o anual · cancelás cuando quieras</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA FINAL ============ -->
+<section id="cta" class="sect-bg">
+  <div class="inner cta-final">
+    <div class="eyebrow center"><span class="line"></span><span class="tag">Evaluación técnica</span><span class="line"></span></div>
+    <h2 class="h2">¿Cuánto te está diciendo tu local?<br><span style="color:var(--cyan)">Averigualo con datos reales.</span></h2>
+    <p class="lead" style="margin:0 auto">Agendá una evaluación técnica sin costo. Te mostramos, sobre TUS cámaras y en 48–72h, qué datos de operación estás dejando sobre la mesa.</p>
+    <form class="cta-form" method="POST" action="/api/contacto">
+      <input type="hidden" name="funnel" value="OPS-Piloto">
+      <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;">
+      <input type="email" name="email" placeholder="tu@email.com" aria-label="Email" required>
+      <Turnstile />
+      <button class="btn-cyan" type="submit">Quiero mi diagnóstico <span class="btn-arrow">→</span></button>
+    </form>
+    <small class="cta-note">🔒 Cero hardware nuevo · cero imágenes a la nube · en español, con soporte cercano.</small>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <div class="footer-brand">RIRO <span>OPS</span></div>
+      <p class="footer-tagline">Automatización con criterio.</p>
+      <div class="biz-lines">
+        <a href="/home" class="biz-item"><span class="biz-badge biz-home">HOME</span><span class="biz-label">Ecosistema residencial inteligente</span></a>
+        <a href="/ops" class="biz-item"><span class="biz-badge biz-ops">OPS</span><span class="biz-label">Inteligencia operativa industrial</span></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <p class="col-heading">Legal</p>
+      <nav class="footer-nav" aria-label="Legal">
+        <a href="/privacidad" class="footer-link">Política de Privacidad</a>
+        <a href="/terminos" class="footer-link">Términos de Uso</a>
+        <a href="/privacidad" class="footer-link">Procesamiento de Datos</a>
+      </nav>
+      <p class="privacy-note">Procesamiento local por diseño. Tus datos permanecen en tu infraestructura.</p>
+    </div>
+    <div class="footer-col">
+      <p class="col-heading">Contacto</p>
+      <nav class="footer-nav" aria-label="Contacto">
+        <a href="#cta" class="footer-link">Solicitar Relevamiento</a>
+        <a href="#cta" class="footer-link footer-link--cta">Escríbenos por email →</a>
+      </nav>
+      <a href="#cta" class="footer-demo">Solicitar Demo</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 Riro Systems. Todos los derechos reservados.</p>
+    <p class="footer-origin"><span class="origin-dot"></span> Hardware tuyo. Criterio nuestro.</p>
+  </div>
+</footer>
+
+<div class="tip" id="tip"></div>
+
+<script is:inline src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script is:inline>
+/* ===== navbar scroll + mobile ===== */
+(()=>{const nb=document.getElementById('navbar-ops'),tg=document.getElementById('no-toggle'),mm=document.getElementById('no-mobile-menu');
+  window.addEventListener('scroll',()=>{nb?.classList.toggle('scrolled',window.scrollY>24)},{passive:true});
+  tg?.addEventListener('click',()=>{const e=tg.getAttribute('aria-expanded')!=='true';tg.setAttribute('aria-expanded',String(e));mm?.setAttribute('aria-hidden',String(!e));mm?.classList.toggle('open',e)});
+  mm?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{tg?.setAttribute('aria-expanded','false');mm?.setAttribute('aria-hidden','true');mm?.classList.remove('open')}));})();
+
+/* ===== hero swiper ===== */
+document.addEventListener('DOMContentLoaded',function(){
+  new Swiper('.hero-swiper',{loop:true,speed:900,effect:'fade',fadeEffect:{crossFade:true},
+    autoplay:{delay:6000,disableOnInteraction:false,pauseOnMouseEnter:true},
+    navigation:{nextEl:'.swiper-button-next',prevEl:'.swiper-button-prev'},
+    pagination:{el:'.swiper-pagination',clickable:true},
+    a11y:{prevSlideMessage:'Slide anterior',nextSlideMessage:'Slide siguiente'}});
+
+  new Swiper('.proof-swiper',{loop:true,speed:500,spaceBetween:0,
+    autoHeight:true,
+    navigation:{nextEl:'.proof-next',prevEl:'.proof-prev'},
+    pagination:{el:'.proof-pagination',clickable:true},
+    a11y:{prevSlideMessage:'Captura anterior',nextSlideMessage:'Captura siguiente'}});
+});
+
+/* ===== data real del piloto Lucca (exportado de la API en vivo) ===== */
+const AFORO=[{h:13,avg:0.2,max:1},{h:14,avg:0.3,max:2},{h:15,avg:6.7,max:11},{h:16,avg:8.8,max:12},
+  {h:17,avg:8.3,max:13},{h:18,avg:9.7,max:14},{h:19,avg:6.2,max:9},{h:20,avg:0.4,max:3}];
+const SEMANAS=[{w:'Sem 1',n:11},{w:'Sem 2',n:18},{w:'Sem 3',n:23},{w:'Sem 4',n:31},
+  {w:'Sem 5',n:56},{w:'Sem 6',n:11},{w:'Sem 7',n:48},{w:'Sem 8',n:2}];
+const TIPOS=[{k:'Ausencia en recepción',n:133,c:'var(--s1)'},{k:'Niños sin supervisión',n:67,c:'var(--s2)'}];
+const CAMS=[{k:'Cámara 2',m:16.8},{k:'Cámara 4',m:12.5},{k:'Cámara 3',m:3.0},{k:'Cámara 1',m:0.0}];
+
+const tip=document.getElementById('tip');
+function showTip(e,html){tip.innerHTML=html;tip.style.opacity=1;tip.style.left=e.clientX+'px';tip.style.top=e.clientY+'px';}
+function hideTip(){tip.style.opacity=0;}
+const NS='http://www.w3.org/2000/svg';
+function el(n,a){const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);return e;}
+
+function areaChart(sel,data,{h=170,pad=26}={}){
+  const box=document.querySelector(sel);const w=box.clientWidth||400;
+  const svg=el('svg',{viewBox:`0 0 ${w} ${h}`,width:'100%',height:h});
+  const maxv=Math.max(...data.map(d=>d.max),1);
+  const x=i=>pad+ i*(w-pad*1.4-pad)/(data.length-1);
+  const y=v=>h-pad-(v/maxv)*(h-pad*2);
+  for(let g=0;g<=maxv;g+=Math.ceil(maxv/3)){svg.appendChild(el('line',{class:'grid-line',x1:pad,x2:w-pad*0.4,y1:y(g),y2:y(g)}));
+    const t=el('text',{class:'axis-lbl',x:2,y:y(g)+3});t.textContent=g;svg.appendChild(t);}
+  const areaPath=(key,fill,op)=>{let d=`M ${x(0)} ${y(0)}`;data.forEach((p,i)=>d+=` L ${x(i)} ${y(p[key])}`);
+    d+=` L ${x(data.length-1)} ${y(0)} Z`;svg.appendChild(el('path',{d,fill,'fill-opacity':op}));};
+  areaPath('max','var(--seq-250)',.20);
+  areaPath('avg','var(--seq-400)',.20);
+  let dl='';data.forEach((p,i)=>dl+=(i?' L ':'M ')+x(i)+' '+y(p.avg));
+  svg.appendChild(el('path',{d:dl,fill:'none',stroke:'var(--seq-400)','stroke-width':2}));
+  data.forEach((p,i)=>{
+    const c=el('circle',{cx:x(i),cy:y(p.avg),r:8,fill:'transparent'});
+    c.addEventListener('mousemove',e=>showTip(e,`<b>${p.h}:00</b> · prom ${p.avg} · pico ${p.max}`));
+    c.addEventListener('mouseleave',hideTip);svg.appendChild(c);
+    svg.appendChild(el('circle',{cx:x(i),cy:y(p.avg),r:3,fill:'var(--seq-400)'}));
+    const t=el('text',{class:'axis-lbl',x:x(i),y:h-8,'text-anchor':'middle'});t.textContent=p.h;svg.appendChild(t);});
+  box.innerHTML='';box.appendChild(svg);
+}
+function barChart(sel,data,{h=190,pad=26,color='var(--seq-400)',key='n',lbl='w',fmt=v=>v}={}){
+  const box=document.querySelector(sel);const w=box.clientWidth||400;
+  const svg=el('svg',{viewBox:`0 0 ${w} ${h}`,width:'100%',height:h});
+  const maxv=Math.max(...data.map(d=>d[key]),1);
+  const bw=(w-pad-8)/data.length;const y=v=>h-pad-(v/maxv)*(h-pad*1.6);
+  for(let g=0;g<=maxv;g+=Math.ceil(maxv/3)){svg.appendChild(el('line',{class:'grid-line',x1:pad,x2:w-4,y1:y(g),y2:y(g)}));
+    const t=el('text',{class:'axis-lbl',x:2,y:y(g)+3});t.textContent=g;svg.appendChild(t);}
+  data.forEach((p,i)=>{
+    const bx=pad+i*bw+bw*0.15,bh=Math.max(h-pad-y(p[key]),0),by=y(p[key]);
+    const r=el('rect',{class:'bar',x:bx,y:by,width:bw*0.7,height:bh,rx:4,fill:p.c||color});
+    r.addEventListener('mousemove',e=>showTip(e,`<b>${p[lbl]}</b> · ${fmt(p[key])}`));
+    r.addEventListener('mouseleave',hideTip);svg.appendChild(r);
+    const t=el('text',{class:'axis-lbl',x:bx+bw*0.35,y:h-8,'text-anchor':'middle'});t.textContent=p[lbl];svg.appendChild(t);});
+  box.innerHTML='';box.appendChild(svg);
+}
+function hbarChart(sel,data,{key='n',lbl='k',color='var(--seq-400)',unit='',rowh=44}={}){
+  const box=document.querySelector(sel);const w=box.clientWidth||400;const h=data.length*rowh+10;
+  const svg=el('svg',{viewBox:`0 0 ${w} ${h}`,width:'100%',height:h});
+  const maxv=Math.max(...data.map(d=>d[key]),1);const lw=w*0.42;
+  data.forEach((p,i)=>{
+    const cy=i*rowh+8;
+    const t=el('text',{class:'axis-lbl',x:0,y:cy+rowh/2,'dominant-baseline':'middle'});
+    t.setAttribute('style','fill:#1b2a4a99;font-size:12px;font-weight:600');t.textContent=p[lbl];svg.appendChild(t);
+    const bw=(p[key]/maxv)*(w-lw-40);
+    const r=el('rect',{class:'bar',x:lw,y:cy+6,width:Math.max(bw,2),height:rowh-20,rx:4,fill:p.c||color});
+    r.addEventListener('mousemove',e=>showTip(e,`<b>${p[lbl]}</b> · ${p[key]}${unit}`));
+    r.addEventListener('mouseleave',hideTip);svg.appendChild(r);
+    const vt=el('text',{x:lw+Math.max(bw,2)+8,y:cy+rowh/2,'dominant-baseline':'middle'});
+    vt.setAttribute('style','fill:#1b2a4a;font-size:12px;font-weight:700');vt.textContent=p[key]+unit;svg.appendChild(vt);});
+  box.innerHTML='';box.appendChild(svg);
+}
+function renderAll(){
+  areaChart('#occChart',AFORO,{h:200});
+  barChart('#wkChart',SEMANAS,{h:200,lbl:'w',key:'n',fmt:v=>v+' incidencias'});
+  hbarChart('#typeChart',TIPOS,{key:'n',lbl:'k'});
+  hbarChart('#camChart',CAMS,{key:'m',lbl:'k',color:'var(--seq-250)',unit:' min'});
+}
+renderAll();
+let rt;window.addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(renderAll,150);});
+</script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+---
+// Footer de la versión en inglés (/en) — corporativo, sin embudo de venta.
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="footer-inner">
+
+    <!-- Columna 1: Marca -->
+    <div class="footer-col">
+      <a href="/en#top" class="footer-logo-link">
+        <img src="/Riro.svg" alt="Riro Systems" class="footer-logo-img" loading="lazy" />
+      </a>
+      <p class="footer-tagline">Automation, with judgment.</p>
+      <p class="footer-origin-line">
+        A <strong>Loreatec Co.,&nbsp;Ltd.</strong> company · Tokyo, Japan
+      </p>
+    </div>
+
+    <!-- Columna 2: Navegación -->
+    <div class="footer-col">
+      <p class="col-heading">Company</p>
+      <nav class="footer-nav" aria-label="Company">
+        <a href="/en#capabilities" class="footer-link">What we do</a>
+        <a href="/en#company" class="footer-link">Who we are</a>
+        <a href="/en#contact" class="footer-link">Get in touch</a>
+        <a href="/" class="footer-link">Español →</a>
+      </nav>
+    </div>
+
+    <!-- Columna 3: Contacto -->
+    <div class="footer-col">
+      <p class="col-heading">Contact</p>
+      <nav class="footer-nav" aria-label="Contact">
+        <a href="#" class="footer-link footer-link--cta email-obf" data-u="contacto" data-d="rirosystems.com">
+          Email us →
+        </a>
+      </nav>
+      <p class="privacy-note">
+        Local processing by design. Your data stays on your own infrastructure.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p class="footer-copy">
+      © {year} Loreatec Co., Ltd. — Riro Systems. All rights reserved.
+    </p>
+    <p class="footer-origin">
+      <span class="origin-dot"></span> Your hardware. Our judgment.
+    </p>
+  </div>
+</footer>
+
+<style>
+  :root {
+    --c-navy:    #1B2A4A;
+    --c-cyan:    #2B96AD;
+    --c-muted:   rgba(255, 255, 255, 0.45);
+  }
+
+  .footer {
+    background: var(--c-navy);
+    border-top: 1px solid rgba(43, 150, 173, 0.15);
+    margin-top: 0;
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3.5rem 1.5rem 2.5rem;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .footer-col { display: flex; flex-direction: column; gap: 0; }
+
+  .footer-logo-link { display: inline-block; margin: 0 0 0.35rem; }
+
+  .footer-logo-img {
+    height: 68px;
+    width: auto;
+    border-radius: 3px;
+    opacity: 0.92;
+    filter: brightness(0) invert(1);
+    transition: opacity 0.2s;
+  }
+  .footer-logo-link:hover .footer-logo-img { opacity: 1; }
+
+  .footer-tagline {
+    font-family: 'Inter', 'DM Sans', system-ui, sans-serif;
+    font-size: 0.8rem;
+    font-style: italic;
+    color: var(--c-muted);
+    margin: 0 0 0.75rem;
+    letter-spacing: 0.01em;
+  }
+
+  .footer-origin-line {
+    font-family: 'Inter', 'DM Sans', system-ui, sans-serif;
+    font-size: 0.775rem;
+    color: rgba(255, 255, 255, 0.4);
+    line-height: 1.5;
+    margin: 0;
+  }
+  .footer-origin-line strong { color: rgba(255, 255, 255, 0.7); font-weight: 600; }
+
+  .col-heading {
+    font-family: 'Inter', 'DM Sans', system-ui, sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.3);
+    margin: 0 0 1.25rem;
+  }
+
+  .footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .footer-link {
+    font-family: 'Inter', 'DM Sans', system-ui, sans-serif;
+    font-size: 0.8375rem;
+    color: var(--c-muted);
+    text-decoration: none;
+    transition: color 0.18s;
+    line-height: 1.4;
+  }
+  .footer-link:hover { color: rgba(255, 255, 255, 0.85); }
+  .footer-link--cta { color: var(--c-cyan); opacity: 0.85; }
+  .footer-link--cta:hover { color: var(--c-cyan); opacity: 1; }
+
+  .privacy-note {
+    font-family: 'Inter', 'DM Sans', system-ui, sans-serif;
+    font-size: 0.725rem;
+    color: rgba(255, 255, 255, 0.22);
+    line-height: 1.5;
+    margin: 0;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.25rem 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-copy,
+  .footer-origin {
+    font-family: 'Inter', 'DM Sans', system-ui, sans-serif;
+    font-size: 0.725rem;
+    color: rgba(255, 255, 255, 0.2);
+    margin: 0;
+  }
+
+  .footer-origin { display: flex; align-items: center; gap: 0.4rem; }
+
+  .origin-dot {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--c-cyan);
+    opacity: 0.5;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 900px) {
+    .footer-inner { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+    .footer-col:first-child { grid-column: 1 / -1; }
+  }
+
+  @media (max-width: 560px) {
+    .footer-inner { grid-template-columns: 1fr; gap: 2rem; padding: 2.5rem 1.25rem 2rem; }
+    .footer-col:first-child { grid-column: auto; }
+    .footer-bottom { flex-direction: column; align-items: flex-start; gap: 0.4rem; }
+  }
+</style>
+
+<script>
+  document.querySelectorAll('a.email-obf').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const el = a as HTMLElement;
+      const href = 'mailto:' + el.dataset.u + '@' + el.dataset.d + (el.dataset.p || '');
+      window.location.href = href;
+    });
+  });
+</script>

@@ -1,7 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Turnstile from "../components/Turnstile.astro";
 
-const EMAIL           = "rirosystems@loreatec.jp";
+const EMAIL           = "contacto@rirosystems.com";
 ---
 
 <BaseLayout
@@ -50,7 +51,7 @@ const EMAIL           = "rirosystems@loreatec.jp";
             </h2>
 
             <!-- Email -->
-            <a href={`mailto:${EMAIL}`} class="canal-item canal-item--email">
+            <a href="#" class="canal-item canal-item--email email-obf" data-u="contacto" data-d="rirosystems.com">
               <div class="canal-icon canal-icon--email">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
@@ -59,7 +60,7 @@ const EMAIL           = "rirosystems@loreatec.jp";
               </div>
               <div class="canal-body">
                 <span class="canal-label">Email</span>
-                <span class="canal-value">{EMAIL}</span>
+                <span class="canal-value">contacto<span class="eat"></span>rirosystems.com</span>
               </div>
               <span class="canal-arrow">→</span>
             </a>
@@ -141,6 +142,8 @@ const EMAIL           = "rirosystems@loreatec.jp";
                   class="form-input form-textarea"
                 ></textarea>
               </div>
+
+              <Turnstile />
 
               <button type="submit" class="form-submit">
                 Enviar mensaje

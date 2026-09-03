@@ -1,1 +1,5 @@
 @import "tailwindcss";
+
+/* Email obfuscation: muestra [a] por defecto, @ en hover */
+.eat::before { content: '[a]'; }
+.email-obf:hover .eat::before { content: '@'; }
