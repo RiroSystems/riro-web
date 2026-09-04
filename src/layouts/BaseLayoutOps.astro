@@ -47,6 +47,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
 
     <link rel="icon" type="image/png" href="/riro_favicon.png" />
+
+    <!-- Head extra por página (ej. hoja de estilos de Swiper en el piloto) -->
+    <slot name="head" />
   </head>
   <body class="bg-white text-[#1B2A4A] antialiased">
     <NavbarOps currentPage={currentPage} />
