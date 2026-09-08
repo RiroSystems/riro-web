@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import NavbarEn from "../components/NavbarEn.astro";
 import FooterEn from "../components/FooterEn.astro";
+import SchemaOrg from "../components/SchemaOrg.astro";
 
 interface Props {
   title: string;
@@ -12,10 +13,11 @@ interface Props {
 const {
   title,
   description = "Riro Systems — Industrial edge intelligence. AI you own, processed locally.",
-  ogImage = "/og-default.png",
+  ogImage = "/Riro.png",
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL(ogImage, Astro.site);
 ---
 
 <!doctype html>
@@ -24,29 +26,34 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#1B2A4A" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
 
     <title>{title} | Riro Systems</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
 
     <!-- Idiomas alternativos -->
-    <link rel="alternate" hreflang="es" href="https://rirosystems.com/" />
+    <link rel="alternate" hreflang="es-PE" href="https://rirosystems.com/" />
     <link rel="alternate" hreflang="en" href="https://rirosystems.com/en" />
     <link rel="alternate" hreflang="x-default" href="https://rirosystems.com/" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Riro Systems" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={`${title} | Riro Systems`} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={ogImage} />
+    <meta property="og:image" content={ogImageURL} />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={`${title} | Riro Systems`} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image" content={ogImageURL} />
+
+    <SchemaOrg />
 
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import NavbarHome from "../components/NavbarHome.astro";
 import Footer from "../components/Footer.astro";
+import SchemaOrg from "../components/SchemaOrg.astro";
 
 interface Props {
   title: string;
@@ -13,40 +14,47 @@ interface Props {
 const {
   title,
   description = "Riro HOME — Ecosistema residencial inteligente. Automatización con criterio.",
-  ogImage = "/og-default.png",
+  ogImage = "/Riro.png",
   currentPage = '',
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL(ogImage, Astro.site);
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es-PE">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#1B2A4A" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
 
     <title>{title} | Riro HOME</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
 
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Riro Systems" />
+    <meta property="og:locale" content="es_PE" />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={`${title} | Riro HOME`} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={ogImage} />
+    <meta property="og:image" content={ogImageURL} />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={`${title} | Riro HOME`} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image" content={ogImageURL} />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
 
     <link rel="icon" type="image/png" href="/riro_favicon.png" />
+
+    <SchemaOrg />
   </head>
   <body class="bg-white text-[#1B2A4A] antialiased">
     <NavbarHome currentPage={currentPage} />
