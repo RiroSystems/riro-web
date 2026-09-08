@@ -29,11 +29,15 @@ const slides = [
 ---
 
 <BaseLayoutOps
-  title="Inteligencia Operativa para Manufactura"
-  description="Monitoreo industrial y visión por computadora 100% local. Sin cámaras invasivas, sin datos en la nube. Cumplimiento objetivo, privacidad ética y fricción mínima."
+  title="Monitoreo Industrial y Visión por Computadora en Perú"
+  description="Riro OPS convierte las cámaras de tu planta en datos de operación. Monitoreo industrial y visión por computadora 100% local en Perú: sin cámaras invasivas, sin nube. Cumplimiento objetivo, privacidad ética y fricción mínima."
   currentPage="ops"
 >
   <HeroCarousel slides={slides} />
+
+  <h1 class="sr-only">
+    Riro OPS — Monitoreo industrial y visión por computadora 100% local para plantas de manufactura en Perú
+  </h1>
 
   <main class="overflow-x-hidden">
 
@@ -266,10 +270,10 @@ const slides = [
         </div>
         <h2 class="text-4xl md:text-5xl font-bold text-[#1B2A4A] mb-6 leading-tight">
           ¿Cuánto produce tu planta?<br />
-          <span class="text-[#2B96AD]">Averigualo con datos reales.</span>
+          <span class="text-[#2B96AD]">Averígualo con datos reales.</span>
         </h2>
         <p class="text-[#64748b] text-lg max-w-xl mx-auto leading-relaxed mb-12">
-          Agendá una evaluación técnica sin costo. Analizamos tu flujo de producción y diseñamos el sistema mínimo necesario para obtener métricas reales.
+          Agenda una evaluación técnica sin costo. Analizamos tu flujo de producción y diseñamos el sistema mínimo necesario para obtener métricas reales.
         </p>
         <a href="/ops/contacto" class="btn-cyan">
           Agendar evaluación técnica
@@ -279,6 +283,28 @@ const slides = [
     </section>
 
   </main>
+
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: "Riro OPS",
+      serviceType: "Monitoreo industrial con visión por computadora",
+      description:
+        "Sistema de inteligencia operativa para plantas de manufactura: conteo de producción por visión, monitoreo de personal sin reconocimiento facial y balance de masas para zonas restringidas. Procesamiento 100% local (edge computing), sin datos en la nube.",
+      provider: { "@id": "https://rirosystems.com/#organization" },
+      areaServed: [
+        { "@type": "Country", name: "Perú" },
+        { "@type": "Country", name: "Latinoamérica" },
+      ],
+      audience: {
+        "@type": "BusinessAudience",
+        audienceType: "Plantas industriales y de manufactura",
+      },
+      url: "https://rirosystems.com/ops",
+    })}
+  />
 </BaseLayoutOps>
 
 <style>

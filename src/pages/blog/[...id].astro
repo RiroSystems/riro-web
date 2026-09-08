@@ -9,12 +9,104 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
+
+const url = `https://rirosystems.com/blog/${post.id}`;
+const pub = post.data.pubDate;
+const fecha = pub.toLocaleDateString("es-PE", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: post.data.title,
+  description: post.data.description,
+  datePublished: pub.toISOString(),
+  dateModified: pub.toISOString(),
+  inLanguage: "es-PE",
+  keywords: post.data.tags.join(", "),
+  author: { "@type": "Organization", name: post.data.author },
+  publisher: { "@id": "https://rirosystems.com/#organization" },
+  image: "https://rirosystems.com/Riro.png",
+  mainEntityOfPage: { "@type": "WebPage", "@id": url },
+  url,
+};
 ---
 
 <BaseLayout title={post.data.title} description={post.data.description}>
   <main class="min-h-screen max-w-3xl mx-auto px-6 py-16">
-    <article class="prose prose-invert">
+    <nav aria-label="Migas de pan" class="text-sm text-[#64748b] mb-8">
+      <a href="/" class="hover:text-[#2B96AD]">Inicio</a>
+      <span class="mx-2">/</span>
+      <a href="/blog" class="hover:text-[#2B96AD]">Blog</a>
+    </nav>
+
+    <article class="riro-article">
+      <header class="mb-10">
+        <h1 class="text-3xl md:text-4xl font-bold text-[#1B2A4A] leading-tight mb-4">
+          {post.data.title}
+        </h1>
+        <p class="text-[#64748b]">
+          <time datetime={pub.toISOString()}>{fecha}</time>
+          <span class="mx-2">·</span>
+          {post.data.author}
+        </p>
+      </header>
       <Content />
     </article>
   </main>
+
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 </BaseLayout>
+
+<style is:global>
+  .riro-article {
+    color: #334155;
+    font-size: 1.0625rem;
+    line-height: 1.8;
+  }
+  .riro-article h2 {
+    color: #1B2A4A;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 2.5rem 0 1rem;
+  }
+  .riro-article h3 {
+    color: #1B2A4A;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 2rem 0 0.75rem;
+  }
+  .riro-article p { margin: 0 0 1.25rem; }
+  .riro-article a { color: #2B96AD; text-decoration: underline; }
+  .riro-article ul,
+  .riro-article ol { margin: 0 0 1.25rem 1.25rem; }
+  .riro-article li { margin: 0.4rem 0; }
+  .riro-article strong { color: #1B2A4A; }
+  .riro-article blockquote {
+    border-left: 3px solid #2B96AD;
+    padding-left: 1.25rem;
+    margin: 1.5rem 0;
+    color: #64748b;
+    font-style: italic;
+  }
+  .riro-article code {
+    background: #f1f5f9;
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    font-size: 0.9em;
+  }
+  .riro-article pre {
+    background: #1B2A4A;
+    color: #e2e8f0;
+    padding: 1.25rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  .riro-article pre code { background: none; padding: 0; }
+  .riro-article img { border-radius: 8px; margin: 1.5rem 0; }
+</style>

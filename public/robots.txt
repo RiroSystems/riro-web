@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /gracias
 
-Sitemap: https://rirosystems.com/sitemap.xml
+Sitemap: https://rirosystems.com/sitemap-index.xml

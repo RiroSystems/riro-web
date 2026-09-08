@@ -1,0 +1,57 @@
+---
+/**
+ * Datos estructurados globales (schema.org / JSON-LD).
+ * Se incluye en el <head> de todos los layouts base.
+ * Define la identidad de marca (Organization) y el sitio (WebSite),
+ * con foco en el mercado industrial de Perú.
+ */
+const site = "https://rirosystems.com";
+
+const organization = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${site}/#organization`,
+  name: "Riro Systems",
+  legalName: "Loreatec Co., Ltd.",
+  url: site,
+  logo: `${site}/riro_system_logo.jpeg`,
+  image: `${site}/Riro.png`,
+  slogan: "El experto silencioso: tecnología que trabaja sin que se note.",
+  description:
+    "Riro Systems, división de automatización inteligente de Loreatec, provee monitoreo industrial y visión por computadora 100% local (edge computing) para plantas de manufactura en Perú y Latinoamérica.",
+  parentOrganization: {
+    "@type": "Organization",
+    name: "Loreatec Co., Ltd.",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Tokio",
+      addressCountry: "JP",
+    },
+  },
+  knowsAbout: [
+    "Monitoreo industrial",
+    "Visión por computadora",
+    "Edge computing",
+    "Automatización de plantas industriales",
+    "Conteo de producción por visión",
+    "Privacidad por diseño",
+  ],
+  areaServed: [
+    { "@type": "Country", name: "Perú" },
+    { "@type": "Country", name: "Latinoamérica" },
+  ],
+};
+
+const website = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${site}/#website`,
+  url: site,
+  name: "Riro Systems",
+  inLanguage: "es-PE",
+  publisher: { "@id": `${site}/#organization` },
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(organization)} />
+<script type="application/ld+json" set:html={JSON.stringify(website)} />
