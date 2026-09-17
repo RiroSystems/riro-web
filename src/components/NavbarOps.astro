@@ -8,30 +8,30 @@ const { currentPage = '' } = Astro.props;
 <header id="navbar-ops" class="navbar-ops">
   <div class="no-inner">
 
-    <a href="/ops" class="no-logo" aria-label="Riro OPS — Inicio">
+    <a href="/ops/" class="no-logo" aria-label="Riro OPS — Inicio">
       <img src="/Riro.svg" alt="Riro Systems" class="no-logo-img" />
       <span class="no-section-badge">OPS</span>
     </a>
 
     <nav class="no-nav" aria-label="Navegación Riro OPS">
-      <a href="/ops" class={`no-link ${currentPage === 'ops' ? 'no-link--active' : ''}`}>
+      <a href="/ops/" class={`no-link ${currentPage === 'ops' ? 'no-link--active' : ''}`}>
         Inteligencia Operativa
       </a>
-      <a href="/ops/metodologia" class={`no-link ${currentPage === 'metodologia' ? 'no-link--active' : ''}`}>
+      <a href="/ops/metodologia/" class={`no-link ${currentPage === 'metodologia' ? 'no-link--active' : ''}`}>
         Metodología
       </a>
-      <a href="/ops/privacidad" class={`no-link ${currentPage === 'privacidad' ? 'no-link--active' : ''}`}>
+      <a href="/ops/privacidad/" class={`no-link ${currentPage === 'privacidad' ? 'no-link--active' : ''}`}>
         Privacidad y Auditoría
       </a>
-      <a href="/ops/criterio" class={`no-link ${currentPage === 'criterio' ? 'no-link--active' : ''}`}>
+      <a href="/ops/criterio/" class={`no-link ${currentPage === 'criterio' ? 'no-link--active' : ''}`}>
         El Criterio
       </a>
-      <a href="/ops/piloto" class={`no-link no-link--pilot ${currentPage === 'piloto' ? 'no-link--pilot-active' : ''}`}>
+      <a href="/ops/piloto/" class={`no-link no-link--pilot ${currentPage === 'piloto' ? 'no-link--pilot-active' : ''}`}>
         <span class="pilot-dot" aria-hidden="true"></span>Piloto Lucca
       </a>
     </nav>
 
-    <a href="/ops/contacto" class={`no-cta ${currentPage === 'contacto' ? 'no-cta--active' : ''}`}>
+    <a href="/ops/contacto/" class={`no-cta ${currentPage === 'contacto' ? 'no-cta--active' : ''}`}>
       Contacto
     </a>
 
@@ -49,14 +49,14 @@ const { currentPage = '' } = Astro.props;
 
   <div id="no-mobile-menu" class="no-mobile" aria-hidden="true">
     <nav aria-label="Navegación Riro OPS móvil">
-      <a href="/ops" class="no-mobile-link">Inteligencia Operativa</a>
-      <a href="/ops/metodologia" class="no-mobile-link">Metodología</a>
-      <a href="/ops/privacidad" class="no-mobile-link">Privacidad y Auditoría</a>
-      <a href="/ops/criterio" class="no-mobile-link">El Criterio RIRO</a>
-      <a href="/ops/piloto" class="no-mobile-link no-mobile-link--pilot">
+      <a href="/ops/" class="no-mobile-link">Inteligencia Operativa</a>
+      <a href="/ops/metodologia/" class="no-mobile-link">Metodología</a>
+      <a href="/ops/privacidad/" class="no-mobile-link">Privacidad y Auditoría</a>
+      <a href="/ops/criterio/" class="no-mobile-link">El Criterio RIRO</a>
+      <a href="/ops/piloto/" class="no-mobile-link no-mobile-link--pilot">
         <span class="pilot-dot" aria-hidden="true"></span>Piloto Lucca · Prueba viva
       </a>
-      <a href="/ops/contacto" class="no-mobile-cta">Contacto</a>
+      <a href="/ops/contacto/" class="no-mobile-cta">Contacto</a>
     </nav>
   </div>
 </header>
