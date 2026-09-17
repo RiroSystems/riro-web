@@ -9,29 +9,29 @@ const { currentPage = '' } = Astro.props;
   <div class="nh-inner">
 
     <!-- Logo + badge de sección -->
-    <a href="/home" class="nh-logo" aria-label="Riro HOME — Inicio">
+    <a href="/home/" class="nh-logo" aria-label="Riro HOME — Inicio">
       <img src="/Riro.svg" alt="Riro Systems" class="nh-logo-img" />
       <span class="nh-section-badge">HOME</span>
     </a>
 
     <!-- Nav desktop -->
     <nav class="nh-nav" aria-label="Navegación Riro HOME">
-      <a href="/home#categorias" class={`nh-link ${currentPage === 'soluciones' ? 'nh-link--active' : ''}`}>
+      <a href="/home/#categorias" class={`nh-link ${currentPage === 'soluciones' ? 'nh-link--active' : ''}`}>
         Soluciones
       </a>
-      <a href="/home/metodologia" class={`nh-link ${currentPage === 'metodologia' ? 'nh-link--active' : ''}`}>
+      <a href="/home/metodologia/" class={`nh-link ${currentPage === 'metodologia' ? 'nh-link--active' : ''}`}>
         Metodología
       </a>
-      <a href="/home/care" class={`nh-link ${currentPage === 'care' ? 'nh-link--active' : ''}`}>
+      <a href="/home/care/" class={`nh-link ${currentPage === 'care' ? 'nh-link--active' : ''}`}>
         Riro Care
       </a>
-      <a href="/home/criterio" class={`nh-link ${currentPage === 'criterio' ? 'nh-link--active' : ''}`}>
+      <a href="/home/criterio/" class={`nh-link ${currentPage === 'criterio' ? 'nh-link--active' : ''}`}>
         El Criterio
       </a>
     </nav>
 
     <!-- CTA desktop -->
-    <a href="/home/contacto" class={`nh-cta ${currentPage === 'contacto' ? 'nh-cta--active' : ''}`}>Contacto</a>
+    <a href="/home/contacto/" class={`nh-cta ${currentPage === 'contacto' ? 'nh-cta--active' : ''}`}>Contacto</a>
 
     <!-- Hamburguesa mobile -->
     <button
@@ -51,11 +51,11 @@ const { currentPage = '' } = Astro.props;
   <!-- Menú mobile -->
   <div id="nh-mobile-menu" class="nh-mobile" aria-hidden="true">
     <nav aria-label="Navegación Riro HOME móvil">
-      <a href="/home#categorias" class="nh-mobile-link">Soluciones</a>
-      <a href="/home/metodologia" class="nh-mobile-link">Metodología</a>
-      <a href="/home/care" class="nh-mobile-link">Riro Care</a>
-      <a href="/home/criterio" class="nh-mobile-link">El Criterio RIRO</a>
-      <a href="/home/contacto" class="nh-mobile-cta">Contacto</a>
+      <a href="/home/#categorias" class="nh-mobile-link">Soluciones</a>
+      <a href="/home/metodologia/" class="nh-mobile-link">Metodología</a>
+      <a href="/home/care/" class="nh-mobile-link">Riro Care</a>
+      <a href="/home/criterio/" class="nh-mobile-link">El Criterio RIRO</a>
+      <a href="/home/contacto/" class="nh-mobile-cta">Contacto</a>
     </nav>
   </div>
 </header>

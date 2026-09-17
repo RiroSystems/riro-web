@@ -13,7 +13,7 @@ interface Props {
 const {
   title,
   description = "Riro Systems — Industrial edge intelligence. AI you own, processed locally.",
-  ogImage = "/Riro.png",
+  ogImage = "/og-riro.png",
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -24,6 +24,7 @@ const ogImageURL = new URL(ogImage, Astro.site);
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="google-site-verification" content="zjvImTckSHxk1bab1n8cw_8PlmjfIeVuQGgXBapoF64" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <meta name="theme-color" content="#1B2A4A" />

@@ -10,9 +10,11 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   site: "https://rirosystems.com",
+  // URLs canónicas con barra final (coincide con cómo sirve nginx y con el sitemap/canonical).
+  trailingSlash: "always",
   redirects: {
     // Unificación: la landing del piloto vive en /ops/piloto
-    "/proyecto-piloto": "/ops/piloto",
+    "/proyecto-piloto": "/ops/piloto/",
   },
   vite: {
     plugins: [tailwindcss()],

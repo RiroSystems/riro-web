@@ -4,3 +4,8 @@ dist/
 *.log
 .env
 .env.*
+
+# Reportes y assets de trabajo (no forman parte del sitio)
+/Riro 2.png
+/report.pdf
+/SEO/
