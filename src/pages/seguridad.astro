@@ -1,0 +1,460 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Seguridad"
+  description="Cómo Riro Systems protege cada despliegue: acceso remoto solo por VPN propia, red de cámaras segmentada, procesamiento local y evaluaciones de seguridad de la plataforma. Servicios de seguridad de red respaldados por Loreatec."
+>
+
+  <main class="seguridad">
+
+    <!-- ══════════════════════ HERO ══════════════════════ -->
+    <section class="sg-hero">
+      <div class="sg-hero-bg" aria-hidden="true"></div>
+      <div class="sg-hero-content">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="eyebrow-line"></span>
+          <span class="eyebrow-tag">Seguridad</span>
+        </div>
+        <h1 class="sg-hero-title">
+          Un sistema que vigila<br />tu planta tiene que<br />ser difícil de vigilar.
+        </h1>
+        <p class="sg-hero-desc">
+          Riro conecta cámaras, sensores e IA dentro de operaciones reales.
+          Por eso la seguridad no es un módulo aparte: es parte del diseño
+          de cada despliegue, desde la red hasta el último dispositivo.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════ PLATAFORMA ══════════════════════ -->
+    <section class="sg-section bg-white">
+      <div class="sg-inner">
+
+        <div class="flex items-center gap-3 mb-6">
+          <span class="w-8 h-px bg-[#2B96AD]"></span>
+          <span class="tag-label">La plataforma Riro</span>
+        </div>
+        <h2 class="sg-section-title mb-4">
+          Seguridad por diseño.<br />No por añadidura.
+        </h2>
+        <p class="sg-body max-w-xl mb-14">
+          Cada instalación de Riro HOME y Riro OPS se entrega con estas
+          medidas activas. No son opcionales ni se cobran aparte.
+        </p>
+
+        <div class="pilares-grid">
+
+          <div class="pilar-card">
+            <span class="pilar-num">01</span>
+            <h3 class="pilar-title">Cero puertos abiertos</h3>
+            <p class="pilar-desc">
+              Ningún equipo del cliente queda expuesto a internet. El acceso
+              remoto para soporte pasa solo por nuestra VPN propia, cifrada
+              con WireGuard y reservada a personal autorizado.
+            </p>
+          </div>
+
+          <div class="pilar-card">
+            <span class="pilar-num">02</span>
+            <h3 class="pilar-title">Red segmentada</h3>
+            <p class="pilar-desc">
+              Cámaras y sensores viven en su propia red, separada de las
+              computadoras de oficina y sin salida directa a internet.
+              Si un dispositivo falla, el problema se queda contenido.
+            </p>
+          </div>
+
+          <div class="pilar-card">
+            <span class="pilar-num">03</span>
+            <h3 class="pilar-title">Los datos no viajan</h3>
+            <p class="pilar-desc">
+              El video se procesa en el servidor local de la planta. Las
+              imágenes no se envían a nubes de terceros: menos copias,
+              menos lugares donde atacar.
+            </p>
+          </div>
+
+          <div class="pilar-card">
+            <span class="pilar-num">04</span>
+            <h3 class="pilar-title">Evaluación continua</h3>
+            <p class="pilar-desc">
+              Sometemos la plataforma Riro a evaluaciones de seguridad
+              propias: revisión de la configuración, de los servicios
+              expuestos y de las dependencias del software, con corrección
+              documentada de cada hallazgo.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════ SERVICIOS ══════════════════════ -->
+    <section class="sg-section bg-[#1B2A4A]">
+      <div class="sg-inner">
+
+        <div class="flex items-center gap-3 mb-6">
+          <span class="w-8 h-px bg-[#2B96AD]"></span>
+          <span class="tag-label tag-label--light">Servicios de seguridad</span>
+        </div>
+        <h2 class="sg-section-title text-white mb-4">
+          La experiencia de Loreatec,<br />a tu disposición.
+        </h2>
+        <p class="sg-body sg-body--light max-w-xl mb-14">
+          Riro Systems es una marca de Loreatec Co., Ltd., que desde 2011
+          diseña y opera infraestructura de red para empresas en Japón.
+          Esa misma experiencia está disponible para tu organización.
+        </p>
+
+        <div class="servicios-grid">
+
+          <div class="servicio-item">
+            <h3 class="servicio-title">Auditoría de red</h3>
+            <p class="servicio-desc">
+              Revisamos firewalls, switches, Wi-Fi y accesos remotos.
+              Entregamos un informe claro: qué está bien, qué hay que
+              corregir y en qué orden.
+            </p>
+          </div>
+
+          <div class="servicio-item servicio-item--border">
+            <h3 class="servicio-title">Segmentación OT / IT</h3>
+            <p class="servicio-desc">
+              Separamos la red de planta (cámaras, PLC, sensores) de la red
+              administrativa, para que un incidente en una no alcance a la otra.
+            </p>
+          </div>
+
+          <div class="servicio-item servicio-item--border">
+            <h3 class="servicio-title">Acceso remoto seguro</h3>
+            <p class="servicio-desc">
+              Diseño y despliegue de VPN corporativa para que proveedores y
+              técnicos entren a tu red sin abrir puertos ni compartir claves.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════ DIVULGACIÓN RESPONSABLE ══════════════════════ -->
+    <section class="sg-section bg-[#F4F7FA]" id="reportar">
+      <div class="sg-inner">
+        <div class="sg-two-col">
+          <div>
+            <div class="flex items-center gap-3 mb-5">
+              <span class="w-8 h-px bg-[#2B96AD]"></span>
+              <span class="tag-label">Divulgación responsable</span>
+            </div>
+            <h2 class="sg-section-title">
+              ¿Encontraste una<br />vulnerabilidad?
+            </h2>
+          </div>
+          <div>
+            <p class="sg-body">
+              Si detectas un problema de seguridad en la plataforma Riro o en
+              este sitio, escríbenos a
+              <a href="#" class="sg-link email-obf" data-u="contacto" data-d="rirosystems.com">contacto [at] rirosystems.com</a>
+              con el asunto «Seguridad». Incluye los pasos para reproducirlo.
+            </p>
+            <p class="sg-body mt-4">
+              Respondemos en un plazo de 5 días hábiles, te mantenemos al tanto
+              de la corrección y no emprendemos acciones contra quien reporte
+              de buena fe.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════ CTA FINAL ══════════════════════ -->
+    <section class="sg-section bg-white">
+      <div class="sg-inner">
+        <div class="sg-cta-banner">
+          <div class="cta-grid-bg" aria-hidden="true"></div>
+          <div class="relative z-10">
+            <div class="flex items-center gap-3 mb-6">
+              <span class="w-8 h-px bg-[#4A7FA5]"></span>
+              <span class="tag-label tag-label--light">Siguiente paso</span>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight max-w-xl">
+              ¿Quieres saber qué tan protegida está tu red?
+            </h2>
+            <p class="text-white/55 text-lg max-w-lg leading-relaxed mb-8">
+              Empezamos con una conversación sobre tu operación y te proponemos
+              solo lo que realmente necesitas.
+            </p>
+            <a href="/contacto/" class="sg-btn-cta">
+              Hablar con nosotros
+              <span class="btn-arrow">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+</BaseLayout>
+
+<style>
+  .seguridad {
+    padding-top: 64px;
+  }
+
+  /* ── Helpers de etiqueta ─────────────────────────────────── */
+  .eyebrow-line {
+    display: block;
+    width: 2rem;
+    height: 1px;
+    background: #2B96AD;
+    flex-shrink: 0;
+  }
+  .eyebrow-tag {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #2B96AD;
+  }
+  .tag-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #2B96AD;
+  }
+  .tag-label--light {
+    color: #4A7FA5;
+  }
+
+  /* ── Hero ────────────────────────────────────────────────── */
+  .sg-hero {
+    position: relative;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: #0A1424;
+  }
+  .sg-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(74, 127, 165, 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(74, 127, 165, 0.07) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+  .sg-hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 75% 40%, rgba(43, 150, 173, 0.18) 0%, transparent 60%);
+  }
+  .sg-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 5rem 1.5rem 4rem;
+  }
+  .sg-hero-title {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: clamp(2.25rem, 5vw, 4.25rem);
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    max-width: 760px;
+    margin-bottom: 1.5rem;
+  }
+  .sg-hero-desc {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: clamp(1rem, 1.5vw, 1.125rem);
+    color: rgba(255, 255, 255, 0.68);
+    max-width: 560px;
+    line-height: 1.72;
+  }
+
+  /* ── Secciones genéricas ─────────────────────────────────── */
+  .sg-section {
+    padding: 6rem 1.5rem;
+  }
+  .sg-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .sg-section-title {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    font-weight: 700;
+    color: #1B2A4A;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.75rem;
+  }
+  .sg-section-title.text-white { color: #ffffff; }
+  .sg-body {
+    font-size: 1rem;
+    color: #64748b;
+    line-height: 1.75;
+  }
+  .sg-body--light {
+    color: rgba(255, 255, 255, 0.55);
+  }
+  .sg-link {
+    color: #2B96AD;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(43, 150, 173, 0.3);
+  }
+  .sg-link:hover { border-color: #2B96AD; }
+
+  /* ── Dos columnas ────────────────────────────────────────── */
+  .sg-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 5rem;
+    align-items: start;
+  }
+  @media (max-width: 768px) {
+    .sg-two-col {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+  }
+
+  /* ── Pilares de la plataforma ────────────────────────────── */
+  .pilares-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  @media (max-width: 768px) {
+    .pilares-grid { grid-template-columns: 1fr; }
+  }
+  .pilar-card {
+    padding: 2.5rem;
+    border: 1px solid rgba(27, 42, 74, 0.08);
+    border-radius: 12px;
+    background: #fff;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+  .pilar-card:hover {
+    border-color: rgba(43, 150, 173, 0.3);
+    transform: translateY(-3px);
+  }
+  .pilar-num {
+    display: block;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: #2B96AD;
+    margin-bottom: 1rem;
+  }
+  .pilar-title {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: #1B2A4A;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.75rem;
+  }
+  .pilar-desc {
+    font-size: 0.9rem;
+    color: #64748b;
+    line-height: 1.68;
+  }
+
+  /* ── Servicios grid ──────────────────────────────────────── */
+  .servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  @media (max-width: 768px) {
+    .servicios-grid { grid-template-columns: 1fr; }
+    .servicio-item--border {
+      border-left: none !important;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+  }
+  .servicio-item {
+    padding: 2rem 1.75rem;
+    background: rgba(255, 255, 255, 0.03);
+    transition: background 0.25s;
+  }
+  .servicio-item:hover {
+    background: rgba(43, 150, 173, 0.07);
+  }
+  .servicio-item--border {
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .servicio-title {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+  }
+  .servicio-desc {
+    font-size: 0.8125rem;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.65;
+  }
+
+  /* ── CTA banner ──────────────────────────────────────────── */
+  .sg-cta-banner {
+    position: relative;
+    background: #1B2A4A;
+    border-radius: 16px;
+    padding: 4.5rem;
+    overflow: hidden;
+    border: 1px solid rgba(74, 127, 165, 0.1);
+  }
+  @media (max-width: 768px) {
+    .sg-cta-banner { padding: 2.5rem 1.75rem; }
+  }
+  .cta-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(74, 127, 165, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(74, 127, 165, 0.04) 1px, transparent 1px);
+    background-size: 44px 44px;
+    pointer-events: none;
+  }
+  .sg-btn-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    color: #fff;
+    background: #2B96AD;
+    text-decoration: none;
+    padding: 0.9rem 1.75rem;
+    border-radius: 7px;
+    transition: background 0.2s, box-shadow 0.2s, gap 0.2s;
+    white-space: nowrap;
+  }
+  .sg-btn-cta:hover {
+    background: #3aa6bc;
+    box-shadow: 0 0 28px rgba(43, 150, 173, 0.4);
+    gap: 0.75rem;
+  }
+  .btn-arrow { transition: transform 0.2s; }
+  .sg-btn-cta:hover .btn-arrow { transform: translateX(3px); }
+</style>
